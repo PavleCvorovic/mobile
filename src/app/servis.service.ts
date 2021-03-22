@@ -25,6 +25,8 @@ marke:any=[];
       .subscribe(posts => {
         this.spiner=false;
         this.telefoni = posts;
+        console.log(this.telefoni);
+        
 
       })
   }
