@@ -1,1 +1,9 @@
+.spinner-border{
 
+
+position: relative;
+  left: 50%;
+  top: 40%;
+ width: 9rem; height: 9rem;
+
+}

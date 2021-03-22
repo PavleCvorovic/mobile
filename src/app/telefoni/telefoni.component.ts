@@ -7,12 +7,19 @@ import {ServisService} from '../servis.service';
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-
-  constructor(public a:ServisService) { }
+marka :string ;
+model:string;
+  constructor(public s:ServisService) { }
 
   ngOnInit(): void {
-    this.a.dajtelefone();
-    console.log(this.a.telefoni);
+    this.s.dajtelefone();
+
+
+
   }
+
+
+
+
 
 }
