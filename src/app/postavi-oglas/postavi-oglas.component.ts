@@ -12,6 +12,7 @@ cijena:string;
 
 
   ngOnInit(): void {
+    this.s.dajmarku();
   }
 
 

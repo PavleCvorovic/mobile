@@ -10,8 +10,8 @@
 <div class="row" >
         <div class="col-md-3"  style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni"  >
   <br>
-<img src="{{a.slika}}"class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
-          <p><b>Marka:</b>  </p>
+<img src="{{a.slika1}}"class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
+          <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
           <p><b>Cijena: </b> {{a.cijena}}</p>
            <button class="btn btn-primary">Pogledaj detaljno</button>
 
