@@ -13,7 +13,8 @@ position: relative;
 #postovi{
   background-color: silver;
   color:white;
-  height: 950px;
+  height: max-content;
+
 }
 .oglas{
   background-color: white;
