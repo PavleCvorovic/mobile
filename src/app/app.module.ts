@@ -11,6 +11,8 @@ import { PostaviOglasComponent } from './postavi-oglas/postavi-oglas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {FormsModule} from '@angular/forms';
+import {DatePipe} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import {FormsModule} from '@angular/forms';
     MatSliderModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

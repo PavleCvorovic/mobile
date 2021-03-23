@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import {
   HttpClient,
   HttpHeaders,
   HttpParams,
   HttpEventType
 } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,16 @@ modeli:any=[];
 marke:any=[];
 postovi:any=[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private datePipe: DatePipe) { }
+
+dajVrijeme(){
+  var date = new Date();
+  console.log(this.datePipe.transform(date,"yyyy-MM-dd"));
+}
+
+
+
+
 
 
   dajtelefone(){
@@ -59,7 +70,7 @@ postovi:any=[];
 
   post:any ={
     tekst :'',
-    datum_objave:new Date()
+
 
 
   }
@@ -73,11 +84,14 @@ postovi:any=[];
 
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-telefon', this.post,
+        'http://localhost:8000/api/dodaj-oglas', this.post,
         {
           params: params
         }
-      )
+      )   .subscribe(responseData =>
+    {
+
+    })
   }
 
 

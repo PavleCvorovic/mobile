@@ -30,8 +30,8 @@
 
     </div>
     <div id="postovi" class="col-md-2"   >
-      <textarea class="form-control" id="textAreaExample" rows="2" placeholder="Postavite oglas i vas kontakt "></textarea>
-      <button class="btn-primary">objavi</button>
+      <textarea   [(ngModel)] = "objava" class="form-control" id="textAreaExample" rows="2" placeholder="Postavite oglas i vas kontakt "></textarea>
+      <button class="btn-primary" (click)="postaviPost()">objavi</button>
       <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
 

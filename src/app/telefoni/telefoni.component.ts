@@ -9,6 +9,7 @@ import {ServisService} from '../servis.service';
 export class TelefoniComponent implements OnInit {
 marka :string ;
 model:string;
+objava:string;
   constructor(public s:ServisService) { }
 
   ngOnInit(): void {
@@ -17,7 +18,13 @@ model:string;
 
 
   }
+postaviPost(){
+    this.s.post.tekst=this.objava
+this.s.dajVrijeme();
+  this.s.dodajPost()
 
+
+}
 
 
 
