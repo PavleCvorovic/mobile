@@ -1,7 +1,7 @@
 
   <div class="row">
 
-    <div class="col-md-10" style="background-color:lightcyan">
+    <div class="col-md-10" >
       <div class="container">
 
 
@@ -29,14 +29,22 @@
 
 
     </div>
-    <div class="col-md-2" style="background-color: silver;color:white">
-      <h1>R</h1><br>
-      <h1>E</h1><br>
-      <h1>K</h1><br>
-      <h1>L</h1><br>
-      <h1>A</h1><br>
-      <h1>M</h1><br>
-      <h1>A</h1><br>
+    <div id="postovi" class="col-md-2" >
+
+      <div *ngFor="let b of this.s.postovi">
+        <br>
+      <p class="oglas">
+        <span>Oglas od : {{b.datum_objave}}</span> <br>
+        {{b.tekst}}
+
+      </p>
+
+
+      </div>
+
+
+
+
     </div>
   </div>
 

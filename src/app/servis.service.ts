@@ -14,6 +14,8 @@ export class ServisService {
 telefoni:any=[];
 modeli:any=[];
 marke:any=[];
+postovi:any=[];
+
   constructor(private http: HttpClient) { }
   dajtelefone(){
     this.spiner=true;
@@ -50,6 +52,21 @@ marke:any=[];
 
       })
   }
+
+
+  dajpostove(){
+    return this.http
+      .get(
+        'http://localhost:8000/api/oglas')
+
+
+      .subscribe(posts => {
+        this.postovi = posts;
+
+      })
+  }
+
+
 
 
 }
