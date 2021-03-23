@@ -13,7 +13,7 @@ model:string;
 
   ngOnInit(): void {
     this.s.dajtelefone();
-
+    this.s.dajpostove();
 
 
   }
