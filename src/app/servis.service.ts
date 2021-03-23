@@ -17,6 +17,8 @@ marke:any=[];
 postovi:any=[];
 
   constructor(private http: HttpClient) { }
+
+
   dajtelefone(){
     this.spiner=true;
     return this.http
@@ -27,6 +29,8 @@ postovi:any=[];
       .subscribe(posts => {
         this.spiner=false;
         this.telefoni = posts;
+        console.log(this.telefoni);
+        
 
       })
   }
@@ -50,6 +54,68 @@ postovi:any=[];
       .subscribe(posts => {
         this.marke = posts;
 
+      })
+  }
+  telefonBaza:any = {
+    mark_id:1,
+    cijena:'',
+    opis:'',
+    konfiguracije:'ssda',
+    prodavac:'',
+    kontakt:'',
+    datum_objave: new Date, 
+    datum_isteka: new Date,
+    slika1:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
+    slika2:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
+    slika3:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg'
+  }
+
+  
+
+  
+
+  dodajTelefon()
+  {
+    // this.knjiga = knjiga;
+    // this.ostaliBaza = ostaliBaza;
+     const params = new HttpParams()
+ 
+
+    
+    this.http
+    .post(
+      'http://localhost:8000/api/dodaj-telefon',this.telefonBaza, 
+      {
+        params:params
+      }
+    )
+    .subscribe(responseData =>
+      { 
+        
+      })
+
+  }
+
+  
+    model_ime:any;
+
+ 
+  dodajModel()
+  {
+    const params = new HttpParams()
+ 
+
+    
+    this.http
+    .post(
+      'http://localhost:8000/api/dodaj-model',this.model_ime, 
+      {
+        params:params
+      }
+    )
+    .subscribe(responseData =>
+      { 
+        
       })
   }
 

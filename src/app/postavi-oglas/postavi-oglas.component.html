@@ -7,29 +7,45 @@
   </div>
   <div class="col-md-6" style="text-align: center">
 
-    <form >
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div ngModelGroup = "unos_telefona" #unos_telefona = "ngModelGroup" > 
+
       <label > Odaberite marku : </label>
       <div>
-      <select>
-        <option value=""></option>
-        <option *ngFor="let a of this.s.marke ">{{a.marka_naziv}}</option>
+      <select [(ngModel)]= "marka" name="marka">
+       
+        <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select>
       </div>
       <label > Unesi cijenu uredjaja : </label>
       <div  style="position: relative; left:165pt;">
-        <input  class="form-control"   placeholder="" style="width:80px ">
+        <input [(ngModel)] = "cijena" name="cijena"  class="form-control"   placeholder="" style="width:80px ">
 
       </div>
 
       <div class="form-group">
         <label >Unesi opis : </label>
-          <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+          <textarea [(ngModel)] = "opis" name="opis" class="form-control" id="textAreaExample" rows="4"></textarea>
      
       </div>
       <div class="form-group ">
-        <label >Unesi kontakt telefon:</label>
-        <input  class="form-control"   placeholder="">
+        <label >Prodavac:</label>
+        <input [(ngModel)] = "prodavac" name="prodavac" class="form-control"   placeholder="">
       </div>
+      <div class="form-group ">
+        <label >Unesi kontakt telefon:</label>
+        <input [(ngModel)] = "kontakt" name="kontakt" class="form-control"   placeholder="">
+      </div>
+      <div class="form-group ">
+        <label >Unesi konfiguracije:</label>
+        <input [(ngModel)] = "konfiguracije" name="konfiguracije" class="form-control"   placeholder="">
+      </div>
+      <label for="exampleInputEmail1">datum objave</label>
+    <input type="date" class="form-control" name = 'datum_objave' aria-describedby="emailHelp" >
+
+    <label for="exampleInputEmail1">datum isteka</label>
+    <input type="date" class="form-control" name = 'datum_isteka' aria-describedby="emailHelp" >
+
   
       <div class="form-group">
         <label for="exampleFormControlFile1">Ubaci sliku</label>
@@ -38,6 +54,7 @@
         <input type="file" class="form-control-file" id="exampleFormControlFile2">
       
         <input type="file" class="form-control-file" id="exampleFormControlFile3">
+      </div>
       </div>
       
 
