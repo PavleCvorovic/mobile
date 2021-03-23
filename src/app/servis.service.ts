@@ -12,6 +12,7 @@ import {
   providedIn: 'root'
 })
 export class ServisService {
+
   spiner:boolean=false;
 telefoni:any=[];
 modeli:any=[];
@@ -22,7 +23,9 @@ postovi:any=[];
 
 dajVrijeme(){
   var date = new Date();
-  console.log(this.datePipe.transform(date,"yyyy-MM-dd"));
+   let a= this.datePipe.transform(date,"mm-dd-yyyy");
+  let newDate = new Date(a);
+  this.post.datum= newDate;
 }
 
 
@@ -70,7 +73,7 @@ dajVrijeme(){
 
   post:any ={
     tekst :'',
-
+     datum:new Date()
 
 
   }
