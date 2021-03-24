@@ -22,7 +22,14 @@ objava:string;
 
 
 postaviPost(){
+
     this.s.tekst=this.objava
+
+
+    this.s.tekst=this.objava
+
+
+
 
 
   this.s.dodajPost()

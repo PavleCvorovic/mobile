@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
 import {ServisService} from '../servis.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-postavi-oglas',
@@ -8,6 +11,7 @@ import {ServisService} from '../servis.service';
   styleUrls: ['./postavi-oglas.component.css']
 })
 export class PostaviOglasComponent implements OnInit {
+  
 
   constructor(public s:ServisService) { }
 
@@ -23,8 +27,8 @@ export class PostaviOglasComponent implements OnInit {
   prodavac='';
   kontakt='';
   konfiguracije='';
-  datum_objave= new Date;
-  datum_isteka= new Date;
+  datum_objave=new Date();
+  datum_isteka=new Date();
   slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
@@ -35,25 +39,20 @@ export class PostaviOglasComponent implements OnInit {
   onSubmit(signupForm:NgForm)
   {
     
-    // this.s.telefonBaza.cijena = this.cijena;
-    // this.s.telefonBaza.opis = this.opis;
-    // this.s.telefonBaza.prodavac= this.prodavac;
-    // this.s.telefonBaza.kontakt = this.kontakt;
-    // this.s.telefonBaza.mark_id = this.marka;
-    // this.s.telefonBaza.konfiguracije=this.konfiguracije;
-    // this.s.telefonBaza.datum_objave=this.datum_objave;
-    // this.s.telefonBaza.datum_isteka=this.datum_isteka;
-    // console.log(this.s.telefonBaza.datum_objave);
+     this.s.telefonBaza.cijena = this.cijena;
+     this.s.telefonBaza.opis = this.opis;
+     this.s.telefonBaza.prodavac= this.prodavac;
+     this.s.telefonBaza.kontakt = this.kontakt;
+     this.s.telefonBaza.mark_id = this.marka;
+     this.s.telefonBaza.konfiguracije=this.konfiguracije;
+      // console.log(this.datum_isteka.DatePipe.transform());
+
     
-
-
-
-    // console.log(this.s.telefonBaza);
-    // this.s.dodajTelefon();
-    this.s.model_ime = this.cijena;
-    console.log(this.s.model_ime);
+     this.s.dodajTelefon();
+    // this.s.models.model_ime = this.cijena;
+    // console.log(this.s.models.model_ime);
     
-    this.s.dodajModel();
+    // this.s.dodajModel();
     
     
   }

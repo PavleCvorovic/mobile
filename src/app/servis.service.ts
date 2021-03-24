@@ -101,8 +101,6 @@ postovi:any=[];
     konfiguracije:'ssda',
     prodavac:'',
     kontakt:'',
-    datum_objave: new Date,
-    datum_isteka: new Date,
     slika1:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
     slika2:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
     slika3:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg'
@@ -130,9 +128,9 @@ postovi:any=[];
 
   }
 
-
-    model_ime:any;
-
+models:any={
+  model_ime:''
+} 
 
   dodajModel()
   {
@@ -142,7 +140,7 @@ postovi:any=[];
 
     this.http
     .post(
-      'http://localhost:8000/api/dodaj-model',this.model_ime,
+      'http://localhost:8000/api/dodaj-model',this.models,
       {
         params:params
       }
