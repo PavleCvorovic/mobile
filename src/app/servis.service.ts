@@ -6,7 +6,7 @@ import {
   HttpParams,
   HttpEventType
 } from '@angular/common/http';
-import {createLogErrorHandler} from '@angular/compiler-cli/ngcc/src/execution/tasks/completion';
+
 
 
 @Injectable({
@@ -19,6 +19,7 @@ telefoni:any=[];
 modeli:any=[];
 marke:any=[];
 postovi:any=[];
+  tekst :string;
 
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
@@ -67,12 +68,12 @@ postovi:any=[];
       })
   }
 
-  posts:any ={
-    tekst :'',
-     datum_objave:new Date()
 
 
-  }
+
+
+
+
 
 
 
@@ -83,10 +84,8 @@ postovi:any=[];
 
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-oglas', this.posts,
-        {
-          params: params
-        }
+        'http://localhost:8000/api/dodaj-oglas', this.tekst
+
       )   .subscribe(responseData =>
     {
 

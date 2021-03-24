@@ -20,11 +20,10 @@ objava:string;
 
   }
 
-  
+
 postaviPost(){
-    this.s.posts.tekst=this.objava
-  var date = new Date();
-  this.s.posts.datum_objave= this.datePipe.transform(date,"YYYY-MM-dd");
+    this.s.tekst=this.objava
+
 
   this.s.dodajPost()
 
