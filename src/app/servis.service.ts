@@ -20,19 +20,9 @@ modeli:any=[];
 marke:any=[];
 postovi:any=[];
 
-
-  tekst :string;
-  datum_objave:string;
-
-
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
-dajVrijeme(){
-  var date = new Date();
-   let a= this.datePipe.transform(date,"YYYY-MM-dd");
-  this.datum_objave=a;
-  console.log(this.datum_objave)
-}
+
 
 
 
@@ -77,25 +67,23 @@ dajVrijeme(){
       })
   }
 
+  posts:any ={
+    tekst :'',
+     datum_objave:new Date()
 
 
-
-
+  }
 
 
 
   dodajPost() {
 
     const params = new HttpParams()
-    console.log(this.tekst);
-    console.log(this.datum_objave);
 
-params.append('tekst',this.tekst);
-    params.append('datum_objave',this.datum_objave)
 
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-oglas',
+        'http://localhost:8000/api/dodaj-oglas', this.posts,
         {
           params: params
         }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-telefoni',
@@ -10,7 +11,7 @@ export class TelefoniComponent implements OnInit {
 marka :string ;
 model:string;
 objava:string;
-  constructor(public s:ServisService) { }
+  constructor(public s:ServisService ,private datePipe:DatePipe) { }
 
   ngOnInit(): void {
     this.s.dajtelefone();
@@ -18,9 +19,13 @@ objava:string;
 
 
   }
+
+  
 postaviPost(){
-    this.s.tekst=this.objava
-this.s.dajVrijeme();
+    this.s.posts.tekst=this.objava
+  var date = new Date();
+  this.s.posts.datum_objave= this.datePipe.transform(date,"YYYY-MM-dd");
+
   this.s.dodajPost()
 
 
