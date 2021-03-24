@@ -7,18 +7,30 @@ position: relative;
  width: 9rem; height: 9rem;
 
 }
-.col-md-10 {
-  background-color:lightcyan ;
-}
+
 #postovi{
   background-color: silver;
   color:white;
   height: max-content;
 
 }
+
 .oglas{
   background-color: white;
   border-radius: 5%;
 color: black;
+
+}
+.telefoni_prazni{
+
+  position: relative;
+  text-align: center;
+  left: 200px;
+  top :300px;
+  font-size: large;
+  font-family: Arial;
+
+
+
 
 }

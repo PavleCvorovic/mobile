@@ -1,56 +1,66 @@
-
+<div class="container-fluid">
   <div class="row">
 
-    <div class="col-md-10" >
-      <div class="container">
-
-
-
-        <h1 style="text-align: center"> Ponuda polovnih telefona : </h1>
-<div class="row" >
-        <div class="col-md-3"  style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni"  >
-  <br>
-<img src="{{a.slika1}}"class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
+    <div class="col-md-10">
+      <h1 style="text-align: center"> Ponuda polovnih telefona : </h1>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2" style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni">
+          <br>
+          <img src="{{a.slika1}}" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
           <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
           <p><b>Cijena: </b> {{a.cijena}}</p>
-           <button class="btn btn-primary">Pogledaj detaljno</button>
+          <button class="btn btn-primary">Pogledaj detaljno</button>
 
 
-
-</div>
-</div>
+        </div>
       </div>
-      <div *ngIf="this.s.spiner===true" class="spinner-border" role="status"  style="text-align: center">
+      <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
         <span class="sr-only">Loading...</span>
       </div>
+     </div>
+      <div *ngIf="s.prikaz===false" class="col-md-10">
+
+        <div class="alert alert-info" role="alert">
+          <h1 class="alert-heading">Zao nam je...</h1>
+          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
+          <hr>
+          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
+        </div>
 
 
-
+      </div>
 
 
     </div>
-    <div id="postovi" class="col-md-2"   >
-      <textarea   [(ngModel)] = "objava" class="form-control" id="textAreaExample" rows="2" placeholder="Postavite oglas i vas kontakt "></textarea>
-      <button class="btn-primary" (click)="postaviPost()">objavi</button>
-      <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
+
+    <div id="postovi" class="col-md-2">
+      <p style="color:black">U ovoj sekciji mozete postaviti oglas,<br> potrazite Vas idealni polovni telefon ! </p>
+
+      <div>
+        <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" rows="5"
+                  placeholder="Postavite oglas i vas kontakt ">
+        </textarea>
+        <button class="btn-primary" (click)="postaviPost()">objavi</button>
+        <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
 
-<div>
-        <br>
-      <p class="oglas"  style="text-align: left">
-        <span>Oglas od : {{b.created_at}}</span> <br>
-      <span class="embed-responsive">{{b.tekst}}</span>
+          <div>
+            <br>
+            <p class="oglas" style="text-align: left">
+              <span>Oglas od : {{b.created_at}}</span> <br>
+              <span rows="5" class="embed-responsive">{{b.tekst}}</span>
 
 
-</div>
+          </div>
 
+        </div>
       </div>
-
-
-
 
     </div>
   </div>
+
+</div>
 
 
 

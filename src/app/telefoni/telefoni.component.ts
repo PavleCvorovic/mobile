@@ -8,6 +8,7 @@ import {DatePipe} from '@angular/common';
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
+
 marka :string ;
 model:string;
 objava:string;
@@ -17,16 +18,15 @@ objava:string;
     this.s.dajtelefone();
     this.s.dajpostove();
 
-
   }
 
 
 postaviPost(){
 
-    this.s.tekst=this.objava
+    this.s.posts.tekst=this.objava
 
 
-    this.s.tekst=this.objava
+    this.s.posts.tekst=this.objava
 
 
 

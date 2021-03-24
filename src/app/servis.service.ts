@@ -19,7 +19,7 @@ telefoni:any=[];
 modeli:any=[];
 marke:any=[];
 postovi:any=[];
-  tekst :string;
+prikaz:boolean=true;
 
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
@@ -38,10 +38,16 @@ postovi:any=[];
 
 
       .subscribe(posts => {
-        this.spiner=false;
-        this.telefoni = posts;
-        console.log(this.telefoni);
 
+        this.telefoni = posts;
+
+
+        this.spiner=false;
+        if(this.telefoni.length === 0)
+        {
+          this.spiner=false;
+          this.prikaz = false;
+        };
 
       })
   }
@@ -72,7 +78,10 @@ postovi:any=[];
 
 
 
+posts:any={
+    tekst:'',
 
+}
 
 
 
@@ -84,7 +93,7 @@ postovi:any=[];
 
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-oglas', this.tekst
+        'http://localhost:8000/api/dodaj-oglas', this.posts
 
       )   .subscribe(responseData =>
     {
@@ -130,7 +139,7 @@ postovi:any=[];
 
 models:any={
   model_ime:''
-} 
+}
 
   dodajModel()
   {
@@ -163,6 +172,8 @@ models:any={
 
       })
   }
+
+
 
 
 
