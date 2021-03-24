@@ -102,8 +102,6 @@ postovi:any=[];
     konfiguracije:'ssda',
     prodavac:'',
     kontakt:'',
-    datum_objave: new Date,
-    datum_isteka: new Date,
     slika1:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
     slika2:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
     slika3:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg'
