@@ -131,9 +131,9 @@ postovi:any=[];
 
   }
 
-
-    model_ime:any;
-
+models:any={
+  model_ime:''
+} 
 
   dodajModel()
   {
@@ -143,7 +143,7 @@ postovi:any=[];
 
     this.http
     .post(
-      'http://localhost:8000/api/dodaj-model',this.model_ime,
+      'http://localhost:8000/api/dodaj-model',this.models,
       {
         params:params
       }

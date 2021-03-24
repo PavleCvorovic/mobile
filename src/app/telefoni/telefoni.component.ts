@@ -24,8 +24,9 @@ objava:string;
 postaviPost(){
     this.s.posts.tekst=this.objava
   var date = new Date();
-  this.s.posts.datum_objave= this.datePipe.transform(date,"YYYY-MM-dd");
-
+  this.s.posts.datum_objave= this.datePipe.transform(date,"shortDate");
+  console.log(this.s.posts.datum_objave);
+  
   this.s.dodajPost()
 
 
