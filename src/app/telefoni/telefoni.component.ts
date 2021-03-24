@@ -19,7 +19,7 @@ objava:string;
 
   }
 postaviPost(){
-    this.s.post.tekst=this.objava
+    this.s.tekst=this.objava
 this.s.dajVrijeme();
   this.s.dodajPost()
 
