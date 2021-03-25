@@ -2,7 +2,7 @@
   <div class="row">
 
     <div class="col-md-10">
-      <h1 style="text-align: center"> Ponuda polovnih telefona : </h1>
+      <h1 style="position:relative;left:700px;font-family: Elephant"> Ponuda polovnih telefona : </h1>
      <div class="container-fluid">
       <div class="row">
         <div class="col-md-2" style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni">
@@ -21,13 +21,17 @@
      </div>
       <div *ngIf="s.prikaz===false" class="col-md-10">
 
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" role="alert" style="text-align: center">
           <h1 class="alert-heading">Zao nam je...</h1>
           <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
           <hr>
           <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
-        </div>
 
+          <img src="https://static.thenounproject.com/png/3271619-200.png">
+
+
+        </div>
+                        <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
 
       </div>
 
@@ -35,7 +39,7 @@
     </div>
 
     <div id="postovi" class="col-md-2">
-      <p style="color:black">U ovoj sekciji mozete postaviti oglas,<br> potrazite Vas idealni polovni telefon ! </p>
+      <p class="tekst" >U ovoj sekciji mozete postaviti oglas,<br> potrazite Vas idealni polovni telefon ! </p>
 
       <div>
         <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" rows="5"
