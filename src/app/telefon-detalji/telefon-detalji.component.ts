@@ -15,7 +15,7 @@ export class TelefonDetaljiComponent implements OnInit {
 
   ngOnInit(): void {
     this.s.uzmiTelefonId(this.id);
-    console.log(this.id);
+   
     
   }
 
