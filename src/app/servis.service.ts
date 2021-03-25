@@ -110,9 +110,9 @@ posts:any={
     konfiguracije:'ssda',
     prodavac:'',
     kontakt:'',
-    slika1:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
-    slika2:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg',
-    slika3:'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg'
+    slika1:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg',
+    slika2:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg',
+    slika3:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg'
   }
 
   dodajTelefon()
