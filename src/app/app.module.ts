@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {FormsModule} from '@angular/forms';
 import {DatePipe} from '@angular/common';
+import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {DatePipe} from '@angular/common';
     FooterComponent,
     TelefoniComponent,
     ModeliComponent,
-    PostaviOglasComponent
+    PostaviOglasComponent,
+    TelefonDetaljiComponent
   ],
   imports: [
     BrowserModule,

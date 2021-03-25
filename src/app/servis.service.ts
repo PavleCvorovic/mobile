@@ -172,6 +172,23 @@ models:any={
 
       })
   }
+  telefonId:any;
+
+  uzmiTelefonId(id)
+  {
+      return this.http
+      .get(
+        'http://localhost:8000/api/telefoni/'+ id
+      )
+      .subscribe(
+        posts=>
+        {
+            this.telefonId = posts;
+            console.log(this.telefonId);
+            
+        }
+      )
+  }
 
 
 
