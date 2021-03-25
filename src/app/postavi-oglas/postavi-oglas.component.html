@@ -1,19 +1,21 @@
-<div class="col-md-12">
 <div class="container" >
+<div class="col-md-12">
+
 
   <div class="col-md-3">
 
 
   </div>
-  <div class="col-md-6" style="text-align: center">
+  <div class="d-flex justify-content-center">
+  <div class="col-md-6" >
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-      <div ngModelGroup = "unos_telefona" #unos_telefona = "ngModelGroup" > 
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)"  >
+      <div ngModelGroup = "unos_telefona" #unos_telefona = "ngModelGroup" >
 
       <label > Odaberite marku : </label>
       <div>
       <select [(ngModel)]= "marka" name="marka">
-       
+
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select>
       </div>
@@ -26,7 +28,7 @@
       <div class="form-group">
         <label >Unesi opis : </label>
           <textarea [(ngModel)] = "opis" name="opis" class="form-control" id="textAreaExample" rows="4"></textarea>
-     
+
       </div>
       <div class="form-group ">
         <label >Prodavac:</label>
@@ -40,29 +42,29 @@
         <label >Unesi konfiguracije:</label>
         <input [(ngModel)] = "konfiguracije" name="konfiguracije" class="form-control"   placeholder="">
       </div>
-      <label for="exampleInputEmail1">datum objave</label>
+      <label >datum objave</label>
     <input type="date" class="form-control" name = 'datum_objave' aria-describedby="emailHelp" >
 
-    <label for="exampleInputEmail1">datum isteka</label>
+    <label >datum isteka</label>
     <input type="date" class="form-control" name = 'datum_isteka' aria-describedby="emailHelp" >
 
-  
+
       <div class="form-group">
         <label for="exampleFormControlFile1">Ubaci sliku</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        
+
         <input type="file" class="form-control-file" id="exampleFormControlFile2">
-      
+
         <input type="file" class="form-control-file" id="exampleFormControlFile3">
       </div>
       </div>
-      
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <button type="submit" class="btn btn-primary ,d-flex justify-content-center">Submit</button>
     </form>
 
 
-
+</div>
   </div>
 
   <div class="col-md-3">
