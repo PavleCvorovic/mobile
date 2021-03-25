@@ -40,6 +40,7 @@ prikaz:boolean=true;
       .subscribe(posts => {
 
         this.telefoni = posts;
+        console.log(this.telefoni);
 
 
         this.spiner=false;
@@ -185,7 +186,7 @@ models:any={
         {
             this.telefonId = posts;
             console.log(this.telefonId);
-            
+
         }
       )
   }
