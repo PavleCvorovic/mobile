@@ -8,7 +8,7 @@ import {ServisService} from '../servis.service';
 })
 export class AdminBordComponent implements OnInit {
 
-  constructor(private  s:ServisService) { }
+  constructor(public  s:ServisService) { }
 
   ngOnInit(): void {
     this.s.dajtelefone();
