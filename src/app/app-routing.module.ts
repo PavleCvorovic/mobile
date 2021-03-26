@@ -4,6 +4,7 @@ import { TelefoniComponent } from './telefoni/telefoni.component';
 import {ModeliComponent} from './modeli/modeli.component';
 import {PostaviOglasComponent} from './postavi-oglas/postavi-oglas.component';
 import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
+import {AdminBordComponent} from './admin-bord/admin-bord.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'telefon' , pathMatch: 'full' },
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path: 'model', component : ModeliComponent},
   {path: 'postavi_oglas', component : PostaviOglasComponent},
   {path: 'telefon-detalji/:id', component:TelefonDetaljiComponent},
-
+  {path: 'admin', component:AdminBordComponent},
 ];
 
 @NgModule({

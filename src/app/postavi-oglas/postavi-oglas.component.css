@@ -1,7 +1,12 @@
 .col-md-6{
-  background-color: darkcyan;
-border-radius: 10pt;
+  background-color: #dae9ff;
 
 
 }
 
+.aa{
+
+  border-radius: 0.25rem;
+  border: #f7951b;
+
+}

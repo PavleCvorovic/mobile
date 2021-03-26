@@ -13,6 +13,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {FormsModule} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
+import { AdminBordComponent } from './admin-bord/admin-bord.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.compo
     TelefoniComponent,
     ModeliComponent,
     PostaviOglasComponent,
-    TelefonDetaljiComponent
+    TelefonDetaljiComponent,
+    AdminBordComponent
   ],
   imports: [
     BrowserModule,
