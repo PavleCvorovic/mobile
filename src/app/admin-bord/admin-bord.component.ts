@@ -12,4 +12,8 @@ export class AdminBordComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+
+
 }

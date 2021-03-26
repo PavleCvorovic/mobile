@@ -50,6 +50,7 @@ promjena1:boolean=false;
       // console.log(this.datum_isteka.DatePipe.transform());
       this.s.models.marka_id = this.marka;
       this.s.models.model_naziv = this.model;
+      
 
 
 
