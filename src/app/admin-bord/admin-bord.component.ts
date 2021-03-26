@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServisService} from '../servis.service';
 
 @Component({
   selector: 'app-admin-bord',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminBordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  s:ServisService) { }
 
   ngOnInit(): void {
+    this.s.dajtelefone();
+
   }
 
 

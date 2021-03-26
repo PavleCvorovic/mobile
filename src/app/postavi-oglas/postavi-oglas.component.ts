@@ -49,20 +49,19 @@ promjena1:boolean=false;
      this.s.telefonBaza.kontakt = this.kontakt;
      this.s.telefonBaza.mark_id = this.marka;
      this.s.telefonBaza.konfiguracije=this.konfiguracije;
-      // console.log(this.datum_isteka.DatePipe.transform());
+     this.s.telefonBaza.javno=0;
       this.s.models.marka_id = this.marka;
       this.s.models.model_naziv = this.model;
-      
+
 
 
 
     this.s.dodajModel();
-    console.log(this.s.models.model_naziv);
+
 
      this.s.dodajTelefon();
 
-     alert('uspjesno postavljen oglas');
-     this.router.navigateByUrl('/postavi_oglas');
+
 
     }else{
 
