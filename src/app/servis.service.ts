@@ -61,6 +61,26 @@ prikaz:boolean=true;
 
       })
   }
+
+  brisiTelefon(id){
+   let ida=id
+    console.log(ida);
+    return this.http.delete('api/obrisi/'+ ida)
+      .subscribe(()=>
+      {
+
+      })
+
+
+
+
+
+
+  }
+
+
+
+
   dajmodel(){
     return this.http
       .get(
