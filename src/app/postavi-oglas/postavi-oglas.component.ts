@@ -6,6 +6,8 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 
 
+
+
 @Component({
   selector: 'app-postavi-oglas',
   templateUrl: './postavi-oglas.component.html',
@@ -60,7 +62,8 @@ promjena1:boolean=false;
      this.s.dodajTelefon();
 
      alert('uspjesno postavljen oglas');
-     this.router.navigateByUrl('/postavi_oglas')
+     this.router.navigateByUrl('/postavi_oglas');
+
     }else{
 
         alert('Popunite sva polja u formi.')
@@ -69,11 +72,6 @@ promjena1:boolean=false;
     // console.log(this.s.models.model_ime);
 
     // this.s.dodajModel();
-
-
-
-
-
 
 
 
