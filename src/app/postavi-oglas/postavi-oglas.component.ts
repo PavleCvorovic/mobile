@@ -39,7 +39,8 @@ promjena1:boolean=false;
 
   onSubmit(signupForm:NgForm)
   {
-
+    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.konfiguracije != null){
+      this.promjena1=true;
      this.s.telefonBaza.cijena = this.cijena;
      this.s.telefonBaza.opis = this.opis;
      this.s.telefonBaza.prodavac= this.prodavac;
@@ -59,6 +60,10 @@ promjena1:boolean=false;
 
      alert('uspjesno postavljen oglas');
      this.router.navigateByUrl('/postavi_oglas')
+    }else{
+
+        alert('Popunite sva polja u formi.')
+    }
     // this.s.models.model_ime = this.cijena;
     // console.log(this.s.models.model_ime);
 
@@ -67,37 +72,19 @@ promjena1:boolean=false;
 
 
 
-     this.s.dodajTelefon();
-     this.fun1()
+
+
 
 
 
 
   }
-fun1(){
-if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.konfiguracije != null){
-this.promjena1=true;
-
-this.cijena
-  this.opis='';
-  this.prodavac='';
-  this.konfiguracije='';
-  this.kontakt='';
-  this.marka='';
-  this.konfiguracije='';
-  this.cijena='';
 
 
 
 
 
 
-}
-else {
-  alert('Popunite sva polja u formi.')
-
-}
-}
 
 
 
