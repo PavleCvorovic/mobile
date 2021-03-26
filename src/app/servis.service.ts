@@ -40,15 +40,24 @@ prikaz:boolean=true;
       .subscribe(posts => {
 
         this.telefoni = posts;
-        console.log(this.telefoni);
+
 
 
         this.spiner=false;
-        if(this.telefoni.length === 0)
+        let i;
+        for( i=0; i<=this.telefoni.length;i++){
+          console.log(this.telefoni[i].javno);
+        if(this.telefoni[i].javno===1)
+
         {
-          this.spiner=false;
+
           this.prikaz = false;
-        };
+        }
+        else {
+          this.prikaz=true;
+          break;
+
+        }}
 
       })
   }
