@@ -41,7 +41,10 @@ prikaz:boolean=true;
 
         this.telefoni = posts;
         console.log(this.telefoni);
+<<<<<<< HEAD
         
+=======
+>>>>>>> b4913511b518d9cd4123358adbe9eac702c3a921
 
 
         this.spiner=false;
@@ -190,7 +193,7 @@ models:any={
         {
             this.telefonId = posts;
             console.log(this.telefonId);
-            
+
         }
       )
   }

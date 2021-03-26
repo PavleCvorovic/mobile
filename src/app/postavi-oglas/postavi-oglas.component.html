@@ -6,6 +6,8 @@
 
 
   </div>
+  <br>
+  <h1>Popunite formu </h1>
   <div class="d-flex justify-content-center">
   <div class="col-md-6" >
 
@@ -25,7 +27,7 @@
       </div>
       </div>
       <label > Unesi cijenu uredjaja : </label>
-      <div  style="position: relative; left:165pt;">
+      <div  style="text-align: center;">
         <input [(ngModel)] = "cijena" name="cijena"  class="form-control"   placeholder="" style="width:80px ">
 
       </div>
@@ -47,11 +49,6 @@
         <label >Unesi konfiguracije:</label>
         <input [(ngModel)] = "konfiguracije" name="konfiguracije" class="form-control"   placeholder="">
       </div>
-      <label >datum objave</label>
-    <input type="date" class="form-control" name = 'datum_objave' aria-describedby="emailHelp" >
-
-    <label >datum isteka</label>
-    <input type="date" class="form-control" name = 'datum_isteka' aria-describedby="emailHelp" >
 
 
       <div class="form-group">
@@ -65,9 +62,14 @@
       </div>
 
 
-      <button type="submit" class="btn btn-primary ,d-flex justify-content-center">Submit</button>
+      <button type="submit" class="btn btn-primary ,d-flex justify-content-center" >Submit</button>
     </form>
-
+    <div class="alert alert-primary" role="alert" *ngIf="promjena1===true">
+     Vas post je trenutno na provjeri ispravnosti od strane admina .<br>
+      Ukoliko se utvrdi da Vas post ispunjava kriterijume, isti ce biti ubrzo objavljen. <br>
+      Hvala na koriscenju aplikacije !
+      <button class="btn-primary" [routerLink]="['/telefon']" >ok</button>
+    </div>
 
 </div>
   </div>
