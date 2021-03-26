@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { from } from 'rxjs';
 import {ServisService} from '../servis.service';
 import { DatePipe } from '@angular/common';
+import { ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DatePipe } from '@angular/common';
 export class PostaviOglasComponent implements OnInit {
   
 
-  constructor(public s:ServisService) { }
+  constructor(public s:ServisService, public router:Router) { }
 
   @ViewChild('f') signupForm: NgForm;
 
@@ -24,11 +25,11 @@ export class PostaviOglasComponent implements OnInit {
   marka='';
   opis='';
   cijena='';
+  model:'';
   prodavac='';
   kontakt='';
   konfiguracije='';
-  datum_objave=new Date();
-  datum_isteka=new Date();
+  javno=1;
   slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
@@ -46,9 +47,17 @@ export class PostaviOglasComponent implements OnInit {
      this.s.telefonBaza.mark_id = this.marka;
      this.s.telefonBaza.konfiguracije=this.konfiguracije;
       // console.log(this.datum_isteka.DatePipe.transform());
+      this.s.models.marka_id = this.marka;
+      this.s.models.model_naziv = this.model;
+      
 
+    this.s.dodajModel();
+    console.log(this.s.models.model_naziv);
     
      this.s.dodajTelefon();
+    
+     alert('uspjesno postavljen oglas');
+     this.router.navigateByUrl('/postavi_oglas')
     // this.s.models.model_ime = this.cijena;
     // console.log(this.s.models.model_ime);
     
