@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { from } from 'rxjs';
 import {ServisService} from '../servis.service';
 import { DatePipe } from '@angular/common';
+import { ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DatePipe } from '@angular/common';
 export class PostaviOglasComponent implements OnInit {
 promjena1:boolean=false;
 
-  constructor(public s:ServisService) { }
+  constructor(public s:ServisService, public router:Router) { }
 
   @ViewChild('f') signupForm: NgForm;
 
@@ -24,11 +25,11 @@ promjena1:boolean=false;
   marka='';
   opis='';
   cijena='';
+  model:'';
   prodavac='';
   kontakt='';
   konfiguracije='';
-  datum_objave=new Date();
-  datum_isteka=new Date();
+  javno=1;
   slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
@@ -46,13 +47,32 @@ promjena1:boolean=false;
      this.s.telefonBaza.mark_id = this.marka;
      this.s.telefonBaza.konfiguracije=this.konfiguracije;
       // console.log(this.datum_isteka.DatePipe.transform());
+      this.s.models.marka_id = this.marka;
+      this.s.models.model_naziv = this.model;
+      
 
+<<<<<<< HEAD
+    this.s.dodajModel();
+    console.log(this.s.models.model_naziv);
+    
+     this.s.dodajTelefon();
+    
+     alert('uspjesno postavljen oglas');
+     this.router.navigateByUrl('/postavi_oglas')
+    // this.s.models.model_ime = this.cijena;
+    // console.log(this.s.models.model_ime);
+    
+    // this.s.dodajModel();
+    
+    
+=======
 
      this.s.dodajTelefon();
      this.fun1()
 
 
 
+>>>>>>> b4913511b518d9cd4123358adbe9eac702c3a921
   }
 fun1(){
 if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.konfiguracije != null){

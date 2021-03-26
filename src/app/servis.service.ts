@@ -41,6 +41,10 @@ prikaz:boolean=true;
 
         this.telefoni = posts;
         console.log(this.telefoni);
+<<<<<<< HEAD
+        
+=======
+>>>>>>> b4913511b518d9cd4123358adbe9eac702c3a921
 
 
         this.spiner=false;
@@ -71,6 +75,8 @@ prikaz:boolean=true;
 
       .subscribe(posts => {
         this.marke = posts;
+        console.log(this.marke);
+        
 
       })
   }
@@ -139,7 +145,8 @@ posts:any={
   }
 
 models:any={
-  model_ime:''
+  marka_id:'',
+  model_naziv:''
 }
 
   dodajModel()
