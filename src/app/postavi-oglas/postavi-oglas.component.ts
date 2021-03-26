@@ -7,6 +7,7 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-postavi-oglas',
   templateUrl: './postavi-oglas.component.html',
@@ -60,7 +61,8 @@ promjena1:boolean=false;
      this.s.dodajTelefon();
 
      alert('uspjesno postavljen oglas');
-      this.router.navigate(['telefoni'])
+     this.router.navigateByUrl('/postavi_oglas');
+
     }else{
 
         alert('Popunite sva polja u formi.')
