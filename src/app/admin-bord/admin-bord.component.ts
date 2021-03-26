@@ -16,6 +16,7 @@ export class AdminBordComponent implements OnInit {
   }
 obrisi(id:number){
     this.s.brisiTelefon(id);
+  console.log(id);
 
 
 

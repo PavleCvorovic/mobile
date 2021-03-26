@@ -63,7 +63,12 @@ prikaz:boolean=true;
   }
 
   brisiTelefon(id){
-    return this.http.delete('api/obrisi/)') +id;
+   let ida=id
+    return this.http.delete('api/obrisi/'+ ida)
+      .subscribe(()=>
+      {
+
+      })
 
 
 
