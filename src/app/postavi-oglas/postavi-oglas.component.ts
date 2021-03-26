@@ -49,30 +49,30 @@ promjena1:boolean=false;
       // console.log(this.datum_isteka.DatePipe.transform());
       this.s.models.marka_id = this.marka;
       this.s.models.model_naziv = this.model;
-      
 
-<<<<<<< HEAD
+
+
     this.s.dodajModel();
     console.log(this.s.models.model_naziv);
-    
+
      this.s.dodajTelefon();
-    
+
      alert('uspjesno postavljen oglas');
      this.router.navigateByUrl('/postavi_oglas')
     // this.s.models.model_ime = this.cijena;
     // console.log(this.s.models.model_ime);
-    
+
     // this.s.dodajModel();
-    
-    
-=======
+
+
+
 
      this.s.dodajTelefon();
      this.fun1()
 
 
 
->>>>>>> b4913511b518d9cd4123358adbe9eac702c3a921
+
   }
 fun1(){
 if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.konfiguracije != null){
