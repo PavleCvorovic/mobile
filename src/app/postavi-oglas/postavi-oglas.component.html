@@ -22,14 +22,22 @@
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select><br>
         <label > Odaberite model : </label>
-        <div>
 
-          <select [(ngModel)]= "marka" name="marka">
 
-            <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
+        <div (click)="marka_model()">
+
+          <select [(ngModel)]= "model" name="marka">
+
+            <option *ngFor="let a of this.prilagodjeni_modeli " >{{a}}</option>
           </select><br>
       </div>
       </div>
+
+
+
+
+
+
       <label > Unesi cijenu uredjaja : </label>
       <div  style="text-align: center;">
         <input [(ngModel)] = "cijena" name="cijena"  class="form-control"   placeholder="" style="width:80px ">
