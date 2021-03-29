@@ -86,7 +86,7 @@ let b:any=[];
 
 
 
-    this.s.dodajModel();
+    // this.s.dodajModel();
 
 
      this.s.dodajTelefon();

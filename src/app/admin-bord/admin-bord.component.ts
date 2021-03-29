@@ -25,11 +25,6 @@ postavi(id:number)
   this.s.dodajTelefonAdmin(id);
 }
 
-obrisiOglas(id)
-{
-  this.s.obrisiPost(id);
-}
-
 
 
 
