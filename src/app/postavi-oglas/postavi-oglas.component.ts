@@ -81,7 +81,7 @@ let b:any=[];
      this.s.telefonBaza.konfiguracije=this.konfiguracije;
      this.s.telefonBaza.javno=0;
       this.s.models.marka_id = this.marka;
-      this.s.models.model_naziv = this.model;
+
 
 
 
