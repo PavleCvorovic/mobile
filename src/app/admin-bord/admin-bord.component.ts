@@ -7,12 +7,14 @@ import {ServisService} from '../servis.service';
   styleUrls: ['./admin-bord.component.css']
 })
 export class AdminBordComponent implements OnInit {
+  telefon_oglas:boolean=false;
 
   constructor(public  s:ServisService) { }
 
   ngOnInit(): void {
     this.s.dajtelefone();
     this.s.dajpostove();
+
 
   }
 obrisi(id:number){

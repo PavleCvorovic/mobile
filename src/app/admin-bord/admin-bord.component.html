@@ -12,13 +12,13 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          <a  class="nav-link text-white" (click)="telefon_oglas=false">
+            <svg class="bi me-2" width="16" height="16"></svg>
             Novi postovi
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-white">
+          <a  class="nav-link text-white" (click)="telefon_oglas=true">
             <svg class="bi me-2" width="16" height="16"></svg>
          Novi komentari
           </a>
@@ -50,7 +50,7 @@
 
 
 
-
+<div class="row" *ngIf="telefon_oglas===false">
         <div class="col-md-3" style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni;index as i">
           <div *ngIf ='a.javno !=1'>
           <br>
@@ -63,8 +63,18 @@
         </div>
       </div>
 
+</div>
+      <div class="row" *ngIf="telefon_oglas===true">
 
+          <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
+                    <h1>{{b.tekst}}</h1>
+            <div>
+
+          </div>
+        </div>
+
+      </div>
 
 
 
@@ -76,6 +86,7 @@
 
     </div>
     </div>
+
 
 
 
