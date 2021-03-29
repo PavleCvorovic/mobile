@@ -51,7 +51,8 @@
 
 
 
-        <div class="col-md-3" style="border-style: solid ; border-width: thin" *ngFor="let a of this.s.telefoni;index as i">
+        <div  *ngFor="let a of this.s.telefoni;index as i">
+        <div class="col-md-3" style="border-style: solid ; border-width: thin" *ngIf="a.javno != 1">
           <br>
           <img src="{{a.slika1}}" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
 
@@ -59,6 +60,8 @@
           <p><b>Cijena: </b> {{a.cijena}}</p>
           <button class="btn-primary" (click)="postavi(a.id)">Postavi</button>
           <button class="btn-danger" (click)="obrisi(a.id)">Obrisi</button>
+          </div>
+
         </div>
 
 
