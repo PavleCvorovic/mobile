@@ -19,7 +19,7 @@ telefoni:any=[];
 modeli:any=[];
 marke:any=[];
 postovi:any=[];
-prikaz:boolean=true;
+prikaz:boolean=false;
 
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
@@ -45,21 +45,28 @@ prikaz:boolean=true;
 
         this.spiner=false;
         let i;
+
+if (this.telefoni.length===0){
+  this.prikaz=true
+}
+        else{
+
         for( i=0; i<=this.telefoni.length;i++){
-          console.log(this.telefoni[i].javno);
-        if(this.telefoni[i].javno===1)
+
+        if(this.telefoni[i].javno != 1 )
 
         {
 
-          this.prikaz = false;
+          this.prikaz = true;
         }
         else {
-          this.prikaz=true;
+
+          this.prikaz=false;
           break;
 
         }}
 
-      })
+      }})
   }
 
   brisiTelefon(id){
