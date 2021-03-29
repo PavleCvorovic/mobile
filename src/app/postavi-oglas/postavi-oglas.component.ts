@@ -50,7 +50,7 @@ let b:any=[];
 
      }
      this.prilagodjeni_modeli=b;
-     
+
    }
 
 
