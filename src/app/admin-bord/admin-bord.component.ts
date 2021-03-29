@@ -12,6 +12,7 @@ export class AdminBordComponent implements OnInit {
 
   ngOnInit(): void {
     this.s.dajtelefone();
+    this.s.dajpostove();
 
   }
 obrisi(id:number){
@@ -22,6 +23,11 @@ obrisi(id:number){
 postavi(id:number)
 {
   this.s.dodajTelefonAdmin(id);
+}
+
+obrisiOglas(id)
+{
+  this.s.obrisiPost(id);
 }
 
 

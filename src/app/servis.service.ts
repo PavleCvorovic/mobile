@@ -89,6 +89,25 @@ if (this.telefoni.length===0){
     })
   }
 
+  dodajOglasAdmin(id)
+  {
+    const params = new HttpParams()
+    return this.http.post('http://localhost:8000/api/edit-oglas/'+id, '')
+    .subscribe(()=>
+    {
+
+    })
+  }
+
+  obrisiPost(id)
+  {
+    return this.http.delete('http://localhost:8000/api/obrisi-oglas/'+ id)
+      .subscribe(()=>
+      {
+
+      })
+  }
+
 
 
 
@@ -215,6 +234,8 @@ models:any={
 
       .subscribe(posts => {
         this.postovi = posts;
+        console.log(this.postovi);
+
 
       })
   }
