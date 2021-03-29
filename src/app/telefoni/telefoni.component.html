@@ -10,7 +10,7 @@
 
         <div   *ngFor="let a of this.s.telefoni ;index as i">
 
-          <div *ngIf="a.javno!=1">
+          <div *ngIf="a.javno===1">
           <img src="{{a.slika1}}" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
 
           <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
