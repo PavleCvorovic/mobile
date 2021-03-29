@@ -19,7 +19,7 @@ telefoni:any=[];
 modeli:any=[];
 marke:any=[];
 postovi:any=[];
-prikaz:boolean=false;
+prikaz:boolean=true;
 
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
