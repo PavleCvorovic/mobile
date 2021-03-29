@@ -111,7 +111,7 @@ if (this.telefoni.length===0){
 
       .subscribe(posts => {
         this.marke = posts;
-        console.log(this.marke);
+       
 
 
       })
