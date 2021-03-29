@@ -14,6 +14,8 @@ export class TelefoniComponent implements OnInit {
 marka :string ;
 model:string;
 objava:string;
+
+
   constructor(public s:ServisService ,private datePipe:DatePipe,public route:ActivatedRoute) { }
 
   ngOnInit(): void {

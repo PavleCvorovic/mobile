@@ -11,13 +11,13 @@
   <div class="d-flex justify-content-center" style="background-color: #ebf7fc">
   <div class="col-md-6" >
 
-    <form class="aa" #f="ngForm" (ngSubmit)="onSubmit(f.value)"  >
+    <form class="aa"  #f="ngForm" (ngSubmit)="onSubmit(f.value)" >
       <div ngModelGroup = "unos_telefona" #unos_telefona = "ngModelGroup" >
 
       <label > Odaberite marku : </label>
       <div>
 
-      <select [(ngModel)]= "marka" name="marka">
+      <select [(ngModel)]= "marka" name="marka"  >
 
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select><br>
@@ -30,6 +30,9 @@
 
             <option *ngFor="let a of this.prilagodjeni_modeli " >{{a}}</option>
           </select><br>
+          <div class="alert-danger" *ngIf="upozorenje_selekt === true">
+            <p>Selektujte prvo marku telefona .</p>
+          </div>
       </div>
       </div>
 
@@ -40,7 +43,7 @@
 
       <label > Unesi cijenu uredjaja : </label>
       <div  style="text-align: center;">
-        <input [(ngModel)] = "cijena" name="cijena"  class="form-control"   placeholder="" style="width:80px ">
+        <input [(ngModel)] = "cijena" name="cijena"  class="form-control"    placeholder="" style="width:80px ">
 
       </div>
 

@@ -15,10 +15,13 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class PostaviOglasComponent implements OnInit {
 promjena1:boolean=false;
+upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
   constructor(public s:ServisService, public router:Router) { }
 
   @ViewChild('f') signupForm: NgForm;
+
+
 
   ngOnInit(): void {
     this.s.dajmarku();
@@ -39,6 +42,9 @@ prilagodjeni_modeli:any=[];
   slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
 
 
+
+
+
 marka_model(){
   let a:number;
  a=Number(this.marka);
@@ -52,12 +58,16 @@ let b:any=[];
      this.prilagodjeni_modeli=b;
 
    }
-
-
-
-
-
+   if (this.marka === ''){
+   this.upozorenje_selekt=true;
+   }
+   else{
+     this.upozorenje_selekt=false;
+   }
 }
+
+
+
 
   onSubmit(signupForm:NgForm)
   {
