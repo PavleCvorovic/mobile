@@ -17,9 +17,11 @@ export class AdminBordComponent implements OnInit {
 obrisi(id:number){
     this.s.brisiTelefon(id);
   console.log(id);
+}
 
-
-
+postavi(id:number)
+{
+  this.s.dodajTelefonAdmin(id);
 }
 
 

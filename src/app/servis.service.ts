@@ -70,12 +70,16 @@ prikaz:boolean=true;
       {
 
       })
+  }
 
+  dodajTelefonAdmin(id)
+  {
+    const params = new HttpParams()
+    return this.http.post('http://localhost:8000/api/edit/'+id, '')
+    .subscribe(()=>
+    {
 
-
-
-
-
+    })
   }
 
 
