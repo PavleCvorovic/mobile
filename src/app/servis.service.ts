@@ -100,6 +100,8 @@ if (this.telefoni.length===0){
 
       .subscribe(posts => {
         this.modeli = posts;
+        console.log(this.modeli);
+
 
       })
   }
