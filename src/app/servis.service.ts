@@ -65,7 +65,7 @@ prikaz:boolean=true;
   brisiTelefon(id){
    let ida=id
     console.log(ida);
-    return this.http.delete('api/obrisi/'+ ida)
+    return this.http.delete('http://localhost:8000/api/obrisi/'+ ida)
       .subscribe(()=>
       {
 
