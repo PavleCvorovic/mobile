@@ -16,14 +16,18 @@
 
       <label > Odaberite marku : </label>
       <div>
+
       <select [(ngModel)]= "marka" name="marka">
 
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select><br>
-      <label > Unesi model: </label>
-      <div  style="position: relative; left:165pt;">
-        <input [(ngModel)] = "model" name="model"  class="form-control"   placeholder="" style="width:80px ">
+        <label > Odaberite model : </label>
+        <div>
 
+          <select [(ngModel)]= "marka" name="marka">
+
+            <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
+          </select><br>
       </div>
       </div>
       <label > Unesi cijenu uredjaja : </label>

@@ -22,6 +22,8 @@ promjena1:boolean=false;
 
   ngOnInit(): void {
     this.s.dajmarku();
+    this.s.dajmodel()
+    console.log(this.s.modeli)
   }
 
   marka='';
