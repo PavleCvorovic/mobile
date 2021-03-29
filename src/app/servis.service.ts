@@ -53,7 +53,7 @@ if (this.telefoni.length===0){
 
         for( i=0; i<=this.telefoni.length;i++){
 
-        if(this.telefoni[i].javno != 1 )
+        if(this.telefoni[i].javno === null )
 
         {
 
