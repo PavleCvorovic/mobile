@@ -183,6 +183,52 @@ posts:any={
 
   }
 
+  konfiguracijeBaza:any= {
+    procesor: '',
+    ram:'',
+    baterija:'',
+    kamera_zadnja:'',
+    kamera_prednja:'',
+    ekran:'',
+    memorija:''
+  }
+  konfiguracije:any;
+
+  uzmiKonfiguracije()
+  {
+    return this.http
+      .get(
+        'http://localhost:8000/api/konfiguracije')
+
+
+      .subscribe(posts => {
+        this.konfiguracije = posts;
+        console.log(this.konfiguracije);
+
+
+      })
+  }
+
+  dodajKonfiguracije()
+  {
+    const params = new HttpParams()
+
+    this.http
+    .post(
+      'http://localhost:8000/api/dodaj-konfiguracije',this.konfiguracijeBaza,
+      {
+        params:params
+      }
+    )
+    .subscribe(responseData =>
+      {
+
+      })
+  }
+
+
+
+
   dodajTelefon()
   {
     // this.knjiga = knjiga;
