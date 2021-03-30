@@ -31,7 +31,7 @@ postaviPost(){
     this.s.posts.tekst=this.objava
 
 
-    this.s.posts.tekst=this.objava
+
 
   this.s.dodajPost()
 

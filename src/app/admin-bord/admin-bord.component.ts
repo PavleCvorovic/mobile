@@ -27,11 +27,11 @@ postavi(id:number)
   this.s.dodajTelefonAdmin(id);
 }
 
-obrisi2(id){
+obrisi2(id:number){
     this.s.obrisiPost(id)
 
 }
-postavi2(id){
+postavi2(id:number){
 this.s.dodajOglasAdmin(id);
 }
 
