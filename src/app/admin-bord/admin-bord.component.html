@@ -67,8 +67,9 @@
       <div class="row" *ngIf="telefon_oglas===true">
 
           <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
-
-                    <h1>{{b.tekst}}</h1>
+              <div *ngIf='b != 1'>
+                    <h1>{{b.tekst}}</h1><br>
+              </div>
             <div>
 
           </div>
