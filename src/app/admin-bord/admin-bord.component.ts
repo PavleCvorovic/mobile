@@ -27,7 +27,12 @@ postavi(id:number)
   this.s.dodajTelefonAdmin(id);
 }
 
+obrisi2(id){
+    this.s.obrisiPost(id)
 
-
+}
+postavi2(id){
+this.s.dodajOglasAdmin(id);
+}
 
 }
