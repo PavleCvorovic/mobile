@@ -79,6 +79,9 @@ let b:any=[];
      this.s.telefonBaza.kontakt = this.kontakt;
      this.s.telefonBaza.mark_id = this.marka;
      this.s.telefonBaza.konfiguracije=this.konfiguracije;
+     this.s.telefonBaza.sifra = 'aaa';
+     this.s.telefonBaza.slika_id = 1;
+     this.s.telefonBaza.model = 'dasdasdas'
      this.s.telefonBaza.javno=0;
       this.s.models.marka_id = this.marka;
 

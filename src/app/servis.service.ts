@@ -40,6 +40,8 @@ prikaz:boolean=false;
       .subscribe(posts => {
 
         this.telefoni = posts;
+        console.log(this.telefoni);
+
 
 
 
@@ -171,12 +173,14 @@ posts:any={
     mark_id:1,
     cijena:'',
     opis:'',
-    konfiguracije:'ssda',
+    konfiguracije:1,
     prodavac:'',
+    model:'dasdas',
     kontakt:'',
-    slika1:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg',
-    slika2:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg',
-    slika3:'http://www.onlinemobilni.com/sites/default/files/imagecache/product_full/proizvodi/apple_iphone5.jpg'
+    slika_id:'1',
+    sifra:'aaa',
+
+
   }
 
   dodajTelefon()
