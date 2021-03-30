@@ -59,7 +59,7 @@
         <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
 
-          <div>
+          <div *ngIf='b.javno ===1'>
             <br>
             <p class="oglas" style="text-align: left">
               <span>Oglas od : {{b.created_at}}</span> <br>
