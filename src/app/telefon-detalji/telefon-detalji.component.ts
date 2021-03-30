@@ -10,14 +10,18 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 export class TelefonDetaljiComponent implements OnInit {
 
   constructor(public s:ServisService, public route: ActivatedRoute) { }
-
+ telefon_detalj:any=[];
   id = this.route.snapshot.params.id;
+provjera:number=this.id;
+
+
+
 
   ngOnInit(): void {
     this.s.uzmiTelefonId(this.id);
-   
-    
-  }
+    console.log(this.s.telefonId)
+    this.s.dajmarku;
+    console.log(this.s.marke)
 
 
-}
+  }}
