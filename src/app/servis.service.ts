@@ -171,13 +171,14 @@ posts:any={
 
     telefonBaza:any = {
     mark_id:1,
+    model:'dasdas',
     cijena:'',
     opis:'',
-    konfiguracije:1,
-    prodavac:'',
-    model:'dasdas',
-    kontakt:'',
     slika_id:'1',
+    specifikacije:1,
+    prodavac:'',
+    kontakt:'',
+    javno:0,
     sifra:'aaa',
 
 
@@ -192,7 +193,7 @@ posts:any={
     ekran:'',
     memorija:''
   }
-  konfiguracije:any;
+  specifikacije:any;
 
   uzmiKonfiguracije()
   {
@@ -202,8 +203,8 @@ posts:any={
 
 
       .subscribe(posts => {
-        this.konfiguracije = posts;
-        console.log(this.konfiguracije);
+        this.specifikacije = posts;
+        console.log(this.specifikacije);
 
 
       })

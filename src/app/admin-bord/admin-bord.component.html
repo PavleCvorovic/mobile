@@ -4,21 +4,22 @@
   <div class="col-md-4" style="position: relative ; top: 1pt">
 
 
-    <div class="d-flex flex-column p-3 text-white bg-dark " style="width: 280px;">
-      <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-
+    <div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         <span class="fs-4">Sidebar</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-
-          <a href="" class="nav-link text-white"  (click)="telefon_oglas=false">
+        <li class="nav-item">
+          <a  class="nav-link text-white" (click)="telefon_oglas=false">
+            <svg class="bi me-2" width="16" height="16"></svg>
             Novi postovi
           </a>
-
+        </li>
         <li>
-          <a   class="nav-link text-white" (click)="telefon_oglas=true">
-
+          <a  class="nav-link text-white" (click)="telefon_oglas=true">
+            <svg class="bi me-2" width="16" height="16"></svg>
          Novi komentari
           </a>
         </li>
@@ -30,14 +31,14 @@
         </li>
         <li>
           <a href="#" class="nav-link text-white">
-
+            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
             Products
           </a>
         </li>
         <li>
-          <a  class="nav-link text-white">
-
-           Log out
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Customers
           </a>
         </li>
       </ul>
@@ -65,28 +66,9 @@
 </div>
       <div class="row" *ngIf="telefon_oglas===true">
 
-
-                <table class="table table-info table-hover">
-                  <thead>
-                  <tr>
-
-                    <th scope="col">Tekst</th>
-                    <th scope="col">Dugme1</th>
-                    <th scope="col">Dugme2</th>
-                  </tr>
-                  </thead>
-                  <tbody *ngFor="let b of this.s.postovi">
-                  <tr *ngIf='b.javno != 1'>
-
-                    <td ><pre style="color: black"> <h1>{{b.tekst}}</h1></pre></td>
-                    <td><button class="btn btn-danger" (click)="obrisi2(b.id)">obrisi</button></td>
-                    <td><button class=" btn btn-primary" (click)="postavi2(b.id)">postavi</button></td>
-                  </tr>
-
-
-                  </tbody>
-                </table>
-
+          <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
+              <div *ngIf='b != 1'>
+                    <h1>{{b.tekst}}</h1><br>
               </div>
             <div>
 
@@ -103,6 +85,7 @@
 
 
 
+    </div>
     </div>
 
 
@@ -123,5 +106,5 @@
 
 
 
-
+</div>
 
