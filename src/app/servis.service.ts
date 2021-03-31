@@ -20,8 +20,50 @@ modeli:any=[];
 marke:any=[];
 postovi:any=[];
 prikaz:boolean=false;
-
+  telefoni_provjera:number=0;
+  postovi_provjera:number=0;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
+
+
+
+
+
+
+  broji_telefone(){
+    for (let i=0; i<this.telefoni.length;i++){
+      if (this.telefoni[i].javno===0){
+        this.telefoni_provjera=this.telefoni_provjera+1;
+      }
+    }
+
+
+
+  }
+  broji_postove() {
+    for (let i = 0; i < this.postovi.length; i++) {
+      if (this.postovi[i].javno === null) {
+        this.postovi_provjera = this.postovi_provjera + 1;
+
+
+      }
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -171,13 +213,14 @@ posts:any={
 
     telefonBaza:any = {
     mark_id:1,
+    model:'dasdas',
     cijena:'',
     opis:'',
-    konfiguracije:1,
-    prodavac:'',
-    model:'dasdas',
-    kontakt:'',
     slika_id:'1',
+    specifikacije:1,
+    prodavac:'',
+    kontakt:'',
+    javno:0,
     sifra:'aaa',
 
 
@@ -192,7 +235,7 @@ posts:any={
     ekran:'',
     memorija:''
   }
-  konfiguracije:any;
+  specifikacije:any;
 
   uzmiKonfiguracije()
   {
@@ -202,8 +245,8 @@ posts:any={
 
 
       .subscribe(posts => {
-        this.konfiguracije = posts;
-        console.log(this.konfiguracije);
+        this.specifikacije = posts;
+        console.log(this.specifikacije);
 
 
       })

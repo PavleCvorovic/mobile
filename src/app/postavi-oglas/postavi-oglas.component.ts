@@ -36,11 +36,11 @@ prilagodjeni_modeli:any=[];
   model:'';
   prodavac='';
   kontakt='';
-  konfiguracije='';
+  specifikacije='';
   javno=1;
-  slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
-  slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
-  slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
+  // slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
+  // slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
+  // slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
   procesor='';
   baterija='';
   ram='';
@@ -79,7 +79,7 @@ let b:any=[];
 
   onSubmit(signupForm:NgForm)
   {
-    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.konfiguracije != null){
+    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.specifikacije != null){
       this.promjena1=true;
 
       this.s.models.marka_id = this.marka;
@@ -93,39 +93,43 @@ let b:any=[];
 
       // console.log(this.s.konfiguracije.length);
       let conf = 45;
-
-
       this.s.dodajKonfiguracije();
+
+
       // this.s.telefonBaza.konfiguracije=this.s.konfiguracijeBaza.id;
       // console.log(this.s.telefonBaza.konfiguracije);
-      for(let i =0;i<this.s.konfiguracije.length;i++)
+      for(let i =0;i<this.s.specifikacije.length;i++)
       {
-        if(this.s.konfiguracijeBaza.procesor == this.s.konfiguracije[i].procesor)
+        if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
         {
           // console.log(this.s.konfiguracijeBaza.procesor);
           // console.log(this.s.konfiguracije[i].procesor);
-
-
-          conf = this.s.konfiguracije[i].id;
+          conf = this.s.specifikacije[i].id;
         }
       }
-      this.s.telefonBaza.konfiguracije = conf;
-      console.log(this.s.telefonBaza.konfiguracije);
 
+    //  console.log(this.s.telefonBaza.konfiguracije);
+
+      this.s.telefonBaza.mark_id = this.marka;
+      this.s.telefonBaza.model = 'dasdasdas'
       this.s.telefonBaza.cijena = this.cijena;
-     this.s.telefonBaza.opis = this.opis;
-     this.s.telefonBaza.prodavac= this.prodavac;
-     this.s.telefonBaza.kontakt = this.kontakt;
-     this.s.telefonBaza.mark_id = this.marka;
-     this.s.telefonBaza.sifra = 'aaa';
-     this.s.telefonBaza.slika_id = 1;
-     this.s.telefonBaza.model = 'dasdasdas'
-     this.s.telefonBaza.javno=0;
-      console.log(this.s.telefonBaza.konfiguracije);
+      this.s.telefonBaza.opis = this.opis;
+      this.s.telefonBaza.slika_id = 1;
+      this.s.telefonBaza.specifikacije = conf;
+      this.s.telefonBaza.prodavac= this.prodavac;
+      this.s.telefonBaza.kontakt = this.kontakt;
+      this.s.telefonBaza.javno=0;
+      this.s.telefonBaza.sifra = 'aaa';
+      console.log(conf);
 
 
-     this.s.dodajTelefon();
 
+
+      // console.log(this.s.telefonBaza.konfiguracije);
+
+
+      this.s.dodajTelefon();
+      this.s.dodajKonfiguracije();
 
 
     }else{
