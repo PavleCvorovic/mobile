@@ -20,35 +20,12 @@ modeli:any=[];
 marke:any=[];
 postovi:any=[];
 prikaz:boolean=false;
-  telefoni_provjera:number=0;
-  postovi_provjera:number=0;
+
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
 
 
 
-
-
-  broji_telefone(){
-    for (let i=0; i<this.telefoni.length;i++){
-      if (this.telefoni[i].javno===0){
-        this.telefoni_provjera=this.telefoni_provjera+1;
-      }
-    }
-
-
-
-  }
-  broji_postove() {
-    for (let i = 0; i < this.postovi.length; i++) {
-      if (this.postovi[i].javno === null) {
-        this.postovi_provjera = this.postovi_provjera + 1;
-
-
-      }
-    }
-
-  }
 
 
 
