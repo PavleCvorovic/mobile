@@ -18,13 +18,12 @@ export class AdminBordComponent implements OnInit {
   ngOnInit(): void {
     this.s.dajtelefone();
     this.s.dajpostove();
-<<<<<<< HEAD
+
     this.s.broji_postove()
     this.s.broji_telefone()
-=======
-this.broji_telefone();
-this.broji_postove()
->>>>>>> 68b9239f4f0ce8e6ee27891fb0a086b99a1df0c4
+
+
+
   }
 obrisi(id:number){
     this.s.brisiTelefon(id);
@@ -45,8 +44,7 @@ this.s.dodajOglasAdmin(id);
 }
 
 
-<<<<<<< HEAD
-=======
+
 broji_telefone(){
     for (let i=0; i<this.s.telefoni.length;i++){
       if (this.s.telefoni[i].javno===0){
@@ -56,7 +54,7 @@ broji_telefone(){
 
 
 
->>>>>>> 68b9239f4f0ce8e6ee27891fb0a086b99a1df0c4
+
 }
 broji_postove() {
   for (let i = 0; i < this.s.postovi.length; i++) {
