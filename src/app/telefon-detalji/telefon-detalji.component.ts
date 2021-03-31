@@ -20,8 +20,7 @@ provjera:number=this.id;
   ngOnInit(): void {
     this.s.uzmiTelefonId(this.id);
     console.log(this.s.telefonId)
-    this.s.dajmarku;
-    console.log(this.s.marke)
+
 
 
   }}
