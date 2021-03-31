@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
 import { AdminBordComponent } from './admin-bord/admin-bord.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AdminBordComponent } from './admin-bord/admin-bord.component';
     ModeliComponent,
     PostaviOglasComponent,
     TelefonDetaljiComponent,
-    AdminBordComponent
+    AdminBordComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
