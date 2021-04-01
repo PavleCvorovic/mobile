@@ -8,10 +8,50 @@
   </div>
   </div>
 
-    <div  class="col-md-12, d-flex justify-content-center" >
+    <div  class="col-md-12" style="text-align: center" >
 
 
-      <img src="{{this.s.telefonId.slika_id.slika1}}"  height="500px" width="400px" style="image-resolution: normal" >
+      <img src="{{this.s.telefonId.slika_id.slika1}}"  height="400px" width="500px"  ><br>
+
+
+  </div>
+  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
+
+
+  <div style="text-align: center" >
+
+
+
+    <table class="table ">
+
+
+
+      <tbody>
+
+
+
+      <tr>
+
+        <td>    <img class="cpu"  src="{{cpu}}"  > <h1> {{this.s.telefonId.specifikacije.procesor}}</h1></td>
+        <td><img class="cpu"  src="{{dis}}" ><h1> {{this.s.telefonId.specifikacije.ekran}}</h1></td>
+
+      </tr>
+      <tr>
+
+        <td> <img class="cpu"  src="{{bat}}" > <h1> {{this.s.telefonId.specifikacije.baterija}}</h1></td>
+        <td><img class="cpu"  src="{{mem}}" ><h1> {{this.s.telefonId.specifikacije.memorija}}</h1></td>
+      </tr>
+      <tr>
+
+        <td><img class="cpu"  src="{{ram_url}}" ><h1> {{this.s.telefonId.specifikacije.ram}}</h1></td>
+        <td><img class="cpu"  src="{{cam}}" > <h1> Prednja kamera: {{this.s.telefonId.specifikacije.kamera_prednja}}<br>Zadnja kamera  {{this.s.telefonId.specifikacije.kamera_zadnja}}</h1></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+
 
 
 
@@ -32,10 +72,6 @@
 
 
   </div>
-
-
-
-
 
 
 
