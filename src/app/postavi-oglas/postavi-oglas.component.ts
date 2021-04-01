@@ -92,7 +92,7 @@ let b:any=[];
       this.s.konfiguracijeBaza.memorija = this.memorija;
 
       // console.log(this.s.konfiguracije.length);
-      let conf = 45;
+      let conf = 0;
       this.s.dodajKonfiguracije();
 
 
@@ -100,27 +100,33 @@ let b:any=[];
       // console.log(this.s.telefonBaza.konfiguracije);
       for(let i =0;i<this.s.specifikacije.length;i++)
       {
-        if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
+        // if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
+        // {
+        //   // console.log(this.s.konfiguracijeBaza.procesor);
+        //   // console.log(this.s.konfiguracije[i].procesor);
+        //   conf = this.s.specifikacije[i].id;
+        // }
+        if(conf<this.s.specifikacije[i].id)
         {
-          // console.log(this.s.konfiguracijeBaza.procesor);
-          // console.log(this.s.konfiguracije[i].procesor);
           conf = this.s.specifikacije[i].id;
         }
       }
+      console.log(conf+1);
 
     //  console.log(this.s.telefonBaza.konfiguracije);
+
+
 
       this.s.telefonBaza.mark_id = this.marka;
       this.s.telefonBaza.model = 'dasdasdas'
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
       this.s.telefonBaza.slika_id = 1;
-      this.s.telefonBaza.specifikacije = conf;
+      this.s.telefonBaza.specifikacije = conf + 1;
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = 'aaa';
-      console.log(conf);
 
 
 
@@ -129,7 +135,7 @@ let b:any=[];
 
 
       this.s.dodajTelefon();
-      this.s.dodajKonfiguracije();
+      // this.s.dodajKonfiguracije();
 
 
     }else{
