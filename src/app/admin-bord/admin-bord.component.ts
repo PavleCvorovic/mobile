@@ -15,6 +15,16 @@ export class AdminBordComponent implements OnInit {
 
   constructor(public  s:ServisService) { }
 
+  ngOnInit(): void {
+    this.s.dajtelefone();
+    this.s.dajpostove();
+    this.s.broji_telefone();
+    this.s.broji_postove();
+
+    // this.broji_postove()
+
+  }
+
 
 obrisi(id:number){
     this.s.brisiTelefon(id);
@@ -36,38 +46,38 @@ this.s.dodajOglasAdmin(id);
 
 
 
-broji_telefone(){
-    for (let i=0; i<this.s.telefoni.length;i++){
-      if (this.s.telefoni[i].javno === 0){
-       this.telefoni_provjera = this.telefoni_provjera + 1;
-      }
+// broji_telefone(){
+//   console.log(this.s.telefoni.length);
 
-    }
+//     for (let i=0; i<this.s.telefoni.length;i++){
+//       if (this.s.telefoni[i].javno != 1){
+//        this.telefoni_provjera++;
+//       }
 
-
-
-
-}
-broji_postove() {
-  for (let i = 0; i < this.s.postovi.length; i++) {
-    if (this.s.postovi[i].javno === null) {
-
-      this.postovi_provjera = this.postovi_provjera + 1;
-
-
-    }
-  }
-}
-
-
-  ngOnInit(): void {
-    this.s.dajtelefone();
-    this.s.dajpostove();
-    this.broji_telefone()
-    this.broji_postove()
+//     }
+//     console.log(this.telefoni_provjera);
 
 
 
 
-  }
+
+// }
+// broji_postove() {
+//   for (let i = 0; i < this.s.postovi.length; i++) {
+//     if (this.s.postovi[i].javno === null) {
+
+//       this.postovi_provjera = this.postovi_provjera + 1;
+
+
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
 }
