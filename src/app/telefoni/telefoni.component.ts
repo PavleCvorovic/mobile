@@ -42,7 +42,7 @@ postaviPost(){
 proslijedimarku(id){
     this.s1.dajtelefonpomarci(id);
     this.pokazivac_marke=true;
-
+  console.log(this.s1.tel_marka_id)
 
 }
 
