@@ -10,7 +10,7 @@ import { ModeliComponent } from './modeli/modeli.component';
 import { PostaviOglasComponent } from './postavi-oglas/postavi-oglas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
 import { AdminBordComponent } from './admin-bord/admin-bord.component';
@@ -35,7 +35,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
