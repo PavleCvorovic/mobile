@@ -96,6 +96,8 @@ let b:any=[];
       this.s.dodajKonfiguracije();
 
 
+
+
       // this.s.telefonBaza.konfiguracije=this.s.konfiguracijeBaza.id;
       // console.log(this.s.telefonBaza.konfiguracije);
       for(let i =0;i<this.s.specifikacije.length;i++)
@@ -135,6 +137,21 @@ let b:any=[];
 
 
       this.s.dodajTelefon();
+      alert('uspjesno dodat telefon!');
+      this.procesor = "";
+      this.baterija='';
+      this.ram='';
+      this.kamera_prednja='';
+      this.kamera_zadnja='';
+      this.memorija='';
+      this.ekran="";
+      this.marka='';
+      this.opis='';
+      this.cijena='';
+      this.model='';
+      this.prodavac='';
+      this.kontakt='';
+      this.specifikacije='';
       // this.s.dodajKonfiguracije();
 
 
