@@ -9,14 +9,14 @@ position: relative;
 }
 
 #postovi{
-  background-color: #4d5f77;
+  background-color: #787f8d;
   color:white;
   height: max-content;
 
 }
 
 .oglas{
-  background-color: white;
+  background-color: #e8eaf1;
   border-radius: 5%;
 color: black;
 
@@ -35,5 +35,10 @@ color: black;
 
 }
 #header1{
-  text-align: center;height: 100px ;background-color: #4d5f77;
+  text-align: center;height: 100px ;background-color: #575e64;
+}
+#textAreaExample{
+  background-color: #d9e0e5;
+
+
 }
