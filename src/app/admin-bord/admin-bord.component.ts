@@ -21,6 +21,7 @@ export class AdminBordComponent implements OnInit {
     this.s.broji_telefone();
     this.s.broji_postove();
 
+
     // this.broji_postove()
 
   }

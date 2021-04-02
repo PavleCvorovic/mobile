@@ -9,7 +9,8 @@ position: relative;
 }
 
 #postovi{
-  background-image: url("https://images.megapixl.com/1717/17171713.jpg");
+  background-image: url("https://images.unsplash.com/photo-1603705664483-b0462e434dd0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
   color:white;
   height: max-content;
 
@@ -36,7 +37,8 @@ color: black;
 }
 #header1{
   text-align: center;height: 100px ;
-  background-image: url("https://images.megapixl.com/1717/17171713.jpg");
+  background-image: url("https://images.unsplash.com/photo-1598432439373-0dedb103d38a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: auto;
 }
 #textAreaExample{
   background-color: #d9e0e5;
