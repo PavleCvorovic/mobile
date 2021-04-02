@@ -15,12 +15,12 @@ tel_marka_id:any;
   dajtelefonpomarci(id){
     return this.http
       .get(
-        'http://localhost:8000/api/model-filtriraj/'+id)
+        'http://localhost:8000/api/telefon-filtriraj/'+id)
 
 
       .subscribe(posts => {
         this.tel_marka_id = posts;
-
+        console.log(this.tel_marka_id)
 
       })
   }
