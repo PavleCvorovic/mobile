@@ -13,6 +13,7 @@ tel_marka_id:any;
 
 
   dajtelefonpomarci(id){
+    console.log(id)
     return this.http
       .get(
         'http://localhost:8000/api/telefon-filtriraj/'+id)
