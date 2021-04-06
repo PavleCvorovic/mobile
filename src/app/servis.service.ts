@@ -362,6 +362,17 @@ logged = false;
 logovan()
 {
   this.logged = true;
+  this.http.get('http://localhost:8000/api/user', {withCredentials:true})
+  .subscribe(res=>
+    {
+      console.log(res);
+    },
+    err=>
+    {
+      console.log(err);
+
+    }
+    )
 }
 
 

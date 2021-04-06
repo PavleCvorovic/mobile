@@ -19,7 +19,7 @@
         <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
       </li>
       <li class="nav-item" *ngIf="this.s.logged===true" >
-        <a class="nav-link"    >Odjavi se</a>
+        <a class="nav-link" [routerLink]="['admin-login']" (click)="odjavi()"  >Odjavi se</a>
       </li>
 
     </ul>
