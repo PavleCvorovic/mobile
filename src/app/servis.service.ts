@@ -357,7 +357,12 @@ models:any={
     })
   }
 
+logged = false;
 
+logovan()
+{
+  this.logged = true;
+}
 
 
 

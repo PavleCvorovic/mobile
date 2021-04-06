@@ -13,9 +13,11 @@ export class AdminBordComponent implements OnInit {
   postovi_provjera:number=0;
 
 
+
   constructor(public  s:ServisService) { }
 
   ngOnInit(): void {
+    this.s.logovan();
     this.s.dajtelefone();
     this.s.dajpostove();
     this.s.broji_telefone();
