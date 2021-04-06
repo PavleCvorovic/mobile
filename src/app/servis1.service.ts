@@ -26,6 +26,23 @@ tel_marka_id:any;
       })
   }
 
+  photo:any={
+    slika1:'',
+    slika2:'',
+    slika3:''
+}
+
+  postavislike(){
+
+    this.http
+      .post('http://localhost:8000/api/file',this.photo)
+
+
+      .subscribe(posts => {
+
+
+      })
+  }
 
 
 

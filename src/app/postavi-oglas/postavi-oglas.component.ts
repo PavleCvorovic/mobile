@@ -4,6 +4,7 @@ import { from } from 'rxjs';
 import {ServisService} from '../servis.service';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Params, Router} from '@angular/router';
+import {Servis1Service} from "../servis1.service";
 
 
 
@@ -17,8 +18,10 @@ export class PostaviOglasComponent implements OnInit {
 promjena1:boolean=false;
 upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
-files:any;
-  constructor(public s:ServisService, public router:Router) { }
+photos1:any;
+photos2:any;
+photos3:any;
+  constructor(public s:ServisService, public router:Router,public s1:Servis1Service) { }
 
   @ViewChild('f') signupForm: NgForm;
 
@@ -75,9 +78,28 @@ let b:any=[];
    }
 }
 
-  ucitavanjeSlike(event){
-  this.files= event.target.files[0];
-    console.log(this.files)
+  ucitavanjeSlike1(event){
+  this.photos1= event.target.files[0];
+
+  }
+  ucitavanjeSlike2(event){
+    this.photos2= event.target.files[0];
+
+  }
+  ucitavanjeSlike3(event){
+    this.photos3= event.target.files[0];
+
+  }
+
+
+  slike(){
+  this.s1.photo.slika1=this.photos1
+    this.s1.photo.slika1=this.photos2
+    this.s1.photo.slika1=this.photos3
+  this.s1.postavislike()
+
+
+
   }
 
 
