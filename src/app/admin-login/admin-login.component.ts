@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModelGroup } from '@angular/forms';
-import { FormBuilder} from '@angular/forms'
+import { FormBuilder} from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,7 +11,7 @@ import { FormBuilder} from '@angular/forms'
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(public fb:FormBuilder) { }
+  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router) { }
 
   unos_admin = this.fb.group(
   {
@@ -23,9 +25,9 @@ export class AdminLoginComponent implements OnInit {
 
   submit()
   {
-    let username = this.unos_admin.get('username').value;
-    let password = this.unos_admin.get('password').value;
-    console.log(username +" " +  password);
+      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true}).
+      subscribe(()=>
+      this.router.navigate(['admin']));
 
   }
 
