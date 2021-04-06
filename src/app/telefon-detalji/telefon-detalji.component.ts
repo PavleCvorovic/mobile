@@ -23,7 +23,7 @@ ram_url:string='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAADJCAMAAAA93N
 
 
   ngOnInit(): void {
-    this.s.uzmiTelefonId(this.id);
+ this.s.uzmiTelefonId(this.id);
     console.log(this.s.telefonId)
 
 

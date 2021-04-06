@@ -17,6 +17,7 @@ export class PostaviOglasComponent implements OnInit {
 promjena1:boolean=false;
 upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
+files:any;
   constructor(public s:ServisService, public router:Router) { }
 
   @ViewChild('f') signupForm: NgForm;
@@ -74,7 +75,10 @@ let b:any=[];
    }
 }
 
-
+  ucitavanjeSlike(event){
+  this.files= event.target.files[0];
+    console.log(this.files)
+  }
 
 
   onSubmit(signupForm:NgForm)
