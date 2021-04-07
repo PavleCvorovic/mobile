@@ -11,7 +11,7 @@ import {Servis1Service} from "../servis1.service";
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-pokazivac_marke:boolean=false;
+pokazivac_marke:number=0;
 marka :string ;
 model:string;
 objava:string;
@@ -41,7 +41,7 @@ postaviPost(){
 
 proslijedimarku(id){
     this.s1.dajtelefonpomarci(id);
-    this.pokazivac_marke=true;
+    this.pokazivac_marke=1;
     this.s1.dajmodelmarke(id);
     this.dropmodel=true;
 
@@ -50,6 +50,7 @@ proslijedimarku(id){
 }
     prosilijedinaziv(naziv){
       this.s1.dajtelefonpomodelu(naziv)
+        this.pokazivac_marke=2;
     }
 
 
