@@ -79,28 +79,30 @@ let b:any=[];
      this.upozorenje_selekt=false;
    }
 }
+photo:any=
+{
+  slika1:'',
+  slika2:'',
+  slika3:''
+}
 
   onChangeFile(event: any): void {
-    window.console.log('konsole ', event.target.files[0]);
-    this.file = event.target.files[0];
+
+    this.photo.slika1 = event.target.files[0];
   }
   onChangeFile1(event: any): void {
-    window.console.log('konsole ', event.target.files[0]);
-    this.file2 = event.target.files[0];
-    let body = new HttpParams();
-    body = body.set('slika1', this.file2);
-    this.http
-      .post('http://localhost:8000/api/file', body).subscribe( function ():void{
-        window.console.log("Uspjesno!");
-    }
-    );
+    this.photo.slika2 = event.target.files[0];
   }
   onChangeFile2(event: any): void {
-    window.console.log('konsole ', event.target.files[0]);
-    this.file3 = event.target.files[0];
+    this.photo.slika3 = event.target.files[0];
   }
 
   slike(){
+
+    this.s1.photo.slika1 = this.photo.slika1;
+    console.log(this.photo.slika2);
+
+    this.s1.postavislike();
 
     // window.console.log('description ', this.desc);
     // window.console.log('fajl', event);

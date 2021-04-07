@@ -132,14 +132,14 @@
 <div class="form-group">
   <label >Ubaci sliku</label>
   <div class="col-lg-4">
-    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>
-    <input class="btn btn-primary" type="file" id="myFile" name="filename" (change)="onChangeFile1($event)">
-<!--    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
-<!--    <input class="btn btn-primary" type="file" id="myFile1" name="filename" (change)="onChangeFile2($event)">-->
-<!--    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
-<!--    <input class="btn btn-primary" type="file" id="myFile2" name="filename" (change)="onChangeFile3($event)">-->
+    <!-- <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label> -->
+    <input class="btn btn-primary" type="file" id="myFile" name="slika3" (change)="onChangeFile1($event)">
+   <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
+   <input class="btn btn-primary" type="file" id="myFile1" name="slika2" (change)="onChangeFile2($event)">
+   <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>
+  <input class="btn btn-primary" type="file" id="myFile2" name="slika1" (change)="onChangeFile($event)">
 
-  <button>salji</button>
+  <button type="submit" (click)="slike()">salji</button>
 
 </div>
 
