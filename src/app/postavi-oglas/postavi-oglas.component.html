@@ -130,10 +130,15 @@
 </div>
 
 <div class="form-group">
-  <label for="exampleFormControlFile1">Ubaci sliku</label>
-  <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="ucitavanjeSlike1($event)" >
-  <input type="file" class="form-control-file" id="exampleFormControlFile2"(change)="ucitavanjeSlike2($event)" >
-  <input type="file" class="form-control-file" id="exampleFormControlFile3" (change)="ucitavanjeSlike3($event)">
+  <label >Ubaci sliku</label>
+  <div class="col-lg-4">
+    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>
+    <input class="btn btn-primary" type="file" id="myFile" name="filename" (change)="onChangeFile1($event)">
+<!--    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
+<!--    <input class="btn btn-primary" type="file" id="myFile1" name="filename" (change)="onChangeFile2($event)">-->
+<!--    <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
+<!--    <input class="btn btn-primary" type="file" id="myFile2" name="filename" (change)="onChangeFile3($event)">-->
+
   <button (click)="slike()">salji</button>
 
 </div>

@@ -33,9 +33,14 @@ tel_marka_id:any;
 }
 
   postavislike(){
-
-    this.http
-      .post('http://localhost:8000/api/file',this.photo)
+    var params = new FormData();
+    params.append('slika1',this.photo.slika1)
+    params.append('slika2',this.photo.slika2)
+    params.append('slika3',this.photo.slika3)
+     this.http
+      .post('http://localhost:8000/api/file',{
+        params:params
+      })
 
 
       .subscribe(posts => {

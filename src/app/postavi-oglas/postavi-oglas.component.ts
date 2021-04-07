@@ -5,6 +5,7 @@ import {ServisService} from '../servis.service';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
+import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
 
 
 
@@ -18,15 +19,16 @@ export class PostaviOglasComponent implements OnInit {
 promjena1:boolean=false;
 upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
+fajl:any;
 photos1:any;
 photos2:any;
 photos3:any;
-  constructor(public s:ServisService, public router:Router,public s1:Servis1Service) { }
+  constructor(public s:ServisService, public router:Router,public s1:Servis1Service,private http: HttpClient) { }
 
   @ViewChild('f') signupForm: NgForm;
-
-
-
+file:any;
+  file2:any;
+  file3:any;
   ngOnInit(): void {
     this.s.dajmarku();
     this.s.dajmodel();
@@ -78,25 +80,35 @@ let b:any=[];
    }
 }
 
-  ucitavanjeSlike1(event){
-  this.photos1= event.target.files[0];
-
+  onChangeFile(event: any): void {
+    window.console.log('konsole ', event.target.files[0]);
+    this.file = event.target.files[0];
   }
-  ucitavanjeSlike2(event){
-    this.photos2= event.target.files[0];
-
+  onChangeFile1(event: any): void {
+    window.console.log('konsole ', event.target.files[0]);
+    this.file2 = event.target.files[0];
+    let body = new HttpParams();
+    body = body.set('slika1', this.file2);
+    this.http
+      .post('http://localhost:8000/api/file', body).subscribe( function ():void{
+        window.console.log("Uspjesno!");
+    }
+    );
   }
-  ucitavanjeSlike3(event){
-    this.photos3= event.target.files[0];
-
+  onChangeFile2(event: any): void {
+    window.console.log('konsole ', event.target.files[0]);
+    this.file3 = event.target.files[0];
   }
-
 
   slike(){
-  this.s1.photo.slika1=this.photos1
-    this.s1.photo.slika1=this.photos2
-    this.s1.photo.slika1=this.photos3
-  this.s1.postavislike()
+
+    // window.console.log('description ', this.desc);
+    // window.console.log('fajl', event);
+    // // this.filesUploadService.create(event.target.files[0],this.obvId!,"PDO", this.description, this.link).subscribe(
+    // this.filesUploadService.create(this.fajl, this.obvId!, 'PDO', this.desc!, this.link!).subscribe(
+    //   (res: HttpResponse<IFilesUpload>) => this.onSuccessUpload(res.body),
+    //   (error: any) => this.onError(error.body, error.headers)
+    // );
 
 
 
