@@ -13,7 +13,6 @@ export class AdminBordComponent implements OnInit {
   postovi_provjera:number=0;
 
 
-
   constructor(public  s:ServisService) { }
 
   ngOnInit(): void {
