@@ -100,6 +100,9 @@ photo:any=
   slike(){
 
     this.s1.photo.slika1 = this.photo.slika1;
+    this.s1.photo.slika2 = this.photo.slika2;
+    this.s1.photo.slika3 = this.photo.slika3;
+
     console.log(this.photo.slika2);
 
     this.s1.postavislike();

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ServisService} from "./servis.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -35,14 +35,18 @@ export class Servis1Service {
   }
 
   postavislike() {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
     var params = new FormData();
     params.append('slika1', this.photo.slika1)
     params.append('slika2', this.photo.slika2)
     params.append('slika3', this.photo.slika3)
     this.http
-      .post('http://localhost:8000/api/file', {
-        params: params
-      })
+      .post('http://localhost:8000/api/file', params
+
+
+      )
 
 
       .subscribe(posts => {
