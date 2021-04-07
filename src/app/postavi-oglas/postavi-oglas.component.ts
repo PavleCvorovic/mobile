@@ -171,6 +171,7 @@ let b:any=[];
 
 
 
+
       // console.log(this.s.telefonBaza.konfiguracije);
 
 

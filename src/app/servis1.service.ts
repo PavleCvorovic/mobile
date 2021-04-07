@@ -6,17 +6,19 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class Servis1Service {
-tel_marka_id:any;
+  tel_marka_id: any;
+  tel_marka_model: any;
+  tel_model_naziv: any;
 
-  constructor(public  s:ServisService,private http: HttpClient) { }
+  constructor(public  s: ServisService, private http: HttpClient) {
+  }
 
 
-
-  dajtelefonpomarci(id){
+  dajtelefonpomarci(id) {
     console.log(id)
     return this.http
       .get(
-        'http://localhost:8000/api/telefon-filtriraj/'+id)
+        'http://localhost:8000/api/telefon-filtriraj/' + id)
 
 
       .subscribe(posts => {
@@ -26,20 +28,20 @@ tel_marka_id:any;
       })
   }
 
-  photo:any={
-    slika1:'',
-    slika2:'',
-    slika3:''
-}
+  photo: any = {
+    slika1: '',
+    slika2: '',
+    slika3: ''
+  }
 
-  postavislike(){
+  postavislike() {
     var params = new FormData();
-    params.append('slika1',this.photo.slika1)
-    params.append('slika2',this.photo.slika2)
-    params.append('slika3',this.photo.slika3)
-     this.http
-      .post('http://localhost:8000/api/file',{
-        params:params
+    params.append('slika1', this.photo.slika1)
+    params.append('slika2', this.photo.slika2)
+    params.append('slika3', this.photo.slika3)
+    this.http
+      .post('http://localhost:8000/api/file', {
+        params: params
       })
 
 
@@ -49,10 +51,33 @@ tel_marka_id:any;
       })
   }
 
+  dajmodelmarke(broj) {
+    return this.http
+      .get(
+        'http://localhost:8000/api/model/' + broj)
 
 
+      .subscribe(posts => {
+        this.tel_marka_model = posts;
 
 
+      })
 
 
+  }
+
+  dajtelefonpomodelu(naziv) {
+    return this.http
+      .get(
+        'http://localhost:8000/api/telefon-filtriraj/telefonmodel/' + naziv)
+
+
+      .subscribe(posts => {
+        this.tel_model_naziv = posts;
+
+
+      })
+
+
+  }
 }

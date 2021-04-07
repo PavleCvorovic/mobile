@@ -15,7 +15,7 @@ pokazivac_marke:boolean=false;
 marka :string ;
 model:string;
 objava:string;
-
+dropmodel:boolean=false;
 
   constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service) { }
 
@@ -42,10 +42,15 @@ postaviPost(){
 proslijedimarku(id){
     this.s1.dajtelefonpomarci(id);
     this.pokazivac_marke=true;
-  console.log(this.s1.tel_marka_id)
+    this.s1.dajmodelmarke(id);
+    this.dropmodel=true;
+
+
 
 }
-
+    prosilijedinaziv(naziv){
+      this.s1.dajtelefonpomodelu(naziv)
+    }
 
 
 
