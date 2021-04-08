@@ -158,6 +158,7 @@ photo:any=
       }
       console.log(conf+1);
 
+
     //  console.log(this.s.telefonBaza.konfiguracije);
 
 

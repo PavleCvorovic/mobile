@@ -101,7 +101,21 @@
       </div>
       </div>
 
+      <div class="form-group">
+        <label >Ubaci slike</label>
+        <div class="col-lg-4">
+        <input class="btn btn-primary" type="file" id="myFile" name="slika1" (change)="onChangeFile($event)">
+        <input class="btn btn-primary" type="file" id="myFile1" name="slika2" (change)="onChangeFile1($event)">
+        <input class="btn btn-primary" type="file" id="myFile2" name="slika3" (change)="onChangeFile2($event)">
+      </div>
 
+
+
+
+
+
+
+      </div>
 
       </div>
 
@@ -129,26 +143,6 @@
 
 </div>
 
-<div class="form-group">
-  <label >Ubaci sliku</label>
-  <div class="col-lg-4">
-    <!-- <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label> -->
-    <input class="btn btn-primary" type="file" id="myFile" name="slika3" (change)="onChangeFile1($event)">
-   <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>-->
-   <input class="btn btn-primary" type="file" id="myFile1" name="slika2" (change)="onChangeFile2($event)">
-   <label for="myFile" class="btn" style="color: black;">Ucitaj fajl:</label>
-  <input class="btn btn-primary" type="file" id="myFile2" name="slika1" (change)="onChangeFile($event)">
 
-  <button type="submit" (click)="slike()">salji</button>
-
-</div>
-
-
-
-
-
-
-
-</div>
 
 
