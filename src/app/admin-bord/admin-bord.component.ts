@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
+import {Servis1Service} from "../servis1.service";
 
 
 @Component({
@@ -13,11 +14,12 @@ export class AdminBordComponent implements OnInit {
   postovi_provjera:number=0;
 
 
-  constructor(public  s:ServisService) { }
+  constructor(public  s:ServisService ,public s1:Servis1Service) { }
 
   ngOnInit(): void {
     this.s.logovan();
-    this.s.dajtelefone();
+   this.s1.dajtelefonadminu();
+    console.log(this.s1.tel_admin)
     this.s.dajpostove();
     this.s.broji_telefone();
     this.s.broji_postove();

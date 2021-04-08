@@ -9,6 +9,7 @@ export class Servis1Service {
   tel_marka_id: any;
   tel_marka_model: any;
   tel_model_naziv: any;
+  tel_admin:any;
 
   constructor(public  s: ServisService, private http: HttpClient) {
   }
@@ -84,4 +85,24 @@ export class Servis1Service {
 
 
   }
+
+
+  dajtelefonadminu() {
+    return this.http
+      .get(
+        'http://localhost:8000/api/novitelefon' )
+
+
+      .subscribe(posts => {
+        this.tel_admin = posts;
+
+
+      })
+
+
+  }
+
+
+
+
 }
