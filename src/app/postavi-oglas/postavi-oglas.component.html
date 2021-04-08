@@ -28,7 +28,7 @@
 
           <select [(ngModel)]= "model" name="marka">
 
-            <option *ngFor="let a of this.prilagodjeni_modeli " >{{a}}</option>
+            <option  *ngFor="let a of this.prilagodjeni_modeli " [value]="a" >{{a}}</option>
           </select><br>
           <div class="alert-danger" *ngIf="upozorenje_selekt === true">
             <p>Selektujte prvo marku telefona .</p>
@@ -149,6 +149,6 @@
 
 
 
-
+</div>
 
 

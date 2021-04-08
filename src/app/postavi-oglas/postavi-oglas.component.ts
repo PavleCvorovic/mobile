@@ -163,7 +163,7 @@ photo:any=
 
 
       this.s.telefonBaza.mark_id = this.marka;
-      this.s.telefonBaza.model = 'dasdasdas'
+      this.s.telefonBaza.model = this.model
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
       this.s.telefonBaza.slika_id = 1;
