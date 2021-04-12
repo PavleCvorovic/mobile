@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
 import {Servis1Service} from "../servis1.service";
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-bord',
@@ -12,14 +12,17 @@ export class AdminBordComponent implements OnInit {
   telefon_oglas:boolean=false;
   telefoni_provjera:number=0;
   postovi_provjera:number=0;
+  t:any;
 
 
-  constructor(public  s:ServisService ,public s1:Servis1Service) { }
+
+  constructor(public  s:ServisService ,public s1:Servis1Service,private domSanitizer: DomSanitizer) { }
+
 
   ngOnInit(): void {
     this.s.logovan();
    this.s1.dajtelefonadminu();
-    console.log(this.s1.tel_admin)
+
     this.s.dajpostove();
     this.s.broji_telefone();
     this.s.broji_postove();
@@ -28,6 +31,10 @@ export class AdminBordComponent implements OnInit {
     // this.broji_postove()
 
   }
+
+
+
+
 
 
 obrisi(id:number){
