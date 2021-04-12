@@ -30,18 +30,13 @@
         <div   *ngFor="let a of this.s.telefoni ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
 
           <div *ngIf="a.javno===1">
-          <img src="{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
+          <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
 
           <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
           <p><b>Cijena: </b> {{a.cijena}}</p>
           <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
 
         </div>
-
-<div *ngIf="a.javno!=1">
-  <img src="http://srpkolestaric.com/wp-content/uploads/2020/10/uskoro_thumb-210x280.png" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
-
-</div>
         </div>
       </div>
       <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
@@ -78,7 +73,7 @@
           <div   *ngFor="let a of this.s1.tel_marka_id ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
 
             <div *ngIf="a.javno===1">
-              <img src="{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
+              <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
 
               <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
               <p><b>Cijena: </b> {{a.cijena}}</p>
@@ -86,10 +81,7 @@
 
             </div>
 
-            <div *ngIf="a.javno!=1">
-              <img src="http://srpkolestaric.com/wp-content/uploads/2020/10/uskoro_thumb-210x280.png" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
 
-            </div>
           </div>
         </div>
         <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
@@ -127,7 +119,7 @@
           <div   *ngFor="let a of this.s1.tel_model_naziv ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
 
             <div *ngIf="a.javno===1">
-              <img src="{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
+              <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
 
               <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
               <p><b>Cijena: </b> {{a.cijena}}</p>
