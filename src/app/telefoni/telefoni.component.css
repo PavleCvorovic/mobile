@@ -37,7 +37,7 @@ color: black;
 }
 #header1{
   text-align: center;height: 150px ;
-  background-image: url("C:\Users\bojan\Desktop\frontend-mobile\src\assets\background.jpg");
+  background-image: url("src\assets\background.jpg");
   background-size: cover;
 background-repeat: no-repeat;
 }
