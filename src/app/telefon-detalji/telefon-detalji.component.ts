@@ -15,7 +15,7 @@ export class TelefonDetaljiComponent implements OnInit {
   id = this.route.snapshot.params.id;
 provjera:number=this.id;
 
-ram_url:string= "src/assets/ram.pgn"
+ram_url:string= "assets/ram.png"
  cpu:string='https://img.flaticon.com/icons/png/512/1892/1892518.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF'
  mem:string='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_I5LusD2YXWs2N8QJXO2PfXjQwMdAzO17Q&usqp=CAU'
  bat:string='https://lh3.googleusercontent.com/proxy/9efXkQXUdGy0Pe_Sd3vmzqyon58SRuINrIJ4DFps-cOTvTa3j88JS3SeEUeH2JejFy1W9KgEcuyEkCZpBL3YXEqKo8uqpcSmRngDozo10OI7EQ'
