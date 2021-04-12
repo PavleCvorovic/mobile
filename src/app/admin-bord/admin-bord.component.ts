@@ -24,11 +24,10 @@ export class AdminBordComponent implements OnInit {
    this.s1.dajtelefonadminu();
 
     this.s.dajpostove();
-    this.s.broji_telefone();
     this.s.broji_postove();
 
 
-    // this.broji_postove()
+
 
   }
 

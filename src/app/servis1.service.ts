@@ -10,6 +10,7 @@ export class Servis1Service {
   tel_marka_model: any;
   tel_model_naziv: any;
   tel_admin:any;
+  telefoni_provjera:number=0;
 
   constructor(public  s: ServisService, private http: HttpClient) {
   }
@@ -97,10 +98,17 @@ export class Servis1Service {
         this.tel_admin = posts;
 
 
+              this.telefoni_provjera=this.tel_admin.length
+
+
+
+        console.log(this.telefoni_provjera)
+
       })
 
 
   }
+
 
 
 

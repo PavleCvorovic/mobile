@@ -307,36 +307,36 @@ models:any={
         }
       )
   }
-  telefoni_provjera:number=0;
+
   postovi_provjera:number= 0;
 
-  broji_telefone(){
-   return  this.http
-      .get(
-        'http://localhost:8000/api/telefoni')
-
-
-      .subscribe(posts => {
-
-        this.telefoni = posts;
-        console.log(this.telefoni);
-        for (let i=0; i<this.telefoni.length;i++){
-          if (this.telefoni[i].javno != 1){
-           this.telefoni_provjera++;
-          }
-
-        }
-        console.log(this.telefoni_provjera);
-      })
-
-
-
-
-
-
-
-
-  }
+  // broji_telefone(){
+  //  return  this.http
+  //     .get(
+  //       'http://localhost:8000/api/telefoni')
+  //
+  //
+  //     .subscribe(posts => {
+  //
+  //       this.telefoni = posts;
+  //       console.log(this.telefoni);
+  //       for (let i=0; i<this.telefoni.length;i++){
+  //         if (this.telefoni[i].javno != 1){
+  //          this.telefoni_provjera++;
+  //         }
+  //
+  //       }
+  //       console.log(this.telefoni_provjera);
+  //     })
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  // }
   broji_postove() {
     return  this.http
     .get(
