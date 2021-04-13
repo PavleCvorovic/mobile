@@ -178,7 +178,8 @@ photo:any=
         s = this.s1.slikeBaza11[i].id;
       }
     }
-
+    this.s.telefonBaza.slika_id = s+1;
+    this.s.telefonBaza.specifikacije = conf + 1;
 
       this.s.telefonBaza.mark_id = this.marka;
 
@@ -201,7 +202,7 @@ photo:any=
 
 
       this.s.dodajTelefon();
-
+      alert('uspjesno dodat telefon!');
       this.procesor = "";
       this.baterija='';
       this.ram='';
