@@ -18,6 +18,7 @@
 
       <select [(ngModel)]= "marka" name="marka"  >
 
+      <option value=" " ></option>
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select><br>
         <label > Odaberite model : </label>

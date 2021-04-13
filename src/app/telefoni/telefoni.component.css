@@ -9,7 +9,7 @@ position: relative;
 }
 
 #postovi{
-  background-image: url("https://cdn.hipwallpaper.com/i/13/93/qJKcV8.jpg");
+  background-image: url("src/assets/background.jpg");
   background-size: contain;
   color:white;
   height: max-content;
@@ -37,7 +37,7 @@ color: black;
 }
 #header1{
   text-align: center;height: 150px ;
-  background-image: url("https://cdn.hipwallpaper.com/i/13/93/qJKcV8.jpg");
+  background-image: url("src/assets/background.jpg");
   background-size: cover;
 background-repeat: no-repeat;
 }

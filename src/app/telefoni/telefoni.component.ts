@@ -3,6 +3,7 @@ import {ServisService} from '../servis.service';
 
 import { ActivatedRoute, Params, Router} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -16,8 +17,8 @@ marka :string ;
 model:string;
 objava:string;
 dropmodel:boolean=false;
-
-  constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service) { }
+telefonifix:any;
+  constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.s.dajtelefone();
@@ -28,7 +29,6 @@ dropmodel:boolean=false;
 
 
   }
-
 
 postaviPost(){
 
