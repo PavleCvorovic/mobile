@@ -2,10 +2,7 @@
 <div class="col-md-12">
 
 
-  <div class="col-md-3">
-<img src="C:\Users\Nikola\Desktop\Samsung_Galaxy_A20e_Black_Front.jpg">
-  </div>
-  <br>
+
   <h1>Popunite formu </h1>
   <div class="d-flex justify-content-center" style="background-color: #ebf7fc">
   <div class="col-md-6" >
@@ -35,24 +32,6 @@
           </div>
       </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <label > Unesi cijenu uredjaja : </label>
       <div  style="text-align: center;">
@@ -108,6 +87,8 @@
         <input class="btn btn-primary" type="file" id="myFile1" name="slika2" (change)="onChangeFile1($event)">
         <input class="btn btn-primary" type="file" id="myFile2" name="slika3" (change)="onChangeFile2($event)">
       </div>
+      <label>Postavite sifru proizvoda pomocu koje cete kasnije imati mogucnost da sami uklonite proizvod kad to pozelite</label>
+      <input [(ngModel)] = "sifra" name="sifra" class="form-control"   placeholder="" style="width: 150px;">
 
 
 

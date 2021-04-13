@@ -61,6 +61,7 @@ file:any;
   kamera_prednja='';
   ekran="";
   memorija='';
+  sifra='';
 
 
 
@@ -192,7 +193,7 @@ photo:any=
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
-      this.s.telefonBaza.sifra = 'aaa';
+      this.s.telefonBaza.sifra = this.sifra;
 
 
 
