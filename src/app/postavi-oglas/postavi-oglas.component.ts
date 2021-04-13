@@ -20,6 +20,7 @@ promjena1:boolean=false;
 upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
 fajl:any;
+path:any;
 photos1:any;
 photos2:any;
 photos3:any;
@@ -33,8 +34,14 @@ file:any;
     this.s.dajmarku();
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
+    this.s1.uzmiSlike();
+    this.s1.slikeBazaId('21');
+
+
 
   }
+  slika1:any;
+
 
   marka='';
   opis='';
@@ -158,16 +165,26 @@ photo:any=
       }
       console.log(conf+1);
 
+      // let sl = 0;
+      // this.slike();
 
     //  console.log(this.s.telefonBaza.konfiguracije);
-
+    this.slike();
+    let s = 0;
+    for(let i = 0; i < this.s1.slikeBaza11.length; i++)
+    {
+      if(s < this.s1.slikeBaza11[i].id)
+      {
+        s = this.s1.slikeBaza11[i].id;
+      }
+    }
 
 
       this.s.telefonBaza.mark_id = this.marka;
-      this.s.telefonBaza.model = this.model
+      this.s.telefonBaza.model = 1;
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
-      this.s.telefonBaza.slika_id = 1;
+      this.s.telefonBaza.slika_id = s+1;
       this.s.telefonBaza.specifikacije = conf + 1;
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
@@ -198,6 +215,8 @@ photo:any=
       this.kontakt='';
       this.specifikacije='';
       // this.s.dodajKonfiguracije();
+      console.log(this.s.telefonBaza);
+
 
 
     }else{

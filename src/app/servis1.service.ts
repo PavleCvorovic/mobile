@@ -34,6 +34,7 @@ export class Servis1Service {
     slika2: '',
     slika3: ''
   }
+  slika:any;
 
   postavislike() {
     const headers = new HttpHeaders();
@@ -46,12 +47,10 @@ export class Servis1Service {
     this.http
       .post('http://localhost:8000/api/file', params
 
-
       )
 
 
       .subscribe(posts => {
-
 
       })
   }
@@ -100,6 +99,29 @@ export class Servis1Service {
       })
 
 
+  }
+  slikeBaza11:any;
+
+  uzmiSlike()
+  {
+    return this.http.get('http://localhost:8000/api/slike')
+    .subscribe(posts=>
+      {
+          this.slikeBaza11 = posts;
+      })
+  }
+  slikaId:any;
+  slikeBazaId(id)
+  {
+    return this.http.get('http://localhost:8000/api/slika/'+id)
+    .subscribe(
+      posts=>
+      {
+          this.slikaId = posts;
+
+
+      }
+    )
   }
 
 

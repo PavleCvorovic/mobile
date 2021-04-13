@@ -25,6 +25,8 @@ dropmodel:boolean=false;
     this.s.dajmarku();
 
 
+
+
   }
 
 
