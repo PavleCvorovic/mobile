@@ -181,22 +181,13 @@ photo:any=
 
 
       this.s.telefonBaza.mark_id = this.marka;
-<<<<<<< HEAD
+
       this.s.telefonBaza.model = 1;
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
       this.s.telefonBaza.slika_id = s+1;
       this.s.telefonBaza.specifikacije = conf + 1;
-=======
       this.s.telefonBaza.model = this.model
-      this.s.telefonBaza.specifikacije = conf + 1;
-
-      this.s.telefonBaza.slika_id = 1;
-      this.s.telefonBaza.cijena = this.cijena;
-      this.s.telefonBaza.opis = this.opis;
-
-
->>>>>>> 09f6c378013a118861ba6b347608f00a85c9cc30
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
