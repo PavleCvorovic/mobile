@@ -201,7 +201,7 @@ photo:any=
 
 
       this.s.dodajTelefon();
-      alert('uspjesno dodat telefon!');
+
       this.procesor = "";
       this.baterija='';
       this.ram='';
