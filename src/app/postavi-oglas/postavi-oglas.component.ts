@@ -182,7 +182,7 @@ photo:any=
 
       this.s.telefonBaza.mark_id = this.marka;
 
-      this.s.telefonBaza.model = 1;
+      // this.s.telefonBaza.model = 1;
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
       this.s.telefonBaza.slika_id = s+1;
