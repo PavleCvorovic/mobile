@@ -35,7 +35,7 @@ file:any;
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
     this.s1.uzmiSlike();
-    this.s1.slikeBazaId('21');
+
 
 
 
@@ -61,7 +61,7 @@ file:any;
   kamera_prednja='';
   ekran="";
   memorija='';
-  sifra='';
+  sifra:"";
 
 
 
@@ -111,7 +111,6 @@ photo:any=
     this.s1.photo.slika2 = this.photo.slika2;
     this.s1.photo.slika3 = this.photo.slika3;
 
-    console.log(this.photo.slika2);
 
     this.s1.postavislike();
 
@@ -146,6 +145,16 @@ photo:any=
       let conf = 0;
       this.s.dodajKonfiguracije();
 
+      let s = 0;
+    this.slike();
+
+    for(let i = 0; i < this.s1.slikeBaza11.length; i++)
+    {
+      if(s < this.s1.slikeBaza11[i].id)
+      {
+        s = this.s1.slikeBaza11[i].id;
+      }
+    }
 
 
 
@@ -170,25 +179,17 @@ photo:any=
       // this.slike();
 
     //  console.log(this.s.telefonBaza.konfiguracije);
-    this.slike();
-    let s = 0;
-    for(let i = 0; i < this.s1.slikeBaza11.length; i++)
-    {
-      if(s < this.s1.slikeBaza11[i].id)
-      {
-        s = this.s1.slikeBaza11[i].id;
-      }
-    }
-    this.s.telefonBaza.slika_id = s+1;
-    this.s.telefonBaza.specifikacije = conf + 1;
+
+      this.s.telefonBaza.slika_id = s+1;
+      this.s.telefonBaza.specifikacije = conf + 1;
 
       this.s.telefonBaza.mark_id = this.marka;
 
       // this.s.telefonBaza.model = 1;
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
-      this.s.telefonBaza.slika_id = s+1;
-      this.s.telefonBaza.specifikacije = conf + 1;
+      // this.s.telefonBaza.slika_id = s+1;
+      // this.s.telefonBaza.specifikacije = conf + 1;
       this.s.telefonBaza.model = this.model
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
@@ -200,10 +201,12 @@ photo:any=
 
 
       // console.log(this.s.telefonBaza.konfiguracije);
+      setTimeout (() => {
+        this.s.dodajTelefon();
+     }, 100);
 
 
-      this.s.dodajTelefon();
-      alert('uspjesno dodat telefon!');
+
       this.procesor = "";
       this.baterija='';
       this.ram='';
