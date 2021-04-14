@@ -21,6 +21,7 @@ ram_url:string= "assets/ram.png"
  bat:string='assets/battery.png'
  cam:string='assets/camera.png'
  dis:string='assets/display.png'
+  i:number=0;
 
 
   ngOnInit(): void {
@@ -29,4 +30,9 @@ ram_url:string= "assets/ram.png"
 
 
 
-  }}
+  }
+
+
+
+
+}

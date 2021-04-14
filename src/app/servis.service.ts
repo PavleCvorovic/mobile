@@ -170,12 +170,12 @@ posts:any={
 
 
     telefonBaza:any = {
-    mark_id:1,
-    model:'dasdas',
+    mark_id:0,
+    model:'',
     cijena:'',
     opis:'',
-    slika_id:'1',
-    specifikacije:1,
+    slika_id:'',
+    specifikacije:0,
     prodavac:'',
     kontakt:'',
     javno:0,

@@ -12,8 +12,10 @@
     <div  class="col-md-12" style="text-align: center" >
 
 
-      <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" class="img-fluid" alt="Responsive image"  height="400px" width="500px"  ><br>
-
+      <img *ngIf="i===0" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" class="img-fluid" alt="Responsive image"  height="400px" width="500px"  ><br>
+       <img *ngIf="i===1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" class="img-fluid" alt="Responsive image"  height="400px" width="500px"  ><br>
+       <img  *ngIf="i===2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" class="img-fluid" alt="Responsive image"  height="400px" width="500px"  ><br>
+      <button (click)="i=i-1">nazad</button> <button (click)="i=i+1">naprijed</button>
 
   </div>
   <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
