@@ -115,6 +115,8 @@ export class Servis1Service {
     .subscribe(posts=>
       {
           this.slikeBaza11 = posts;
+          console.log(this.slikeBaza11);
+          
       })
   }
   slikaId:any;

@@ -16,9 +16,9 @@ export class TelefonDetaljiComponent implements OnInit {
 provjera:number=this.id;
 
 ram_url:string= "assets/ram.png"
- cpu:string='assets/cpu.png'
+ cpu:string='assets/processor.png'
  mem:string='assets/memory.png'
- bat:string='assets/battery.png'
+ bat:string='assets/baterijaa.png'
  cam:string='assets/camera.png'
  dis:string='assets/display.png'
   i:number=0;
