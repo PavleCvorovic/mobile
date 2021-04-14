@@ -12,9 +12,7 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['postavi_oglas']">Postavi oglas</a>
       </li>
-      <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['model']"  >Modeli</a>
-      </li>
+
       <li class="nav-item" *ngIf="this.s.logged===false" >
         <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
       </li>

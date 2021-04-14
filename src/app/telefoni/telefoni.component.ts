@@ -33,11 +33,9 @@ telefonifix:any;
 postaviPost(){
 
     this.s.posts.tekst=this.objava
-
-
-
-
-  this.s.dodajPost()
+  this.s.dodajPost();
+  alert('Dodat oglas, batali da kucas!!!');
+  this.objava="";
 
 }
 
