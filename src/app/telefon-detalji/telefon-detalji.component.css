@@ -20,7 +20,7 @@ overflow:hidden;
 }
 .navigation{
   position: absolute;
-  bottom: -150px;
+  bottom: 200px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -53,8 +53,8 @@ input[name="r"]{
   transition: 1s;
 }
 .slide img{
-  width: 50%;
-  height: 90%;
+  width: 30%;
+  height: 70%;
 }
 
 #r1:checked ~ .s1{
