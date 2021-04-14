@@ -1,10 +1,26 @@
 <div class="container-fluid">
   <div class="row">
+
   <div class=" d-flex justify-content-left" id="heder"  >
 <h1>
   <img src="{{this.s.telefonId.mark_id.slika}}"  height="100px" width="100px" style="image-resolution: normal" >
 
     </h1>
+    <div class="container">
+      <div class="justify-content-center">
+        <button  (click)="obrisi()">Obrisi oglas</button>
+      </div>
+      <div *ngIf="brisanjePregled === true">
+        <label style="margin-top: 5px;">Unesite sifru telefona koju ste postavili kad ste objavljivali oglas:</label>
+        <div>
+        <input type="input" [(ngModel)] = "sifra" name="sifra">
+      </div>
+      <div>
+        <button type="submit" (click)="PotvrdiBrisanje(id)" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
+      </div>
+      </div>
+    </div>
+
 
   </div>
   </div>

@@ -22,16 +22,32 @@ ram_url:string= "assets/ram.png"
  cam:string='assets/camera.png'
  dis:string='assets/display.png'
   i:number=0;
+  sifra:"";
 
 
   ngOnInit(): void {
  this.s.uzmiTelefonId(this.id);
     console.log(this.s.telefonId)
 
+  }
+
+  brisanjePregled:boolean = false;
+  obrisi()
+  {
+    this.brisanjePregled=true;
+  }
+  PotvrdiBrisanje()
+  {
+    if(this.s.telefonId.sifra===this.sifra)
+    {
+      this.s.brisiTelefon(this.id)
+    }else{
+      alert('Pogresna sifra');
+      this.sifra = "";
+    }
 
 
   }
-
 
 
 
