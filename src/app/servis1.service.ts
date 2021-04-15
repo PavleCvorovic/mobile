@@ -17,7 +17,7 @@ export class Servis1Service {
 
 
   dajtelefonpomarci(id) {
-    console.log(id)
+    this.s.spiner=true;
     return this.http
       .get(
         'http://localhost:8000/api/telefon-filtriraj/' + id)
@@ -25,7 +25,13 @@ export class Servis1Service {
 
       .subscribe(posts => {
         this.tel_marka_id = posts;
-        console.log(this.tel_marka_id)
+        this.s.spiner=false;
+
+        if (this.tel_marka_id.length===0){
+          this.s.prikaz=true
+        }
+        else {          this.s.prikaz=false
+        }
 
       })
   }
@@ -72,6 +78,7 @@ export class Servis1Service {
   }
 
   dajtelefonpomodelu(naziv) {
+    this.s.spiner=true;
     return this.http
       .get(
         'http://localhost:8000/api/telefon-filtriraj/telefonmodel/' + naziv)
@@ -79,12 +86,18 @@ export class Servis1Service {
 
       .subscribe(posts => {
         this.tel_model_naziv = posts;
+        this.s.spiner=false;
 
+        if (this.tel_model_naziv.length===0){
+          this.s.prikaz=true
+        }
+        else {          this.s.prikaz=false
+        }
 
       })
-
-
   }
+
+    
 
 
   dajtelefonadminu() {
@@ -116,7 +129,7 @@ export class Servis1Service {
       {
           this.slikeBaza11 = posts;
           console.log(this.slikeBaza11);
-          
+
       })
   }
   slikaId:any;

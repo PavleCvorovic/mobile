@@ -5,7 +5,10 @@
        </div>
 
     <div class="col-md-3" >
+      <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false" >
+
 <div class="list-group" *ngFor="let a of this.s.marke" >
+
   <a  class="list-group-item list-group-item-dark" (click)="proslijedimarku(a.id)">{{a.marka_naziv}} <img style="height: 20px;width: 20px;text-align: right" src="{{a.slika}}"></a>
   <span *ngFor="let b of this.s1.tel_marka_model">
   <div class="dropdown" *ngIf="dropmodel===true && a.id===b.marka_id">

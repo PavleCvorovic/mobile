@@ -43,7 +43,12 @@ proslijedimarku(id){
     this.s1.dajtelefonpomarci(id);
     this.pokazivac_marke=1;
     this.s1.dajmodelmarke(id);
-    this.dropmodel=true;
+    if(this.dropmodel===false){
+      this.dropmodel=true;
+    }
+    else {
+      this.dropmodel=false;
+    }
 
 
 
