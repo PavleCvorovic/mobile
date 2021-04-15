@@ -129,7 +129,7 @@ photo:any=
 
   onSubmit(signupForm:NgForm)
   {
-    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.specifikacije &&this.baterija && this.procesor && this.kamera_prednja && this.kamera_zadnja && this.ekran && this.sifra &&this.memorija != null){
+    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.baterija && this.procesor && this.kamera_prednja && this.kamera_zadnja && this.ekran && this.sifra &&this.memorija != null){
       this.promjena1=true;
 
       this.s.models.marka_id = this.marka;
@@ -203,7 +203,7 @@ photo:any=
       // console.log(this.s.telefonBaza.konfiguracije);
       setTimeout (() => {
         this.s.dodajTelefon();
-     }, 100);
+     }, 10000);
 
 
 
