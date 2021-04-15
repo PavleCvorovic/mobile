@@ -91,13 +91,14 @@ export class Servis1Service {
         if (this.tel_model_naziv.length===0){
           this.s.prikaz=true
         }
-        else {          this.s.prikaz=false
+        else {
+          this.s.prikaz=false
         }
 
       })
   }
 
-    
+
 
 
   dajtelefonadminu() {
