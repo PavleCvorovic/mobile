@@ -102,6 +102,7 @@
 
 
       <button type="submit"  class="btn btn-primary ,d-flex justify-content-center" >Submit</button>
+      <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center"><span class="sr-only">Loading...</span></div>
     </form>
     <div class="alert alert-primary" role="alert" *ngIf="promjena1===true">
      Vas post je trenutno na provjeri ispravnosti od strane admina .<br>

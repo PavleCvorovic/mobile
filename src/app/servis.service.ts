@@ -232,6 +232,7 @@ posts:any={
 
   dodajTelefon()
   {
+
     // this.knjiga = knjiga;
     // this.ostaliBaza = ostaliBaza;
      const params = new HttpParams()

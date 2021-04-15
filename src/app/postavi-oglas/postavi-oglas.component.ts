@@ -21,6 +21,8 @@ upozorenje_selekt=false;
 prilagodjeni_modeli:any=[];
 fajl:any;
 path:any;
+spiner:boolean=false;
+strike:boolean=true;
 photos1:any;
 photos2:any;
 photos3:any;
@@ -195,7 +197,7 @@ photo:any=
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
-
+this.s.spiner=true;
 
 
 
@@ -203,6 +205,7 @@ photo:any=
       // console.log(this.s.telefonBaza.konfiguracije);
       setTimeout (() => {
         this.s.dodajTelefon();
+        this.s.spiner=false;
      }, 10000);
 
 
