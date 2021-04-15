@@ -16,7 +16,7 @@
         <input type="input" [(ngModel)] = "sifra" name="sifra">
       </div>
       <div>
-        <button type="submit" (click)="PotvrdiBrisanje(id)" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
+        <button type="submit" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
       </div>
       </div>
     </div>
@@ -24,21 +24,21 @@
 
   </div>
   </div>
-
+  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
     <div  class="slideshow-preview" style="text-align: center" >
-      
+
       <div class="slides">
         <input type="radio" name="r" id="r1" checked>
         <input type="radio" name="r" id="r2">
         <input type="radio" name="r" id="r3">
         <div class="slide s1">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" class="responsive" >
+          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height: 350pt;width:300pt " >
         </div>
         <div class="slide">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" class="responsive" >
+          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height: 350pt;width:300pt " >
         </div>
         <div class="slide">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" class="responsive" >
+          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height: 350pt;width:300pt " >
         </div>
         <div class="navigation">
           <label for="r1" class="bar"></label>
@@ -48,7 +48,7 @@
 
 
   </div>
-  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
+
 
 
   <div style="text-align: center" >
@@ -84,9 +84,9 @@
 
   </div>
   <a href="Tel:067-111-111">067-111-111  KLIKNI DA NAZOVES PRODAVCA</a>
-   
 
-    
+
+
 
 
 
