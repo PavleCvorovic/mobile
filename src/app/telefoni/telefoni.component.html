@@ -5,14 +5,14 @@
        </div>
 
     <div class="col-md-3" >
-      <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false" >
+      <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false;this.s.prikaz=false">
 
 <div class="list-group" *ngFor="let a of this.s.marke" >
 
-  <a  class="list-group-item list-group-item-dark" (click)="proslijedimarku(a.id)">{{a.marka_naziv}} <img style="height: 20px;width: 20px;text-align: right" src="{{a.slika}}"></a>
+  <a  class="list-group-item list-group-item-primary" id="marke" (click)="proslijedimarku(a.id)">{{a.marka_naziv}} <img style="height: 20px;width: 20px;text-align: right" src="{{a.slika}}"> <img class="rounded float-right" src="assets/back.png"*ngIf="dropmodel==true" alt="Responsive image"style="height: 10pt;width: 10pt"></a>
   <span *ngFor="let b of this.s1.tel_marka_model">
   <div class="dropdown" *ngIf="dropmodel===true && a.id===b.marka_id">
- <span (click)="prosilijedinaziv(b.model_naziv)">  <l1  class="list-group-item list-group-item-success"   >{{b.model_naziv}}</l1></span >
+ <span (click)="prosilijedinaziv(b.model_naziv)">  <l1  class="list-group-item list-group-item-success" id="model"  >{{b.model_naziv}}</l1></span >
 </div></span>
 </div>
 

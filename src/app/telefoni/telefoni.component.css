@@ -46,3 +46,13 @@ background-repeat: no-repeat;
 
 
 }
+#marke:hover{
+  border-color: lightgreen;
+
+
+}
+#model:hover{
+  border-color: blue;
+
+
+}
