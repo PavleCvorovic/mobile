@@ -23,7 +23,6 @@ export class AdminBordComponent implements OnInit {
   ngOnInit(): void {
     this.s.logovan();
    this.s1.dajtelefonadminu();
-    this.guard.logovan = true;
     this.s.dajpostove();
     this.s.broji_postove();
 
