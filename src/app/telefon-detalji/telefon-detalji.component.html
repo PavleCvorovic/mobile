@@ -25,29 +25,32 @@
   </div>
   </div>
   <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
-    <div  class="slideshow-preview" style="text-align: center" >
 
-      <div class="slides">
-        <input type="radio" name="r" id="r1" checked>
-        <input type="radio" name="r" id="r2">
-        <input type="radio" name="r" id="r3">
-        <div class="slide s1">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height: 350pt;width:300pt " >
-        </div>
-        <div class="slide">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height: 350pt;width:300pt " >
-        </div>
-        <div class="slide">
-          <img src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height: 350pt;width:300pt " >
-        </div>
-        <div class="navigation">
-          <label for="r1" class="bar"></label>
-          <label for="r2" class="bar"></label>
-          <label for="r3" class="bar"></label>
-        </div>
+
+  <div class="text-center">
+    <img *ngIf="this.promjena===0"  src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height:450pt;width:450pt " >
+
+
+    <img *ngIf="this.promjena===1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height:450pt;width:450pt "  >
+
+    <img *ngIf="this.promjena==2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height:450pt;width:450pt " >
 
 
   </div>
+
+
+<div class="text-center" >
+          <img (click)="this.promjena=0" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
+
+
+          <img (click)="this.promjena=1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px "  >
+
+          <img (click)="this.promjena=2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
+
+
+</div>
+
+
 
 
 
@@ -109,7 +112,6 @@
 
 
 
-  </div>
 
 
 

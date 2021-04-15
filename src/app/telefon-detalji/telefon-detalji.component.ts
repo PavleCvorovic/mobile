@@ -22,6 +22,7 @@ ram_url:string= "assets/ram.png"
  cam:string='assets/camera.png'
  dis:string='assets/display.png'
   i:number=0;
+promjena:number=0;
   sifra:"";
 
 
