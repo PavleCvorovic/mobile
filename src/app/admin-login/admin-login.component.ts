@@ -3,6 +3,7 @@ import { NgModelGroup } from '@angular/forms';
 import { FormBuilder} from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Router } from '@angular/router';
+import { AdminGuardGuard } from '../admin-guard.guard';
 
 @Component({
   selector: 'app-admin-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router) { }
+  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router, public guard:AdminGuardGuard) { }
 
   unos_admin = this.fb.group(
   {
@@ -25,10 +26,12 @@ export class AdminLoginComponent implements OnInit {
 
   submit()
   {
-      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true}).
-      subscribe(()=>
-      this.router.navigate(['admin']));
+      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true}).subscribe(()=>
+      {
 
+      });
+      this.guard.logovan = true
+      this.router.navigate(['admin']);
   }
 
 }
