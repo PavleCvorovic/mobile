@@ -19,10 +19,10 @@ export class AdminBordComponent implements OnInit {
 
 
   constructor(public  s:ServisService ,public s1:Servis1Service,private domSanitizer: DomSanitizer, public guard:AdminGuardGuard, public cookie:CookieService) { }
-
+jwt :any
 
   ngOnInit(): void {
-    console.log(this.cookie.get('jwt'))
+    this.jwt = this.cookie.get('jwt');
 
     this.s.logovan();
    this.s1.dajtelefonadminu();

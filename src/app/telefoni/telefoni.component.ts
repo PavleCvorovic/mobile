@@ -18,6 +18,7 @@ model:string;
 objava:string;
 dropmodel:boolean=false;
 telefonifix:any;
+neznamdjesam:boolean=false;
   constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -45,17 +46,19 @@ proslijedimarku(id){
     this.s1.dajmodelmarke(id);
     if(this.dropmodel===false){
       this.dropmodel=true;
+      
     }
     else {
       this.dropmodel=false;
-    }
 
+}
 
 
 }
     prosilijedinaziv(naziv){
       this.s1.dajtelefonpomodelu(naziv)
         this.pokazivac_marke=2;
+
     }
 
 
