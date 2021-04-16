@@ -15,6 +15,7 @@ import {DatePipe} from '@angular/common';
 import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.component';
 import { AdminBordComponent } from './admin-bord/admin-bord.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import {CookieService} from "ngx-cookie-service";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

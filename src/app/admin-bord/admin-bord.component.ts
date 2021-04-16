@@ -3,6 +3,7 @@ import {ServisService} from '../servis.service';
 import {Servis1Service} from "../servis1.service";
 import { DomSanitizer } from '@angular/platform-browser';
 import { AdminGuardGuard } from '../admin-guard.guard';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-admin-bord',
@@ -17,10 +18,12 @@ export class AdminBordComponent implements OnInit {
 
 
 
-  constructor(public  s:ServisService ,public s1:Servis1Service,private domSanitizer: DomSanitizer, public guard:AdminGuardGuard) { }
+  constructor(public  s:ServisService ,public s1:Servis1Service,private domSanitizer: DomSanitizer, public guard:AdminGuardGuard, public cookie:CookieService) { }
 
 
   ngOnInit(): void {
+    console.log(this.cookie.get('jwt'))
+
     this.s.logovan();
    this.s1.dajtelefonadminu();
     this.s.dajpostove();
