@@ -53,6 +53,9 @@
         <input [(ngModel)] = "kontakt" name="kontakt" class="form-control"   placeholder="">
       </div>
       <div class="form-group ">
+        <h1 *ngIf="this.s.spiner===true">Vas post ce biti uskoro proslijedjen....</h1>
+        <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="height: 200px;width: 200px"><span class="sr-only">Loading...</span></div>
+
         <label ><b>Unesi konfiguracije:</b></label><br>
         <div class="row">
 
@@ -80,7 +83,7 @@
       </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" >
         <label >Ubaci slike</label>
         <div class="col-lg-4">
         <input class="btn btn-primary" type="file" id="myFile" name="slika1" (change)="onChangeFile($event)">
@@ -102,7 +105,7 @@
 
 
       <button type="submit"  class="btn btn-primary ,d-flex justify-content-center" >Submit</button>
-      <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center"><span class="sr-only">Loading...</span></div>
+
     </form>
     <div class="alert alert-primary" role="alert" *ngIf="promjena1===true">
      Vas post je trenutno na provjeri ispravnosti od strane admina .<br>
