@@ -184,7 +184,7 @@
 
 
 
-    <div id="postovi" class="col-md-2" style="border-radius: 1%">
+    <div id="postovi" class="col-md-2" style="border-radius: 1%;text-align: center ">
 
       <h1 class="tekst" >U ovoj sekciji mozete postaviti oglas ! </h1>
 
@@ -192,7 +192,7 @@
        <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" rows="5"
                   placeholder="Postavite oglas i vas kontakt ">
         </textarea>
-        <button class="btn btn-primary"  style="position: relative;left: 125px" (click)="postaviPost()">objavi</button>
+        <button class="btn btn-primary"   (click)="postaviPost()">objavi</button>
         <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
 
