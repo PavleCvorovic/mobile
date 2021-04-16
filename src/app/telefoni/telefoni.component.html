@@ -30,7 +30,7 @@
      <div class="container">
       <div class="row" style="text-align: center " >
 
-        <div   *ngFor="let a of this.s.telefoni ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
+        <div   *ngFor="let a of this.s.telefoni ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px; border-color: white;">
 
           <div *ngIf="a.javno===1">
           <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">

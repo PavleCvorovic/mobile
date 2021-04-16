@@ -41,8 +41,10 @@ promjena:number=0;
   {
     if(this.s.telefonId.sifra===this.sifra)
     {
-      this.s.brisiTelefon(this.id)
+      this.s.brisiTelefon(this.id);
+      alert('uspjesno obrisan telefon!');
     }else{
+
       alert('Pogresna sifra');
       this.sifra = "";
     }

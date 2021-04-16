@@ -28,19 +28,19 @@
 
 
   <div class="text-center">
-    <img *ngIf="this.promjena===0"  src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height:350pt;width:350pt " >
+    <img *ngIf="this.promjena===0"  src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height:350pt;width:450pt " >
 
 
-    <img *ngIf="this.promjena===1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height:350pt;width:350pt "  >
+    <img *ngIf="this.promjena===1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height:350pt;width:450pt "  >
 
-    <img *ngIf="this.promjena==2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height:350pt;width:350pt " >
+    <img *ngIf="this.promjena==2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height:350pt;width:450pt " >
 
 
   </div>
 <br>
 
 <div class="text-center" >
-       <span >   <img  id="a"(click)="this.promjena=0" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " ></span>
+       <span >   <img  id="a"(click)="this.promjena=0" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " ></span>
 
 
       <span >    <img id="b"(click)="this.promjena=1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px "  ></span>
@@ -85,11 +85,11 @@
       </tbody>
   </table>
 
-
+  </div>
   <a href="Tel:067-111-111">067-111-111  KLIKNI DA NAZOVES PRODAVCA</a>
 
 
-  </div>
+
 
 
 
