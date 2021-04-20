@@ -13,6 +13,7 @@
 
 
        </div>
+    <div  >    <img  class="img-fluid" alt="Responsive image"  src="assets/reklama.gif"  ></div>
 
     <div class="col-md-3" >
       <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false;this.s.prikaz=false">
@@ -40,7 +41,7 @@
      <div class="container">
       <div class="row" style="text-align: center " >
 
-        <div   *ngFor="let a of this.s.telefoni ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px; border-color: black;">
+        <div   *ngFor="let a of this.s.telefoni ;let i=index"  class="col-md-3" style="border-style: solid;border-width: 1px; border-color: black;">
 
           <div *ngIf="a.javno===1">
           <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
@@ -51,6 +52,7 @@
 
         </div>
         </div>
+        <button> 1</button> <button (click)="pokazi_telefone2">2</button>
       </div>
       <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
         <span class="sr-only">Loading...</span>
@@ -74,6 +76,7 @@
 
 
     </div>
+
 
 
 

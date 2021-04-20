@@ -56,4 +56,12 @@ background-repeat: no-repeat;
 
 
 }
+.container-fluid{
+  background-image: url("src/assets/back1.jpg");
+  background-size: cover;
+
+
+
+}
+
 

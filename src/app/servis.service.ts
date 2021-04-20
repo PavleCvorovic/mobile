@@ -71,6 +71,47 @@ if (this.telefoni.length===0){
       }})
   }
 
+  dajtelefone1(){
+    this.spiner=true;
+    return this.http
+      .get(
+        'http://localhost:8000/api/telefoni1')
+
+
+      .subscribe(posts => {
+
+        this.telefoni = posts;
+        console.log(this.telefoni);
+
+
+
+
+        this.spiner=false;
+        let i;
+
+        if (this.telefoni.length===0){
+          this.prikaz=true
+        }
+        else{
+
+          for( i=0; i<=this.telefoni.length;i++){
+
+            if(this.telefoni[i].javno === null )
+
+            {
+
+              this.prikaz = true;
+            }
+            else {
+
+              this.prikaz=false;
+              break;
+
+            }}
+
+        }})
+  }
+
   brisiTelefon(id){
    let ida=id
     console.log(ida);
