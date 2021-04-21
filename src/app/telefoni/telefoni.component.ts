@@ -21,12 +21,9 @@ nextTelefon:boolean=false;
   constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-if (this.nextTelefon===false){
+
   this.s.dajtelefone()
-}
-else{
-  this.s.dajtelefone1()
-}
+
 
     this.s.dajpostove();
     this.s.dajmarku();
