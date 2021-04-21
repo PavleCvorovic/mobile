@@ -367,7 +367,7 @@ logovan()
   this.http.get('http://localhost:8000/api/user', {withCredentials:true})
   .subscribe(res=>
     {
-      console.log(res);
+      // console.log(res);
     },
     err=>
     {

@@ -4,6 +4,7 @@ import { FormBuilder} from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { AdminGuardGuard } from '../admin-guard.guard';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-admin-login',
@@ -12,7 +13,7 @@ import { AdminGuardGuard } from '../admin-guard.guard';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router, public guard:AdminGuardGuard) { }
+  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router, public guard:AdminGuardGuard, public cookieService:CookieService) { }
 
   unos_admin = this.fb.group(
   {
@@ -33,5 +34,6 @@ export class AdminLoginComponent implements OnInit {
       this.guard.logovan = true
       this.router.navigate(['admin']);
   }
+
 
 }

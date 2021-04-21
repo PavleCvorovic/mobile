@@ -32,11 +32,7 @@ nextTelefon:boolean=false;
 
 
   }
-  pokazi_telefone2(){
-   this.s.dajtelefone1();
 
-
-}
 
 postaviPost(){
 
