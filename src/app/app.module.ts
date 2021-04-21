@@ -16,6 +16,8 @@ import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.compo
 import { AdminBordComponent } from './admin-bord/admin-bord.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import {CookieService} from "ngx-cookie-service";
+import {NgxPaginationModule} from "ngx-pagination";
+
 
 
 @NgModule({
@@ -30,15 +32,16 @@ import {CookieService} from "ngx-cookie-service";
     AdminBordComponent,
     AdminLoginComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgxPaginationModule
+    ],
   providers: [DatePipe, CookieService],
   bootstrap: [AppComponent]
 })

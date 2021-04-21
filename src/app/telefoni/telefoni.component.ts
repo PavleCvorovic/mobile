@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
 
 import { ActivatedRoute, Params, Router} from '@angular/router';
@@ -18,11 +18,14 @@ model:string;
 objava:string;
 dropmodel:boolean=false;
 nextTelefon:boolean=false;
+  pageSize=5;
+  total= 16;
+  p=1;
   constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
-  this.s.dajtelefone()
+  this.s.dajtelefone();
 
 
     this.s.dajpostove();
@@ -32,11 +35,7 @@ nextTelefon:boolean=false;
 
 
   }
-  pokazi_telefone2(){
-   this.s.dajtelefone1();
-
-
-}
+  pageChange: EventEmitter<number>;
 
 postaviPost(){
 

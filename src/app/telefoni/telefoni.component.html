@@ -17,7 +17,7 @@
     <div class="col-md-3" >
       <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false;this.s.prikaz=false">
 
-<div class="list-group" *ngFor="let a of this.s.marke" >
+<div class="list-group" *ngFor="let a of this.s.marke " >
 
   <a  class="list-group-item list-group-item-primary" id="marke" (click)="proslijedimarku(a.id)">{{a.marka_naziv}} <img style="height: 20px;width: 20px;text-align: right" src="{{a.slika}}"> <img class="rounded float-right" src="assets/back.png"*ngIf="dropmodel==true" alt="Responsive image"style="height: 10pt;width: 10pt"></a>
   <span *ngFor="let b of this.s1.tel_marka_model">
@@ -40,7 +40,10 @@
      <div class="container">
       <div class="row" style="text-align: center " >
 
-        <div   *ngFor="let a of this.s.telefoni ;let i=index"  class="col-md-3" style="border-style: solid;border-width: 1px; border-color: black;">
+        <div   *ngFor="let a of this.s.telefoni | paginate: {
+                                                      itemsPerPage:5,
+                                                      currentPage: p
+                                                       }"   class="col-md-3" style="border-style: solid;border-width: 1px; border-color: black;">
 
           <div *ngIf="a.javno===1">
           <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
@@ -51,7 +54,18 @@
 
         </div>
         </div>
-        <button> 1</button> <button (click)="pokazi_telefone2">2</button>
+
+        <pagination-controls  (pageChange)="p = $event"
+                              directionLinks="true"
+                              autoHide="true"
+                              responsive="true"
+                              previousLabel="Prethodna"
+                              nextLabel="Sledeca"
+                              screenReaderPaginationLabel="Pagination"
+                              screenReaderPageLabel="page"
+                              screenReaderCurrentLabel="You're on page">
+          ></pagination-controls>
+
       </div>
       <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
         <span class="sr-only">Loading...</span>
