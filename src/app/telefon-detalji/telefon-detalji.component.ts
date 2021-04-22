@@ -11,16 +11,16 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 export class TelefonDetaljiComponent implements OnInit {
 
   constructor(public s:ServisService, public route: ActivatedRoute) { }
- telefon_detalj:any=[];
-  id = this.route.snapshot.params.id;
-provjera:number=this.id;
 
+  id = this.route.snapshot.params.id;
+telefonId:any;
+  brisanjePregled:boolean = false;
 ram_url:string= "assets/ram.png"
- cpu:string='assets/processor.png'
- mem:string='assets/memory.png'
- bat:string='assets/baterijaa.png'
- cam:string='assets/camera.png'
- dis:string='assets/display.png'
+ cpu:string="assets/processor.png"
+ mem:string="assets/memory.png"
+ bat:string="assets/baterijaa.png"
+ cam:string="assets/camera.png"
+ dis:string="assets/display.png"
   i:number=0;
 promjena:number=0;
   sifra:"";
@@ -28,11 +28,11 @@ promjena:number=0;
 
   ngOnInit(): void {
  this.s.uzmiTelefonId(this.id);
-    console.log(this.s.telefonId)
+
 
   }
 
-  brisanjePregled:boolean = false;
+
   obrisi()
   {
     this.brisanjePregled=true;

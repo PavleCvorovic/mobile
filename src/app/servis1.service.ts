@@ -26,6 +26,7 @@ export class Servis1Service {
 
       .subscribe(posts => {
         this.tel_marka_id = posts;
+        console.log(this.tel_marka_id)
         this.s.spiner=false;
 
         if (this.tel_marka_id.length===0){
@@ -132,11 +133,7 @@ export class Servis1Service {
 
 
       })
-
-
-
   }
-
 
 
 

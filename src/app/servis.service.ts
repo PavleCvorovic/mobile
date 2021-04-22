@@ -304,7 +304,8 @@ models:any={
         posts=>
         {
             this.telefonId = posts;
-            console.log(this.telefonId);
+
+          console.log(this.telefonId)
 
         }
       )

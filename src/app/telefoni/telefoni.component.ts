@@ -21,13 +21,12 @@ nextTelefon:boolean=false;
   pageSize=5;
   total= 16;
   p=1;
-  constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service,private sanitizer: DomSanitizer) { }
+  constructor(public s:ServisService ,public route:ActivatedRoute,public s1:Servis1Service) { }
 
   ngOnInit(): void {
 
+
   this.s.dajtelefone();
-
-
     this.s.dajpostove();
     this.s.dajmarku();
 
@@ -45,6 +44,16 @@ postaviPost(){
   this.objava="";
 
 }
+
+// proba(a){
+//   this.s1.prototip_slike(a);
+//
+//
+//
+//
+// }
+
+
 
 proslijedimarku(id){
     this.s1.dajtelefonpomarci(id);
