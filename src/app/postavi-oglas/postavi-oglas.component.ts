@@ -131,7 +131,7 @@ photo:any=
 
   onSubmit(signupForm:NgForm)
   {
-    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.baterija && this.procesor && this.kamera_prednja && this.kamera_zadnja && this.ekran && this.sifra &&this.memorija != null){
+    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.sifra  != null){
       this.promjena1=true;
 
       this.s.models.marka_id = this.marka;
@@ -146,19 +146,6 @@ photo:any=
       // console.log(this.s.konfiguracije.length);
       let conf = 0;
       this.s.dodajKonfiguracije();
-
-      let s = 0;
-    this.slike();
-
-    for(let i = 0; i < this.s1.slikeBaza11.length; i++)
-    {
-      if(s < this.s1.slikeBaza11[i].id)
-      {
-        s = this.s1.slikeBaza11[i].id;
-      }
-    }
-
-
 
       // this.s.telefonBaza.konfiguracije=this.s.konfiguracijeBaza.id;
       // console.log(this.s.telefonBaza.konfiguracije);
@@ -182,7 +169,7 @@ photo:any=
 
     //  console.log(this.s.telefonBaza.konfiguracije);
 
-      this.s.telefonBaza.slika_id = s+1;
+
       this.s.telefonBaza.specifikacije = conf + 1;
 
       this.s.telefonBaza.mark_id = this.marka;
@@ -197,18 +184,13 @@ photo:any=
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
-this.s.spiner=true;
+      this.s.spiner=true;
 
 
 
+      this.s.dodajTelefon();
 
       // console.log(this.s.telefonBaza.konfiguracije);
-      setTimeout (() => {
-        this.s.dodajTelefon();
-        this.s.spiner=false;
-     }, 10000);
-
-
 
       this.procesor = "";
       this.baterija='';
