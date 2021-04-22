@@ -18,6 +18,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import {CookieService} from "ngx-cookie-service";
 import {NgxPaginationModule} from "ngx-pagination";
 import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 
@@ -40,6 +41,7 @@ import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
         HttpClientModule,
         BrowserAnimationsModule,
         MatSliderModule,
+        RouterModule,
         FormsModule,
         ReactiveFormsModule,
         NgxPaginationModule
