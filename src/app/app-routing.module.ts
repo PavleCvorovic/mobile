@@ -7,6 +7,7 @@ import { TelefonDetaljiComponent } from './telefon-detalji/telefon-detalji.compo
 import {AdminBordComponent} from './admin-bord/admin-bord.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminGuardGuard } from './admin-guard.guard';
+import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'telefon' , pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'model', component : ModeliComponent},
   {path: 'postavi_oglas', component : PostaviOglasComponent},
   {path: 'telefon-detalji/:id', component:TelefonDetaljiComponent},
+  {path: 'telefon-detalji-admin/:id', component:DetaljiComponent},
   {path: 'admin', component:AdminBordComponent, canActivate:[AdminGuardGuard]},
   {path:  'admin-login', component:AdminLoginComponent},
 ];

@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class=" d-flex justify-content-left" id="heder"  >
+      <h1>
+        <img src="{{this.s.telefonId.mark_id.slika}}"  height="100px" width="100px" style="image-resolution: normal" >
+
+      </h1>
+
+      </div>
+
+
+
+  </div>
+  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{this.s.telefonId.mark_id.marka_naziv}}    {{this.s.telefonId.model}}</h1>     </div>
+
+
+  <div class="text-center">
+    <img *ngIf="this.promjena===0"  src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}" alt="Responsive image" style="height:350pt;width:450pt " >
+
+
+    <img *ngIf="this.promjena===1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}" alt="Responsive image" style="height:350pt;width:450pt "  >
+
+    <img *ngIf="this.promjena==2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}" alt="Responsive image" style="height:350pt;width:450pt " >
+
+
+  </div>
+  <br>
+
+  <div class="text-center" >
+    <span >   <img  id="a"(click)="this.promjena=0" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika1}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " ></span>
+
+
+    <span >    <img id="b"(click)="this.promjena=1" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika2}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px "  ></span>
+
+    <span >  <img id="c" (click)="this.promjena=2" src="http://localhost:8000/storage/slike/{{this.s.telefonId.slika_id.slika3}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " ></span>
+
+
+  </div>
+
+
+
+
+
+  <div style="text-align: center" >
+
+
+
+    <table class="table ">
+
+
+
+      <tbody>
+
+
+
+      <tr>
+
+        <td>    <img class="cpu"  src="{{cpu}}"  > <h1> {{this.s.telefonId.specifikacije.procesor}}</h1></td>
+        <td><img class="cpu"  src="{{dis}}" ><h1> {{this.s.telefonId.specifikacije.ekran}}</h1></td>
+
+      </tr>
+      <tr>
+
+        <td> <img class="cpu"  src="{{bat}}" > <h1> {{this.s.telefonId.specifikacije.baterija}}</h1></td>
+        <td><img class="cpu"  src="{{mem}}" ><h1> {{this.s.telefonId.specifikacije.memorija}}</h1></td>
+      </tr>
+      <tr>
+
+        <td><img class="cpu"  src="{{ram_url}}" ><h1> {{this.s.telefonId.specifikacije.ram}}</h1></td>
+        <td><img class="cpu"  src="{{cam}}" > <h1> Prednja kamera: {{this.s.telefonId.specifikacije.kamera_prednja}}<br>Zadnja kamera  {{this.s.telefonId.specifikacije.kamera_zadnja}}</h1></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="justify-content-center">
+    <button class="btn-success"style="height: 100px;width: 200px"(click)= "postavi(this.s.id_telefona) " [routerLink]="['/admin']">Postavi</button>
+    <button class="btn-danger"style="height: 100px;width: 200px" (click)="obrisi(this.s.id_telefona)" [routerLink]="['/admin']">Obrisi</button>
+    </div>
+
+  </div>
+</div>

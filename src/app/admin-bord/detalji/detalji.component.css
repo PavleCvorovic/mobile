@@ -1,0 +1,13 @@
+#header{
+
+
+
+}
+.cpu{
+  height: 70px;width: 140px;
+}
+#a:hover{border-style: solid;
+  border-color:red;
+}
+#b:hover {border-style: solid; border-color:green; }
+#c:hover{border-style: solid; border-color: blue;}

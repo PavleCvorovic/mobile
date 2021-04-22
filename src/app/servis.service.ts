@@ -20,7 +20,7 @@ modeli:any=[];
 marke:any=[];
 postovi:any=[];
 prikaz:boolean=false;
-
+  id_telefona;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
 
@@ -367,7 +367,7 @@ logovan()
   this.http.get('http://localhost:8000/api/user', {withCredentials:true})
   .subscribe(res=>
     {
-      // console.log(res);
+       console.log(res);
     },
     err=>
     {

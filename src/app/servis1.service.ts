@@ -11,6 +11,7 @@ export class Servis1Service {
   tel_model_naziv: any;
   tel_admin:any;
   telefoni_provjera:number=0;
+  slike_novi_nacin:any;
 
   constructor(public  s: ServisService, private http: HttpClient) {
   }
@@ -121,6 +122,39 @@ export class Servis1Service {
 
 
   }
+
+  prototip_slike(a){
+
+    return this.http.get('http://localhost:8000/api/slika/'+a)
+      .subscribe(posts=>
+      {
+        this.slike_novi_nacin = posts;
+
+
+      })
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   slikeBaza11:any;
 
   uzmiSlike()

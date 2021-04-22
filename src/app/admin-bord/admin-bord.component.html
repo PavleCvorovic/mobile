@@ -16,7 +16,7 @@
 
 <span *ngIf="this.s1.telefoni_provjera===0">
 
-          <a href="" class="nav-link text-white"  (click)="telefon_oglas=false" > Novi telefoni
+          <a href="#" onclick="return false;" class="nav-link text-white"  (click)="telefon_oglas=0" > Novi telefoni
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-bell" viewBox="0 0 16 16">
              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
             </svg>
@@ -25,7 +25,7 @@
           </a>
   </span>
 <span *ngIf="this.s1.telefoni_provjera>0">
-        <a href="" class="nav-link text-white"  (click)="telefon_oglas=false" > Novi telefoni
+        <a href="#" onclick="return false;" class="nav-link text-white"  (click)="telefon_oglas=0" > Novi telefoni
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-bell" viewBox="0 0 16 16">
             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
           </svg>
@@ -33,22 +33,23 @@
           {{this.s1.telefoni_provjera}}
         </a>
 </span>
-        <li>
 
 
-<span *ngIf="s.postovi_provjera===0">
-          <a class="nav-link text-white" (click)="telefon_oglas=true">Novi komentari
+
+<span *ngIf="s.postovi_provjera===null">
+          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=1">Novi komentari
 
 
 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-bell" viewBox="0 0 16 16" >
               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-            </svg>    {{this.s.postovi_provjera}}
+            </svg>
+            {{this.s.postovi_provjera}}
           </a>
   </span>
 
-          <span *ngIf="s.postovi_provjera !==0">
-          <a class="nav-link text-white" (click)="telefon_oglas=true">Novi komentari
+          <span *ngIf="s.postovi_provjera !==null">
+          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=1">Novi komentari
 
 
 
@@ -72,16 +73,14 @@
 
 
 
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-           Korisnici
+          <a href="#" onclick="return false;" class="nav-link text-white"(click)="telefon_oglas=2" >
+            Korisnici
           </a>
 
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          <a href="#" onclick="return false;" class="nav-link text-white">
             Ukloni telefon
           </a>
-</li>
+
       </ul>
       <hr>
     </div>
@@ -91,21 +90,21 @@
 
 
 
-<div class="row" *ngIf="telefon_oglas===false">
+<div class="row" *ngIf="telefon_oglas===0">
         <div class="col-md-3" style="border-style: solid ; border-width: thin" *ngFor="let a of this.s1.tel_admin;index as i">
-          <div *ngIf ='a.javno !=1'>
+
           <br>
           <img src="http://localhost:8000/storage/slike/{{a.slika_id.slika1}}" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
 
           <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
           <p><b>Cijena: </b> {{a.cijena}}</p>
-          <button class="btn-primary"(click)= "postavi(a.id)">Postavi</button>
-          <button class="btn-danger" (click)="obrisi(a.id)">Obrisi</button>
-        </div>
+
+            <button class="btn-primary "  [routerLink]="['/telefon-detalji-admin',a.id]" (click)="this.s.id_telefona=a.id">Pogledaj detaljno</button>
+
       </div>
 
 </div>
-      <div class="row" *ngIf="telefon_oglas===true">
+      <div class="row" *ngIf="telefon_oglas===1">
         <table class="table table-hover">
           <thead>
             <tr>
@@ -117,17 +116,40 @@
             </tr>
           </thead>
           <tbody *ngFor= "let a of this.s.postovi" >
-            <tr *ngIf="a.javno != 1">
+            <tr >
 
               <td>{{a.id}}</td>
               <td>{{a.tekst}}</td>
               <td><button class="btn-primary" (click)="postavi2(a.id)" >Objavi</button></td>
               <td><button class="btn-danger" (click)="obrisi2(a.id)">Obrisi</button></td>
+
             </tr>
 
           </tbody>
-        </table>
+        </table> </div>
+        <div class="row" *ngIf="telefon_oglas===2">
+          <table class="table table-hover">
+            <thead>
+            <tr>
 
+              <th scope="col">Id</th>
+              <th scope="col">Korisnik</th>
+              <th scope="col">Kontakt</th>
+
+            </tr>
+            </thead>
+            <tbody *ngFor= "let a of this.s.telefoni" >
+            <tr >
+
+              <td>{{a.id}}</td>
+              <td>{{a.prodavac}}</td>
+              <td>{{a.kontakt}}</td>
+
+
+            </tr>
+
+            </tbody>
+          </table>
 
 
 
@@ -142,7 +164,7 @@
 
 
 
-    </div>
+
     </div>
 
 
@@ -165,3 +187,4 @@
 
 </div>
 
+</div>

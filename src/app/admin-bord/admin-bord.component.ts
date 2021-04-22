@@ -11,97 +11,51 @@ import {CookieService} from "ngx-cookie-service";
   styleUrls: ['./admin-bord.component.css']
 })
 export class AdminBordComponent implements OnInit {
-  telefon_oglas:boolean=false;
-  telefoni_provjera:number=0;
-  postovi_provjera:number=0;
-  t:any;
+  telefon_oglas:number=0;
+  t: any;
 
 
 
-  constructor(public  s:ServisService ,public s1:Servis1Service,private domSanitizer: DomSanitizer, public guard:AdminGuardGuard, public cookie:CookieService) { }
-jwt :any
+  constructor(public  s: ServisService, public s1: Servis1Service, private domSanitizer: DomSanitizer, public guard: AdminGuardGuard, public cookie: CookieService) {
+  }
+
+  jwt: any
 
 
   ngOnInit(): void {
 
 
-
     this.s.logovan();
-   this.s1.dajtelefonadminu();
+    this.s1.dajtelefonadminu();
+    this.s.dajtelefone();
     this.s.dajpostove();
     this.s.broji_postove();
 
 
-
-
   }
-proba()
-{
-  this.jwt = this.cookie.get('jwt');
 
-    if(this.jwt.length > 0)
-    {
+  proba() {
+    this.jwt = this.cookie.get('jwt');
+
+    if (this.jwt.length > 0) {
       console.log(this.jwt);
 
     }
-}
+  }
 
 
+  postavi(id: number) {
+    this.s.dodajTelefonAdmin(id);
+  }
 
-
-
-obrisi(id:number){
-    this.s.brisiTelefon(id);
-  console.log(id);
-}
-
-postavi(id:number)
-{
-  this.s.dodajTelefonAdmin(id);
-}
-
-obrisi2(id:number){
+  obrisi2(id: number) {
     this.s.obrisiPost(id)
 
-}
-postavi2(id:number){
-this.s.dodajOglasAdmin(id);
-}
+  }
 
-
-
-// broji_telefone(){
-//   console.log(this.s.telefoni.length);
-
-//     for (let i=0; i<this.s.telefoni.length;i++){
-//       if (this.s.telefoni[i].javno != 1){
-//        this.telefoni_provjera++;
-//       }
-
-//     }
-//     console.log(this.telefoni_provjera);
-
-
-
-
-
-// }
-// broji_postove() {
-//   for (let i = 0; i < this.s.postovi.length; i++) {
-//     if (this.s.postovi[i].javno === null) {
-
-//       this.postovi_provjera = this.postovi_provjera + 1;
-
-
-//     }
-//   }
-// }
-
-
-
-
-
-
+  postavi2(id: number) {
+    this.s.dodajOglasAdmin(id);
+  }
 
 
 }

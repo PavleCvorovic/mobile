@@ -17,6 +17,7 @@ import { AdminBordComponent } from './admin-bord/admin-bord.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import {CookieService} from "ngx-cookie-service";
 import {NgxPaginationModule} from "ngx-pagination";
+import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 
 
 
@@ -30,7 +31,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     PostaviOglasComponent,
     TelefonDetaljiComponent,
     AdminBordComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    DetaljiComponent
   ],
     imports: [
         BrowserModule,

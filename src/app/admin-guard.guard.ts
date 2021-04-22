@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class AdminGuardGuard implements CanActivate {
 constructor(public cookieService:CookieService){}
-  logovan
+  logovan = false;
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean{
 
-return this.logovan;
+     return this.logovan;
 
   }
 

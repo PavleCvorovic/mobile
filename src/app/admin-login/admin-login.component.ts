@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModelGroup } from '@angular/forms';
+
 import { FormBuilder} from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient} from '@angular/common/http'
 import { Router } from '@angular/router';
 import { AdminGuardGuard } from '../admin-guard.guard';
 import { CookieService } from 'ngx-cookie-service';
@@ -27,12 +27,13 @@ export class AdminLoginComponent implements OnInit {
 
   submit()
   {
-      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true}).subscribe(()=>
+      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true})
+        .subscribe(()=>
       {
-
+        this.guard.logovan = true
+        this.router.navigate(['admin']);
       });
-      this.guard.logovan = true
-      this.router.navigate(['admin']);
+
   }
 
 
