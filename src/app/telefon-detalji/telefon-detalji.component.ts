@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServisService } from '../servis.service';
 import { ActivatedRoute, Params, Router} from '@angular/router';
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -10,10 +11,13 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class TelefonDetaljiComponent implements OnInit {
 
-  constructor(public s:ServisService, public route: ActivatedRoute) { }
+  constructor(public s:ServisService, public route: ActivatedRoute,protected http:HttpClient) {
 
+  }
+
+  telefon  = {};
   id = this.route.snapshot.params.id;
-telefonId:any;
+
   brisanjePregled:boolean = false;
 ram_url:string= "assets/ram.png"
  cpu:string="assets/processor.png"
@@ -27,11 +31,19 @@ promjena:number=0;
 
 
   ngOnInit(): void {
- this.s.uzmiTelefonId(this.id);
 
+
+    this.pozovi();
 
   }
 
+
+  pozovi() {
+    this.s.getTelefonId(this.id).subscribe(data => {
+      this.telefon = data;
+      console.log(data);
+    })
+  }
 
   obrisi()
   {

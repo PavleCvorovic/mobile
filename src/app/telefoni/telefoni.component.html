@@ -66,6 +66,7 @@
                               screenReaderPageLabel="page"
                               screenReaderCurrentLabel="You're on page"> </pagination-controls>
 
+
       </div>
       <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
         <span class="sr-only">Loading...</span>
@@ -84,82 +85,43 @@
 
         </div>
                         <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
-
       </div>
-
-
     </div>
-
-
-
-
     <div class="col-md-7" *ngIf="pokazivac_marke===1">
-
       <div class="container">
         <div class="row" style="text-align: center; " >
-
           <div   *ngFor="let a of this.s1.tel_marka_id ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
-
-
               <img src="http://localhost:8000/storage/slike/{{a.slika.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
-
               <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
-
               <p><b>Cijena: </b> {{a.cijena}}</p>
               <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
-
-
 </div>
-
         </div>
         <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
       <div *ngIf="s.prikaz===true" class="col-md-14">
-
         <div class="alert alert-info" role="alert" style="text-align: center">
           <h1 class="alert-heading">Zao nam je...</h1>
           <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
           <hr>
           <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
-
           <img src="https://static.thenounproject.com/png/3271619-200.png">
-
-
         </div>
         <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
-
       </div>
-
-
     </div>
-
-
-
-
     <div class="col-md-7" *ngIf="pokazivac_marke===2" >
-
-
       <div class="container">
         <div class="row" style="text-align: center " >
-
           <div   *ngFor="let a of this.s1.tel_model_naziv ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
-
-
-
               <img src="http://localhost:8000/storage/slike/{{a.slika.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
-
-
               <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
               <p><b>Cijena: </b> {{a.cijena}}</p>
               <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
-
-
-
             <div *ngIf="a.javno!=1">
               <img src="http://srpkolestaric.com/wp-content/uploads/2020/10/uskoro_thumb-210x280.png" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
-
             </div>
           </div>
         </div>
@@ -168,49 +130,16 @@
         </div>
       </div>
       <div *ngIf="s.prikaz===true" class="col-md-14">
-
         <div class="alert alert-info" role="alert" style="text-align: center">
           <h1 class="alert-heading">Zao nam je...</h1>
           <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
           <hr>
           <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
-
           <img src="https://static.thenounproject.com/png/3271619-200.png">
-
-
         </div>
         <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
-
       </div>
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div id="postovi" class="col-md-2" style="border-radius: 1%;text-align: center ">
 
       <h1 class="tekst" >U ovoj sekciji mozete postaviti oglas ! </h1>
@@ -222,24 +151,15 @@
         <button class="btn btn-primary"   (click)="postaviPost()">objavi</button>
         <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
-
           <div *ngIf='b.javno ===1'>
-
-
-
             <pre class="oglas">
               <span>Oglas od : {{b.created_at}}</span> <br>
               <span rows="5" class="embed-responsive">{{b.tekst}}</span></pre>
-
-
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
-
 </div>
 
 

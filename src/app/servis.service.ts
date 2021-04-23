@@ -6,6 +6,7 @@ import {
   HttpParams,
   HttpEventType
 } from '@angular/common/http';
+import {Observable} from "rxjs";
 
 
 
@@ -41,10 +42,6 @@ prikaz:boolean=false;
 
         this.telefoni = posts;
         console.log(this.telefoni);
-
-
-
-
         this.spiner=false;
         let i;
 
@@ -73,9 +70,9 @@ if (this.telefoni.length===0){
 
 
   brisiTelefon(id){
-   let ida=id
-    console.log(ida);
-    return this.http.delete('http://localhost:8000/api/obrisi/'+ ida)
+
+
+    return this.http.delete('http://localhost:8000/api/obrisi/'+ id)
       .subscribe(()=>
       {
 
@@ -175,12 +172,13 @@ posts:any={
     model:'',
     cijena:'',
     opis:'',
-    slika_id:'',
     specifikacije:0,
     prodavac:'',
     kontakt:'',
     javno:0,
     sifra:'aaa',
+      slike:{},
+      
 
 
   }
@@ -294,52 +292,17 @@ models:any={
   }
   telefonId:any;
 
-  uzmiTelefonId(id)
-  {
-      return this.http
-      .get(
-        'http://localhost:8000/api/telefoni/'+ id
-      )
-      .subscribe(
-        posts=>
-        {
-            this.telefonId = posts;
 
-          console.log(this.telefonId)
 
-        }
-      )
-  }
+
+
+
+
 
   postovi_provjera:number= 0;
 
-  // broji_telefone(){
-  //  return  this.http
-  //     .get(
-  //       'http://localhost:8000/api/telefoni')
-  //
-  //
-  //     .subscribe(posts => {
-  //
-  //       this.telefoni = posts;
-  //       console.log(this.telefoni);
-  //       for (let i=0; i<this.telefoni.length;i++){
-  //         if (this.telefoni[i].javno != 1){
-  //          this.telefoni_provjera++;
-  //         }
-  //
-  //       }
-  //       console.log(this.telefoni_provjera);
-  //     })
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  // }
+
+
   broji_postove() {
     return  this.http
     .get(
@@ -361,6 +324,10 @@ models:any={
   }
 
 logged = false;
+
+  getTelefonId(id:any) :Observable<any> {
+    return this.http.get('http://localhost:8000/api/telefoni/'+ id);
+  }
 
 logovan()
 {

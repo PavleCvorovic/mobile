@@ -6,6 +6,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
 import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
+import {coerceNumberProperty} from "@angular/cdk/coercion";
 
 
 
@@ -53,9 +54,7 @@ file:any;
   kontakt='';
   specifikacije='';
   javno=1;
-  // slika1 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
-  // slika2 = 'https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
-  // slika3 ='https://tvtopsound.com/media/news/nijesmoMiOdJuceTvSerija/crop2/nijesmo-mi-od-juce-1.jpg';
+
   procesor='';
   baterija='';
   ram='';
@@ -98,7 +97,7 @@ photo:any=
 
   onChangeFile(event: any): void {
 
-    this.photo.slika1 = event.target.files[0];
+    this.s.telefonBaza.slike = event.target.files[0];
   }
   onChangeFile1(event: any): void {
     this.photo.slika2 = event.target.files[0];
@@ -107,26 +106,11 @@ photo:any=
     this.photo.slika3 = event.target.files[0];
   }
 
-  slike(){
-
-    this.s1.photo.slika1 = this.photo.slika1;
-    this.s1.photo.slika2 = this.photo.slika2;
-    this.s1.photo.slika3 = this.photo.slika3;
-
-
-    this.s1.postavislike();
-
-    // window.console.log('description ', this.desc);
-    // window.console.log('fajl', event);
-    // // this.filesUploadService.create(event.target.files[0],this.obvId!,"PDO", this.description, this.link).subscribe(
-    // this.filesUploadService.create(this.fajl, this.obvId!, 'PDO', this.desc!, this.link!).subscribe(
-    //   (res: HttpResponse<IFilesUpload>) => this.onSuccessUpload(res.body),
-    //   (error: any) => this.onError(error.body, error.headers)
-    // );
 
 
 
-  }
+
+
 
 
   onSubmit(signupForm:NgForm)
@@ -174,11 +158,10 @@ photo:any=
 
       this.s.telefonBaza.mark_id = this.marka;
 
-      // this.s.telefonBaza.model = 1;
+
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
-      // this.s.telefonBaza.slika_id = s+1;
-      // this.s.telefonBaza.specifikacije = conf + 1;
+
       this.s.telefonBaza.model = this.model
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
@@ -190,7 +173,6 @@ photo:any=
 
       this.s.dodajTelefon();
 
-      // console.log(this.s.telefonBaza.konfiguracije);
 
       this.procesor = "";
       this.baterija='';
@@ -206,7 +188,7 @@ photo:any=
       this.prodavac='';
       this.kontakt='';
       this.specifikacije='';
-      // this.s.dodajKonfiguracije();
+
       console.log(this.s.telefonBaza);
 
 
