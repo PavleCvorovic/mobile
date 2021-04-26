@@ -39,9 +39,8 @@ export class Servis1Service {
   }
 
   photo: any = {
-    slika1: '',
-    slika2: '',
-    slika3: ''
+    slika:"",
+    telefon_id:""
   }
   slika:any;
 
@@ -50,9 +49,8 @@ export class Servis1Service {
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('slika1', this.photo.slika1)
-    params.append('slika2', this.photo.slika2)
-    params.append('slika3', this.photo.slika3)
+    params.append('slika', this.photo.slika)
+    params.append('telefon_id', this.photo.telefon_id);
     this.http
       .post('http://localhost:8000/api/file', params
 

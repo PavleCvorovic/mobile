@@ -177,8 +177,11 @@ posts:any={
     kontakt:'',
     javno:0,
     sifra:'aaa',
-      slike:{},
-      
+      photo:{
+        slika:'',
+        telefon_id:''
+      },
+
 
 
   }

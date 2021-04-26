@@ -88,26 +88,14 @@ let b:any=[];
      this.upozorenje_selekt=false;
    }
 }
-photo:any=
-{
-  slika1:'',
-  slika2:'',
-  slika3:''
-}
+slika:any;
 
   onChangeFile(event: any): void {
 
-    let a = event.target.files[0];
-    var params = new FormData();
-    params.append('slika1', a)
-    this.s.telefonBaza.slike=params;
+    this.slika = event.target.files[0];
+
   }
-  onChangeFile1(event: any): void {
-    this.photo.slika2 = event.target.files[0];
-  }
-  onChangeFile2(event: any): void {
-    this.photo.slika3 = event.target.files[0];
-  }
+
 
 
 
@@ -170,11 +158,16 @@ photo:any=
       this.s.telefonBaza.kontakt = this.kontakt;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
+
       this.s.spiner=true;
+      this.s1.photo.slika = this.slika;
+      this.s1.photo.telefon_id = this.s.telefonBaza.id;
 
 
 
       this.s.dodajTelefon();
+      this.s1.postavislike();
+
 
 
       this.procesor = "";
