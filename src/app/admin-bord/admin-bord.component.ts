@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
-import {Servis1Service} from "../servis1.service";
+import {Servis1Service} from '../servis1.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AdminGuardGuard } from '../admin-guard.guard';
-import {CookieService} from "ngx-cookie-service";
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-admin-bord',
@@ -11,7 +11,7 @@ import {CookieService} from "ngx-cookie-service";
   styleUrls: ['./admin-bord.component.css']
 })
 export class AdminBordComponent implements OnInit {
-  telefon_oglas:number=0;
+  telefon_oglas = 0;
   t: any;
 
 
@@ -19,7 +19,7 @@ export class AdminBordComponent implements OnInit {
   constructor(public  s: ServisService, public s1: Servis1Service, private domSanitizer: DomSanitizer, public guard: AdminGuardGuard, public cookie: CookieService) {
   }
 
-  jwt: any
+  jwt: any;
 
 
   ngOnInit(): void {
@@ -49,7 +49,7 @@ export class AdminBordComponent implements OnInit {
   }
 
   obrisi2(id: number) {
-    this.s.obrisiPost(id)
+    this.s.obrisiPost(id);
 
   }
 

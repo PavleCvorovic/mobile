@@ -101,7 +101,7 @@ if (this.telefoni.length===0){
 
   obrisiPost(id)
   {
-    return this.http.delete('http://localhost:8000/api/obrisi-oglas/'+ id)
+    this.http.delete('http://localhost:8000/api/obrisi-oglas/'+ id)
       .subscribe(()=>
       {
 
