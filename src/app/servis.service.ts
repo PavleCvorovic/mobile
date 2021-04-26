@@ -20,6 +20,7 @@ telefoni:any=[];
 modeli:any=[];
 marke:any=[];
 postovi:any=[];
+  postovi1:any=[];
 prikaz:boolean=false;
   id_telefona;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
@@ -289,6 +290,19 @@ models:any={
       .subscribe(posts => {
         this.postovi = posts;
         console.log(this.postovi);
+
+
+      })
+  }
+  dajpostoveadminu(){
+    return this.http
+      .get(
+        'http://localhost:8000/api/oglasadmin')
+
+
+      .subscribe(posts => {
+        this.postovi1 = posts;
+     
 
 
       })
