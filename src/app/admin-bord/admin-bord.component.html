@@ -77,7 +77,7 @@
             Korisnici
           </a>
 
-          <a href="#" onclick="return false;" class="nav-link text-white">
+          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=3">
             Ukloni telefon
           </a>
 
@@ -157,6 +157,45 @@
       </div>
 
 
+      <div class="container" *ngIf="telefon_oglas===3">
+
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+
+            <th scope="col">Id</th>
+            <th scope="col">Model</th>
+            <th scope="col">Marka</th>
+            <th scope="col">Korisnik</th>
+            <th scope="col">Obrisi</th>
+
+
+          </tr>
+          </thead>
+          <tbody *ngFor= "let a of this.s.telefoni" >
+          <tr >
+
+            <td>{{a.id}}</td>
+            <td>{{a.model}}</td>
+            <td>{{a.naziv}}</td>
+            <td>{{a.prodavac}}</td>
+            <td><button class="btn btn-danger" (click)="this.s.brisiTelefon(a.id)"> Obrisi</button></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+          </div>
+
+
+
+
+        </div>
 
 
 
@@ -187,4 +226,3 @@
 
 </div>
 
-</div>
