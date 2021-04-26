@@ -97,7 +97,10 @@ photo:any=
 
   onChangeFile(event: any): void {
 
-    this.s.telefonBaza.slike = event.target.files[0];
+    let a = event.target.files[0];
+    var params = new FormData();
+    params.append('slika1', a)
+    this.s.telefonBaza.slike=params;
   }
   onChangeFile1(event: any): void {
     this.photo.slika2 = event.target.files[0];
