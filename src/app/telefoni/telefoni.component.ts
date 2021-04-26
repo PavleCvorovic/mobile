@@ -1,9 +1,9 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
 
-import { ActivatedRoute, Params, Router} from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
-import { DomSanitizer } from '@angular/platform-browser';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 @Component({
@@ -38,20 +38,17 @@ nextTelefon:boolean=false;
 
 postaviPost(){
 
-    this.s.posts.tekst=this.objava
+if(this.objava!=='') {
+  this.s.posts.tekst = this.objava
   this.s.dodajPost();
-  alert('Dodat oglas, batali da kucas!!!');
-  this.objava="";
-
+  this.objava = "";
+  Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
+}else {
+  Swal.fire('Zao nam je...', 'Pokušali ste da postavite prazan oglas !', 'error')
+}
+  this.objava = "";
 }
 
-// proba(a){
-//   this.s1.prototip_slike(a);
-//
-//
-//
-//
-// }
 
 
 

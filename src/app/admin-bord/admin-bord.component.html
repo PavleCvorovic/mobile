@@ -36,7 +36,7 @@
 
 
 
-<span *ngIf="s.postovi_provjera===null">
+<span *ngIf="s.postovi_provjera===0">
           <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=1">Novi komentari
 
 
@@ -48,7 +48,7 @@
           </a>
   </span>
 
-          <span *ngIf="s.postovi_provjera !==null">
+          <span *ngIf="s.postovi_provjera >null">
           <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=1">Novi komentari
 
 
@@ -111,7 +111,7 @@
 
               <th scope="col">Id</th>
               <th scope="col">Oglas</th>
-              <th scope="col">Objavi</th>
+              <th scope="col" >Objavi</th>
               <th scope="col">Obrisi</th>
             </tr>
           </thead>
@@ -120,7 +120,9 @@
 
               <td>{{a.id}}</td>
               <td>{{a.tekst}}</td>
-              <td><button class="btn-primary" (click)="postavi2(a.id)" >Objavi</button></td>
+              <td ><button class="btn-primary" (click)="postavi2(a.id)" >Objavi</button></td>
+
+
               <td><button class="btn-danger" (click)="obrisi2(a.id)">Obrisi</button></td>
 
             </tr>
