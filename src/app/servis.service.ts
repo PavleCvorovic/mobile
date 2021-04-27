@@ -336,20 +336,14 @@ models:any={
   broji_postove() {
     return  this.http
     .get(
-      'http://localhost:8000/api/oglas')
+      'http://localhost:8000/api/oglasadmin')
 
 
     .subscribe(posts => {
 
       this.postovi = posts;
       console.log(this.postovi);
-      for (let i=0; i<this.postovi.length;i++){
-        if (this.postovi[i].javno != 1){
-         this.postovi_provjera++;
-        }
-
-      }
-      console.log(this.postovi_provjera);
+this.postovi_provjera=this.postovi.length;
     })
   }
 

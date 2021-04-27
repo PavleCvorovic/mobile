@@ -4,7 +4,7 @@ import {Servis1Service} from '../servis1.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AdminGuardGuard } from '../admin-guard.guard';
 import {CookieService} from 'ngx-cookie-service';
-import {Swal} from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-admin-bord',
@@ -64,13 +64,13 @@ export class AdminBordComponent implements OnInit {
          icon: 'success'
         } )
         this.s.obrisiPost(id);
-
+        this.ngOnInit()
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire({
           text: 'Oglas nije izbrisan',
           icon: 'error'
         } )
-        this.ngOnInit()}
+       }
     })
 
   }
