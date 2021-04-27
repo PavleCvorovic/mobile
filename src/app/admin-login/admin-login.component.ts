@@ -20,8 +20,11 @@ export class AdminLoginComponent implements OnInit {
     username:'',
     password:''
   });
-
+  jwt= this.cookieService.get('jwt')
   ngOnInit(): void {
+    console.log(this.jwt);
+
+
 
   }
 

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'model', component : ModeliComponent},
   {path: 'postavi_oglas', component : PostaviOglasComponent},
   {path: 'telefon-detalji/:id', component:TelefonDetaljiComponent},
-  {path: 'telefon-detalji-admin/:id', component:DetaljiComponent},
+  {path: 'telefon-detalji-admin/:id', component:DetaljiComponent, canActivate:[AdminGuardGuard]},
   {path: 'admin', component:AdminBordComponent, canActivate:[AdminGuardGuard]},
   {path:  'admin-login', component:AdminLoginComponent},
 ];
