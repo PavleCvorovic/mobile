@@ -50,6 +50,7 @@ export class AdminBordComponent implements OnInit {
   }
 
   obrisi2(id: number) {
+
     Swal.fire({
       title: 'Jeste li sigurni?',
       text: 'Necete moći povratiti ovaj oglas!',
@@ -64,8 +65,12 @@ export class AdminBordComponent implements OnInit {
          icon: 'success'
         } )
         this.s.obrisiPost(id);
+
         this.ngOnInit()
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+
+
+      else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire({
           text: 'Oglas nije izbrisan',
           icon: 'error'

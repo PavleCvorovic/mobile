@@ -3,14 +3,6 @@
   <div class="row">
        <div class="col-md-12" id="header1" >   <span class="float-right"> <img  class="img-fluid" alt="Responsive image" style="height: 150px"  src="assets/mobileg.gif" ></span>
 
-
-
-
-
-
-
-
-
        </div>
     <div  >    <img  class="img-fluid" alt="Responsive image"  src="assets/reklama.gif"  ></div>
 
@@ -25,21 +17,10 @@
  <span (click)="prosilijedinaziv(b.model_naziv)">  <l1  class="list-group-item list-group-item-success" id="model"  >{{b.model_naziv}}</l1></span >
 </div></span>
 </div>
-
-
-
-
     </div>
-
-
-
-
     <div class="col-md-7" *ngIf="pokazivac_marke===0">
-
-
      <div class="container">
       <div class="row" style="text-align: center " >
-
         <div   *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p

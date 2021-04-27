@@ -7,7 +7,7 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
 import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
 import {coerceNumberProperty} from "@angular/cdk/coercion";
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 
@@ -118,7 +118,7 @@ urls=[];
   onSubmit(signupForm:NgForm)
   {
     if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.sifra  != null){
-      this.promjena1=true;
+
 
       this.s.models.marka_id = this.marka;
       this.s.konfiguracijeBaza.procesor = this.procesor;
@@ -207,9 +207,7 @@ urls=[];
         this.s1.photo.slika = this.urls[i];
         this.s1.photo.telefon_id = t;
          this.s1.postavislike();
-        // setTimeout(function(){
-        //   this.s1.postavislike();
-        // },7000);
+
 
       }
 
@@ -230,13 +228,13 @@ urls=[];
       this.kontakt='';
       this.specifikacije='';
 
-      console.log(this.s.telefonBaza);
 
 
+      Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
 
     }else{
 
-        alert('Popunite sva polja u formi.')
+      Swal.fire('Upssss...', 'Popunite sva polja oznacena sa "*" ', 'warning')
     }
     // this.s.models.model_ime = this.cijena;
     // console.log(this.s.models.model_ime);

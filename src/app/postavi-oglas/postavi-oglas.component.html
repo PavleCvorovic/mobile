@@ -10,7 +10,7 @@
     <form class="aa"  #f="ngForm" (ngSubmit)="onSubmit(f.value)" >
       <div ngModelGroup = "unos_telefona" #unos_telefona = "ngModelGroup" >
 
-      <label > Odaberite marku : </label>
+      <label > Odaberite marku : *</label>
       <div>
 
       <select [(ngModel)]= "marka" name="marka"  >
@@ -18,7 +18,7 @@
       <option value=" " ></option>
         <option *ngFor="let a of this.s.marke " [value]="a.id">{{a.marka_naziv}}</option>
       </select><br>
-        <label > Odaberite model : </label>
+        <label > Odaberite model : *</label>
 
 
         <div (click)="marka_model()">
@@ -33,7 +33,7 @@
       </div>
       </div>
 
-      <label > Unesi cijenu uredjaja : </label>
+      <label > Unesi cijenu uredjaja : *</label>
       <div  style="text-align: center;">
         <input [(ngModel)] = "cijena" name="cijena"  class="form-control"   placeholder="" style="width:80px ">
 
@@ -45,17 +45,17 @@
 
       </div>
       <div class="form-group ">
-        <label >Prodavac:</label>
+        <label >Prodavac: *</label>
         <input [(ngModel)] = "prodavac" name="prodavac" class="form-control"   placeholder="">
       </div>
       <div class="form-group ">
-        <label >Unesi kontakt telefon:</label>
+        <label >Unesi kontakt telefon: *</label>
         <input [(ngModel)] = "kontakt" name="kontakt" class="form-control"   placeholder="">
       </div>
       <div class="form-group ">
 
 
-        <label ><b>Unesi konfiguracije:</b></label><br>
+        <label ><b>Unesi konfiguracije: </b></label><br>
         <div class="row">
 
         <div class='col'>
@@ -83,13 +83,13 @@
       </div>
 
       <div class="form-group" >
-        <label >Ubaci slike</label>
+        <label >Ubaci slike *</label>
         <div class="col-lg-4">
         <input class="btn btn-primary" type="file" id="myFile" name="slika"   (change)="onChangeFile($event)" multiple>
         <img *ngFor="let url of urls" [src] = "url" height="50">
 
       </div>
-      <label>Postavite sifru proizvoda pomocu koje cete kasnije imati mogucnost da sami uklonite proizvod kad to pozelite</label>
+      <label>Postavite sifru proizvoda pomocu koje cete kasnije imati mogucnost da sami uklonite proizvod kad to pozelite *</label>
       <input [(ngModel)] = "sifra" name="sifra" class="form-control"   placeholder="" style="width: 150px;">
 
 
