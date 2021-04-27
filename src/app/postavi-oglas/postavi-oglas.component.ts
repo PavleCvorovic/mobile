@@ -34,6 +34,7 @@ file:any;
   file2:any;
   file3:any;
   ngOnInit(): void {
+    this.s.uzmiSveTelefone();
     this.s.dajmarku();
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
@@ -43,7 +44,7 @@ file:any;
 
 
   }
-  slika1:any;
+  slika:any;
 
 
   marka='';
@@ -88,11 +89,21 @@ let b:any=[];
      this.upozorenje_selekt=false;
    }
 }
-slika:any;
+urls=[];
 
   onChangeFile(event: any): void {
 
-    this.slika = event.target.files[0];
+    {
+      for(let i = 0; i<10;i++)
+      {
+        if(event.target.files)
+        {
+       let j = event.target.files[i];
+       this.urls.push(j);
+      //  console.log(this.urls[i].name);
+        }
+      }
+    }
 
   }
 
@@ -139,6 +150,7 @@ slika:any;
       }
       console.log(conf+1);
 
+
       // let sl = 0;
       // this.slike();
 
@@ -166,7 +178,40 @@ slika:any;
 
 
       this.s.dodajTelefon();
-      this.s1.postavislike();
+      // let t = this.s.telefoni[this.s.telefoni.length-1].id;
+      let t = 0;
+      for(let i =0;i<this.s.telefoniZaSlike.length;i++)
+      {
+        // if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
+        // {
+        //   // console.log(this.s.konfiguracijeBaza.procesor);
+        //   // console.log(this.s.konfiguracije[i].procesor);
+        //   conf = this.s.specifikacije[i].id;
+        // }
+        if(t<this.s.telefoniZaSlike[i].id)
+        {
+          t = this.s.telefoniZaSlike[i].id;
+        }
+      }
+      console.log(t+1 + " telefoni");
+
+
+      t = t+1;
+
+      for(let i = 0; i<this.urls.length;i++)
+      {
+        if(this.urls[i] == null)
+        {
+          break;
+        }
+        this.s1.photo.slika = this.urls[i];
+        this.s1.photo.telefon_id = t;
+         this.s1.postavislike();
+        // setTimeout(function(){
+        //   this.s1.postavislike();
+        // },7000);
+
+      }
 
 
 

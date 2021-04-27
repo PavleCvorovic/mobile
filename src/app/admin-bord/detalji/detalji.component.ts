@@ -31,7 +31,7 @@ this.pozovi();
 
   }
   pozovi() {
-    this.s.getTelefonId(this.id).subscribe(data => {
+    return this.s.getTelefonId(this.id).subscribe(data => {
       this.telefon = data;
       console.log(data);
     })

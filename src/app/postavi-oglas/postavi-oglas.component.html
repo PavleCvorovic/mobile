@@ -86,7 +86,8 @@
       <div class="form-group" >
         <label >Ubaci slike</label>
         <div class="col-lg-4">
-        <input class="btn btn-primary" type="file" id="myFile" name="slika1" (change)="onChangeFile($event)">
+        <input class="btn btn-primary" type="file" id="myFile" name="slika"   (change)="onChangeFile($event)" multiple>
+        <img *ngFor="let url of urls" [src] = "url" height="50">
 
       </div>
       <label>Postavite sifru proizvoda pomocu koje cete kasnije imati mogucnost da sami uklonite proizvod kad to pozelite</label>

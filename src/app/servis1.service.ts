@@ -109,9 +109,7 @@ export class Servis1Service {
 
       .subscribe(posts => {
         this.tel_admin = posts;
-
-
-              this.telefoni_provjera=this.tel_admin.length
+        this.telefoni_provjera=this.tel_admin.length
 
 
 

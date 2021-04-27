@@ -25,7 +25,20 @@ prikaz:boolean=false;
   id_telefona;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
+  telefoniZaSlike:any;
 
+  uzmiSveTelefone()
+  {
+    return this.http
+        .get(
+          'http://localhost:8000/api/sviTelefoni')
+
+
+        .subscribe(posts => {
+            this.telefoniZaSlike = posts;
+        }
+        )
+  }
 
 
 
@@ -302,7 +315,7 @@ models:any={
 
       .subscribe(posts => {
         this.postovi1 = posts;
-     
+
 
 
       })
