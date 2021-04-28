@@ -90,6 +90,7 @@ let b:any=[];
    }
 }
 urls=[];
+prikazSlike=[];
 
   onChangeFile(event: any): void {
 
@@ -100,9 +101,17 @@ urls=[];
         {
        let j = event.target.files[i];
        this.urls.push(j);
+       var reader = new FileReader();
+       reader.readAsDataURL(event.target.files[i]);
+       reader.onload=(e:any)=>
+       {
+         this.prikazSlike.push(e.target.result);
+       }
       //  console.log(this.urls[i].name);
         }
       }
+
+
     }
 
   }
@@ -117,7 +126,12 @@ urls=[];
 
   onSubmit(signupForm:NgForm)
   {
-    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.sifra  != null){
+    if( this.cijena && this.opis && this.prodavac && this.kontakt && this.marka && this.sifra != null){
+      if(this.urls.length>0)
+      {
+
+
+
 
 
       this.s.models.marka_id = this.marka;
@@ -180,6 +194,7 @@ urls=[];
       this.s.dodajTelefon();
       // let t = this.s.telefoni[this.s.telefoni.length-1].id;
       let t = 0;
+
       for(let i =0;i<this.s.telefoniZaSlike.length;i++)
       {
         // if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
@@ -206,7 +221,12 @@ urls=[];
         }
         this.s1.photo.slika = this.urls[i];
         this.s1.photo.telefon_id = t;
-         this.s1.postavislike();
+
+        setTimeout(()=>{                           //<<<---using ()=> syntax
+          this.s1.postavislike();
+     }, 3000);
+
+
 
 
       }
@@ -243,7 +263,7 @@ urls=[];
 
 
 
-
+  }
 
   }
 
