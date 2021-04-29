@@ -7,19 +7,10 @@
     <div  >    <img  class="img-fluid" alt="Responsive image"  src="assets/reklama.gif"  ></div>
 
     <div class="col-md-3" >
-      <img src="assets/refresh.png" style="height: 25pt;width: 25pt" (click)="pokazivac_marke=0 ;this.dropmodel=false;this.s.prikaz=false">
 
-<div class="list-group" *ngFor="let a of this.s.marke " >
-
-  <a  class="list-group-item list-group-item-primary" id="marke" (click)="proslijedimarku(a.id)">{{a.marka_naziv}} <img style="height: 20px;width: 20px;text-align: right" src="{{a.slika}}"> <img class="rounded float-right" src="assets/back.png"*ngIf="dropmodel==true" alt="Responsive image"style="height: 10pt;width: 10pt"></a>
-  <span *ngFor="let b of this.s1.tel_marka_model">
-  <div class="dropdown" *ngIf="dropmodel===true && a.id===b.marka_id">
- <span (click)="prosilijedinaziv(b.model_naziv)">  <l1  class="list-group-item list-group-item-success" id="model"  >{{b.model_naziv}}</l1></span >
-</div></span>
-</div>
     </div>
     <div class="col-md-7" *ngIf="pokazivac_marke===0">
-     <div class="container">
+     <div class="container" style="margin-top: 3rem">
       <div class="row" style="text-align: center " >
         <div   *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
@@ -69,59 +60,7 @@
                         <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
       </div>
     </div>
-    <div class="col-md-7" *ngIf="pokazivac_marke===1">
-      <div class="container">
-        <div class="row" style="text-align: center; " >
-          <div   *ngFor="let a of this.s1.tel_marka_id ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
-              <img src="http://localhost:8000/storage/slike/{{a.slika.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
-              <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
-              <p><b>Cijena: </b> {{a.cijena}}</p>
-              <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
-</div>
-        </div>
-        <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </div>
-      <div *ngIf="s.prikaz===true" class="col-md-14">
-        <div class="alert alert-info" role="alert" style="text-align: center">
-          <h1 class="alert-heading">Zao nam je...</h1>
-          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
-          <hr>
-          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
-          <img src="https://static.thenounproject.com/png/3271619-200.png">
-        </div>
-        <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
-      </div>
-    </div>
-    <div class="col-md-7" *ngIf="pokazivac_marke===2" >
-      <div class="container">
-        <div class="row" style="text-align: center " >
-          <div   *ngFor="let a of this.s1.tel_model_naziv ;index as i"  class="col-md-3" style="border-style: solid;border-width: 1px">
-              <img src="http://localhost:8000/storage/slike/{{a.slika.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
-              <p><b>Marka:</b>{{a.mark_id.marka_naziv}}  </p>
-              <p><b>Cijena: </b> {{a.cijena}}</p>
-              <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
-            <div *ngIf="a.javno!=1">
-              <img src="http://srpkolestaric.com/wp-content/uploads/2020/10/uskoro_thumb-210x280.png" class="img-fluid" alt="Responsive image" style="width:200px;height: 200px;">
-            </div>
-          </div>
-        </div>
-        <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </div>
-      <div *ngIf="s.prikaz===true" class="col-md-14">
-        <div class="alert alert-info" role="alert" style="text-align: center">
-          <h1 class="alert-heading">Zao nam je...</h1>
-          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
-          <hr>
-          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
-          <img src="https://static.thenounproject.com/png/3271619-200.png">
-        </div>
-        <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
-      </div>
-    </div>
+
     <div id="postovi" class="col-md-2" style="border-radius: 1%;text-align: center ">
 
       <h1 class="tekst" >U ovoj sekciji mozete postaviti oglas ! </h1>
