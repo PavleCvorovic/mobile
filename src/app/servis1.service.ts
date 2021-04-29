@@ -71,7 +71,7 @@ export class Servis1Service {
       .subscribe(posts => {
         this.tel_marka_model = posts;
 
-
+        console.log(this.tel_marka_model)
       })
 
 
@@ -86,6 +86,7 @@ export class Servis1Service {
 
       .subscribe(posts => {
         this.tel_model_naziv = posts;
+        console.log(this.tel_model_naziv)
         this.s.spiner=false;
 
         if (this.tel_model_naziv.length===0){

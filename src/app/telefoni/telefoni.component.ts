@@ -12,8 +12,8 @@ import {Options} from "ng5-slider";
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-  value: number = 40;
-  highValue: number = 60;
+  value: number = 0;
+  highValue: number = 2000;
   options: Options = {
     floor: 0,
     ceil: 2000}

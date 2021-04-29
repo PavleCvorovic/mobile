@@ -125,10 +125,10 @@ if (this.telefoni.length===0){
 
 
 
-  dajmodel(){
+  dajmodel(id:number){
     return this.http
       .get(
-        'http://localhost:8000/api/model')
+        'http://localhost:8000/api/model/'+id)
 
 
       .subscribe(posts => {
@@ -146,7 +146,7 @@ if (this.telefoni.length===0){
 
       .subscribe(posts => {
         this.marke = posts;
-
+        console.log(this.marke)
 
 
       })
