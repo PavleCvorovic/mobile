@@ -29,6 +29,7 @@ nextTelefon:boolean=false;
   this.s.dajtelefone();
     this.s.dajpostove();
     this.s.dajmarku();
+    this.s.dajmodel();
 
 
 

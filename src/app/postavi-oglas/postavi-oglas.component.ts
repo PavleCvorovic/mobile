@@ -252,7 +252,7 @@ prikazSlike=[];
 
       Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
 
-    }else{
+    }}else{
 
       Swal.fire('Upssss...', 'Popunite sva polja oznacena sa "*" ', 'warning')
     }
@@ -263,7 +263,7 @@ prikazSlike=[];
 
 
 
-  }
+
 
   }
 
