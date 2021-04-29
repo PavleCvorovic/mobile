@@ -6,11 +6,16 @@
        </div>
     <div  >    <img  class="img-fluid" alt="Responsive image"  src="assets/reklama.gif"  ></div>
 
-    <div class="col-md-3" >
+    <div class="col-md-3 text-center">
+      <h1>FILTER</h1>
+
+
+      <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+
 
     </div>
     <div class="col-md-7" *ngIf="pokazivac_marke===0">
-     <div class="container" style="margin-top: 3rem">
+     <div class="container" style="margin-top: 3rem;">
       <div class="row" style="text-align: center " >
         <div   *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
@@ -21,7 +26,6 @@
           <p><b>Cijena: </b> {{a.cijena}}</p>
 
 <img src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
-
 
 
           <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>

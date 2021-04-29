@@ -19,6 +19,7 @@ import {CookieService} from "ngx-cookie-service";
 import {NgxPaginationModule} from "ngx-pagination";
 import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 import { RouterLink, RouterModule } from '@angular/router';
+import {Ng5SliderModule} from "ng5-slider";
 
 
 
@@ -44,7 +45,8 @@ import { RouterLink, RouterModule } from '@angular/router';
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+      Ng5SliderModule
     ],
   providers: [DatePipe, CookieService],
   bootstrap: [AppComponent]
