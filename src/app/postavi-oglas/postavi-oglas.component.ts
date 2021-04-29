@@ -219,11 +219,11 @@ prikazSlike=[];
         {
           break;
         }
-        this.s1.photo.slika = this.urls[i];
-        this.s1.photo.telefon_id = t;
 
         setTimeout(()=>{                           //<<<---using ()=> syntax
-          this.s1.postavislike();
+          this.s1.photo.slika = this.urls[i];
+        this.s1.photo.telefon_id = t;
+        this.s1.postavislike();
      }, 3000);
 
 
