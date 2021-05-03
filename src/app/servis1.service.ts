@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class Servis1Service {
   tel_marka_id: any;
-  tel_marka_model: any;
+
   tel_model_naziv: any;
   tel_admin:any;
   telefoni_provjera:number=0;
@@ -62,20 +62,7 @@ export class Servis1Service {
       })
   }
 
-  dajmodelmarke(broj) {
-    return this.http
-      .get(
-        'http://localhost:8000/api/model/' + broj)
 
-
-      .subscribe(posts => {
-        this.tel_marka_model = posts;
-
-        console.log(this.tel_marka_model)
-      })
-
-
-  }
 
   dajtelefonpomodelu(naziv) {
     this.s.spiner=true;

@@ -14,7 +14,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ServisService {
-
+  tel_marka_model:any;
   spiner:boolean=false;
 telefoni:any=[];
 modeli:any=[];
@@ -125,19 +125,22 @@ if (this.telefoni.length===0){
 
 
 
-  dajmodel(id:number){
+  dajmodel(){
     return this.http
+
       .get(
-        'http://localhost:8000/api/model/'+id)
+        'http://localhost:8000/api/model/')
 
 
       .subscribe(posts => {
         this.modeli = posts;
-        console.log(this.modeli);
+
+
 
 
       })
   }
+
   dajmarku(){
     return this.http
       .get(
@@ -146,13 +149,26 @@ if (this.telefoni.length===0){
 
       .subscribe(posts => {
         this.marke = posts;
-        console.log(this.marke)
+
 
 
       })
   }
 
+  dajmodelmarke(broj) {
+    return this.http
+      .get(
+        'http://localhost:8000/api/model/' + broj)
 
+
+      .subscribe(posts => {
+        this.tel_marka_model = posts;
+
+        console.log(this.tel_marka_model)
+      })
+
+
+  }
 
 
 

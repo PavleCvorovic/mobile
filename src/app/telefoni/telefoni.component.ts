@@ -12,6 +12,7 @@ import {Options} from "ng5-slider";
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
+  x:any
   value: number = 0;
   highValue: number = 2000;
   options: Options = {
@@ -35,7 +36,7 @@ nextTelefon:boolean=false;
   this.s.dajtelefone();
     this.s.dajpostove();
     this.s.dajmarku();
-    this.s.dajmodel();
+
 
 
 
@@ -59,18 +60,9 @@ if(this.objava!=='') {
 
 
 
-proslijedimarku(id){
-    this.s1.dajtelefonpomarci(id);
-    this.pokazivac_marke=1;
-    this.s1.dajmodelmarke(id);
-    if(this.dropmodel===false){
-      this.dropmodel=true;
+proba(value){
 
-    }
-    else {
-      this.dropmodel=false;
-
-}
+  this.s.dajmodelmarke(value);
 
 
 }
