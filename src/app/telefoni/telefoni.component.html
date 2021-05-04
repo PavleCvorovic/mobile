@@ -8,13 +8,13 @@
 
     <div class="col-md-3 text-center">
       <h1>FILTER</h1>
-
+<form>
 
       <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
 
 
-<div    (change)="proba(f.value)"  >
-      <select   #f>
+  <div    (change)="proba(f.value)"  >
+      <select   #f class="form-control">
         <option  >Izaberite marku</option>
        <option [value]="a.id"  *ngFor="let a of this.s.marke"  > {{a.marka_naziv}} </option >
 
@@ -22,13 +22,14 @@
 
 </div>
   <div   >
-      <select  >
+      <select  class="form-control" >
         <option >Izaberite model</option>
         <option *ngFor="let b of this.s.tel_marka_model"  >{{b.model_naziv}}</option>
 
       </select>
 
 </div>
+</form>
       <br>
 <button class="btn btn-success" style="margin-top: 2rem">Filtriraj</button>
     </div>
