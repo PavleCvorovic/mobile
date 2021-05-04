@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit {
   });
   jwt= this.cookieService.get('jwt')
   ngOnInit(): void {
-    console.log(JSON.parse(this.cookieService.get('user')));
+
 
 
 
