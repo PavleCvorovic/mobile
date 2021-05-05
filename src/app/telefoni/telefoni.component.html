@@ -1,73 +1,78 @@
-
 <div class="container-fluid">
   <div class="row">
-       <div class="col-md-12" id="header1" >   <span class="float-right"> <img  class="img-fluid" alt="Responsive image" style="height: 150px"  src="assets/mobileg.gif" ></span>
+    <div class="col-md-12" id="header1"><span class="float-right"> <img alt="Responsive image" class="img-fluid"
+                                                                        src="assets/mobileg.gif" style="height: 150px"></span>
 
-       </div>
-    <div  >    <img  class="img-fluid" alt="Responsive image"  src="assets/reklama.gif"  ></div>
+    </div>
+    <div><img alt="Responsive image" class="img-fluid" src="assets/reklama.gif"></div>
 
     <div class="col-md-3 text-center">
       <h1>FILTER</h1>
-<form>
+      <form>
 
-      <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
-
-
-  <div    (change)="proba(f.value)"  >
-      <select   #f class="form-control">
-        <option  >Izaberite marku</option>
-       <option [value]="a.id"  *ngFor="let a of this.s.marke"  > {{a.marka_naziv}} </option >
-
-      </select >
-
-</div>
-  <div   >
-      <select  class="form-control" >
-        <option >Izaberite model</option>
-        <option *ngFor="let b of this.s.tel_marka_model"  >{{b.model_naziv}}</option>
-
-      </select>
-
-</div>
-</form>
-      <br>
-<button class="btn btn-success" style="margin-top: 2rem">Filtriraj</button>
-    </div>
-    <div class="col-md-7" *ngIf="pokazivac_marke===0">
-     <div class="container" style="margin-top: 3rem;">
-      <div class="row" style="text-align: center " >
-        <div   *ngFor="let a of this.s.telefoni | paginate: {
-                                                      itemsPerPage:12,
-                                                      currentPage: p
-                                                       }"   class="col-md-3" style="border-style: solid;border-width: 1px; border-color: black;" >
-          <p><b >Marka:</b>{{a.naziv}}  </p>
-          <p><b>Model:</b>{{ a.model }}</p>
-          <p><b>Cijena: </b> {{a.cijena}}</p>
-
-<img src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="width:400px;height: 200px;">
+        <ng5-slider   [(highValue)]="this.s1.filter.cijena_max" [(value)]="this.s1.filter.cijena_min" [options]="options" (change)="postavi_parametre_cijena()"></ng5-slider>
 
 
-          <button class="btn btn-primary"  [routerLink]="['/telefon-detalji',a.id]">Pogledaj detaljno</button>
+        <div (change)="prenos(f.value)" >
+          <select  #f class="form-control" >
+            <option [value]="0">Izaberite marku</option>
+            <option *ngFor="let a of this.s.marke" [value]="a.id"> {{a.marka_naziv}} </option>
 
+          </select>
 
         </div>
 
-        <pagination-controls  (pageChange)="p = $event"
-                              directionLinks="true"
-                              autoHide="true"
-                              responsive="true"
-                              previousLabel="Prethodna"
-                              nextLabel="Sledeca"
-                              screenReaderPaginationLabel="Pagination"
-                              screenReaderPageLabel="page"
-                              screenReaderCurrentLabel="You're on page"> </pagination-controls>
+        <div (change)="postavi_parametre(a.value)">
+          <select #a class="form-control">
+            <option [value]="">Izaberite model</option>
+            <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
+
+          </select>
+        </div>
+      </form>
+      <br>
+
+      <button class="btn btn-success" (click)="filtriraj()" style="margin-top: 2rem">Filtriraj</button>
+      <button class="btn btn-primary" (click)="resetuj()" style="margin-top: 2rem">Resetuj </button>
+
+    </div>
+    <div *ngIf="pokazivac_marke===0" class="col-md-7">
+      <div class="container" style="margin-top: 3rem;">
+        <div class="row" style="text-align: center ">
+          <div *ngFor="let a of this.s.telefoni | paginate: {
+                                                      itemsPerPage:12,
+                                                      currentPage: p
+                                                       }" class="col-md-3"
+               style="border-style: solid;border-width: 1px; border-color: black;">
+            <p><b>Marka:</b>{{a.naziv}}  </p>
+            <p><b>Model:</b>{{ a.model }}</p>
+            <p><b>Cijena: </b> {{a.cijena}}</p>
+
+            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
+                 style="width:400px;height: 200px;">
 
 
+            <button [routerLink]="['/telefon-detalji',a.id]" class="btn btn-primary">Pogledaj detaljno</button>
+
+
+          </div>
+
+          <pagination-controls (pageChange)="p = $event"
+                               autoHide="true"
+                               directionLinks="true"
+                               nextLabel="Sledeca"
+                               previousLabel="Prethodna"
+                               responsive="true"
+                               screenReaderCurrentLabel="You're on page"
+                               screenReaderPageLabel="page"
+                               screenReaderPaginationLabel="Pagination"></pagination-controls>
+
+
+        </div>
+        <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
+          <span class="sr-only">Loading...</span>
+        </div>
       </div>
-      <div *ngIf="this.s.spiner===true" class="spinner-border" role="status" style="text-align: center">
-        <span class="sr-only">Loading...</span>
-      </div>
-     </div>
       <div *ngIf="s.prikaz===true" class="col-md-14">
 
         <div class="alert alert-info" role="alert" style="text-align: center">
@@ -80,25 +85,100 @@
 
 
         </div>
-                        <div style="text-align: center">  <button class="btn btn-primary"  [routerLink]="['/postavi_oglas']"  >POSALJI </button></div>
+        <div style="text-align: center">
+          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POSALJI</button>
+        </div>
       </div>
     </div>
 
-    <div id="postovi" class="col-md-2" style="border-radius: 1%;text-align: center ">
 
-      <h1 class="tekst" >U ovoj sekciji mozete postaviti oglas ! </h1>
+
+
+
+
+
+    <div *ngIf="pokazivac_marke===1" class="col-md-7">
+      <div class="container" style="margin-top: 3rem;">
+        <div class="row" style="text-align: center ">
+          <div *ngFor="let a of this.s1.filter_res | paginate: {
+                                                      itemsPerPage:12,
+                                                      currentPage: p
+                                                       }" class="col-md-3"
+               style="border-style: solid;border-width: 1px; border-color: black;">
+            <p><b>Marka:</b>{{a.naziv}}  </p>
+            <p><b>Model:</b>{{ a.model }}</p>
+            <p><b>Cijena: </b> {{a.cijena}}</p>
+
+            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika.slika}}"
+                 style="width:400px;height: 200px;">
+
+
+            <button [routerLink]="['/telefon-detalji',a.id]" class="btn btn-primary">Pogledaj detaljno</button>
+
+
+          </div>
+
+          <pagination-controls (pageChange)="p = $event"
+                               autoHide="true"
+                               directionLinks="true"
+                               nextLabel="Sledeca"
+                               previousLabel="Prethodna"
+                               responsive="true"
+                               screenReaderCurrentLabel="You're on page"
+                               screenReaderPageLabel="page"
+                               screenReaderPaginationLabel="Pagination"></pagination-controls>
+
+
+        </div>
+        <div *ngIf="s1.spiner===true" class="spinner-border" role="status" style="text-align: center">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div *ngIf="s1.prikaz===true" class="col-md-14">
+
+        <div class="alert alert-info" role="alert" style="text-align: center">
+          <h1 class="alert-heading">Zao nam je...</h1>
+          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
+          <hr>
+          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
+
+          <img src="https://static.thenounproject.com/png/3271619-200.png">
+
+
+        </div>
+        <div style="text-align: center">
+          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POSALJI</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-2" id="postovi" style="border-radius: 1%;text-align: center ">
+
+      <h1 class="tekst">U ovoj sekciji mozete postaviti oglas ! </h1>
 
       <div>
-       <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" rows="5"
-                  placeholder="Postavite oglas i vas kontakt ">
+       <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" placeholder="Postavite oglas i vas kontakt "
+                 rows="5">
         </textarea>
-        <button class="btn btn-primary"   (click)="postaviPost()">objavi</button>
+        <button (click)="postaviPost()" class="btn btn-primary">objavi</button>
         <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
 
           <div *ngIf='b.javno ===1'>
             <pre class="oglas">
               <span>Oglas od : {{b.created_at}}</span> <br>
-              <span rows="5" class="embed-responsive">{{b.tekst}}</span></pre>
+              <span class="embed-responsive" rows="5">{{b.tekst}}</span></pre>
           </div>
         </div>
       </div>

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import {ServisService} from "./servis.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class Servis1Service {
+  prikaz:boolean=false;
+  spiner:boolean=false;
   tel_marka_id: any;
-
+filter_res:any;
   tel_model_naziv: any;
   tel_admin:any;
   telefoni_provjera:number=0;
@@ -43,6 +45,38 @@ export class Servis1Service {
     telefon_id:""
   }
   slika:any;
+
+  filter:any ={
+    marka_id:0,
+    cijena_min:0,
+    cijena_max:2000,
+    model_naziv:''
+  }
+
+
+  filtriraj(){
+    this.spiner=true;
+
+    return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
+      .subscribe(posts=>
+      {
+        this.spiner=false;
+        this.filter_res=posts;
+       if (this.filter_res.length===0){
+         this.prikaz=true
+
+       }else this.prikaz=false;
+
+
+
+      })
+  }
+
+
+
+
+
+
 
   postavislike() {
     const headers = new HttpHeaders();
