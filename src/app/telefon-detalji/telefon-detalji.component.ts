@@ -27,7 +27,7 @@ ram_url:string= "assets/ram.png"
  dis:string="assets/display.png"
   i:number=0;
 promjena:number=0;
-  sifra:"";
+  sifra:string="";
 
 
   ngOnInit(): void {
@@ -51,7 +51,7 @@ promjena:number=0;
   }
   PotvrdiBrisanje()
   {
-    if(this.s.telefonId.sifra===this.sifra)
+    if(this.telefon[0].sifra===this.sifra)
     {
       this.s.brisiTelefon(this.id);
       alert('uspjesno obrisan telefon!');

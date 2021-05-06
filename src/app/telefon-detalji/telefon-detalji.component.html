@@ -35,9 +35,10 @@
   </div>
 <br>
 
-<div class="row" style="text-align: center">
-<div  *ngFor="let a of telefon[0]?.slika;index as i" >
-     <div  class="col-md-12">  <span><img id="a"(click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " ></span></div>
+<div style="text-align: center" class="d-flex justify-content-center">
+  <div  *ngFor="let a of telefon[0]?.slika;index as i" class="d-flex ">
+
+    <img id="a"(click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
 
 </div>
 
@@ -59,19 +60,19 @@
 
       <tr>
 
-        <td>    <img class="cpu"  src="{{cpu}}"  > <h1> {{telefon[0]?.specifikacije.procesor}}</h1></td>
-        <td><img class="cpu"  src="{{dis}}" ><h1> {{telefon[0]?.specifikacije.ekran}}</h1></td>
+        <td>    <img class="cpu"  src="{{cpu}}"  > <h1 *ngIf="telefon[0]?.specifikacije.procesor != null" > {{telefon[0]?.specifikacije.procesor}}-GHz</h1> <h1 *ngIf="telefon[0]?.specifikacije.procesor == null">N/a</h1></td>
+        <td><img class="cpu"  src="{{dis}}" ><h1 *ngIf="telefon[0]?.specifikacije.ekran != null"> {{telefon[0]?.specifikacije.ekran}}-Inch</h1> <h1 *ngIf="telefon[0]?.specifikacije.ekran == null">N/a</h1></td>
 
       </tr>
       <tr>
 
-        <td> <img class="cpu"  src="{{bat}}" > <h1> {{telefon[0]?.specifikacije.baterija}}</h1></td>
-        <td><img class="cpu"  src="{{mem}}" ><h1> {{telefon[0]?.specifikacije.memorija}}</h1></td>
+        <td> <img class="cpu"  src="{{bat}}" > <h1 *ngIf="telefon[0]?.specifikacije.baterija != null"> {{telefon[0]?.specifikacije.baterija}}-mA</h1><h1 *ngIf="telefon[0]?.specifikacije.baterija == null">N/a</h1></td>
+        <td><img class="cpu"  src="{{mem}}" ><h1 *ngIf="telefon[0]?.specifikacije.memorija != null"> {{telefon[0]?.specifikacije.memorija}}-Gb</h1><h1 *ngIf="telefon[0]?.specifikacije.memorija == null">N/a</h1></td>
       </tr>
       <tr>
 
-        <td><img class="cpu"  src="{{ram_url}}" ><h1> {{telefon[0]?.specifikacije.ram}}</h1></td>
-        <td><img class="cpu"  src="{{cam}}" > <h1> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}<br>Zadnja kamera  {{telefon[0]?.specifikacije.kamera_zadnja}}</h1></td>
+        <td><img class="cpu"  src="{{ram_url}}" ><h1 *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb</h1><h1 *ngIf="telefon[0]?.specifikacije.ram == null">N/a</h1></td>
+        <td><img class="cpu"  src="{{cam}}" > <h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja != null ||telefon[0]?.specifikacije.kamera_prednja "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<br>Zadnja kamera :{{telefon[0]?.specifikacije.kamera_zadnja}}-MP</h1><h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null ||telefon[0]?.specifikacije.kamera_prednja ">N/a</h1></td>
       </tr>
       </tbody>
   </table>

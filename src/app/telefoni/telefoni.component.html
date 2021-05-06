@@ -13,7 +13,7 @@
         <ng5-slider   [(highValue)]="this.s1.filter.cijena_max" [(value)]="this.s1.filter.cijena_min" [options]="options" (change)="postavi_parametre_cijena()"></ng5-slider>
 
 
-        <div (change)="prenos(f.value)" >
+        <div class="zoom" (change)="prenos(f.value)" >
           <select  #f class="form-control" >
             <option [value]="0">Izaberite marku</option>
             <option *ngFor="let a of this.s.marke" [value]="a.id"> {{a.marka_naziv}} </option>
@@ -21,7 +21,7 @@
           </select>
         </div>
 
-        <div (change)="postavi_parametre(a.value)">
+        <div class="zoom" (change)="postavi_parametre(a.value)">
           <select #a class="form-control">
             <option [value]="" >Izaberite model</option>
             <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
@@ -29,7 +29,7 @@
           </select>
 
         </div>
-        <div (change)="postavi_parametre_ram(b.value)">
+        <div class="zoom" (change)="postavi_parametre_ram(b.value)">
           <select #b class="form-control">
             <option value="" >Izaberite ram</option>
             <option value="2">2Gb</option>
@@ -42,7 +42,7 @@
 
 
         </div>
-        <div (change)="postavi_parametre_kamPrednja(c.value)">
+        <div class="zoom" (change)="postavi_parametre_kamPrednja(c.value)">
           <select #c class="form-control">
             <option value="" >Prednja kamera</option>
             <option value="8">8MP</option>
@@ -55,7 +55,7 @@
 
 
         </div>
-        <div (change)="postavi_parametre_kamZadnja(e.value)">
+        <div class="zoom" (change)="postavi_parametre_kamZadnja(e.value)">
           <select #e class="form-control">
             <option value="" >Zadnja kamera</option>
             <option value="8">8MP</option>
@@ -66,9 +66,9 @@
             <option value="48">48MP</option>
           </select>
         </div>
-        <div (change)="postavi_parametre_memorija(e.value)">
+        <div class="zoom" (change)="postavi_parametre_memorija(e.value)">
           <select #e class="form-control">
-            <option value="" >Zadnja kamera</option>
+            <option value="" >Memorija</option>
             <option value="8">8Gb</option>
             <option value="16">16Gb</option>
             <option value="32">32Gb</option>
@@ -85,9 +85,9 @@
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-7">
-      <div class="container" style="margin-top: 3rem;">
+      <div class="container" style="margin-top: 3rem;" >
         <div class="row" style="text-align: center ">
-          <div *ngFor="let a of this.s.telefoni | paginate: {
+          <div  *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
                                                        }" class="col-md-3"
@@ -96,7 +96,7 @@
             <p><b>Model:</b>{{ a.model }}</p>
             <p><b>Cijena: </b> {{a.cijena}}</p>
 
-            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
+            <img  alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
                  style="width:400px;height: 200px;">
 
 
