@@ -11,3 +11,10 @@
 }
 #b:hover {border-style: solid; border-color:green; }
 #c:hover{border-style: solid; border-color: blue;}
+.container-fluid{
+
+  background-image: url("src/assets/pozadina_detalji.jpg");
+  background-size: cover;
+
+
+}
