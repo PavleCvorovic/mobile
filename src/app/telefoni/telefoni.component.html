@@ -27,13 +27,61 @@
             <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
 
           </select>
-        
+
+        </div>
+        <div (change)="postavi_parametre_ram(b.value)">
+          <select #b class="form-control">
+            <option value="" >Izaberite ram</option>
+            <option value="2">2Gb</option>
+            <option value="4">4Gb</option>
+            <option value="6">6Gb</option>
+            <option value="8">8Gb</option>
+            <option value="10">10Gb</option>
+            <option value="12">12Gb</option>
+          </select>
+
+
+        </div>
+        <div (change)="postavi_parametre_kamPrednja(c.value)">
+          <select #c class="form-control">
+            <option value="" >Prednja kamera</option>
+            <option value="8">8MP</option>
+            <option value="12">12MP</option>
+            <option value="18">18MP</option>
+            <option value="24">24MP</option>
+            <option value="36">36MP</option>
+            <option value="48">48MP</option>
+          </select>
+
+
+        </div>
+        <div (change)="postavi_parametre_kamZadnja(e.value)">
+          <select #e class="form-control">
+            <option value="" >Zadnja kamera</option>
+            <option value="8">8MP</option>
+            <option value="12">12MP</option>
+            <option value="18">18MP</option>
+            <option value="24">24MP</option>
+            <option value="36">36MP</option>
+            <option value="48">48MP</option>
+          </select>
+        </div>
+        <div (change)="postavi_parametre_memorija(e.value)">
+          <select #e class="form-control">
+            <option value="" >Zadnja kamera</option>
+            <option value="8">8Gb</option>
+            <option value="16">16Gb</option>
+            <option value="32">32Gb</option>
+            <option value="64">64Gb</option>
+            <option value="128">128Gb</option>
+
+          </select>
         </div>
       </form>
       <br>
 
       <button class="btn btn-success" (click)="filtriraj()" style="margin-top: 2rem">Filtriraj</button>
-      <button class="btn btn-primary" (click)="resetuj()" style="margin-top: 2rem">Resetuj </button>
+<!--      <button class="btn btn-primary" (click)="resetuj()" style="margin-top: 2rem">Resetuj </button>-->
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-7">

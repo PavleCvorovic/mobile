@@ -50,7 +50,11 @@ filter_res:any;
     marka_id:0,
     cijena_min:0,
     cijena_max:2000,
-    model_naziv:''
+    model_naziv:'',
+    ram:0,
+    prednja:0,
+    zadnja:0,
+    memorija:0,
   }
 
 

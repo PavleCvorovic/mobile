@@ -78,6 +78,21 @@ if(this.s1.filter.model_naziv!=''){
     this.s1.filter.cijena_max=this.highValue;
 
   }
+  postavi_parametre_ram(value){
+    this.s1.filter.ram=value;
+
+  }
+  postavi_parametre_kamPrednja(value){
+    this.s1.filter.prednja=value;
+  }
+  postavi_parametre_kamZadnja(value){
+    this.s1.filter.zadnja=value;
+  }
+  postavi_parametre_memorija(value){
+    this.s1.filter.memorija=value;
+  }
+
+
   filtriraj(){
     this.s1.filtriraj();
 
