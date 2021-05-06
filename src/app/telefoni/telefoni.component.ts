@@ -62,6 +62,9 @@ export class TelefoniComponent implements OnInit {
 
     this.s.dajmodelmarke(value);
 this.s1.filter.marka_id=value;
+if(this.s1.filter.model_naziv!=''){
+  this.s1.filter.model_naziv='';
+}
 
   }
 
@@ -77,10 +80,7 @@ this.s1.filter.marka_id=value;
   }
   filtriraj(){
     this.s1.filtriraj();
-    this.s1.filter.cijena_max=2000
-    this.s1.filter.cijena_min=0
-    this.s1.filter.marka_id=0
-    this.s1.filter.model_naziv=''
+
 this.pokazivac_marke=1;
   }
 resetuj(){
