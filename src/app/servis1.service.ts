@@ -62,6 +62,7 @@ filter_res:any;
       {
         this.spiner=false;
         this.filter_res=posts;
+
        if (this.filter_res.length===0){
          this.prikaz=true
 

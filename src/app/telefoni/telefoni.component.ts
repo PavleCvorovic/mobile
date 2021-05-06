@@ -77,8 +77,10 @@ this.s1.filter.marka_id=value;
   }
   filtriraj(){
     this.s1.filtriraj();
-    this.highValue=2000
-    this.value=0
+    this.s1.filter.cijena_max=2000
+    this.s1.filter.cijena_min=0
+    this.s1.filter.marka_id=0
+    this.s1.filter.model_naziv=''
 this.pokazivac_marke=1;
   }
 resetuj(){
