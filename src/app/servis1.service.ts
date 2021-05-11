@@ -59,6 +59,15 @@ filter_res:any;
 
 
   filtriraj(){
+    console.log('-------------------------------------')
+    console.log(this.filter.marka_id)
+    console.log(this.filter.model_naziv)
+    console.log(this.filter.cijena_min)
+    console.log(this.filter.cijena_max)
+    console.log(this.filter.ram)
+    console.log(this.filter.prednja)
+    console.log(this.filter.zadnja)
+    console.log(this.filter.memorija)
     this.spiner=true;
 
     return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
