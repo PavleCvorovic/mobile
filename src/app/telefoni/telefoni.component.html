@@ -23,7 +23,7 @@
 
         <div class="zoom" (change)="postavi_parametre(a.value)">
           <select #a class="form-control">
-            <option [value]="" >Izaberite model </option>
+            <option value="" >Izaberite model </option>
             <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
 
           </select>
