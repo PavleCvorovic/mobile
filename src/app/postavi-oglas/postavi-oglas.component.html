@@ -55,8 +55,8 @@
       <div class="form-group ">
 
 
-        <label ><b>Unesi konfiguracije: </b></label><br>
-        <div class="row">
+        <button  class="btn btn-primary" (click)="otvori()">Unesi konfiguracije: </button><br>
+        <div class="row" *ngIf="otvoric===true">
 
         <div class='col'>
         <label >Procesor:</label><input [(ngModel)] = "procesor" name="procesor" class="form-control"   placeholder="" style="width: 150px;">

@@ -25,8 +25,7 @@ path:any;
 spiner:boolean=false;
 strike:boolean=true;
 photos1:any;
-photos2:any;
-photos3:any;
+otvoric:boolean=false;
   constructor(public s:ServisService, public router:Router,public s1:Servis1Service,private http: HttpClient) { }
 
   @ViewChild('f') signupForm: NgForm;
@@ -68,7 +67,9 @@ file:any;
 
 
 
-
+otvori(){
+ this.otvoric=true;
+}
 marka_model(){
   let a:number;
  a=Number(this.marka);
@@ -256,10 +257,7 @@ prikazSlike=[];
 
       Swal.fire('Upssss...', 'Popunite sva polja oznacena sa "*" ', 'warning')
     }
-    // this.s.models.model_ime = this.cijena;
-    // console.log(this.s.models.model_ime);
 
-    // this.s.dodajModel();
 
 
 

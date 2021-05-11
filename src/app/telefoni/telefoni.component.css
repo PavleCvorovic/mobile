@@ -36,10 +36,10 @@ color: black;
 
 }
 #header1{
-  text-align: center;height: 150px ;
+
   background-image: url("src/assets/background.jpg");
   background-size: cover;
-background-repeat: no-repeat;
+
 }
 #textAreaExample{
   background-color: #d9e0e5;
@@ -67,3 +67,10 @@ background-repeat: no-repeat;
 }
 
 
+.telefon:hover{
+  transform: scale(1.1);
+  background-color: #21a469;
+}
+.telefon{
+  border-style: solid;border-width: 1px; border-color: black; border-radius:10%;height:fit-content;width:200px
+}
