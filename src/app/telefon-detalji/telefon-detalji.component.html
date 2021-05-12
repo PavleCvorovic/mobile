@@ -77,7 +77,7 @@
       <tr>
 
         <td><img class="cpu"  src="{{ram_url}}" ><h1 *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb</h1><h1 *ngIf="telefon[0]?.specifikacije.ram == null">N/a</h1></td>
-        <td><img class="cpu"  src="{{cam}}" > <h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja != null ||telefon[0]?.specifikacije.kamera_prednja "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<br>Zadnja kamera :{{telefon[0]?.specifikacije.kamera_zadnja}}-MP</h1><h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null ||telefon[0]?.specifikacije.kamera_prednja ">N/a</h1></td>
+        <td><img class="cpu"  src="{{cam}}" > <h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja != null ||telefon[0]?.specifikacije.kamera_prednja "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<br>Zadnja kamera :{{telefon[0]?.specifikacije.kamera_zadnja}}-MP</h1><h1 *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</h1></td>
       </tr>
       </tbody>
   </table>
