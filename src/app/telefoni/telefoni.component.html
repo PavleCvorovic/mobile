@@ -85,19 +85,19 @@
 <!--      <button class="btn btn-primary" (click)="resetuj()" style="margin-top: 2rem">Resetuj </button>-->
 
     </div>
-    <div *ngIf="pokazivac_marke===0" class="col-md-7">
+    <div *ngIf="pokazivac_marke===0" class="col-md-7 ">
       <div class="container" style="margin-top: 3rem;" >
         <div class="row" style="text-align: center ">
           <div  *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
-                                                       }" class="col-md-3"  class="telefon" >
+                                                       }" class="col-md-3"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >
 
             <div class="product-top">
               <div class="flash">
                                     <span class="onnew">
                                         <span class="text">
-                                          <b>Marka: </b> {{a.naziv}}
+                                         {{a.naziv}}
                                         </span>
                                     </span>
               </div>
@@ -162,12 +162,12 @@
                                                       itemsPerPage:12,
                                                       currentPage: p
                                                        }" class="col-md-3"
-               class="telefon">
+               class="telefon" [routerLink]="['/telefon-detalji',a.id]">
             <div class="product-top">
               <div class="flash">
                                     <span class="onnew">
                                         <span class="text">
-                                          <b>Marka: </b> {{a.naziv}}
+                                          {{a.naziv}}
                                         </span>
                                     </span>
               </div>
