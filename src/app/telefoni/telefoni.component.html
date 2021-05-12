@@ -91,11 +91,19 @@
           <div  *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
-                                                       }" class="col-md-3"
-               class="telefon">
-            <p><b>Marka:</b>{{a.naziv}}  </p>
-            <p><b>Model:</b>{{ a.model }}</p>
-            <p><b>Cijena: </b> {{a.cijena}}</p>
+                                                       }" class="col-md-3"  class="telefon" >
+            <div class="product-top">
+              <div class="flash">
+                                    <span class="onnew">
+                                        <span class="text">
+                                            <b>Marka:</b>{{a.naziv}}
+                                        </span>
+                                    </span>
+              </div>
+            </div>
+
+            <div><b>Model:</b>{{ a.model }}</div>
+            <div><b>Cijena: </b> {{a.cijena}}</div>
 
             <img  alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
                  style="width:400px;height: 200px;">
