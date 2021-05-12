@@ -23,6 +23,7 @@ postovi:any=[];
   postovi1:any=[];
 prikaz:boolean=false;
   id_telefona;
+  duzinatelefona:number;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
   telefoniZaSlike:any;
@@ -58,7 +59,7 @@ prikaz:boolean=false;
         console.log(this.telefoni);
         this.spiner=false;
         let i;
-
+     this.duzinatelefona=this.telefoni.length
 if (this.telefoni.length===0){
   this.prikaz=true
 }

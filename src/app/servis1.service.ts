@@ -15,6 +15,7 @@ filter_res:any;
   telefoni_provjera:number=0;
   slike_novi_nacin:any;
 
+duzinafil:number;
   constructor(public  s: ServisService, private http: HttpClient) {
   }
 
@@ -75,7 +76,8 @@ filter_res:any;
       {
         this.spiner=false;
         this.filter_res=posts;
-
+        console.log(this.filter_res)
+this.duzinafil=this.filter_res.length
        if (this.filter_res.length===0){
          this.prikaz=true
 

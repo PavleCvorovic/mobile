@@ -9,7 +9,7 @@ position: relative;
 }
 
 #postovi{
-  background-image: url("src/assets/background.jpg");
+  background-color: #1a9a8d;
   background-size: contain;
   color:white;
   height: max-content;
