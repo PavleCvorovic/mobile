@@ -3,17 +3,25 @@
 
 
 }
+
 .cpu{
-  height: 70px;width: 140px;
+ height: 5rem;
+  width: 5rem;
+}
+.specifikacije{
+  border-style:solid ; border-color:white;border-radius: 20%;
+}
+.specifikacije:hover{
+  transform: scale(1.2);
 }
 #a:hover{border-style: solid;
   border-color:red;
 }
 #b:hover {border-style: solid; border-color:green; }
 #c:hover{border-style: solid; border-color: blue;}
-.container-fluid{
+.col-md-8{
 
-  background-image: url("src/assets/pozadina_detalji.jpg");
+  background-image: url("src/assets/back1.jpg");
   background-size: cover;
 
 
