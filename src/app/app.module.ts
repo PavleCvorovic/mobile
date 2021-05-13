@@ -20,6 +20,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import {Ng5SliderModule} from "ng5-slider";
+import { TestComponent } from './test/test.component';
 
 
 
@@ -34,7 +35,8 @@ import {Ng5SliderModule} from "ng5-slider";
     TelefonDetaljiComponent,
     AdminBordComponent,
     AdminLoginComponent,
-    DetaljiComponent
+    DetaljiComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,
