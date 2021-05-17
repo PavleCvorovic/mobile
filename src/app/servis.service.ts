@@ -56,7 +56,7 @@ prikaz:boolean=false;
       .subscribe(posts => {
 
         this.telefoni = posts;
-        console.log(this.telefoni);
+
         this.spiner=false;
         let i;
      this.duzinatelefona=this.telefoni.length
