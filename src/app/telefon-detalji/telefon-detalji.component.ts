@@ -41,7 +41,7 @@ promjena:number=0;
   pozovi() {
     this.s.getTelefonId(this.id).subscribe(data => {
       this.telefon = data;
-      console.log(data);
+
     })
   }
 
