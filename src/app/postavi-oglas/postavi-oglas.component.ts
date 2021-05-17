@@ -163,7 +163,7 @@ prikazSlike=[];
           conf = this.s.specifikacije[i].id;
         }
       }
-      console.log(conf+1);
+      // console.log(conf+1);
 
 
       // let sl = 0;
@@ -209,7 +209,7 @@ prikazSlike=[];
           t = this.s.telefoniZaSlike[i].id;
         }
       }
-      console.log(t+1 + " telefoni");
+      // console.log(t+1 + " telefoni");
 
 
       t = t+1;
