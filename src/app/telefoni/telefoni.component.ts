@@ -100,8 +100,8 @@ this.pokazivac_marke=1;
   }
 resetuj(){
     this.pokazivac_marke=0;
-  this.s1.filter.cijena_min=0;
-  this.s1.filter.cijena_max=2000;
+    this.s1.filter.cijena_min=0;
+    this.s1.filter.cijena_max=2000;
 
 }
 
