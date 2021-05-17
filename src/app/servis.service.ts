@@ -165,7 +165,7 @@ if (this.telefoni.length===0){
       .subscribe(posts => {
         this.tel_marka_model = posts;
 
-        console.log(this.tel_marka_model)
+
       })
 
 
@@ -237,7 +237,7 @@ posts:any={
 
       .subscribe(posts => {
         this.specifikacije = posts;
-        console.log(this.specifikacije);
+
 
 
       })
@@ -319,7 +319,7 @@ models:any={
 
       .subscribe(posts => {
         this.postovi = posts;
-        console.log(this.postovi);
+
 
 
       })
@@ -359,7 +359,7 @@ models:any={
     .subscribe(posts => {
 
       this.postovi = posts;
-      console.log(this.postovi);
+
 this.postovi_provjera=this.postovi.length;
     })
   }
@@ -376,7 +376,7 @@ logovan()
   this.http.get('http://localhost:8000/api/user', {withCredentials:true})
   .subscribe(res=>
     {
-       console.log(res);
+
     },
     err=>
     {

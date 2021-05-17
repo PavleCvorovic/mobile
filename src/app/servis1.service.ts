@@ -29,7 +29,7 @@ duzinafil:number;
 
       .subscribe(posts => {
         this.tel_marka_id = posts;
-        console.log(this.tel_marka_id)
+
         this.s.spiner=false;
 
         if (this.tel_marka_id.length===0){
@@ -60,15 +60,7 @@ duzinafil:number;
 
 
   filtriraj(){
-    console.log('-------------------------------------')
-    console.log(this.filter.marka_id)
-    console.log(this.filter.model_naziv)
-    console.log(this.filter.cijena_min)
-    console.log(this.filter.cijena_max)
-    console.log(this.filter.ram)
-    console.log(this.filter.prednja)
-    console.log(this.filter.zadnja)
-    console.log(this.filter.memorija)
+
     this.spiner=true;
 
     return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
@@ -76,7 +68,7 @@ duzinafil:number;
       {
         this.spiner=false;
         this.filter_res=posts;
-        console.log(this.filter_res)
+
 this.duzinafil=this.filter_res.length
        if (this.filter_res.length===0){
          this.prikaz=true
@@ -123,7 +115,7 @@ this.duzinafil=this.filter_res.length
 
       .subscribe(posts => {
         this.tel_model_naziv = posts;
-        console.log(this.tel_model_naziv)
+
         this.s.spiner=false;
 
         if (this.tel_model_naziv.length===0){
@@ -151,7 +143,7 @@ this.duzinafil=this.filter_res.length
 
 
 
-        console.log(this.telefoni_provjera)
+
 
       })
 
@@ -194,7 +186,7 @@ this.duzinafil=this.filter_res.length
     .subscribe(posts=>
       {
           this.slikeBaza11 = posts;
-          console.log(this.slikeBaza11);
+
 
       })
   }
