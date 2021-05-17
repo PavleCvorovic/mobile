@@ -58,7 +58,7 @@ color: black;
 
 }
 .container-fluid{
-  /*background-image: url("//images01.nicepage.com/c461c07a441a5d220e8feb1a/8f200ad4059f5a528df1fea4/gr4.png");*/
+  background-image: url("src/assets/back1.jpg");
   background-size: cover;
 }
 
