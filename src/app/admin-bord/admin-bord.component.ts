@@ -29,6 +29,7 @@ export class AdminBordComponent implements OnInit {
     this.s.dajtelefone();
     this.s.dajpostoveadminu();
     this.s.broji_postove();
+    this.s.dajpitanja();
 
 
   }

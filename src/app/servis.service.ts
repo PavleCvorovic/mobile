@@ -24,6 +24,8 @@ postovi:any=[];
 prikaz:boolean=false;
   id_telefona;
   duzinatelefona:number;
+  pitanja:any;
+  pitanja_provjera:number;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 
   telefoniZaSlike:any;
@@ -386,7 +388,21 @@ logovan()
     )
 }
 
+dajpitanja(){
+  return  this.http
+    .get(
+      'http://localhost:8000/api/mail-svi')
 
+
+    .subscribe(posts => {
+
+      this.pitanja = posts;
+
+      this.pitanja_provjera=this.pitanja.length;
+    })
+
+
+}
 
 
 
