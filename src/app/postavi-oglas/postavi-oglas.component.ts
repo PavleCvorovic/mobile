@@ -32,7 +32,7 @@ otvoric:boolean=false;
 file:any;
   file2:any;
   file3:any;
-  currentRate: number = 3;
+  currentRate: number ;
   ngOnInit(): void {
     this.s.uzmiSveTelefone();
     this.s.dajmarku();
@@ -184,6 +184,7 @@ prikazSlike=[];
       this.s.telefonBaza.model = this.model
       this.s.telefonBaza.prodavac= this.prodavac;
       this.s.telefonBaza.kontakt = this.kontakt;
+      this.s.telefonBaza.stanje = this.currentRate;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
 

@@ -210,6 +210,7 @@ posts:any={
     kontakt:'',
     javno:0,
     sifra:'aaa',
+    stanje:'',
       photo:{
         slika:'',
         telefon_id:''
