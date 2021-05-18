@@ -1,16 +1,10 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {ServisService} from '../servis.service';
-import {FormBuilder} from '@angular/forms';
+
 import {ActivatedRoute} from '@angular/router';
 import {Servis1Service} from "../servis1.service";
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import {Options} from "ng5-slider";
-import { HttpParams } from '@angular/common/http';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpEventType
-} from '@angular/common/http';
 
 @Component({
   selector: 'app-telefoni',
@@ -36,7 +30,7 @@ export class TelefoniComponent implements OnInit {
   p = 1;
   pageChange: EventEmitter<number>;
   starRating = 0;
-  constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service, public fb:FormBuilder, public http:HttpClient) {
+  constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service) {
   }
 
   ngOnInit(): void {
@@ -48,31 +42,6 @@ export class TelefoniComponent implements OnInit {
     this.s.dajmarku();
 
 
-  }
-  question=this.fb.group({
-    email:'',
-    poruka:''
-  })
-
-  pitaj()
-  {
-    const params = new HttpParams()
-
-    let pitanje =
-    {
-      email:JSON.stringify(this.question.value.email),
-      poruka:JSON.stringify(this.question.value.poruka)
-    }
-    this.http
-      .post(
-        'http://localhost:8000/api/mail-salji', pitanje
-
-      )   .subscribe(responseData =>
-    {
-      console.log(responseData);
-
-
-    })
   }
 
   postaviPost() {

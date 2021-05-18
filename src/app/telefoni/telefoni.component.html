@@ -267,18 +267,14 @@
         <img alt="Responsive image" class="float-left"
              src="assets/logo.png" style="height: 150px ;border-radius: 50%">
       </div>
-
       <div class="col-md-10 d-flex justify-content-end pt-5">
-        <div class="text-center" >
-          <form [formGroup] = "question">
-          <input class="form-control"  placeholder="Vaša e-mail adresa ." formControlName = "email">
-          <input class="form-control" placeholder="Postavite pitanje?" formControlName="poruka">
-          <button type="submit" class="btn btn-success " (click) = "pitaj()"> Pitaj !</button>
-        </form>
+        <div class="text-center">
+          <input class="form-control" placeholder="Postavite pitanje ?">
+          <input class="form-control" type="email" placeholder="Vaša e-mail adresa .">
+          <button class="btn btn-success "> Pitaj !</button>
         </div>
 
       </div>
-
 
 
 
