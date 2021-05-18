@@ -90,7 +90,7 @@
 
       <div class="container" style="margin-top: 3rem;" >
         <div class="row justify-content-center" style="text-align: center ">
-          <div  *ngFor="let a of this.s.telefoni  | paginate: {
+          <div  *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
                                                        }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >
@@ -112,11 +112,7 @@
             <div><b>Model: </b>{{  a.model }}</div>
             <div><b>Cijena:  </b> {{  a.cijena}}</div>
 
-            <div style="font-size:large; color: orange">
-              <ngb-rating [max]="10" [(rate)]="a.stanje " [readonly] = "true">
-
-              </ngb-rating>
-            </div>
+            <button [routerLink]="['/telefon-detalji',a.id]" style="width: fit-content" class="btn btn-primary">Pogledaj detaljno</button>
 
 
           </div>
@@ -271,14 +267,18 @@
         <img alt="Responsive image" class="float-left"
              src="assets/logo.png" style="height: 150px ;border-radius: 50%">
       </div>
+
       <div class="col-md-10 d-flex justify-content-end pt-5">
-        <div class="text-center">
-          <input class="form-control" placeholder="Postavite pitanje ?">
-          <input class="form-control" type="email" placeholder="Vaša e-mail adresa .">
-          <button class="btn btn-success "> Pitaj !</button>
+        <div class="text-center" >
+          <form [formGroup] = "question">
+          <input class="form-control"  placeholder="Vaša e-mail adresa ." formControlName = "email">
+          <input class="form-control" placeholder="Postavite pitanje?" formControlName="poruka">
+          <button type="submit" class="btn btn-success " (click) = "pitaj()"> Pitaj !</button>
+        </form>
         </div>
 
       </div>
+
 
 
 
