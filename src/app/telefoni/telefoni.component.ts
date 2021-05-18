@@ -29,25 +29,19 @@ export class TelefoniComponent implements OnInit {
   marka: string;
   model: string;
   objava: string;
-  dropmodel: boolean = false;
-  nextTelefon: boolean = false;
   pageSize = 5;
   total = 16;
   p = 1;
-  pageChange: EventEmitter<number>;
   starRating = 0;
   constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service, public fb:FormBuilder, public http:HttpClient) {
   }
 
   ngOnInit(): void {
 
-
     this.objava = ''
     this.s.dajtelefone();
     this.s.dajpostove();
     this.s.dajmarku();
-
-
   }
   question=this.fb.group({
     email:'',
@@ -69,7 +63,7 @@ export class TelefoniComponent implements OnInit {
 
       )   .subscribe(responseData =>
     {
-      console.log(responseData);
+
 
 
     })
