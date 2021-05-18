@@ -21,6 +21,7 @@ import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import {Ng5SliderModule} from "ng5-slider";
 import { TestComponent } from './test/test.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -48,7 +49,8 @@ import { TestComponent } from './test/test.component';
         FormsModule,
         ReactiveFormsModule,
         NgxPaginationModule,
-      Ng5SliderModule
+      Ng5SliderModule,
+      NgbModule
     ],
   providers: [DatePipe, CookieService],
   bootstrap: [AppComponent]

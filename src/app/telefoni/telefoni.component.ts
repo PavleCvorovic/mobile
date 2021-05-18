@@ -29,7 +29,7 @@ export class TelefoniComponent implements OnInit {
   total = 16;
   p = 1;
   pageChange: EventEmitter<number>;
-
+  starRating = 0;
   constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service) {
   }
 

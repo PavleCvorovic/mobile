@@ -108,7 +108,7 @@ prikazSlike=[];
        {
          this.prikazSlike.push(e.target.result);
        }
-
+      //  console.log(this.urls[i].name);
         }
       }
 
