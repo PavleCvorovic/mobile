@@ -228,10 +228,10 @@
 
     </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let b of s.pitanja">
     <tr>
-      <td>{{s.pitanja.poruka}}</td>
-      <td>{{s.pitanja.email}}</td>
+      <td>{{b.poruka}}</td>
+      <td><a > {{b.email}}</a></td>
 
 
 
