@@ -62,7 +62,7 @@
 
 
         <span *ngIf="s.pitanja_provjera===0">
-          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=4">Novi komentari
+          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=4">Nova pitanja
 
 
 
@@ -74,7 +74,7 @@
   </span>
 
         <span *ngIf="s.pitanja_provjera > 0">
-          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=4">Novi komentari
+          <a href="#" onclick="return false;" class="nav-link text-white" (click)="telefon_oglas=4">Nova pitanja
 
 
 
@@ -218,7 +218,7 @@
 
 <div class="row" *ngIf="telefon_oglas===4">
 
-  <table>
+  <table class="table table-hover">
     <thead>
     <tr>
 
