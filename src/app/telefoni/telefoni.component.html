@@ -112,7 +112,13 @@
             <div><b>Model: </b>{{  a.model }}</div>
             <div><b>Cijena:  </b> {{  a.cijena}}</div>
 
-            <button [routerLink]="['/telefon-detalji',a.id]" style="width: fit-content" class="btn btn-primary">Pogledaj detaljno</button>
+
+            <div style="font-size:large; color: orange">
+              <ngb-rating [max]="10" [(rate)]= "a.stanje" [readonly] = "true">
+
+              </ngb-rating>
+            </div>
+
 
 
           </div>
@@ -187,7 +193,11 @@
 
 
 
-            <button [routerLink]="['/telefon-detalji',a.id]" class="btn btn-primary">Pogledaj detaljno</button>
+            <div style="font-size:large; color: orange">
+              <ngb-rating [max]="10" [(rate)]= "a.stanje" [readonly] = "true">
+
+              </ngb-rating>
+            </div>
 
 
           </div>
