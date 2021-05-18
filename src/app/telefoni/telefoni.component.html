@@ -250,22 +250,22 @@
 
 
 
-    <div class="col-md-3" id="postovi" style="border-radius: 1%;text-align: center ">
+    <div class="col-md-3" id="postovi" style="border-radius:1%;text-align: center ">
 
-      <h1 class="tekst">U ovoj sekciji mozete postaviti oglas ! </h1>
+      <h1 class="tekst pt-5 pb-3">U ovoj sekciji mozete postaviti oglas ! </h1>
 
       <div>
        <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" placeholder="Postavite oglas i vas kontakt "
                  rows="5">
         </textarea>
-        <button (click)="postaviPost()" class="btn btn-primary">objavi</button>
-        <div *ngFor="let b of this.s.postovi" style="position: relative; right: 10px;">
+        <button (click)="postaviPost()" class="btn btn-primary mt-2">objavi</button>
+        <div *ngFor="let b of this.s.postovi" style="position: relative ;padding-top: 5pt; right: 10px;">
 
-          <div *ngIf='b.javno ===1'>
-            <pre class="oglas">
+
+            <pre class="oglas pt-2">
               <span>Oglas od : {{b.created_at}}</span> <br>
               <span class="embed-responsive" rows="5">{{b.tekst}}</span></pre>
-          </div>
+
         </div>
       </div>
     </div>
@@ -278,7 +278,7 @@
              src="assets/logo.png" style="height: 150px ;border-radius: 50%">
       </div>
 
-      <div class="col-md-10 d-flex justify-content-end pt-5">
+      <div class="col-md-10 d-flex justify-content-end pt-3 pb-2">
         <div class="text-center" >
           <form [formGroup] = "question">
           <input class="form-control"  placeholder="Vaša e-mail adresa ." formControlName = "email">
