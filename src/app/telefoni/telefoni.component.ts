@@ -12,7 +12,7 @@ import {Options} from "ng5-slider";
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-
+   zvezdice:any=[4,2,3];
   value: number = 0;
   highValue: number = 2000;
   options: Options = {

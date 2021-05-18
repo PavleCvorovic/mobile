@@ -90,7 +90,7 @@
 
       <div class="container" style="margin-top: 3rem;" >
         <div class="row justify-content-center" style="text-align: center ">
-          <div  *ngFor="let a of this.s.telefoni | paginate: {
+          <div  *ngFor="let a of this.s.telefoni  | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
                                                        }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >
@@ -112,7 +112,11 @@
             <div><b>Model: </b>{{  a.model }}</div>
             <div><b>Cijena:  </b> {{  a.cijena}}</div>
 
-            <button [routerLink]="['/telefon-detalji',a.id]" style="width: fit-content" class="btn btn-primary">Pogledaj detaljno</button>
+            <div style="font-size:large; color: orange">
+              <ngb-rating [max]="10" [(rate)]="a.stanje " [readonly] = "true">
+
+              </ngb-rating>
+            </div>
 
 
           </div>
