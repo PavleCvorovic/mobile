@@ -32,6 +32,7 @@ otvoric:boolean=false;
 file:any;
   file2:any;
   file3:any;
+  currentRate: number = 3;
   ngOnInit(): void {
     this.s.uzmiSveTelefone();
     this.s.dajmarku();
