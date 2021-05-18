@@ -99,7 +99,7 @@
       <div class="form-group" >
         <label >Ubaci slike <span class="req">*</span></label>
         <div class="col-lg-4">
-        <input class="btn btn-primary" type="file" id="myFile" name="slika"   (change)="onChangeFile($event)" multiple>
+        <input class="form-control-file" type="file" id="myFile" name="slika" (change)="onChangeFile($event)" >
         <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
 
       </div>
