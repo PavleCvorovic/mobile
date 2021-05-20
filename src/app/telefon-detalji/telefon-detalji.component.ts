@@ -28,7 +28,7 @@ ram_url:string= "assets/ram.png"
   i:number=0;
 promjena:number=0;
   sifra:string="";
-
+stanje:number;
 
   ngOnInit(): void {
 
@@ -41,6 +41,7 @@ promjena:number=0;
   pozovi() {
     this.s.getTelefonId(this.id).subscribe(data => {
       this.telefon = data;
+    this.stanje=this.telefon[0].stanje
 
     })
   }

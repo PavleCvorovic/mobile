@@ -1,24 +1,22 @@
-<div class="row">
+<!--<div class="row">-->
 
-<div class="col-md-2"></div>
-  <div class="col-md-8" id="heder"  >
+<!--<div class="col-md-2"></div>-->
+<!--  <div class="col-md-8" id="heder"  >-->
 
-    <div class="text-right">
-      <div >
-        <button class="btn btn-danger" (click)="obrisi()">Obrisi oglas</button>
-      </div>
-      <div *ngIf="brisanjePregled === true">
-        <label style="margin-top: 5px;">Unesite sifru telefona koju ste postavili kad ste objavljivali oglas:</label>
-        <div>
-          <input type="input" [(ngModel)] = "sifra" name="sifra">
-        </div>
-        <div>
-          <button type="submit" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
-        </div>
-      </div>
-    </div>
-
-
+<!--    <div class="text-right">-->
+<!--      <div >-->
+<!--        <button class="btn btn-danger" (click)="obrisi()">Obrisi oglas</button>-->
+<!--      </div>-->
+<!--      <div *ngIf="brisanjePregled === true">-->
+<!--        <label style="margin-top: 5px;">Unesite sifru telefona koju ste postavili kad ste objavljivali oglas:</label>-->
+<!--        <div>-->
+<!--          <input type="input" [(ngModel)] = "sifra" name="sifra">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button type="submit" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
 
@@ -27,64 +25,151 @@
 
 
 
-  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{telefon[0]?.mark_id.marka_naziv}}    {{telefon[0]?.model}}</h1>     </div>
 
 
-  <div class="text-center" *ngFor="let a of telefon[0]?.slika;index as i">
-   <div><img *ngIf="this.promjena===i"  src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="height:350pt;width:450pt " ></div>
+<!--  <div class="col-md-12, d-flex justify-content-center">      <h1>  {{telefon[0]?.mark_id.marka_naziv}}    {{telefon[0]?.model}}</h1>     </div>-->
+
+
+<!--  <div class="text-center" *ngFor="let a of telefon[0]?.slika;index as i">-->
+<!--   <div><img *ngIf="this.promjena===i"  src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="height:350pt;width:450pt " ></div>-->
 
 
 
-  </div>
+<!--  </div>-->
+<!--<br>-->
+
+<!--<div style="text-align: center" class="d-flex justify-content-center table-responsive-md">-->
+<!--  <div  *ngFor="let a of telefon[0]?.slika;index as i" class="d-flex ">-->
+
+<!--    <img id="a"(click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >-->
+
+<!--</div>-->
+
+
+
+<!--</div>-->
+
+
+
+
+
+<!--  <div class="container specifikacije" >-->
+
+<!--    <br>-->
+
+<!--    <div class="row justify-content-center ">-->
+
+
+<!--      <div class="col-md-1 text-center"> <img class="cpu"  src="{{cpu}}" > <p *ngIf="telefon[0]?.specifikacije.procesor != null" > {{telefon[0]?.specifikacije.procesor}}-GHz <p *ngIf="telefon[0]?.specifikacije.procesor == null">N/a</p></div>-->
+<!--      <div class="col-md-1 text-center"> <img class="cpu"  src="{{dis}}" ><p *ngIf="telefon[0]?.specifikacije.ekran != null"> {{telefon[0]?.specifikacije.ekran}}-Inch <p *ngIf="telefon[0]?.specifikacije.ekran == null">N/a</p></div>-->
+
+
+
+
+<!--      <div class="col-md-1 text-center">  <img class="cpu"  src="{{bat}}" > <p *ngIf="telefon[0]?.specifikacije.baterija != null"> {{telefon[0]?.specifikacije.baterija}}-mA<p *ngIf="telefon[0]?.specifikacije.baterija == null">N/a</p></div>-->
+<!--       <div class="col-md-1 text-center"> <img class="cpu"  src="{{mem}}" ><p *ngIf="telefon[0]?.specifikacije.memorija != null"> {{telefon[0]?.specifikacije.memorija}}-Gb<p *ngIf="telefon[0]?.specifikacije.memorija == null">N/a</p></div>-->
+
+
+
+<!--       <div class="col-md-1 text-center"> <img class="cpu"   src="{{ram_url}}" ><p *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb<p *ngIf="telefon[0]?.specifikacije.ram == null">N/a</p></div>-->
+<!--     <div class="col-md-1 text-center"> <img class="cpu"  src="{{cam}}" > <p *ngIf="telefon[0]?.specifikacije.kamera_prednja !=null "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<p *ngIf="telefon[0]?.specifikacije.kamera_prednja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</p></div>-->
+<!--      <div class="col-md-1 text-center">  <img class="cpu"  src="{{cam}}" > <p *ngIf="telefon[0]?.specifikacije.kamera_zadnja !=null "> Zadnja kamera: {{telefon[0]?.specifikacije.kamera_zadnja}}-MP<p *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</p></div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- <div class="col-md-2"></div>-->
+<!--  <a href="Tel:067-111-111">067-111-111  KLIKNI DA NAZOVES PRODAVCA</a>-->
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+
+          <div class="preview-pic tab-content"  *ngFor="let a of telefon[0]?.slika,index as i">
+            <div><img *ngIf="this.promjena===i"  src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="height:350pt;width:450pt " ></div>
+          </div>
+          <div class="d-flex flex-row justify-content-center"><div class="d-flex  "  *ngFor="let a of telefon[0]?.slika,index as i">
+            <img (click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
+
+          </div></div>
+          <br>
 <br>
-
-<div style="text-align: center" class="d-flex justify-content-center table-responsive-md">
-  <div  *ngFor="let a of telefon[0]?.slika;index as i" class="d-flex ">
-
-    <img id="a"(click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
-
-</div>
+          <div class="container float-left"  >
 
 
+            <div class="row justify-content-center " >
 
-</div>
+
+              <div class=" text-center p-5"> <img class="cpu"  src="{{cpu}}" > <p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.procesor != null" > {{telefon[0]?.specifikacije.procesor}}-GHz <div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.procesor == null">N/a</div></div>
+              <div class=" text-center p-5"> <img class="cpu"  src="{{dis}}" ><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.ekran != null"> {{telefon[0]?.specifikacije.ekran}}-Inch <div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.ekran == null">N/a</div></div>
 
 
 
 
-
-  <div class="container specifikacije" >
-
-    <br>
-
-    <div class="row justify-content-center ">
-
-
-      <div class="col-md-1 text-center"> <img class="cpu"  src="{{cpu}}" > <p *ngIf="telefon[0]?.specifikacije.procesor != null" > {{telefon[0]?.specifikacije.procesor}}-GHz <p *ngIf="telefon[0]?.specifikacije.procesor == null">N/a</p></div>
-      <div class="col-md-1 text-center"> <img class="cpu"  src="{{dis}}" ><p *ngIf="telefon[0]?.specifikacije.ekran != null"> {{telefon[0]?.specifikacije.ekran}}-Inch <p *ngIf="telefon[0]?.specifikacije.ekran == null">N/a</p></div>
+              <div class=" text-center p-5">  <img class="cpu"  src="{{bat}}" > <p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.baterija != null"> {{telefon[0]?.specifikacije.baterija}}-mA<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.baterija == null">N/a</div></div>
+              <div class=" text-center p-5"> <img class="cpu"  src="{{mem}}" ><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.memorija != null"> {{telefon[0]?.specifikacije.memorija}}-Gb<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.memorija == null">N/a</div></div>
 
 
 
+              <div class=" text-center p-5"> <img class="cpu"   src="{{ram_url}}" ><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.ram == null">N/a</div></div>
+              <div class=" text-center p-5"> <img class="cpu"  src="{{cam}}" > <p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.kamera_prednja !=null "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.kamera_prednja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</div></div>
+              <div class=" text-center p-5">  <img class="cpu"  src="{{cam}}" > <p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.kamera_zadnja !=null "> Zadnja kamera: {{telefon[0]?.specifikacije.kamera_zadnja}}-MP<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</div></div>
 
-      <div class="col-md-1 text-center">  <img class="cpu"  src="{{bat}}" > <p *ngIf="telefon[0]?.specifikacije.baterija != null"> {{telefon[0]?.specifikacije.baterija}}-mA<p *ngIf="telefon[0]?.specifikacije.baterija == null">N/a</p></div>
-       <div class="col-md-1 text-center"> <img class="cpu"  src="{{mem}}" ><p *ngIf="telefon[0]?.specifikacije.memorija != null"> {{telefon[0]?.specifikacije.memorija}}-Gb<p *ngIf="telefon[0]?.specifikacije.memorija == null">N/a</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details col-md-6" >
+          <h3 class="product-title">  {{telefon[0]?.mark_id.marka_naziv}}    {{telefon[0]?.model}}  </h3>
+          <div class="rating" >
+            <div style="font-size: larger; color: orange">
+              <p style="color: black">Stanje procijenjeno od strane vlasnika </p>
+              <ngb-rating [max]="5" [(rate)]= "stanje" [readonly] = "true">
+
+              </ngb-rating>
+            </div>
+
+          </div>
+          <p class="product-description"> {{telefon[0]?.opis}}</p>
+          <h4 class="price">Trenutna cijena :<span>{{telefon[0]?.cijena}} eur</span></h4>
+          <div class="details">
+          <h1>Kontakt: {{telefon[0]?.kontakt}}</h1>
+            <h1>Prodavac: {{telefon[0]?.prodavac}}</h1>
+          </div>
 
 
-
-       <div class="col-md-1 text-center"> <img class="cpu"   src="{{ram_url}}" ><p *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb<p *ngIf="telefon[0]?.specifikacije.ram == null">N/a</p></div>
-     <div class="col-md-1 text-center"> <img class="cpu"  src="{{cam}}" > <p *ngIf="telefon[0]?.specifikacije.kamera_prednja !=null "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<p *ngIf="telefon[0]?.specifikacije.kamera_prednja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</p></div>
-      <div class="col-md-1 text-center">  <img class="cpu"  src="{{cam}}" > <p *ngIf="telefon[0]?.specifikacije.kamera_zadnja !=null "> Zadnja kamera: {{telefon[0]?.specifikacije.kamera_zadnja}}-MP<p *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null && telefon[0]?.specifikacije.kamera_prednja ">N/a</p></div>
-
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
- <div class="col-md-2"></div>
-  <a href="Tel:067-111-111">067-111-111  KLIKNI DA NAZOVES PRODAVCA</a>
 
-
-
-
+</body>
+</html>
 
 
 
