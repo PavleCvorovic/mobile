@@ -1,4 +1,7 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
 <div class="container-fluid">
+
 
   <div class="row">
     <div class="col-md-12 text-center" id="header1">
@@ -10,7 +13,7 @@
     <div class="col-md-12 text-center" style="background-color: #e5e2e2">
 
       <h1>FILTER</h1>
-      <form class="row row-cols-md-12 row-cols-sm-3" >
+      <form class="row  row-cols-sm-3" >
 
 
         <div class="zoom" (change)="prenos(f.value)" >
@@ -85,7 +88,7 @@
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-9 ">
-      <div >   <div class="col-md-1 alert-info "  > '{{s.duzinatelefona}}' telefona </div></div>
+      <div >   <div class="col-md-1 alert-info "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>
 
       <div class="container" style="margin-top: 3rem;" >
         <div class="row justify-content-center" style="text-align: center ">
@@ -112,8 +115,8 @@
             <div><b>Cijena:  </b> {{  a.cijena}}</div>
 
 
-            <div style="font-size:large; color: orange">
-              <ngb-rating [max]="10" [(rate)]= "a.stanje" [readonly] = "true">
+            <div style="font-size:xx-large; color: orange">
+              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
 
               </ngb-rating>
             </div>
@@ -142,17 +145,17 @@
       <div *ngIf="s.prikaz===true" class="col-md-12">
 
         <div class="alert alert-info" role="alert" style="text-align: center">
-          <h1 class="alert-heading">Zao nam je...</h1>
-          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
+          <h1 class="alert-heading">Žao nam je...</h1>
+          <p>Nažalost nismo mogli pronaći nijedan oglas.</p>
           <hr>
-          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
+          <p class="mb-0">Budite prvi, objavite svoj polovni telefon !</p>
 
           <img src="https://static.thenounproject.com/png/3271619-200.png">
 
 
         </div>
         <div style="text-align: center">
-          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POSALJI</button>
+          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>
         </div>
       </div>
     </div>
@@ -165,8 +168,8 @@
 
     <div *ngIf="pokazivac_marke===1" class="col-md-9">
       <div class="container" style="margin-top: 3rem;">
-        <div class="col-md-2 alert-info" >Vraceno je: '{{s1.duzinafil}}' telefona </div>
-        <div class="row" style="text-align: center ">
+        <div class="col-md-2 alert-info" >Vraćeno je: '{{s1.duzinafil}}' telefona </div>
+        <div class="row justify-content-center" style="text-align: center ">
           <div class  *ngFor="let a of this.s1.filter_res | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
@@ -192,8 +195,8 @@
 
 
 
-            <div style="font-size:large; color: orange">
-              <ngb-rating [max]="10" [(rate)]= "a.stanje" [readonly] = "true">
+            <div style="font-size: larger; color: orange">
+              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
 
               </ngb-rating>
             </div>
@@ -231,7 +234,7 @@
 
         </div>
         <div style="text-align: center">
-          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POSALJI</button>
+          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>
         </div>
       </div>
 
@@ -251,7 +254,7 @@
 
     <div class="col-md-3" id="postovi" style="border-radius:1%;text-align: center ">
 
-      <h1 class="tekst pt-5 pb-3">U ovoj sekciji mozete postaviti oglas ! </h1>
+      <h1 class="tekst pt-5 pb-3">U ovoj sekciji možete postaviti oglas ! </h1>
 
       <div>
        <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" placeholder="Postavite oglas i vas kontakt "

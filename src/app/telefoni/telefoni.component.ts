@@ -54,9 +54,20 @@ export class TelefoniComponent implements OnInit {
 
     let pitanje =
     {
-      email:JSON.stringify(this.question.value.email),
-      poruka:JSON.stringify(this.question.value.poruka)
+      email:this.question.value.email,
+      poruka:this.question.value.poruka
     }
+    console.log(pitanje.email)
+    console.log(pitanje.poruka)
+    if(pitanje.poruka=='' || pitanje.email=='' || pitanje.poruka==null ||pitanje.email==null)
+    {
+
+      Swal.fire('Upss...', 'Morate popuniti oba polja !', 'warning')
+     this.question.reset()
+      pitanje.poruka=''
+      pitanje.email=''
+    }
+    else{
     this.http
       .post(
         'http://localhost:8000/api/mail-salji', pitanje
@@ -64,9 +75,11 @@ export class TelefoniComponent implements OnInit {
       )   .subscribe(responseData =>
     {
 
-
-
-    })
+      Swal.fire('Hvala vam...', 'Uspjesno ste postavili pitanje, admin će Vam ubrzo odgovoriti !', 'success')
+ this.question.reset();
+      this.question.value.email=''
+      this.question.value.poruka=''
+    })}
   }
 
   postaviPost() {

@@ -14,13 +14,14 @@ position: relative;
   background-size: contain;
   color:white;
   height: max-content;
-
+  font-family:'Nova Slim',cursive
 }
 
 .oglas{
   background-color: white;
   border-radius: 5%;
 color: black;
+  font-family:'Nova Slim',cursive
 
 }
 .telefoni_prazni{
@@ -106,4 +107,7 @@ color: black;
   background-color: #65a15a;
   color: #fff;
   position: relative;
+}
+.container-fluid{
+  font-family:'Nova Slim',cursive
 }
