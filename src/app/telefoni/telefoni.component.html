@@ -11,7 +11,7 @@
 
 
     <div class="col-md-12 text-center" style="background-color:
-#000000">
+#f1efef">
 
       <h1 style=" font-family:'Nova Slim',cursive;color: white">FILTER</h1>
       <form class="row  row-cols-sm-3" >
@@ -85,7 +85,7 @@
       <ng5-slider   [(highValue)]="this.s1.filter.cijena_max" [(value)]="this.s1.filter.cijena_min" [options]="options" (change)="postavi_parametre_cijena()"></ng5-slider>
       <br>
 
-      <button class="btn btn-danger" (click)="filtriraj()" style="margin-top: 2rem ">Filtriraj</button>
+      <button class="btn btn-danger" (click)="filtriraj()" style="margin-top: 2rem ; ">Filtriraj</button>
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-9 ">
