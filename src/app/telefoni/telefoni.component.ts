@@ -57,8 +57,7 @@ export class TelefoniComponent implements OnInit {
       email:this.question.value.email,
       poruka:this.question.value.poruka
     }
-    console.log(pitanje.email)
-    console.log(pitanje.poruka)
+
     if(pitanje.poruka=='' || pitanje.email=='' || pitanje.poruka==null ||pitanje.email==null)
     {
 
