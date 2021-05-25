@@ -160,6 +160,20 @@
           <h1>Kontakt: {{telefon[0]?.kontakt}}</h1>
             <h1>Prodavac: {{telefon[0]?.prodavac}}</h1>
           </div>
+          <div class="text-left">
+            <div >
+              <button class="btn btn-danger" (click)="obrisi()">Obrisi oglas</button>
+            </div>
+            <div *ngIf="brisanjePregled === true">
+              <label style="margin-top: 5px;">Unesite sifru telefona koju ste postavili kad ste objavljivali oglas:</label>
+              <div>
+                <input type="input" [(ngModel)] = "sifra" name="sifra">
+              </div>
+              <div>
+                <button type="submit" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
+              </div>
+            </div>
+            </div>
 
 
           </div>
