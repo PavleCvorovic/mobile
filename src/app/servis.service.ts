@@ -16,6 +16,7 @@ import {Observable} from "rxjs";
 export class ServisService {
   tel_marka_model:any;
   spiner:boolean=false;
+  spinerOglas:boolean=false;
 telefoni:any=[];
 modeli:any=[];
 marke:any=[];
@@ -246,10 +247,11 @@ posts:any={
       })
   }
 
+
   dodajKonfiguracije()
   {
     const params = new HttpParams()
-
+    this.spinerOglas = true;
     this.http
     .post(
       'http://localhost:8000/api/dodaj-konfiguracije',this.konfiguracijeBaza,

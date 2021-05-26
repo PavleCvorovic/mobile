@@ -120,6 +120,19 @@ prikazSlike=[];
 
 
 
+  postavi_parametre_ram(value){
+    this.ram=value;
+
+  }
+  postavi_parametre_kamPrednja(value){
+    this.kamera_prednja=value;
+  }
+  postavi_parametre_kamZadnja(value){
+    this.kamera_zadnja=value;
+  }
+  postavi_parametre_memorija(value){
+    this.memorija=value;
+  }
 
 
 
@@ -192,6 +205,7 @@ prikazSlike=[];
       this.s1.photo.slika = this.slika;
       this.s1.photo.telefon_id = this.s.telefonBaza.id;
 
+      console.log(this.kamera_prednja);
 
 
       this.s.dodajTelefon();
@@ -253,12 +267,14 @@ prikazSlike=[];
 
 
 
-      Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
-
-    }}else{
-
-      Swal.fire('Upssss...', 'Popunite sva polja oznacena sa "*" ', 'warning')
+    }}else{console.log('ne');
     }
+if(this.s1.swaloglas===true){
+  Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
+}
+
+
+
 
 
 
@@ -266,14 +282,4 @@ prikazSlike=[];
 
 
   }
-
-
-
-
-
-
-
-
-
-
 }

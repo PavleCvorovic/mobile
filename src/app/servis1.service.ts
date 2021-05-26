@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {ServisService} from "./servis.service";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import Swal from 'sweetalert2';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,7 @@ import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 export class Servis1Service {
   prikaz:boolean=false;
   spiner:boolean=false;
+  swaloglas:boolean=false;
   tel_marka_id: any;
 filter_res:any;
   tel_model_naziv: any;
@@ -82,7 +85,7 @@ this.duzinafil=this.filter_res.length
 
 
 
-
+brojac = 0;
 
 
 
@@ -100,7 +103,12 @@ this.duzinafil=this.filter_res.length
 
 
       .subscribe(posts => {
-
+        this.s.spinerOglas = false;
+        if(this.brojac <1)
+        {
+           Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
+           this.brojac++;
+        }
       })
   }
 
