@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServisService } from '../servis.service';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
+import Swal from "sweetalert2";
 
 
 @Component({
@@ -55,10 +56,11 @@ stanje:number;
     if(this.telefon[0].sifra===this.sifra)
     {
       this.s.brisiTelefon(this.id);
-      alert('uspjesno obrisan telefon!');
+
+        Swal.fire('Uspješno !', 'Izbrisali ste telefon sa aplikacije!', 'success')
     }else{
 
-      alert('Pogresna sifra');
+      Swal.fire('Žao nam je ...', 'Šifra nije ispravna !', 'warning')
       this.sifra = "";
     }
 

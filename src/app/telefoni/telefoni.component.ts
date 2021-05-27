@@ -42,6 +42,7 @@ export class TelefoniComponent implements OnInit {
     this.s.dajtelefone();
     this.s.dajpostove();
     this.s.dajmarku();
+    this.time()
   }
   question=this.fb.group({
     email:'',
@@ -80,6 +81,15 @@ export class TelefoniComponent implements OnInit {
       this.question.value.poruka=''
     })}
   }
+
+ time(){
+   let today = new Date()
+   today.toISOString().split('T')[0]
+   console.log(today)
+    this.s.telefoni
+ }
+
+
 
   postaviPost() {
 

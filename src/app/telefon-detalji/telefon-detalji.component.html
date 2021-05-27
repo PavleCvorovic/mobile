@@ -167,10 +167,10 @@
             <div *ngIf="brisanjePregled === true">
               <label style="margin-top: 5px;">Unesite sifru telefona koju ste postavili kad ste objavljivali oglas:</label>
               <div>
-                <input type="input" [(ngModel)] = "sifra" name="sifra">
+                <input class="form-control" [(ngModel)] = "sifra" name="sifra">
               </div>
               <div>
-                <button type="submit" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
+                <button class="btn btn btn-danger" (click)="PotvrdiBrisanje()" style="margin-top: 5px; margin-left: 110px;">Potvrdi</button>
               </div>
             </div>
             </div>

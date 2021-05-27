@@ -110,6 +110,7 @@
 
 
 
+
             <img   alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
                  style="width:400px;height: 200px; border-radius:5%">
             <div><b>Model: </b>{{  a.model }}</div>
@@ -120,6 +121,15 @@
               <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
 
               </ngb-rating>
+              <div class="product-bottom">
+                <div class="flashr">
+                                    <span class="onnew">
+                                        <span class="text">
+                                         {{a.okacen}}
+                                        </span>
+                                    </span>
+                </div>
+              </div>
             </div>
 
 

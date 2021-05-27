@@ -58,7 +58,8 @@ prikaz:boolean=false;
 
       .subscribe(posts => {
 
-        this.telefoni = posts;
+   this.telefoni = posts;
+this.telefoni.reverse();
         console.log(this.telefoni)
         this.spiner=false;
         let i;
@@ -324,7 +325,7 @@ models:any={
 
       .subscribe(posts => {
         this.postovi = posts;
-
+this.postovi.reverse();
 
 
       })

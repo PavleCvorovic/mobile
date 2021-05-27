@@ -110,6 +110,21 @@ color: black;
   color: #fff;
   position: relative;
 }
+.telefon .flashr {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  float:right;
+  line-height: 20px;
+  height: 22px;
+  min-width: 44px;
+  padding: 0 5px;
+  text-align: center;
+
+  color: #110101;
+  position: relative;
+}
 .container-fluid{
   font-family:'Nova Slim',cursive
 }
