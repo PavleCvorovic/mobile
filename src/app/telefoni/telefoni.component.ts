@@ -14,7 +14,7 @@ import {
 
 @Component({
   selector: 'app-telefoni',
-  templateUrl: './telefoni-temp.html',
+  templateUrl: './telefoni.component.html',
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
