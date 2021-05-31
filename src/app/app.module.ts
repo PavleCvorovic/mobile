@@ -50,7 +50,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         ReactiveFormsModule,
         NgxPaginationModule,
       Ng5SliderModule,
-      NgbModule
+      NgbModule,
+
     ],
   providers: [DatePipe, CookieService],
   bootstrap: [AppComponent]

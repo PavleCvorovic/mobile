@@ -1,5 +1,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
+
 <div class="container-fluid">
 
 
@@ -89,7 +90,9 @@
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-9 ">
-      <div >   <div class="col-md-1 alert-info "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>
+
+
+      <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>
 
       <div class="container" style="margin-top: 3rem;" >
         <div class="row justify-content-center" style="text-align: center ">
@@ -125,7 +128,9 @@
                 <div class="flashr">
                                     <span class="onnew">
                                         <span class="text">
-                                         {{a.okacen}}
+                                         {{
+                                           a.vrijeme
+                                          }}
                                         </span>
                                     </span>
                 </div>
@@ -179,7 +184,7 @@
 
     <div *ngIf="pokazivac_marke===1" class="col-md-9">
       <div class="container" style="margin-top: 3rem;">
-        <div class="col-md-2 alert-info" >Vraćeno je: '{{s1.duzinafil}}' telefona </div>
+        <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s1.duzinafil}}' </div></div>
         <div class="row justify-content-center" style="text-align: center ">
           <div class  *ngFor="let a of this.s1.filter_res | paginate: {
                                                       itemsPerPage:12,

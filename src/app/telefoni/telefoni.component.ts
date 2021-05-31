@@ -14,11 +14,11 @@ import {
 
 @Component({
   selector: 'app-telefoni',
-  templateUrl: './telefoni.component.html',
+  templateUrl: './telefoni-temp.html',
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-
+vreme:string[];
   value: number = 0;
   highValue: number = 2000;
   options: Options = {
@@ -33,6 +33,7 @@ export class TelefoniComponent implements OnInit {
   total = 16;
   p = 1;
   starRating = 0;
+
   constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service, public fb:FormBuilder, public http:HttpClient) {
   }
 
@@ -43,6 +44,7 @@ export class TelefoniComponent implements OnInit {
     this.s.dajpostove();
     this.s.dajmarku();
     this.time()
+    console.log(this.vreme)
   }
   question=this.fb.group({
     email:'',
@@ -84,9 +86,13 @@ export class TelefoniComponent implements OnInit {
 
  time(){
    let today = new Date()
-   today.toISOString().split('T')[0]
-   console.log(today)
-    this.s.telefoni
+ for (let a of this.s.telefoni){
+   let newdate =new Date(a.vrijeme)
+   if(newdate.getDay()==today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()){
+    this.vreme[0]='danas';
+   }
+
+ }
  }
 
 

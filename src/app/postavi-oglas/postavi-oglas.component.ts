@@ -187,7 +187,7 @@ prikazSlike=[];
 
 
       this.s.telefonBaza.specifikacije = conf + 1;
-
+      var  x = Date();
       this.s.telefonBaza.mark_id = this.marka;
 
 
@@ -200,7 +200,7 @@ prikazSlike=[];
       this.s.telefonBaza.stanje = this.currentRate;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
-
+this.s.telefonBaza.vrijeme=x;
       this.s.spiner=true;
       this.s1.photo.slika = this.slika;
       this.s1.photo.telefon_id = this.s.telefonBaza.id;
