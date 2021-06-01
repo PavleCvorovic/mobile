@@ -73,8 +73,8 @@ if (this.telefoni.length===0){
 
 
         }
-        let timeH:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-        let timeM:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
+        var timeH:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        var timeM:number[]=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
         var timeD:number[]=[];
         for (let i=0;i<31;i++){
           timeD[i]=i;
@@ -87,37 +87,50 @@ if (this.telefoni.length===0){
           var timenowH:number=today.getHours();
           var timepostM=newdate.getMinutes();
           var timenowM:number=today.getMinutes();
-
+          var zbirM:number=timepostM+timenowM;
+          var timenowD:number=today.getDay();
+          var timepostD:number=newdate.getDay();
          var checkMin:boolean=false;
          var checkHr:boolean=false;
+         var satiM,satiH,satiD;
 
 
+if (timenowM<timepostM){
+  timenowM=timenowM+60
+   timenowH=timenowH-1;
+   satiM= Math.abs(timenowM-timepostM);
+}else {
+  satiM = timenowM-timepostM;
+}
+          // satiM= Math.abs(timenowM-timepostM);
 
-          var satiM=timenowM-timepostM;
-          Math.abs(satiM)
+          // console.log('minuta je'+ timenowM+''+timepostM+'='+satiM)
 
-          var satiH=timenowH-timepostH
-          Math.abs(satiH)
+          if(timenowH<timepostH)
+          {
+            timenowH=timenowH+24;
+            timenowD=timenowD-1;
+            satiH= Math.abs(timenowH-timepostH);
+          }else {
+            satiH = timenowH- timepostH;
+          }
 
 
-          for (let c=0;c<=timeH.length;c++){
-          if(newdate.getDay()==today.getDay() && newdate.getMonth()==today.getMonth() && today.getFullYear()===newdate.getFullYear() && satiM===timeM[c]){
-            this.telefoni[i].vrijeme='prije '+timeM[c]+'min'
-checkMin=true;
+          satiD=timenowD-timepostD
+          Math.abs(satiD)
+          
 
+          if(timepostD == timenowD && timenowH == timepostH)
+          {
+            console.log("prije " + satiM + "minutta" )
+            this.telefoni[i].vrijeme = "prije "+ satiM+ "min";
+          }
+          else if(timepostD == timenowD)
+          {
+            console.log("prije "+ satiH + "SAti " + satiM + "minuta" )
+            this.telefoni[i].vrijeme = "prije" + satiH + "sati";
 
-          }}
-
-          for (let b=0;b<=timeH.length;b++){
-           if(newdate.getDay()==today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&checkMin!==true&&timeH[b]===satiH){
-            this.telefoni[i].vrijeme='prije '+timeH[b]+'h'
-checkHr=true;
-          }}
-          // for (let e=0;e<=timeD.length;e++){
-          //   if(newdate.getDay()!=today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&checkHr!==true&&dani===timeD[e]){
-          //     this.telefoni[i].vrijeme='prije '+timeD[e]+'dan-a'
-          //
-          //   }}
+          }
 
 
 
