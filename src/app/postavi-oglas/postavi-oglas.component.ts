@@ -276,6 +276,9 @@ if(this.s1.swaloglas===true){
 
 
 
+setTimeout(()=>{                           //<<<---using ()=> syntax
+  window.location.reload();
+}, 6000);
 
 
 
