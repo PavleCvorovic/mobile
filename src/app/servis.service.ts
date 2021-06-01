@@ -73,7 +73,7 @@ if (this.telefoni.length===0){
 
 
         }
-        let timeH:number[]=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        let timeH:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
         let timeM:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
         var timeD:number[]=[];
         for (let i=0;i<31;i++){
@@ -87,15 +87,17 @@ if (this.telefoni.length===0){
           var timenowH:number=today.getHours();
           var timepostM=newdate.getMinutes();
           var timenowM:number=today.getMinutes();
-          
+
          var checkMin:boolean=false;
          var checkHr:boolean=false;
-   var sati= Math.abs(timenowH-timepostH)
-          var satiM= Math.abs(timenowM-timepostM)
 
-          console.log('Sati'+ sati)
-         var dani= Math.abs(today.getDay()-newdate.getDay())
 
+
+          var satiM=timenowM-timepostM;
+          Math.abs(satiM)
+
+          var satiH=timenowH-timepostH
+          Math.abs(satiH)
 
 
           for (let c=0;c<=timeH.length;c++){
@@ -107,15 +109,15 @@ checkMin=true;
           }}
 
           for (let b=0;b<=timeH.length;b++){
-           if(newdate.getDay()==today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&sati===timeH[b]&&checkMin!==true){
+           if(newdate.getDay()==today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&checkMin!==true&&timeH[b]===satiH){
             this.telefoni[i].vrijeme='prije '+timeH[b]+'h'
 checkHr=true;
           }}
-          for (let e=0;e<=timeD.length;e++){
-            if(newdate.getDay()!=today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&checkHr!==true&&dani===timeD[e]){
-              this.telefoni[i].vrijeme='prije '+timeD[e]+'dan-a'
-
-            }}
+          // for (let e=0;e<=timeD.length;e++){
+          //   if(newdate.getDay()!=today.getDay()&&newdate.getMonth()==today.getMonth()&&today.getFullYear()===newdate.getFullYear()&&checkHr!==true&&dani===timeD[e]){
+          //     this.telefoni[i].vrijeme='prije '+timeD[e]+'dan-a'
+          //
+          //   }}
 
 
 
