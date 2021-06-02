@@ -2412,7 +2412,9 @@
         <!-- Shop Bottom Area End -->
       </div>
       <!-- Sidebar Area Start -->
+
       <div class="col-lg-3 order-lg-first col-md-12 order-md-last mb-md-60px mb-lm-60px">
+        <form>
         <div class="shop-sidebar-wrap">
           <div class="sidebar-widget padding-30px bg-light-gray-2 mb-30px">
             <h3 class="sidebar-title">Marka&Model</h3>
@@ -2444,12 +2446,17 @@
               <!-- card -->
             </div>
           </div>
-          <!-- Sidebar single item -->
-          <div class="sidebar-widget-group mt-20 padding-30px">
+
+
+
+        <div class="shop-sidebar-wrap">
+          <div class="sidebar-widget padding-30px bg-light-gray-2 mb-30px">
             <h3 class="sidebar-title">Filter</h3>
 
+
+
             <div class="zoom" (change)="postavi_parametre_ram(b.value)">
-              <select #b class="form-control  mt-5">
+              <select #b class="form-control">
                 <option value="" >Izaberite ram</option>
                 <option value="2">2Gb</option>
                 <option value="4">4Gb</option>
@@ -2462,7 +2469,7 @@
 
             </div>
             <div class="zoom" (change)="postavi_parametre_kamPrednja(c.value)">
-              <select #c class="form-control mt-5">
+              <select #c class="form-control">
                 <option value="" >Prednja kamera</option>
                 <option value="8">8MP</option>
                 <option value="12">12MP</option>
@@ -2475,7 +2482,7 @@
 
             </div>
             <div class="zoom" (change)="postavi_parametre_kamZadnja(e.value)">
-              <select #e class="form-control mt-5">
+              <select #e class="form-control">
                 <option value="" >Zadnja kamera</option>
                 <option value="8">8MP</option>
                 <option value="12">12MP</option>
@@ -2486,7 +2493,7 @@
               </select>
             </div>
             <div class="zoom" (change)="postavi_parametre_memorija(i.value)">
-              <select #i class="form-control mt-5">
+              <select #i class="form-control">
                 <option value="" >Memorija</option>
                 <option value="8">8Gb</option>
                 <option value="16">16Gb</option>
@@ -2495,22 +2502,27 @@
                 <option value="128">128Gb</option>
 
               </select>
-            </div>
-
-
-
-
-
 
             </div>
+
+                </div>
+              </div>
+        </form>
+            </div> <!-- card -->
+            <!-- card -->
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
 
-<!-- Shop Category Area End -->
-<!-- Footer Area Start -->
+
+
+
+
+
+
+
+
 <div class="footer-area">
   <div class="footer-container">
     <div class="footer-top">
