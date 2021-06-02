@@ -81,6 +81,7 @@ else if(value == 1)
     this.sort++;
   }
   this.telefoni = this.telefoniZaCijenuObrnuto;
+  this.sort = 0;
 }
 }
 
