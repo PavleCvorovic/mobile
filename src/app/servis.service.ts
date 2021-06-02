@@ -45,9 +45,10 @@ prikaz:boolean=false;
   }
 
   telefoniZaCijenu:any=[];
+  telefoniZaCijenuObrnuto:any=[]
 sort = 0;
 
-sortCijena()
+sortCijena(value:number)
 {
   // this.dajtelefone();
   // this.telefoniZaCijenu = this.s.telefoniZaSlike;
@@ -61,15 +62,25 @@ sortCijena()
   // this.telefoniZaCijenu = this.telefoniZaCijenu.slice();
 
   // console.log(this.telefoniZaCijenu);
-  for( let i=0;i<this.telefoniZaCijenu.length;i++){
-    for(let j=0;j<this.telefoniZaCijenu.length-1;j++){
-      if(this.telefoniZaCijenu[j].cijena > this.telefoniZaCijenu[j+1].cijena){
-        [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j+1]] =[this.telefoniZaCijenu[j+1],this.telefoniZaCijenu[j]];
-    }
+  if(value == 0)
+  {
+    for( let i=0;i<this.telefoniZaCijenu.length;i++){
+      for(let j=0;j<this.telefoniZaCijenu.length-1;j++){
+        if(this.telefoniZaCijenu[j].cijena > this.telefoniZaCijenu[j+1].cijena){
+          [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j+1]] =[this.telefoniZaCijenu[j+1],this.telefoniZaCijenu[j]];
+      }
   }
-  this.telefoni = this.telefoniZaCijenu;
 }
-
+}
+else if(value == 1)
+{
+  for(let i=this.telefoniZaCijenu.length-1;i>=0;i--)
+  {
+    this.telefoniZaCijenuObrnuto[this.sort] = this.telefoniZaCijenu[i];
+    this.sort++;
+  }
+  this.telefoni = this.telefoniZaCijenuObrnuto;
+}
 }
 
 
