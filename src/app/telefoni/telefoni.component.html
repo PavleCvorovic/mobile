@@ -1208,11 +1208,11 @@
             <div class="shot-product">
               <p>Sortiraj:</p>
             </div>
-            <div class="shop-select" (change)= "s.sortCijena()">
-              <select>
+            <div class="shop-select" (change)= "s.sortCijena(l.value)">
+              <select #l>
                 <option value=""></option>
-                <option value="">Cijena najmanja-najveća</option>
-                <option value=""> Cijena najveća-najmanja</option>
+                <option value="0">Cijena najmanja-najveća</option>
+                <option value="1"> Cijena najveća-najmanja</option>
 
               </select>
             </div>
