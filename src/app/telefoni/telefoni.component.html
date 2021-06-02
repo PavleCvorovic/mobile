@@ -2369,7 +2369,7 @@
 
 
                       <div class="zoom" (change)="prenos(f.value)" >
-                        <select  #f class="form-control" >
+                        <select  #f class="form-control mb-2" >
                           <option [value]="0">Izaberite marku</option>
                           <option *ngFor="let a of this.s.marke" [value]="a.id"> {{a.marka_naziv}} </option>
 
@@ -2377,7 +2377,7 @@
                       </div>
 
                       <div class="zoom" (change)="postavi_parametre(a.value)">
-                        <select #a class="form-control">
+                        <select #a class="form-control mb-2">
                           <option value="" >Izaberite model </option>
                           <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
 
@@ -2402,7 +2402,7 @@
 
 
             <div class="zoom" (change)="postavi_parametre_ram(b.value)">
-              <select #b class="form-control">
+              <select #b class="form-control mb-2">
                 <option value="" >Izaberite ram</option>
                 <option value="2">2Gb</option>
                 <option value="4">4Gb</option>
@@ -2415,7 +2415,7 @@
 
             </div>
             <div class="zoom" (change)="postavi_parametre_kamPrednja(c.value)">
-              <select #c class="form-control">
+              <select #c class="form-control mb-2">
                 <option value="" >Prednja kamera</option>
                 <option value="8">8MP</option>
                 <option value="12">12MP</option>
@@ -2428,7 +2428,7 @@
 
             </div>
             <div class="zoom" (change)="postavi_parametre_kamZadnja(e.value)">
-              <select #e class="form-control">
+              <select #e class="form-control mb-2">
                 <option value="" >Zadnja kamera</option>
                 <option value="8">8MP</option>
                 <option value="12">12MP</option>
@@ -2439,7 +2439,7 @@
               </select>
             </div>
             <div class="zoom" (change)="postavi_parametre_memorija(i.value)">
-              <select #i class="form-control">
+              <select #i class="form-control mb-2">
                 <option value="" >Memorija</option>
                 <option value="8">8Gb</option>
                 <option value="16">16Gb</option>
