@@ -48,7 +48,7 @@ prikaz:boolean=false;
   telefoniZaCijenuObrnuto:any=[]
 sort = 0;
 
-sortCijena(value:number)
+sortCijena(value:any)
 {
   // this.dajtelefone();
   // this.telefoniZaCijenu = this.s.telefoniZaSlike;
