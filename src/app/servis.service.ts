@@ -44,6 +44,34 @@ prikaz:boolean=false;
         )
   }
 
+  telefoniZaCijenu:any=[];
+sort = 0;
+
+sortCijena()
+{
+  // this.dajtelefone();
+  // this.telefoniZaCijenu = this.s.telefoniZaSlike;
+  for(let i = 0; i<this.telefoni.length;i++)
+  {
+    this.telefoniZaCijenu[i] = this.telefoni[i];
+
+  }
+
+
+  // this.telefoniZaCijenu = this.telefoniZaCijenu.slice();
+
+  // console.log(this.telefoniZaCijenu);
+  for( let i=0;i<this.telefoniZaCijenu.length;i++){
+    for(let j=0;j<this.telefoniZaCijenu.length-1;j++){
+      if(this.telefoniZaCijenu[j].cijena > this.telefoniZaCijenu[j+1].cijena){
+        [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j+1]] =[this.telefoniZaCijenu[j+1],this.telefoniZaCijenu[j]];
+    }
+  }
+  this.telefoni = this.telefoniZaCijenu;
+}
+
+}
+
 
 
 
@@ -130,23 +158,29 @@ if (timenowM<timepostM){
           if(timenowMonth-timepostMonth >= 3)
           {
             this.brisiTelefon(this.telefoni[i].id);
+          }else
+          {
+            satiMonth= timenowMonth - timepostMonth;
           }
 
 
           if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
           {
 
-            this.telefoni[i].vrijeme = "prije "+ satiM+ "min";
+            this.telefoni[i].vrijeme = "prije "+ satiM+ " min";
           }
           else if(timepostMonth==timenowMonth && timepostD == timenowD)
           {
 
-            this.telefoni[i].vrijeme = "prije" + satiH + "h";
+            this.telefoni[i].vrijeme = "prije " + satiH + " h";
 
           }else if(timepostMonth==timenowMonth)
           {
 
-            this.telefoni[i].vrijeme = "prije" + satiD + "Dana";
+            this.telefoni[i].vrijeme = "prije " + satiD + " dana";
+          }else
+          {
+            this.telefoni[i].vrijeme = "prije "+ satiMonth + " mjeseca"
           }
 
 
@@ -476,6 +510,8 @@ dajpitanja(){
 
 
 }
+
+
 
 
 
