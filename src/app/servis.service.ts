@@ -90,9 +90,11 @@ if (this.telefoni.length===0){
           var zbirM:number=timepostM+timenowM;
           var timenowD:number=today.getDay();
           var timepostD:number=newdate.getDay();
-         var checkMin:boolean=false;
-         var checkHr:boolean=false;
-         var satiM,satiH,satiD;
+          var timenowMonth:number= today.getMonth();
+          var timepostMonth:number = newdate.getMonth();
+          var checkMin:boolean=false;
+          var checkHr:boolean=false;
+          var satiM,satiH,satiD,satiMonth;
 
 
 if (timenowM<timepostM){
@@ -116,20 +118,35 @@ if (timenowM<timepostM){
           }
 
 
-          satiD=timenowD-timepostD
-          Math.abs(satiD)
-          
-
-          if(timepostD == timenowD && timenowH == timepostH)
+          if(timenowD<timepostD)
           {
-            console.log("prije " + satiM + "minutta" )
+            timenowD = timenowD+31;
+            timenowMonth = timenowMonth-1;
+            satiD = timenowD-timepostD;
+          }else
+          {
+            satiD = timenowD-timepostD
+          }
+          if(timenowMonth-timepostMonth >= 3)
+          {
+            this.brisiTelefon(this.telefoni[i].id);
+          }
+
+
+          if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
+          {
+
             this.telefoni[i].vrijeme = "prije "+ satiM+ "min";
           }
-          else if(timepostD == timenowD)
+          else if(timepostMonth==timenowMonth && timepostD == timenowD)
           {
-            console.log("prije "+ satiH + "SAti " + satiM + "minuta" )
-            this.telefoni[i].vrijeme = "prije" + satiH + "sati";
 
+            this.telefoni[i].vrijeme = "prije" + satiH + "h";
+
+          }else if(timepostMonth==timenowMonth)
+          {
+
+            this.telefoni[i].vrijeme = "prije" + satiD + "Dana";
           }
 
 
