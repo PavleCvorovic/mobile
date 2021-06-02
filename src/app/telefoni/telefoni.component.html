@@ -15,62 +15,7 @@
 #f1efef">
 
       <h1 style=" font-family:'Nova Slim',cursive;color: #040510">FILTER</h1>
-      <form class="row  row-cols-sm-3" >
 
-
-        <div class="zoom" (change)="postavi_parametre_ram(b.value)">
-          <select #b class="form-control">
-            <option value="" >Izaberite ram</option>
-            <option value="2">2Gb</option>
-            <option value="4">4Gb</option>
-            <option value="6">6Gb</option>
-            <option value="8">8Gb</option>
-            <option value="10">10Gb</option>
-            <option value="12">12Gb</option>
-          </select>
-
-
-        </div>
-        <div class="zoom" (change)="postavi_parametre_kamPrednja(c.value)">
-          <select #c class="form-control">
-            <option value="" >Prednja kamera</option>
-            <option value="8">8MP</option>
-            <option value="12">12MP</option>
-            <option value="18">18MP</option>
-            <option value="24">24MP</option>
-            <option value="36">36MP</option>
-            <option value="48">48MP</option>
-          </select>
-
-
-        </div>
-        <div class="zoom" (change)="postavi_parametre_kamZadnja(e.value)">
-          <select #e class="form-control">
-            <option value="" >Zadnja kamera</option>
-            <option value="8">8MP</option>
-            <option value="12">12MP</option>
-            <option value="18">18MP</option>
-            <option value="24">24MP</option>
-            <option value="36">36MP</option>
-            <option value="48">48MP</option>
-          </select>
-        </div>
-        <div class="zoom" (change)="postavi_parametre_memorija(i.value)">
-          <select #i class="form-control">
-            <option value="" >Memorija</option>
-            <option value="8">8Gb</option>
-            <option value="16">16Gb</option>
-            <option value="32">32Gb</option>
-            <option value="64">64Gb</option>
-            <option value="128">128Gb</option>
-
-          </select>
-        </div>
-      </form>
-      <ng5-slider   [(highValue)]="this.s1.filter.cijena_max" [(value)]="this.s1.filter.cijena_min" [options]="options" (change)="postavi_parametre_cijena()"></ng5-slider>
-      <br>
-
-      <button class="btn btn-primary p-1" (click)="filtriraj()"   >Filtriraj</button>
 
     </div>
     <div *ngIf="pokazivac_marke===0" class="col-md-9 ">
@@ -1287,7 +1232,7 @@
                   <article class="list-product">
                     <div class="img-block">
                       <a  class="thumbnail">
-                        <img class="first-img" style="height:300px"  src="http://localhost:8000/storage/slike/{{a.slika}} " />
+                        <img class="first-img" style="height:300px"  src="http://localhost:8000/storage/slike/{{a.slika.slika}} " />
 
                       </a>
                       <div class="quick-view">
@@ -2446,6 +2391,7 @@
               <!-- card -->
             </div>
           </div>
+          <ng5-slider  class="mb-5"  [(highValue)]="this.s1.filter.cijena_max" [(value)]="this.s1.filter.cijena_min" [options]="options" (change)="postavi_parametre_cijena()"></ng5-slider>
 
 
 
@@ -2508,6 +2454,10 @@
                 </div>
               </div>
         </form>
+
+<div class="text-center">
+        <button class="btn btn-primary mt-5 " (click)="filtriraj()"   >Filtriraj</button>
+</div>
             </div> <!-- card -->
             <!-- card -->
           </div>

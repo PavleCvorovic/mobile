@@ -70,7 +70,7 @@ duzinafil:number;
       .subscribe(posts=>
       {
         this.spiner=false;
-        this.filter_res=posts;
+        this.s.telefoni=posts;
 
 this.duzinafil=this.filter_res.length
        if (this.filter_res.length===0){
