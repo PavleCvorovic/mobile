@@ -64,15 +64,15 @@ duzinafil:number;
 
   filtriraj(){
 
-    this.spiner=true;
+    this.s.spiner=true;
 
     return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
       .subscribe(posts=>
       {
-        this.spiner=false;
+        this.s.spiner=false;
         this.s.telefoni=posts;
 
-this.duzinafil=this.filter_res.length
+this.s.duzinatelefona=  this.s.telefoni.length
        if (this.filter_res.length===0){
          this.prikaz=true
 
