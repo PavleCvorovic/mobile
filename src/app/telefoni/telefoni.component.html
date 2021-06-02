@@ -18,22 +18,6 @@
       <form class="row  row-cols-sm-3" >
 
 
-        <div class="zoom" (change)="prenos(f.value)" >
-          <select  #f class="form-control" >
-            <option [value]="0">Izaberite marku</option>
-            <option *ngFor="let a of this.s.marke" [value]="a.id"> {{a.marka_naziv}} </option>
-
-          </select>
-        </div>
-
-        <div class="zoom" (change)="postavi_parametre(a.value)">
-          <select #a class="form-control">
-            <option value="" >Izaberite model </option>
-            <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
-
-          </select>
-
-        </div>
         <div class="zoom" (change)="postavi_parametre_ram(b.value)">
           <select #b class="form-control">
             <option value="" >Izaberite ram</option>
@@ -534,7 +518,7 @@
             <h4 class="menu-title">All Cattegories</h4>
             <ul class="menu-content display-none">
               <li class="menu-item">
-                <a href="#">Electronics <i class="ion-ios-arrow-right"></i></a>
+              Electronics <i class="ion-ios-arrow-right"></i>
                 <ul class="sub-menu flex-wrap">
                   <li>
                     <a href="#">
@@ -1299,7 +1283,7 @@
             <!-- Tab One Start -->
             <div id="shop-1" class="tab-pane active">
               <div class="row responsive-md-class responsive-xl-class responsive-lg-class">
-                <div class="col-xl-3 col-md-4 col-sm-6 " *ngFor="let a of s.telefoni">
+                <div class="col-xl-3 col-md-4 col-sm-6 " *ngFor="let a of s.telefoni" [routerLink]="['/telefon-detalji',a.id]">
                   <article class="list-product">
                     <div class="img-block">
                       <a  class="thumbnail">
@@ -2431,224 +2415,99 @@
       <div class="col-lg-3 order-lg-first col-md-12 order-md-last mb-md-60px mb-lm-60px">
         <div class="shop-sidebar-wrap">
           <div class="sidebar-widget padding-30px bg-light-gray-2 mb-30px">
-            <h3 class="sidebar-title">Electronics</h3>
+            <h3 class="sidebar-title">Marka&Model</h3>
             <div class="accordion" id="accordionExample">
               <div class="card">
                 <div class="card-header" id="headingOne">
-                  <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">Hot Category</a>
-                </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Dresses</a></li>
-                      <li><a href="#">Jackets &amp; Coats</a></li>
-                      <li><a href="#">Sweaters</a></li>
-                      <li><a href="#">Jeans</a></li>
-                      <li><a href="#">Blouses &amp; Shirts</a></li>
-                    </ul>
+
+                      <div class="zoom" (change)="prenos(f.value)" >
+                        <select  #f class="form-control" >
+                          <option [value]="0">Izaberite marku</option>
+                          <option *ngFor="let a of this.s.marke" [value]="a.id"> {{a.marka_naziv}} </option>
+
+                        </select>
+                      </div>
+
+                      <div class="zoom" (change)="postavi_parametre(a.value)">
+                        <select #a class="form-control">
+                          <option value="" >Izaberite model </option>
+                          <option *ngFor="let b of this.s.tel_marka_model" [value]="b.model_naziv">{{b.model_naziv}}</option>
+
+                        </select>
+
+                      </div>
+
                   </div>
                 </div>
               </div> <!-- card -->
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Outerwear &amp; Jackets</a>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" style="">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Basic Jackets</a></li>
-                      <li><a href="#">Real Fur</a></li>
-                      <li><a href="#">Down Coats</a></li>
-                      <li><a href="#">Blazers</a></li>
-                      <li><a href="#">Trench Coats </a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> <!-- card -->
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Weddings &amp; Events</a>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Wedding Dresses</a></li>
-                      <li><a href="#">Evening Dresses</a></li>
-                      <li><a href="#">Prom Dresses </a></li>
-                      <li><a href="#">Bridesmaid Dresses</a></li>
-                      <li><a href="#">Wedding Accessories</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> <!-- card -->
-              <div class="card">
-                <div class="card-header" id="headingFour">
-                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Bottoms</a>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Skirts</a></li>
-                      <li><a href="#">Leggings</a></li>
-                      <li><a href="#">Pants &amp; Capris</a></li>
-                      <li><a href="#">Wide Leg Pants</a></li>
-                      <li><a href="#">Shorts</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> <!-- card -->
-              <div class="card">
-                <div class="card-header" id="headingFive">
-                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Tops &amp; Sets</a>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Tank Tops</a></li>
-                      <li><a href="#">Suits &amp; Sets</a></li>
-                      <li><a href="#">Jumpsuits</a></li>
-                      <li><a href="#">Rompers</a></li>
-                      <li><a href="#">Sleep &amp; Lounge</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> <!-- card -->
-              <div class="card">
-                <div class="card-header" id="headingSix">
-                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Accessories</a>
-                </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <ul class="category-list">
-                      <li><a href="#">Eyewear &amp; Accessories</a></li>
-                      <li><a href="#">Hats &amp; Caps</a></li>
-                      <li><a href="#">Belts &amp; Cummerbunds</a></li>
-                      <li><a href="#">Scarves &amp; Wraps</a></li>
-                      <li><a href="#">Gloves &amp; Mittens</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> <!-- card -->
+              <!-- card -->
             </div>
           </div>
           <!-- Sidebar single item -->
           <div class="sidebar-widget-group mt-20 padding-30px">
-            <h3 class="sidebar-title">Filter By</h3>
-            <div class="sidebar-widget mt-20">
-              <h4 class="pro-sidebar-title">Price</h4>
-              <div class="price-filter mt-10">
-                <div class="price-slider-amount">
-                  <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                </div>
-                <div id="slider-range"></div>
-              </div>
+            <h3 class="sidebar-title">Filter</h3>
+
+            <div class="zoom" (change)="postavi_parametre_ram(b.value)">
+              <select #b class="form-control  mt-5">
+                <option value="" >Izaberite ram</option>
+                <option value="2">2Gb</option>
+                <option value="4">4Gb</option>
+                <option value="6">6Gb</option>
+                <option value="8">8Gb</option>
+                <option value="10">10Gb</option>
+                <option value="12">12Gb</option>
+              </select>
+
+
             </div>
-            <!-- Sidebar single item -->
-            <div class="sidebar-widget mt-30">
-              <h4 class="pro-sidebar-title">Size</h4>
-              <div class="sidebar-widget-list">
-                <ul>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" /> <a href="#">X<span>(4)</span> </a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">M<span>(4)</span></a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">L<span>(4)</span> </a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">XL<span>(4)</span> </a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <div class="zoom" (change)="postavi_parametre_kamPrednja(c.value)">
+              <select #c class="form-control mt-5">
+                <option value="" >Prednja kamera</option>
+                <option value="8">8MP</option>
+                <option value="12">12MP</option>
+                <option value="18">18MP</option>
+                <option value="24">24MP</option>
+                <option value="36">36MP</option>
+                <option value="48">48MP</option>
+              </select>
+
+
             </div>
-            <!-- Sidebar single item -->
-            <div class="sidebar-widget no-cba mt-20">
-              <h4 class="pro-sidebar-title">Colour</h4>
-              <div class="sidebar-widget-list">
-                <ul>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" /> <a href="#">Grey<span>(2)</span> </a>
-                      <span class="checkmark grey"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">White<span>(4)</span></a>
-                      <span class="checkmark white"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">Black<span>(4)</span> </a>
-                      <span class="checkmark black"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">Camel<span>(4)</span> </a>
-                      <span class="checkmark camel"></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <div class="zoom" (change)="postavi_parametre_kamZadnja(e.value)">
+              <select #e class="form-control mt-5">
+                <option value="" >Zadnja kamera</option>
+                <option value="8">8MP</option>
+                <option value="12">12MP</option>
+                <option value="18">18MP</option>
+                <option value="24">24MP</option>
+                <option value="36">36MP</option>
+                <option value="48">48MP</option>
+              </select>
             </div>
-            <!-- Sidebar single item -->
-            <div class="sidebar-widget mt-30">
-              <h4 class="pro-sidebar-title">Brand</h4>
-              <div class="sidebar-widget-list">
-                <ul>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" /> <a href="#">Studio Design<span>(10)</span> </a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sidebar-widget-list-left">
-                      <input type="checkbox" value="" /> <a href="#">Graphic Corner<span>(7)</span></a>
-                      <span class="checkmark"></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <div class="zoom" (change)="postavi_parametre_memorija(i.value)">
+              <select #i class="form-control mt-5">
+                <option value="" >Memorija</option>
+                <option value="8">8Gb</option>
+                <option value="16">16Gb</option>
+                <option value="32">32Gb</option>
+                <option value="64">64Gb</option>
+                <option value="128">128Gb</option>
+
+              </select>
             </div>
-          </div>
-          <!-- Sidebar single item -->
-          <div class="sidebar-widget tag mt-30px">
-            <div class="main-heading">
-              <h3 class="sidebar-title">Tags</h3>
+
+
+
+
+
+
             </div>
-            <div class="sidebar-widget-tag">
-              <ul>
-                <li><a href="#">Electronics</a></li>
-                <li><a href="#">Audio & Video</a></li>
-                <li><a href="#">Video Games</a></li>
-                <li><a href="#">Camera & Photo</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- Sidebar single item -->
         </div>
       </div>
     </div>
   </div>
-</div>
+
 
 <!-- Shop Category Area End -->
 <!-- Footer Area Start -->
