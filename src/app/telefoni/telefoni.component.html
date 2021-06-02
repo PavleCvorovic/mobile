@@ -17,173 +17,173 @@
       <h1 style=" font-family:'Nova Slim',cursive;color: #040510">FILTER</h1>
 
 
-    </div>
-    <div *ngIf="pokazivac_marke===0" class="col-md-9 ">
+<!--    </div>-->
+<!--    <div *ngIf="pokazivac_marke===0" class="col-md-9 ">-->
 
 
-      <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>
+<!--      <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>-->
 
-      <div class="container" style="margin-top: 3rem;" >
-        <div class="row justify-content-center" style="text-align: center ">
-          <div  *ngFor="let a of this.s.telefoni | paginate: {
-                                                      itemsPerPage:12,
-                                                      currentPage: p
-                                                       }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >
+<!--      <div class="container" style="margin-top: 3rem;" >-->
+<!--        <div class="row justify-content-center" style="text-align: center ">-->
+<!--          <div  *ngFor="let a of this.s.telefoni | paginate: {-->
+<!--                                                      itemsPerPage:12,-->
+<!--                                                      currentPage: p-->
+<!--                                                       }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >-->
 
-            <div class="product-top">
-              <div class="flash">
-                                    <span class="onnew">
-                                        <span class="text">
-                                         {{a.naziv}}
-                                        </span>
-                                    </span>
-              </div>
-            </div>
-
-
-
-
-            <img   alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"
-                 style="width:400px;height: 200px; border-radius:5%">
-            <div><b>Model: </b>{{  a.model }}</div>
-            <div><b>Cijena:  </b> {{  a.cijena}}</div>
-
-
-            <div style="font-size:xx-large; color: orange">
-              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
-
-              </ngb-rating>
-              <div class="product-bottom">
-                <div class="flashr">
-                                    <span class="onnew">
-                                        <span class="text">
-                                         {{
-                                           a.vrijeme
-                                          }}
-                                        </span>
-                                    </span>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-
-          <pagination-controls (pageChange)="p = $event"
-                               autoHide="true"
-                               directionLinks="true"
-                               nextLabel="Sledeca"
-                               previousLabel="Prethodna"
-                               responsive="true"
-                               screenReaderCurrentLabel="You're on page"
-                               screenReaderPageLabel="page"
-                               screenReaderPaginationLabel="Pagination"></pagination-controls>
-
-
-        </div>
-        <div *ngIf="this.s.spiner===true" role="status" style="text-align: center">
-          <img alt="Responsive image" class="img-fluid"
-               src="assets/mobileg.gif" style="height: 150px">
-        </div>
-      </div>
-      <div *ngIf="s.prikaz===true" class="col-md-12">
-
-        <div class="alert alert-info" role="alert" style="text-align: center">
-          <h1 class="alert-heading">Žao nam je...</h1>
-          <p>Nažalost nismo mogli pronaći nijedan oglas.</p>
-          <hr>
-          <p class="mb-0">Budite prvi, objavite svoj polovni telefon !</p>
-
-          <img src="https://static.thenounproject.com/png/3271619-200.png">
-
-
-        </div>
-        <div style="text-align: center">
-          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>
-        </div>
-      </div>
-    </div>
+<!--            <div class="product-top">-->
+<!--              <div class="flash">-->
+<!--                                    <span class="onnew">-->
+<!--                                        <span class="text">-->
+<!--                                         {{a.naziv}}-->
+<!--                                        </span>-->
+<!--                                    </span>-->
+<!--              </div>-->
+<!--            </div>-->
 
 
 
 
+<!--            <img   alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"-->
+<!--                 style="width:400px;height: 200px; border-radius:5%">-->
+<!--            <div><b>Model: </b>{{  a.model }}</div>-->
+<!--            <div><b>Cijena:  </b> {{  a.cijena}}</div>-->
+
+
+<!--            <div style="font-size:xx-large; color: orange">-->
+<!--              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">-->
+
+<!--              </ngb-rating>-->
+<!--              <div class="product-bottom">-->
+<!--                <div class="flashr">-->
+<!--                                    <span class="onnew">-->
+<!--                                        <span class="text">-->
+<!--                                         {{-->
+<!--                                           a.vrijeme-->
+<!--                                          }}-->
+<!--                                        </span>-->
+<!--                                    </span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
 
 
 
-    <div *ngIf="pokazivac_marke===1" class="col-md-9">
-      <div class="container" style="margin-top: 3rem;">
-        <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s1.duzinafil}}' </div></div>
-        <div class="row justify-content-center" style="text-align: center ">
-          <div class  *ngFor="let a of this.s1.filter_res | paginate: {
-                                                      itemsPerPage:12,
-                                                      currentPage: p
-                                                       }" class="col-md-3"
-               class="telefon" [routerLink]="['/telefon-detalji',a.id]">
-            <div class="product-top">
-              <div class="flash">
-                                    <span class="onnew">
-                                        <span class="text">
-                                          {{a.mark_id.marka_naziv}}
-                                        </span>
-                                    </span>
-              </div>
-            </div>
+<!--          </div>-->
+
+<!--          <pagination-controls (pageChange)="p = $event"-->
+<!--                               autoHide="true"-->
+<!--                               directionLinks="true"-->
+<!--                               nextLabel="Sledeca"-->
+<!--                               previousLabel="Prethodna"-->
+<!--                               responsive="true"-->
+<!--                               screenReaderCurrentLabel="You're on page"-->
+<!--                               screenReaderPageLabel="page"-->
+<!--                               screenReaderPaginationLabel="Pagination"></pagination-controls>-->
 
 
-            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika.slika}}"
-                 style="width:400px;height: 200px; border-radius:5%">
+<!--        </div>-->
+<!--        <div *ngIf="this.s.spiner===true" role="status" style="text-align: center">-->
+<!--          <img alt="Responsive image" class="img-fluid"-->
+<!--               src="assets/mobileg.gif" style="height: 150px">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div *ngIf="s.prikaz===true" class="col-md-12">-->
+
+<!--        <div class="alert alert-info" role="alert" style="text-align: center">-->
+<!--          <h1 class="alert-heading">Žao nam je...</h1>-->
+<!--          <p>Nažalost nismo mogli pronaći nijedan oglas.</p>-->
+<!--          <hr>-->
+<!--          <p class="mb-0">Budite prvi, objavite svoj polovni telefon !</p>-->
+
+<!--          <img src="https://static.thenounproject.com/png/3271619-200.png">-->
 
 
-            <p><b>Model: </b>{{ a.model }}</p>
-            <p><b>Cijena:  </b> {{a.cijena}}</p>
+<!--        </div>-->
+<!--        <div style="text-align: center">-->
+<!--          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
 
-            <div style="font-size: larger; color: orange">
-              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
-
-              </ngb-rating>
-            </div>
 
 
-          </div>
-
-          <pagination-controls (pageChange)="p = $event"
-                               autoHide="true"
-                               directionLinks="true"
-                               nextLabel="Sledeca"
-                               previousLabel="Prethodna"
-                               responsive="true"
-                               screenReaderCurrentLabel="You're on page"
-                               screenReaderPageLabel="page"
-                               screenReaderPaginationLabel="Pagination"></pagination-controls>
 
 
-        </div>
-        <div *ngIf="s1.spiner===true"style="text-align: center">
-          <img alt="Responsive image" class="img-fluid"
-               src="assets/mobileg.gif" style="height: 150px">
-        </div>
-      </div>
-      <div *ngIf="s1.prikaz===true" class="col-md-14">
+<!--    <div *ngIf="pokazivac_marke===1" class="col-md-9">-->
+<!--      <div class="container" style="margin-top: 3rem;">-->
+<!--        <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s1.duzinafil}}' </div></div>-->
+<!--        <div class="row justify-content-center" style="text-align: center ">-->
+<!--          <div class  *ngFor="let a of this.s1.filter_res | paginate: {-->
+<!--                                                      itemsPerPage:12,-->
+<!--                                                      currentPage: p-->
+<!--                                                       }" class="col-md-3"-->
+<!--               class="telefon" [routerLink]="['/telefon-detalji',a.id]">-->
+<!--            <div class="product-top">-->
+<!--              <div class="flash">-->
+<!--                                    <span class="onnew">-->
+<!--                                        <span class="text">-->
+<!--                                          {{a.mark_id.marka_naziv}}-->
+<!--                                        </span>-->
+<!--                                    </span>-->
+<!--              </div>-->
+<!--            </div>-->
 
-        <div class="alert alert-info" role="alert" style="text-align: center">
-          <h1 class="alert-heading">Zao nam je...</h1>
-          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>
-          <hr>
-          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>
 
-          <img src="https://static.thenounproject.com/png/3271619-200.png">
+<!--            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika.slika}}"-->
+<!--                 style="width:400px;height: 200px; border-radius:5%">-->
 
 
-        </div>
-        <div style="text-align: center">
-          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>
-        </div>
-      </div>
+<!--            <p><b>Model: </b>{{ a.model }}</p>-->
+<!--            <p><b>Cijena:  </b> {{a.cijena}}</p>-->
 
-    </div>
+
+
+<!--            <div style="font-size: larger; color: orange">-->
+<!--              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">-->
+
+<!--              </ngb-rating>-->
+<!--            </div>-->
+
+
+<!--          </div>-->
+
+<!--          <pagination-controls (pageChange)="p = $event"-->
+<!--                               autoHide="true"-->
+<!--                               directionLinks="true"-->
+<!--                               nextLabel="Sledeca"-->
+<!--                               previousLabel="Prethodna"-->
+<!--                               responsive="true"-->
+<!--                               screenReaderCurrentLabel="You're on page"-->
+<!--                               screenReaderPageLabel="page"-->
+<!--                               screenReaderPaginationLabel="Pagination"></pagination-controls>-->
+
+
+<!--        </div>-->
+<!--        <div *ngIf="s1.spiner===true"style="text-align: center">-->
+<!--          <img alt="Responsive image" class="img-fluid"-->
+<!--               src="assets/mobileg.gif" style="height: 150px">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div *ngIf="s1.prikaz===true" class="col-md-14">-->
+
+<!--        <div class="alert alert-info" role="alert" style="text-align: center">-->
+<!--          <h1 class="alert-heading">Zao nam je...</h1>-->
+<!--          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>-->
+<!--          <hr>-->
+<!--          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>-->
+
+<!--          <img src="https://static.thenounproject.com/png/3271619-200.png">-->
+
+
+<!--        </div>-->
+<!--        <div style="text-align: center">-->
+<!--          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
 
 
 

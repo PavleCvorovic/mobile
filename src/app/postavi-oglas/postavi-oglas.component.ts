@@ -305,14 +305,13 @@ this.s.telefonBaza.vrijeme=x;
     }
 if(this.s1.swaloglas===true){
   Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
+}else{
+  Swal.fire('Izvinite..', 'Popunite sva polja naznačena *!', 'warning')
 }
 
 
 
 
-setTimeout(()=>{                           //<<<---using ()=> syntax
-  window.location.reload();
-}, 6000);
 
 
 
