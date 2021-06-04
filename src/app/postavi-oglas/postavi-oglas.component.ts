@@ -300,12 +300,11 @@ this.s.telefonBaza.vrijeme=x;
       this.specifikacije='';
 
 
+      setTimeout(()=>{                           //<<<---using ()=> syntax
+        window.location.reload();
+    }, 7000);
 
-    }}else{console.log('ne');
-    }
-if(this.s1.swaloglas===true){
-  Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
-}else{
+    }}else{
   Swal.fire('Izvinite..', 'Popunite sva polja naznačena *!', 'warning')
 }
 
