@@ -1,242 +1,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" xmlns:paginate="http://www.w3.org/1999/xhtml">
 <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
 
-<div class="container-fluid">
-
-
-  <div class="row">
-    <div class="col-md-12 text-center" id="header1">
-       <img alt="Responsive image" class="img-fluid"
-                                      src="assets/logo.png" style="height: 150px ;border-radius: 50%">
-    </div>
-
-
-    <div class="col-md-12 text-center" style="background-color:
-#f1efef">
-
-      <h1 style=" font-family:'Nova Slim',cursive;color: #040510">FILTER</h1>
-
-
-<!--    </div>-->
-<!--    <div *ngIf="pokazivac_marke===0" class="col-md-9 ">-->
-
-
-<!--      <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s.duzinatelefona}}' </div></div>-->
-
-<!--      <div class="container" style="margin-top: 3rem;" >-->
-<!--        <div class="row justify-content-center" style="text-align: center ">-->
-<!--          <div  *ngFor="let a of this.s.telefoni | paginate: {-->
-<!--                                                      itemsPerPage:12,-->
-<!--                                                      currentPage: p-->
-<!--                                                       }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >-->
-
-<!--            <div class="product-top">-->
-<!--              <div class="flash">-->
-<!--                                    <span class="onnew">-->
-<!--                                        <span class="text">-->
-<!--                                         {{a.naziv}}-->
-<!--                                        </span>-->
-<!--                                    </span>-->
-<!--              </div>-->
-<!--            </div>-->
-
-
-
-
-<!--            <img   alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika}}"-->
-<!--                 style="width:400px;height: 200px; border-radius:5%">-->
-<!--            <div><b>Model: </b>{{  a.model }}</div>-->
-<!--            <div><b>Cijena:  </b> {{  a.cijena}}</div>-->
-
-
-<!--            <div style="font-size:xx-large; color: orange">-->
-<!--              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">-->
-
-<!--              </ngb-rating>-->
-<!--              <div class="product-bottom">-->
-<!--                <div class="flashr">-->
-<!--                                    <span class="onnew">-->
-<!--                                        <span class="text">-->
-<!--                                         {{-->
-<!--                                           a.vrijeme-->
-<!--                                          }}-->
-<!--                                        </span>-->
-<!--                                    </span>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-
-
-
-<!--          </div>-->
-
-<!--          <pagination-controls (pageChange)="p = $event"-->
-<!--                               autoHide="true"-->
-<!--                               directionLinks="true"-->
-<!--                               nextLabel="Sledeca"-->
-<!--                               previousLabel="Prethodna"-->
-<!--                               responsive="true"-->
-<!--                               screenReaderCurrentLabel="You're on page"-->
-<!--                               screenReaderPageLabel="page"-->
-<!--                               screenReaderPaginationLabel="Pagination"></pagination-controls>-->
-
-
-<!--        </div>-->
-<!--        <div *ngIf="this.s.spiner===true" role="status" style="text-align: center">-->
-<!--          <img alt="Responsive image" class="img-fluid"-->
-<!--               src="assets/mobileg.gif" style="height: 150px">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div *ngIf="s.prikaz===true" class="col-md-12">-->
-
-<!--        <div class="alert alert-info" role="alert" style="text-align: center">-->
-<!--          <h1 class="alert-heading">Žao nam je...</h1>-->
-<!--          <p>Nažalost nismo mogli pronaći nijedan oglas.</p>-->
-<!--          <hr>-->
-<!--          <p class="mb-0">Budite prvi, objavite svoj polovni telefon !</p>-->
-
-<!--          <img src="https://static.thenounproject.com/png/3271619-200.png">-->
-
-
-<!--        </div>-->
-<!--        <div style="text-align: center">-->
-<!--          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-
-
-
-
-
-
-<!--    <div *ngIf="pokazivac_marke===1" class="col-md-9">-->
-<!--      <div class="container" style="margin-top: 3rem;">-->
-<!--        <div >   <div class="col-md-12 alert-dark "  >Vraćeno je : '{{s1.duzinafil}}' </div></div>-->
-<!--        <div class="row justify-content-center" style="text-align: center ">-->
-<!--          <div class  *ngFor="let a of this.s1.filter_res | paginate: {-->
-<!--                                                      itemsPerPage:12,-->
-<!--                                                      currentPage: p-->
-<!--                                                       }" class="col-md-3"-->
-<!--               class="telefon" [routerLink]="['/telefon-detalji',a.id]">-->
-<!--            <div class="product-top">-->
-<!--              <div class="flash">-->
-<!--                                    <span class="onnew">-->
-<!--                                        <span class="text">-->
-<!--                                          {{a.mark_id.marka_naziv}}-->
-<!--                                        </span>-->
-<!--                                    </span>-->
-<!--              </div>-->
-<!--            </div>-->
-
-
-<!--            <img alt="Responsive image" class="img-fluid" src="http://localhost:8000/storage/slike/{{a.slika.slika}}"-->
-<!--                 style="width:400px;height: 200px; border-radius:5%">-->
-
-
-<!--            <p><b>Model: </b>{{ a.model }}</p>-->
-<!--            <p><b>Cijena:  </b> {{a.cijena}}</p>-->
-
-
-
-<!--            <div style="font-size: larger; color: orange">-->
-<!--              <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">-->
-
-<!--              </ngb-rating>-->
-<!--            </div>-->
-
-
-<!--          </div>-->
-
-<!--          <pagination-controls (pageChange)="p = $event"-->
-<!--                               autoHide="true"-->
-<!--                               directionLinks="true"-->
-<!--                               nextLabel="Sledeca"-->
-<!--                               previousLabel="Prethodna"-->
-<!--                               responsive="true"-->
-<!--                               screenReaderCurrentLabel="You're on page"-->
-<!--                               screenReaderPageLabel="page"-->
-<!--                               screenReaderPaginationLabel="Pagination"></pagination-controls>-->
-
-
-<!--        </div>-->
-<!--        <div *ngIf="s1.spiner===true"style="text-align: center">-->
-<!--          <img alt="Responsive image" class="img-fluid"-->
-<!--               src="assets/mobileg.gif" style="height: 150px">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div *ngIf="s1.prikaz===true" class="col-md-14">-->
-
-<!--        <div class="alert alert-info" role="alert" style="text-align: center">-->
-<!--          <h1 class="alert-heading">Zao nam je...</h1>-->
-<!--          <p>Nazalost nismo mogli pronaci nijedan oglas.</p>-->
-<!--          <hr>-->
-<!--          <p class="mb-0">Budite prvi, prodajte svoj polovni telefon !</p>-->
-
-<!--          <img src="https://static.thenounproject.com/png/3271619-200.png">-->
-
-
-<!--        </div>-->
-<!--        <div style="text-align: center">-->
-<!--          <button [routerLink]="['/postavi_oglas']" class="btn btn-primary">POŠALJI</button>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="col-md-3" id="postovi" style="border-radius:1%;text-align: center ">
-
-      <h1 class="tekst pt-5 pb-3"style="  font-family:'Nova Slim',cursive;color: black">U ovoj sekciji možete postaviti oglas ! </h1>
-
-      <div>
-       <textarea [(ngModel)]="objava" class="form-control" id="textAreaExample" placeholder="Postavite oglas i vaš kontakt "
-                 rows="5">
-        </textarea>
-        <button (click)="postaviPost()" class="btn btn-primary mt-2">objavi</button>
-        <div *ngFor="let b of this.s.postovi" style="position: relative ;padding-top: 5pt; right: 10px;">
-
-
-            <pre class="oglas pt-2">
-              <span class="float-right"> {{b.created_at}}</span> <br>
-              <span class="embed-responsive float-left" rows="5">{{b.tekst}}</span></pre>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer >
-    <div class="row" style="background-color: #100000" >
-      <div class="col-md-2">
-        <img alt="Responsive image" class="float-left"
-             src="assets/logo.png" style="height: 150px ;border-radius: 50%">
-      </div>
-
-
-
-
-
-
-    </div>
-
-
-
-
-  </footer>
-</div>
 
 
 
@@ -249,7 +13,6 @@
 
 
 <body>
-<!-- Header Section Start From Here -->
 <header class="header-wrapper">
   <!-- Header Nav Start -->
   <div class="header-nav">
@@ -268,72 +31,19 @@
       <div class="row">
         <div class="col-md-2">
           <div class="logo">
-        <img style="height: 150px ;border-radius: 50%" class="img-responsive" src="assets/logo.png"  />
+            <img style="height: 150px ;border-radius: 50%" class="img-responsive" src="assets/logo.png"  />
           </div>
         </div>
 
-          </div>
-          <!--Cart info End -->
-        </div>
       </div>
+      <!--Cart info End -->
+    </div>
+  </div>
 
   <!-- Header Nav End -->
-  <div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 custom-col-2">
-          <div class="header-menu-vertical">
-            <h4 class="nav-link mt-2" style="color: black" [routerLink]="['telefon']">Pocetna</h4>
-
-            <!-- menu content -->
-          </div>
-          <!-- header menu vertical -->
-        </div>
-
-          <!-- header horizontal menu -->
-          <div class="intro-text-shipping text-right">
-            <div >
-              <a class="nav-link mt-2" style="margin-right: 40px;color:white" [routerLink]="['../telefon']">Ponuda</a></div>
-          </div>
-          <div class="intro-text-shipping text-right">
-            <div >
-              <a class="nav-link mt-2"  style="margin-right: 40px;color:white" [routerLink]="['../postavi_oglas']">Postavi oglas</a>
-            </div>
-          </div>
-          <div class="intro-text-shipping text-right">
-            <div >
-              <a class="nav-link mt-2"  style="margin-right: 40px;color:white" [routerLink]="['../admin-login']">Admin</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- row -->
-    </div>
-    <!-- container -->
-  <!-- header menu -->
 </header>
-<!-- Header Section End Here -->
 
-<!-- Mobile Header Section Start -->
-<div class="mobile-header d-xl-none sticky-nav bg-white ptb-10px">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Header Logo Start -->
-      <div class="col">
-        <div class="header-logo">
-          <img style="height:50px" class="img-responsive" src="assets/logo.png" alt="logo.jpg" />
-        </div>
-      </div>
-      <!-- Header Logo End -->
-
-
-
-        </div>
-      </div>
       <!-- Header Tools End -->
-
-    </div>
 
 
 <!-- Search Category Start -->
@@ -342,232 +52,11 @@
 
 <!-- Mobile Header Section End -->
 <!-- OffCanvas Wishlist Start -->
-<div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist">
-  <div class="inner">
-    <div class="head">
-      <span class="title">Wishlist</span>
-      <button class="offcanvas-close">×</button>
-    </div>
-    <div class="body customScroll">
-      <ul class="minicart-product-list">
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/7.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Walnut Cutting Board</a>
-            <span class="quantity-price">1 x <span class="amount">$100.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/9.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Lucky Wooden Elephant</a>
-            <span class="quantity-price">1 x <span class="amount">$35.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/8.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Fish Cut Out Set</a>
-            <span class="quantity-price">1 x <span class="amount">$9.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="foot">
-      <div class="buttons">
-        <a href="wishlist.html" class="btn btn-dark btn-hover-primary mt-30px">view wishlist</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- OffCanvas Wishlist End -->
 
-<!-- OffCanvas Cart Start -->
-<div id="offcanvas-cart" class="offcanvas offcanvas-cart">
-  <div class="inner">
-    <div class="head">
-      <span class="title">Cart</span>
-      <button class="offcanvas-close">×</button>
-    </div>
-    <div class="body customScroll">
-      <ul class="minicart-product-list">
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/1.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Walnut Cutting Board</a>
-            <span class="quantity-price">1 x <span class="amount">$100.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/2.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Lucky Wooden Elephant</a>
-            <span class="quantity-price">1 x <span class="amount">$35.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-        <li>
-          <a href="single-product.html" class="image"><img src="assets/customcss/images/product-image/3.jpg" alt="Cart product Image"></a>
-          <div class="content">
-            <a href="single-product.html" class="title">Fish Cut Out Set</a>
-            <span class="quantity-price">1 x <span class="amount">$9.00</span></span>
-            <a href="#" class="remove">×</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="foot">
-      <div class="sub-total">
-        <strong>Subtotal :</strong>
-        <span class="amount">$144.00</span>
-      </div>
-      <div class="buttons">
-        <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-        <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
-      </div>
-      <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
-    </div>
-  </div>
-</div>
 <!-- OffCanvas Cart End -->
 
 <!-- OffCanvas Search Start -->
-<div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
-  <div class="inner customScroll">
-    <div class="head">
-      <span class="title">&nbsp;</span>
-      <button class="offcanvas-close">×</button>
-    </div>
-    <div class="offcanvas-menu-search-form">
-      <form action="#">
-        <input type="text" placeholder="Search...">
-        <button><i class="icon-magnifier"></i></button>
-      </form>
-    </div>
-    <div class="offcanvas-menu">
-      <ul>
-        <li><a href="#"><span class="menu-text">Home</span></a>
-          <ul class="sub-menu">
-            <li><a href="index.html"><span class="menu-text">Home 1</span></a></li>
-            <li><a href="index-2.html"><span class="menu-text">Home 2</span></a></li>
-            <li> <a href="index-3.html"><span class="menu-text">Home 3</span></a></li>
-            <li><a href="index-4.html"><span class="menu-text">Home 4</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#"><span class="menu-text">Shop</span></a>
-          <ul class="sub-menu">
-            <li>
-              <a href="#"><span class="menu-text">Shop Grid</span></a>
-              <ul class="sub-menu">
-                <li><a href="shop-3-column.html">Shop Grid 3 Column</a></li>
-                <li><a href="shop-4-column.html">Shop Grid 4 Column</a></li>
-                <li><a href="shop-left-sidebar.html">Shop Grid Left Sidebar</a></li>
-                <li><a href="shop-right-sidebar.html">Shop Grid Right Sidebar</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><span class="menu-text">Shop List</span></a>
-              <ul class="sub-menu">
-                <li><a href="shop-list.html">Shop List</a></li>
-                <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><span class="menu-text">Shop Single</span></a>
-              <ul class="sub-menu">
-                <li><a href="single-product.html">Shop Single</a></li>
-                <li><a href="single-product-variable.html">Shop Variable</a></li>
-                <li><a href="single-product-affiliate.html">Shop Affiliate</a></li>
-                <li><a href="single-product-group.html">Shop Group</a></li>
-                <li><a href="single-product-tabstyle-2.html">Shop Tab 2</a></li>
-                <li><a href="single-product-tabstyle-3.html">Shop Tab 3</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><span class="menu-text">Shop Single</span></a>
-              <ul class="sub-menu">
-                <li><a href="single-product-slider.html">Shop Slider</a></li>
-                <li><a href="single-product-gallery-left.html">Shop Gallery Left</a></li>
-                <li><a href="single-product-gallery-right.html">Shop Gallery Right</a></li>
-                <li><a href="single-product-sticky-left.html">Shop Sticky Left</a></li>
-                <li><a href="single-product-sticky-right.html">Shop Sticky Right</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#"><span class="menu-text">Pages</span></a>
-          <ul class="sub-menu">
-            <li><a href="about.html">About Page</a></li>
-            <li><a href="cart.html">Cart Page</a></li>
-            <li><a href="checkout.html">Checkout Page</a></li>
-            <li><a href="compare.html">Compare Page</a></li>
-            <li><a href="login.html">Login & Register Page</a></li>
-            <li><a href="my-account.html">Account Page</a></li>
-            <li><a href="wishlist.html">Wishlist Page</a></li>
-            <li><a href="thank-you-page.html">Thank You Page</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><span class="menu-text">Blog</span></a>
-          <ul class="sub-menu">
-            <li><a href="#"><span class="menu-text">Blog Grid</span></a>
-              <ul class="sub-menu">
-                <li><a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a></li>
-                <li><a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><span class="menu-text">Blog List</span></a>
-              <ul class="sub-menu">
-                <li><a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a></li>
-                <li><a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><span class="menu-text">Blog Single</span></a>
-              <ul class="sub-menu">
-                <li><a href="blog-single-left-sidebar.html">Blog Single Left Sidebar</a></li>
-                <li><a href="blog-single-right-sidebar.html">Blog Single Right Sidbar</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="offcanvas-buttons mt-30px">
-      <div class="header-tools d-flex">
-        <div class="cart-info d-flex align-self-center">
-          <a href="my-account.html" class="user"><i class="icon-user"></i></a>
-          <a href="wishlist.html" data-number="3"><i class="icon-heart"></i></a>
-          <a href="cart.html" data-number="3"><i class="icon-bag"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="offcanvas-social mt-30px">
-      <ul>
-        <li>
-          <a href="#"><i class="icon-social-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-instagram"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-google"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-instagram"></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!-- OffCanvas Search End -->
+
 
 <div class="offcanvas-overlay"></div>
 <!-- Breadcrumb Area Start -->
@@ -719,7 +208,7 @@
 
             <pre class="oglas pt-2">
               <span class="float-right"> {{b.created_at}}</span> <br>
-              <span class="embed-responsive float-left" rows="5">{{b.tekst}}</span></pre>
+              <span class="embed-responsive float-left ml-2" rows="5">{{b.tekst}}</span></pre>
                             </div>
                           </div>
 
@@ -1061,7 +550,7 @@
 </body>
 
 
-</div>
+
 
 
 
