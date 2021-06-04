@@ -140,20 +140,21 @@
                                         <li class="new">New</li>
                                       </ul>
                                       <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span></a>
-                                        <h2>{{a.model}}</h2>
+                                        <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span>  <h2 class="float-right">{{a.model}}</h2></a>
+
                                         <div style="font-size: larger; color: orange">
+                                          <div >
+                                            <ul>
+
+                                              <li class="current-price" style="color: red">€{{a.cijena}}</li>
+
+                                            </ul>
+                                          </div>
                                           <ngb-rating [max]="5" [(rate)]= "a.stanje" [readonly] = "true">
 
                                           </ngb-rating>
                                         </div>
-                                        <div class="pricing-meta">
-                                          <ul>
 
-                                            <li class="current-price">€{{a.cijena}}</li>
-
-                                          </ul>
-                                        </div>
                                       </div>
                                       <div class="add-to-link">
                                         <ul>
