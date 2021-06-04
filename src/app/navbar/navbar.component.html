@@ -57,34 +57,53 @@
 <!-- Header Section End Here -->
 
 <!-- Mobile Header Section Start -->
-<div class="mobile-header d-xl-none sticky-nav bg-white ptb-10px">
+<div class="mobile-header d-xl-none sticky-nav bg-blue-light ptb-10px">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row">
+      <div class="col-lg-3 custom-col-2">
+        <div class="header-menu-vertical">
+          <h1 class="nav-link m-1" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
 
-      <!-- Header Logo Start -->
+          <!-- menu content -->
+        </div>
+        <!-- header menu vertical -->
+      </div>
 
-
-      <div class="row " style="background-color: #65b6ee">
-
-
-        <img style="height:50px;border-radius:50%" class="img-responsive" src="assets/logo.png" alt="logo.jpg" />
-
-
-
-        <a class="nav-link mt-2" style="color: black" [routerLink]="['telefon']">Pocetna</a>
-        <a class="nav-link mt-2" style="margin-right: 40px;color:blue" [routerLink]="['../telefon']">Ponuda</a>
+      <!-- header horizontal menu -->
 
 
+        <div class="kruzici m-2">
+          <a class="nav-link m1" style="margin-right: 40px;color:black" [routerLink]="['../telefon']">Ponuda</a></div>
 
-        <a class="nav-link mt-2"  style="margin-right: 40px;color:blue" [routerLink]="['../postavi_oglas']">Postavi oglas</a>
 
-
-
-        <a class="nav-link mt-2"  style="margin-right: 40px;color:blue" [routerLink]="['../admin-login']">Admin</a>
+        <div class="kruzici m-2">
+          <a class="nav-link m1"  style="margin-right: 40px;color:black" [routerLink]="['../postavi_oglas']">Postavi oglas</a>
 
       </div>
+
+        <div class="kruzici m-2">
+          <li class="nav-item" *ngIf="this.s.logged===false" >
+            <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
+          </li>
+
+      </div>
+
+        <div class="kruzici m-2">
+          <li class="nav-item" *ngIf="this.s.logged===true" >
+            <a class="nav-link" [routerLink]="['admin']">Admin</a>
+          </li>
+
+      </div>
+
+        <div class="kruzici m-2">
+          <li class="nav-item" *ngIf="this.s.logged===true" >
+            <a class="nav-link" [routerLink]="['admin-login']" (click)="odjavi()"  >Odjavi se</a>
+          </li>
+
+      </div>
+
       <!-- Header Logo End -->
     </div>
-  </div>
-</div>
 
+</div>
+</div>
