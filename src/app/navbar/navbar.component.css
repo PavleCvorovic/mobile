@@ -4,4 +4,10 @@
    background-color: white;
 
 
+
  }
+.kruzici:hover{
+  border:solid;
+  border-color:black ;
+  border-width: thin;
+}
