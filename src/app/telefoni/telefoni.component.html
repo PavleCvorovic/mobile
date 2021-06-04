@@ -708,11 +708,13 @@
 
                         </div>
                       </div>
-                      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 text-center" >
+                      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 " >
     <textarea [(ngModel)]="objava" class="form-control"  placeholder="Postavite oglas i vaš kontakt "
               rows="5">
         </textarea>
-                        <button (click)="postaviPost()" class="btn btn-primary m-2">objavi</button>
+                        <div class="text-center">
+                        <button (click)="postaviPost()" class="btn btn-primary m-2 ">objavi</button>
+                        </div>
                             <div class="product-intro-info" *ngFor=" let b of s.postovi">
 
             <pre class="oglas pt-2">
