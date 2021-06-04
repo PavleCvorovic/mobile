@@ -631,7 +631,7 @@
                 <div  *ngFor="let a of this.s.telefoni | paginate: {
                                                       itemsPerPage:12,
                                                       currentPage: p
-                                                       }" class="col-md-2"  class="telefon" [routerLink]="['/telefon-detalji',a.id]" >
+                                                       }" class="col-xl-3 col-md-4 col-sm-6" [routerLink]="['/telefon-detalji',a.id]" >
 
 
 
@@ -681,15 +681,15 @@
                                   </div>
                                 </div>
                               </div>
-            <pagination-controls (pageChange)="p = $event"-->
-                                           autoHide="true"-->
-                                           directionLinks="true"-->
-                                             nextLabel="Sledeca"-->
-                                             previousLabel="Prethodna"-->
-                                             responsive="true"-->
-                                             screenReaderCurrentLabel="You're on page"-->
-                                             screenReaderPageLabel="page"-->
-                                            screenReaderPaginationLabel="Pagination"></pagination-controls>-->
+            <pagination-controls (pageChange)="p = $event"
+                                           autoHide="true"
+                                           directionLinks="true"
+                                             nextLabel="Sledeca"
+                                             previousLabel="Prethodna"
+                                             responsive="true"
+                                             screenReaderCurrentLabel="You're on page"
+                                             screenReaderPageLabel="page"
+                                            screenReaderPaginationLabel="Pagination"></pagination-controls>
 
                               <!-- Tab One End -->
             <!-- Tab Two Start -->
@@ -2089,6 +2089,7 @@
 
 
 </body>
+
 
 
 
