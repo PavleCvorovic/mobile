@@ -24,9 +24,26 @@
       </div>
       <div class="intro-text-shipping text-right">
         <div class="kruzici m-2">
-          <a class="nav-link m1"  style="margin-right: 40px;color:black" [routerLink]="['../admin-login']">Admin</a>
+          <li class="nav-item" *ngIf="this.s.logged===false" >
+            <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
+          </li>
         </div>
       </div>
+      <div class="intro-text-shipping text-right">
+        <div class="kruzici m-2">
+          <li class="nav-item" *ngIf="this.s.logged===true" >
+            <a class="nav-link" [routerLink]="['admin']">Admin</a>
+          </li>
+        </div>
+      </div>
+      <div class="intro-text-shipping text-right">
+        <div class="kruzici m-2">
+          <li class="nav-item" *ngIf="this.s.logged===true" >
+            <a class="nav-link" [routerLink]="['admin-login']" (click)="odjavi()"  >Odjavi se</a>
+          </li>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- row -->
