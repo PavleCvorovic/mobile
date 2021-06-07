@@ -8,17 +8,17 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class Servis1Service {
-  prikaz:boolean=false;
+
   spiner:boolean=false;
   swaloglas:boolean=false;
   tel_marka_id: any;
-filter_res:any;
+
   tel_model_naziv: any;
   tel_admin:any;
   telefoni_provjera:number=0;
   slike_novi_nacin:any;
 
-duzinafil:number;
+
   constructor(public  s: ServisService, private http: HttpClient) {
   }
 
@@ -64,19 +64,132 @@ duzinafil:number;
 
   filtriraj(){
 
-    this.s.spiner=true;
+    this.s.spiner=false;
 
     return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
       .subscribe(posts=>
       {
-        this.s.spiner=false;
+
         this.s.telefoni=posts;
 
-this.s.duzinatelefona=  this.s.telefoni.length
-       if (this.filter_res.length===0){
-         this.prikaz=true
+this.s.duzinatelefona=this.s.telefoni.length
 
-       }else this.prikaz=false;
+
+
+        this.s.telefoni.reverse();
+
+        this.s.spiner=false;
+        if (this.s.telefoni.length===0){
+          this.s.prikaz=true
+        }
+        else {
+
+          this.s.prikaz=false;
+
+
+        }
+
+        let i;
+
+        var timeH:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        var timeM:number[]=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
+        var timeD:number[]=[];
+        for (let i=0;i<31;i++){
+          timeD[i]=i;
+        }
+
+        let today = new Date()
+        for (let i=0 ;i <=this.s.telefoni.length;i++){
+          let newdate =new Date(this.s.telefoni[i]?.vrijeme)
+          var timepostH=newdate.getHours();
+          var timenowH:number=today.getHours();
+          var timepostM=newdate.getMinutes();
+          var timenowM:number=today.getMinutes();
+          var zbirM:number=timepostM+timenowM;
+          var timenowD:number=today.getDay();
+          var timepostD:number=newdate.getDay();
+          var timenowMonth:number= today.getMonth();
+          var timepostMonth:number = newdate.getMonth();
+          var checkMin:boolean=false;
+          var checkHr:boolean=false;
+          var satiM,satiH,satiD,satiMonth;
+
+
+          if (timenowM<timepostM){
+            timenowM=timenowM+60
+            timenowH=timenowH-1;
+            satiM= Math.abs(timenowM-timepostM);
+          }else {
+            satiM = timenowM-timepostM;
+          }
+          // satiM= Math.abs(timenowM-timepostM);
+
+          // console.log('minuta je'+ timenowM+''+timepostM+'='+satiM)
+
+          if(timenowH<timepostH)
+          {
+            timenowH=timenowH+24;
+            timenowD=timenowD-1;
+            satiH= Math.abs(timenowH-timepostH);
+          }else {
+            satiH = timenowH- timepostH;
+          }
+
+
+          if(timenowD<timepostD)
+          {
+            timenowD = timenowD+31;
+
+            satiD = timenowD-timepostD;
+            satiD=31-satiD
+          }else
+          {
+            satiD = timenowD-timepostD
+          }
+          if(timenowMonth-timepostMonth >= 3)
+          {
+            this.s.brisiTelefon(this.s.telefoni[i].id);
+          }else
+          {
+            satiMonth= timenowMonth - timepostMonth;
+          }
+
+
+          if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
+          {
+            this.s.telefoni[i].okacen='1';
+            this.s.telefoni[i].vrijeme = "prije "+ satiM+ " min";
+          }
+          else if(timepostMonth==timenowMonth && timepostD == timenowD)
+          {
+            this.s.telefoni[i].okacen='1';
+            this.s.telefoni[i].vrijeme = "prije " + satiH + " h";
+
+          }else if(timepostMonth==timenowMonth)
+          {
+
+            this.s.telefoni[i].vrijeme = "prije " + satiD + " dan";
+          }else
+          {
+            this.s.telefoni[i].vrijeme = "prije "+ satiMonth + " mjesec"
+          }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -114,27 +227,6 @@ brojac = 0;
 
 
 
-  dajtelefonpomodelu(naziv) {
-    this.s.spiner=true;
-    return this.http
-      .get(
-        'http://localhost:8000/api/telefon-filtriraj/telefonmodel/' + naziv)
-
-
-      .subscribe(posts => {
-        this.tel_model_naziv = posts;
-
-        this.s.spiner=false;
-
-        if (this.tel_model_naziv.length===0){
-          this.s.prikaz=true
-        }
-        else {
-          this.s.prikaz=false
-        }
-
-      })
-  }
 
 
 

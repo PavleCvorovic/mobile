@@ -243,23 +243,18 @@ this.s.telefonBaza.vrijeme=x;
 
 
       this.s.dodajTelefon();
-      // let t = this.s.telefoni[this.s.telefoni.length-1].id;
+
       let t = 0;
 
       for(let i =0;i<this.s.telefoniZaSlike.length;i++)
       {
-        // if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
-        // {
-        //   // console.log(this.s.konfiguracijeBaza.procesor);
-        //   // console.log(this.s.konfiguracije[i].procesor);
-        //   conf = this.s.specifikacije[i].id;
-        // }
+
         if(t<this.s.telefoniZaSlike[i].id)
         {
           t = this.s.telefoniZaSlike[i].id;
         }
       }
-      // console.log(t+1 + " telefoni");
+
 
 
       t = t+1;

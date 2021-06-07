@@ -52,12 +52,7 @@ sortCijena(value:any)
 {
   // this.dajtelefone();
   // this.telefoniZaCijenu = this.s.telefoniZaSlike;
-  for(let i = 0; i<this.telefoni.length;i++)
-  {
-    this.telefoniZaCijenu[i] = this.telefoni[i];
-
-  }
-
+this.telefoniZaCijenu=this.telefoni
 
   // this.telefoniZaCijenu = this.telefoniZaCijenu.slice();
 
@@ -75,12 +70,9 @@ sortCijena(value:any)
 }
 else if(value == 1)
 {
-  for(let i=this.telefoniZaCijenu.length-1;i>=0;i--)
-  {
-    this.telefoniZaCijenuObrnuto[this.sort] = this.telefoniZaCijenu[i];
-    this.sort++;
-  }
+this.telefoniZaCijenuObrnuto=this.telefoniZaCijenu.reverse()
   this.telefoni = this.telefoniZaCijenuObrnuto;
+
   this.sort = 0;
 }
 }
@@ -122,19 +114,17 @@ if (this.telefoni.length===0){
         }
 
         let today = new Date()
-        for (let i=0 ;i <=this.telefoni.length;i++){
+        for (let i=0 ;i <this.telefoni.length;i++){
           let newdate =new Date(this.telefoni[i]?.vrijeme)
           var timepostH=newdate.getHours();
           var timenowH:number=today.getHours();
           var timepostM=newdate.getMinutes();
           var timenowM:number=today.getMinutes();
-          var zbirM:number=timepostM+timenowM;
           var timenowD:number=today.getDay();
           var timepostD:number=newdate.getDay();
           var timenowMonth:number= today.getMonth();
           var timepostMonth:number = newdate.getMonth();
-          var checkMin:boolean=false;
-          var checkHr:boolean=false;
+
           var satiM,satiH,satiD,satiMonth;
 
 
@@ -145,10 +135,6 @@ if (timenowM<timepostM){
 }else {
   satiM = timenowM-timepostM;
 }
-          // satiM= Math.abs(timenowM-timepostM);
-
-          // console.log('minuta je'+ timenowM+''+timepostM+'='+satiM)
-
           if(timenowH<timepostH)
           {
             timenowH=timenowH+24;
@@ -162,8 +148,9 @@ if (timenowM<timepostM){
           if(timenowD<timepostD)
           {
             timenowD = timenowD+31;
-            timenowMonth = timenowMonth-1;
+
             satiD = timenowD-timepostD;
+            satiD=31-satiD
           }else
           {
             satiD = timenowD-timepostD
@@ -179,21 +166,21 @@ if (timenowM<timepostM){
 
           if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
           {
-
+            this.telefoni[i].okacen='1';
             this.telefoni[i].vrijeme = "prije "+ satiM+ " min";
           }
           else if(timepostMonth==timenowMonth && timepostD == timenowD)
           {
-
+            this.telefoni[i].okacen='1';
             this.telefoni[i].vrijeme = "prije " + satiH + " h";
 
           }else if(timepostMonth==timenowMonth)
           {
 
-            this.telefoni[i].vrijeme = "prije " + satiD + " dana";
+            this.telefoni[i].vrijeme = "prije " + satiD + " dan";
           }else
           {
-            this.telefoni[i].vrijeme = "prije "+ satiMonth + " mjeseca"
+            this.telefoni[i].vrijeme = "prije "+ satiMonth + " mjesec";
           }
 
 
