@@ -99,7 +99,7 @@ this.s.duzinatelefona=this.s.telefoni.length
         }
 
         let today = new Date()
-        for (let i=0 ;i <=this.s.telefoni.length;i++){
+        for (let i=0 ;i <this.s.telefoni.length;i++){
           let newdate =new Date(this.s.telefoni[i]?.vrijeme)
           var timepostH=newdate.getHours();
           var timenowH:number=today.getHours();

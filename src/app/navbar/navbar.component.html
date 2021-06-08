@@ -9,7 +9,7 @@
 
         <div class="header-menu-vertical">
 
-          <h1 class="nav-link mt-5" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
+          <h1 class="nav-link mt-5 pr-5" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
 
           <!-- menu content -->
         </div>
@@ -66,7 +66,7 @@
     <div class="row">
       <div class="col-lg-3 custom-col-2">
         <div class="header-menu-vertical">
-          <h1 class="nav-link mt-5 ml-1" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
+          <h1 class="nav-link  ml-1" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
 
           <!-- menu content -->
         </div>
@@ -76,30 +76,30 @@
       <!-- header horizontal menu -->
 
 
-        <div class="kruzici mt-5 ml-1">
+        <div class="kruzici mt-2 ml-1">
           <a class="nav-link m1" style="margin-right: 40px;color:black" [routerLink]="['../telefon']">Ponuda</a></div>
 
 
-        <div class="kruzici mt-5 ml-1">
+        <div class="kruzici mt-2 ml-1">
           <a class="nav-link m1"  style="margin-right: 40px;color:black" [routerLink]="['../postavi_oglas']">Postavi oglas</a>
 
       </div>
 
-        <div class="kruzici mt-5 ml-1">
+        <div class="kruzici mt-2 ml-1">
           <li class="nav-item" *ngIf="this.s.logged===false" >
             <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
           </li>
 
       </div>
 
-        <div class="kruzici mt-5 ml-1">
+        <div class="kruzici mt-2 ml-1">
           <li class="nav-item" *ngIf="this.s.logged===true" >
             <a class="nav-link" [routerLink]="['admin']">Admin</a>
           </li>
 
       </div>
 
-        <div class="kruzici mt-5 ml-1">
+        <div class="kruzici mt-2 ml-1">
           <li class="nav-item" *ngIf="this.s.logged===true" >
             <a class="nav-link" [routerLink]="['admin-login']" (click)="odjavi()"  >Odjavi se</a>
           </li>
