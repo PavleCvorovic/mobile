@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
-import {Servis1Service} from '../servis1.service';
+
 import { DomSanitizer } from '@angular/platform-browser';
 import { AdminGuardGuard } from '../admin-guard.guard';
 import {CookieService} from 'ngx-cookie-service';
@@ -26,7 +26,7 @@ export class AdminBordComponent implements OnInit {
   brojac = 0;
 
 
-  constructor(public  s: ServisService, public s1: Servis1Service, private http:HttpClient, public guard: AdminGuardGuard, public cookie: CookieService) {
+  constructor(public  s: ServisService, private http:HttpClient, public guard: AdminGuardGuard, public cookie: CookieService) {
   }
 
 

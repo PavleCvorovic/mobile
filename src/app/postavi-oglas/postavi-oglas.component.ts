@@ -4,8 +4,8 @@ import { from } from 'rxjs';
 import {ServisService} from '../servis.service';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Params, Router} from '@angular/router';
-import {Servis1Service} from "../servis1.service";
-import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
+
+import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from "@angular/common/http";
 import {coerceNumberProperty} from "@angular/cdk/coercion";
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -26,12 +26,22 @@ spiner:boolean=false;
 strike:boolean=true;
 photos1:any;
 otvoric:boolean=false;
-telefoniSortCijena:any;
-  constructor(public s:ServisService, public router:Router,public s1:Servis1Service,private http: HttpClient) { }
+
+  constructor(public s:ServisService, public router:Router,private http: HttpClient) { }
 
   @ViewChild('f') signupForm: NgForm;
 file:any;
   file2:any;
+  photo: any = {
+    slika:"",
+    telefon_id:""
+  }
+  slika:any;
+
+
+
+
+  brojac = 0;
 
   currentRate: number ;
   ngOnInit(): void {
@@ -39,7 +49,7 @@ file:any;
     this.s.dajmarku();
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
-    this.s1.uzmiSlike();
+    this.uzmiSlike();
 
 
 
@@ -52,7 +62,7 @@ file:any;
 
 
 
-  slika:any;
+
 
 
   marka='';
@@ -72,6 +82,48 @@ file:any;
   ekran="";
   memorija='';
   sifra:"";
+
+
+
+
+  postavislike() {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('slika', this.photo.slika)
+    params.append('telefon_id', this.photo.telefon_id);
+    this.http
+      .post('http://localhost:8000/api/file', params
+
+      )
+
+
+      .subscribe(posts => {
+        this.s.spinerOglas = false;
+        if(this.brojac <1)
+        {
+          Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
+          this.brojac++;
+        }
+      })
+  }
+
+
+
+  slikeBaza11:any;
+
+  uzmiSlike()
+  {
+    return this.http.get('http://localhost:8000/api/slike')
+      .subscribe(posts=>
+      {
+        this.slikeBaza11 = posts;
+
+
+      })
+  }
+
 
 
 
@@ -115,7 +167,7 @@ prikazSlike=[];
        {
          this.prikazSlike.push(e.target.result);
        }
-      //  console.log(this.urls[i].name);
+
         }
       }
 
@@ -164,32 +216,18 @@ prikazSlike=[];
       this.s.konfiguracijeBaza.ekran = this.ekran;
       this.s.konfiguracijeBaza.memorija = this.memorija;
 
-      // console.log(this.s.konfiguracije.length);
       let conf = 0;
       this.s.dodajKonfiguracije();
 
-      // this.s.telefonBaza.konfiguracije=this.s.konfiguracijeBaza.id;
-      // console.log(this.s.telefonBaza.konfiguracije);
       for(let i =0;i<this.s.specifikacije.length;i++)
       {
-        // if(this.s.konfiguracijeBaza.procesor == this.s.specifikacije[i].procesor)
-        // {
-        //   // console.log(this.s.konfiguracijeBaza.procesor);
-        //   // console.log(this.s.konfiguracije[i].procesor);
-        //   conf = this.s.specifikacije[i].id;
-        // }
+
         if(conf<this.s.specifikacije[i].id)
         {
           conf = this.s.specifikacije[i].id;
         }
       }
-      // console.log(conf+1);
 
-
-      // let sl = 0;
-      // this.slike();
-
-    //  console.log(this.s.telefonBaza.konfiguracije);
 
 
       this.s.telefonBaza.specifikacije = conf + 1;
@@ -208,8 +246,8 @@ prikazSlike=[];
       this.s.telefonBaza.sifra = this.sifra;
 this.s.telefonBaza.vrijeme=x;
       this.s.spiner=true;
-      this.s1.photo.slika = this.slika;
-      this.s1.photo.telefon_id = this.s.telefonBaza.id;
+      this.photo.slika = this.slika;
+      this.photo.telefon_id = this.s.telefonBaza.id;
 
       console.log(this.kamera_prednja);
 
@@ -239,9 +277,9 @@ this.s.telefonBaza.vrijeme=x;
         }
 
         setTimeout(()=>{                           //<<<---using ()=> syntax
-          this.s1.photo.slika = this.urls[i];
-        this.s1.photo.telefon_id = t;
-        this.s1.postavislike();
+          this.photo.slika = this.urls[i];
+        this.photo.telefon_id = t;
+        this.postavislike();
      }, 3000);
 
 

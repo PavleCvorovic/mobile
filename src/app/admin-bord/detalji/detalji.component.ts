@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from "../../servis.service";
 import {ActivatedRoute} from "@angular/router";
-import {Servis1Service} from "../../servis1.service";
+
 
 @Component({
   selector: 'app-detalji',
@@ -10,7 +10,7 @@ import {Servis1Service} from "../../servis1.service";
 })
 export class DetaljiComponent implements OnInit {
 
-  constructor(public s:ServisService, public route: ActivatedRoute,public s1:Servis1Service) { }
+  constructor(public s:ServisService, public route: ActivatedRoute) { }
 
   id = this.route.snapshot.params.id;
 telefon={};

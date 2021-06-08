@@ -4,7 +4,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { TelefoniComponent } from './telefoni/telefoni.component';
 import { ModeliComponent } from './modeli/modeli.component';
 import { PostaviOglasComponent } from './postavi-oglas/postavi-oglas.component';
@@ -20,7 +20,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import {Ng5SliderModule} from "ng5-slider";
-import { TestComponent } from './test/test.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -29,7 +29,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
     TelefoniComponent,
     ModeliComponent,
     PostaviOglasComponent,
@@ -37,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AdminBordComponent,
     AdminLoginComponent,
     DetaljiComponent,
-    TestComponent
+
   ],
     imports: [
         BrowserModule,

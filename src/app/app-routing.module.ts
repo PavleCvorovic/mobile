@@ -8,7 +8,7 @@ import {AdminBordComponent} from './admin-bord/admin-bord.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminGuardGuard } from './admin-guard.guard';
 import { DetaljiComponent } from './admin-bord/detalji/detalji.component';
-import { TestComponent } from './test/test.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'telefon' , pathMatch: 'full' },
@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'telefon-detalji-admin/:id', component:DetaljiComponent, canActivate:[AdminGuardGuard]},
   {path: 'admin', component:AdminBordComponent, canActivate:[AdminGuardGuard]},
   {path:  'admin-login', component:AdminLoginComponent},
-  {path:'test', component:TestComponent}
+
 ];
 
 @NgModule({

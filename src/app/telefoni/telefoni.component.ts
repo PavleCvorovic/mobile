@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {ServisService} from '../servis.service';
 import {FormBuilder} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Servis1Service} from "../servis1.service";
+
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import {Options} from "ng5-slider";
 import { HttpParams } from '@angular/common/http';
@@ -44,7 +44,7 @@ export class TelefoniComponent implements OnInit {
   p = 1;
   starRating = 0;
 
-  constructor(public s: ServisService, public route: ActivatedRoute, public s1: Servis1Service, public fb:FormBuilder, public http:HttpClient, public router:Router) {
+  constructor(public s: ServisService, public route: ActivatedRoute, public fb:FormBuilder, public http:HttpClient, public router:Router) {
   }
 
   ngOnInit(): void {
