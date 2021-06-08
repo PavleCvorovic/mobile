@@ -141,7 +141,7 @@ this.s.duzinatelefona=this.s.telefoni.length
             timenowD = timenowD+31;
 
             satiD = timenowD-timepostD;
-            satiD=31-satiD
+            timepostMonth = timepostMonth-1;
           }else
           {
             satiD = timenowD-timepostD
