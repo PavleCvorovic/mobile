@@ -101,10 +101,19 @@ file:any;
 
       .subscribe(posts => {
         this.s.spinerOglas = false;
+        console.log(this.urls.length);
+
         if(this.brojac <1)
         {
           Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
-          this.brojac++;
+
+        }
+        this.brojac++;
+        if(this.urls.length-this.brojac == 1)
+        {
+          setTimeout(()=>{                           //<<<---using ()=> syntax
+            window.location.reload();
+        }, 1000);
         }
       })
   }
@@ -305,9 +314,7 @@ this.s.telefonBaza.vrijeme=x;
       this.specifikacije='';
 
 
-      setTimeout(()=>{                           //<<<---using ()=> syntax
-        window.location.reload();
-    }, 17000);
+
 
     }}else{
   Swal.fire('Izvinite..', 'Popunite sva polja naznačena *!', 'warning')
