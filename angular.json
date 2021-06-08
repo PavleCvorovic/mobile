@@ -24,13 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css",
-              "styles.css",
-              "./css/my-styles.css",
-               "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-               "../node_modules/tether/dist/css/tether.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./src/styles.css"
             ],
             "scripts": []
           },
