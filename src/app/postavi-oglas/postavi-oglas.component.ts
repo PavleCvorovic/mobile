@@ -307,7 +307,7 @@ this.s.telefonBaza.vrijeme=x;
 
       setTimeout(()=>{                           //<<<---using ()=> syntax
         window.location.reload();
-    }, 7000);
+    }, 17000);
 
     }}else{
   Swal.fire('Izvinite..', 'Popunite sva polja naznačena *!', 'warning')
