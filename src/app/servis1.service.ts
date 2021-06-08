@@ -57,14 +57,6 @@ brojac = 0;
   }
 
 
-
-
-
-
-
-
-
-
   slikeBaza11:any;
 
   uzmiSlike()
