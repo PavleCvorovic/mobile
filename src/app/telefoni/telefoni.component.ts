@@ -258,8 +258,8 @@ export class TelefoniComponent implements OnInit {
 
           if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
           {
-            this.s.telefoni[i].okacen='1';
-            this.s.telefoni[i].vrijeme = "prije "+ satiM+ " min";
+            this.telefoni[i].okacen='1';
+            this.telefoni[i].vrijeme = "prije "+ satiM+ " min";
           }
           else if(timepostMonth==timenowMonth && timepostD == timenowD)
           {
