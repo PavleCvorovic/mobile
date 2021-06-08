@@ -6,6 +6,7 @@ import { AdminGuardGuard } from '../admin-guard.guard';
 import {CookieService} from 'ngx-cookie-service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { AdminLoginComponent } from '../admin-login/admin-login.component';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-admin-bord',
@@ -15,16 +16,23 @@ import { AdminLoginComponent } from '../admin-login/admin-login.component';
 export class AdminBordComponent implements OnInit {
   telefon_oglas = 0;
   t: any;
+  tel_admin:any;
+  telefoni_provjera:number=0;
+  photo: any = {
+    slika:"",
+    telefon_id:""
+  }
+  slika:any;
+  brojac = 0;
 
 
-
-  constructor(public  s: ServisService, public s1: Servis1Service, private domSanitizer: DomSanitizer, public guard: AdminGuardGuard, public cookie: CookieService) {
+  constructor(public  s: ServisService, public s1: Servis1Service, private http:HttpClient, public guard: AdminGuardGuard, public cookie: CookieService) {
   }
 
 
   ngOnInit(): void {
     this.s.logovan();
-    this.s1.dajtelefonadminu();
+    this.dajtelefonadminu();
     this.s.dajpostoveadminu();
     this.s.broji_postove();
     this.s.dajpitanja();
@@ -38,9 +46,25 @@ export class AdminBordComponent implements OnInit {
 
 
 
-  postavi(id: number) {
-    this.s.dodajTelefonAdmin(id);
+  dajtelefonadminu() {
+    return this.http
+      .get(
+        'http://localhost:8000/api/novitelefon' )
+
+
+      .subscribe(posts => {
+        this.tel_admin = posts;
+        this.telefoni_provjera=this.tel_admin.length
+
+
+
+
+
+      })
+
+
   }
+
 
   obrisi2(id: number) {
 

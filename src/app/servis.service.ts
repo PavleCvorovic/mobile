@@ -23,9 +23,7 @@ export class ServisService {
   token: string;
   pitanja_provjera: number;
   telefoniZaSlike: any;
-  telefoniZaCijenu: any = [];
-  telefoniZaCijenuObrnuto: any = []
-  sort = 0;
+
   posts: any = {
     tekst: '',
 
@@ -81,27 +79,6 @@ export class ServisService {
       )
   }
 
-  sortCijena(value: any) {
-
-    this.telefoniZaCijenu = this.telefoni
-
-
-    for (let i = 0; i < this.telefoniZaCijenu.length; i++) {
-      for (let j = 0; j < this.telefoniZaCijenu.length - 1; j++) {
-        if (this.telefoniZaCijenu[j].cijena > this.telefoniZaCijenu[j + 1].cijena) {
-          [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j + 1]] = [this.telefoniZaCijenu[j + 1], this.telefoniZaCijenu[j]];
-        }
-      }
-    }
-    if (value == 0) {
-      this.telefoni = this.telefoniZaCijenu;
-    } else if (value == 1) {
-      this.telefoniZaCijenuObrnuto = this.telefoniZaCijenu.reverse()
-      this.telefoni = this.telefoniZaCijenuObrnuto;
-
-      this.sort = 0;
-    }
-  }
 
 
 

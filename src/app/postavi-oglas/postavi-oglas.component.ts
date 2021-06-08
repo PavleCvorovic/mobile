@@ -32,7 +32,7 @@ telefoniSortCijena:any;
   @ViewChild('f') signupForm: NgForm;
 file:any;
   file2:any;
-  file3:any;
+
   currentRate: number ;
   ngOnInit(): void {
     this.s.uzmiSveTelefone();
@@ -76,9 +76,7 @@ file:any;
 
 
 
-otvori(){
- this.otvoric=true;
-}
+
 marka_model(){
   let a:number;
  a=Number(this.marka);

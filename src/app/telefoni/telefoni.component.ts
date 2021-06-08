@@ -23,8 +23,9 @@ export class TelefoniComponent implements OnInit {
   prikaz: boolean = false;
   duzinatelefona: number;
 
-
-
+  telefoniZaCijenu: any = [];
+  telefoniZaCijenuObrnuto: any = []
+  sort = 0;
 
 
   vreme:string[];
@@ -51,6 +52,7 @@ export class TelefoniComponent implements OnInit {
 
     this.objava = ''
     this.dajtelefone();
+
     this.s.dajpostove();
     this.s.dajmarku();
     this.time()
@@ -60,6 +62,10 @@ export class TelefoniComponent implements OnInit {
     email:'',
     poruka:''
   })
+
+
+
+
 
 
   dajtelefone() {
@@ -277,6 +283,33 @@ export class TelefoniComponent implements OnInit {
         }
       })
   }
+
+  sortCijena(value: any) {
+
+    this.telefoniZaCijenu = this.telefoni
+
+
+    for (let i = 0; i < this.telefoniZaCijenu.length; i++) {
+      for (let j = 0; j < this.telefoniZaCijenu.length - 1; j++) {
+        if (this.telefoniZaCijenu[j].cijena > this.telefoniZaCijenu[j + 1].cijena) {
+          [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j + 1]] = [this.telefoniZaCijenu[j + 1], this.telefoniZaCijenu[j]];
+        }
+      }
+    }
+    if (value == 0) {
+      this.telefoni = this.telefoniZaCijenu;
+    } else if (value == 1) {
+      this.telefoniZaCijenuObrnuto = this.telefoniZaCijenu.reverse()
+      this.telefoni = this.telefoniZaCijenuObrnuto;
+
+      this.sort = 0;
+    }
+  }
+
+
+
+
+
 
 
 

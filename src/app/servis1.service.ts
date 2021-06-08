@@ -9,14 +9,10 @@ import Swal from 'sweetalert2';
 })
 export class Servis1Service {
 
-  spiner:boolean=false;
-  swaloglas:boolean=false;
-  tel_marka_id: any;
 
-  tel_model_naziv: any;
-  tel_admin:any;
-  telefoni_provjera:number=0;
-  slike_novi_nacin:any;
+
+
+
 
 
   constructor(public  s: ServisService, private http: HttpClient) {
@@ -66,36 +62,6 @@ brojac = 0;
 
 
 
-  dajtelefonadminu() {
-    return this.http
-      .get(
-        'http://localhost:8000/api/novitelefon' )
-
-
-      .subscribe(posts => {
-        this.tel_admin = posts;
-        this.telefoni_provjera=this.tel_admin.length
-
-
-
-
-
-      })
-
-
-  }
-
-  prototip_slike(a){
-
-    return this.http.get('http://localhost:8000/api/slika/'+a)
-      .subscribe(posts=>
-      {
-        this.slike_novi_nacin = posts;
-
-
-      })
-  }
-
 
 
 
@@ -111,20 +77,6 @@ brojac = 0;
 
       })
   }
-  slikaId:any;
-  slikeBazaId(id)
-  {
-    return this.http.get('http://localhost:8000/api/slika/'+id)
-    .subscribe(
-      posts=>
-      {
-          this.slikaId = posts;
-
-
-      }
-    )
-  }
-
 
 
 
