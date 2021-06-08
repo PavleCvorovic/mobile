@@ -8,8 +8,7 @@ import {Options} from "ng5-slider";
 import { HttpParams } from '@angular/common/http';
 import {
   HttpClient,
-  HttpHeaders,
-  HttpEventType
+
 } from '@angular/common/http';
 
 @Component({
@@ -157,6 +156,131 @@ export class TelefoniComponent implements OnInit {
       })
   }
 
+  filter:any ={
+    marka_id:0,
+    cijena_min:0,
+    cijena_max:2000,
+    model_naziv:'',
+    ram:0,
+    prednja:0,
+    zadnja:0,
+    memorija:0,
+  }
+
+
+  filtrirajj(){
+
+    this.s.spiner=false;
+
+    return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
+      .subscribe(posts=>
+      {
+
+        this.telefoni=posts;
+
+        this.duzinatelefona=this.telefoni.length
+
+
+
+        this.telefoni.reverse();
+
+        this.spiner=false;
+        if (this.telefoni.length===0){
+          this.prikaz=true
+        }
+        else {
+
+          this.prikaz=false;
+
+
+        }
+
+
+
+        var timeD:number[]=[];
+        for (let i=0;i<31;i++){
+          timeD[i]=i;
+        }
+
+        let today = new Date()
+        for (let i=0 ;i <this.telefoni.length;i++){
+          let newdate =new Date(this.telefoni[i]?.vrijeme)
+          var timepostH=newdate.getHours();
+          var timenowH:number=today.getHours();
+          var timepostM=newdate.getMinutes();
+          var timenowM:number=today.getMinutes();
+          var zbirM:number=timepostM+timenowM;
+          var timenowD:number=today.getDay();
+          var timepostD:number=newdate.getDay();
+          var timenowMonth:number= today.getMonth();
+          var timepostMonth:number = newdate.getMonth();
+
+          var satiM,satiH,satiD,satiMonth;
+
+
+          if (timenowM<timepostM){
+            timenowM=timenowM+60
+            timenowH=timenowH-1;
+            satiM= Math.abs(timenowM-timepostM);
+          }else {
+            satiM = timenowM-timepostM;
+          }
+
+
+          if(timenowH<timepostH)
+          {
+            timenowH=timenowH+24;
+            timenowD=timenowD-1;
+            satiH= Math.abs(timenowH-timepostH);
+          }else {
+            satiH = timenowH- timepostH;
+          }
+
+
+          if(timenowD<timepostD)
+          {
+            timenowD = timenowD+31;
+
+            satiD = timenowD-timepostD;
+            timepostMonth = timepostMonth-1;
+          }else
+          {
+            satiD = timenowD-timepostD
+          }
+          if(timenowMonth-timepostMonth >= 3)
+          {
+            this.s.brisiTelefon(this.telefoni[i].id);
+          }else
+          {
+            satiMonth= timenowMonth - timepostMonth;
+          }
+
+
+          if(timepostMonth==timenowMonth && timepostD == timenowD && timenowH == timepostH)
+          {
+            this.s.telefoni[i].okacen='1';
+            this.s.telefoni[i].vrijeme = "prije "+ satiM+ " min";
+          }
+          else if(timepostMonth==timenowMonth && timepostD == timenowD)
+          {
+            this.telefoni[i].okacen='1';
+            this.telefoni[i].vrijeme = "prije " + satiH + " h";
+
+          }else if(timepostMonth==timenowMonth)
+          {
+
+            this.telefoni[i].vrijeme = "prije " + satiD + " dan";
+          }else
+          {
+            this.telefoni[i].vrijeme = "prije "+ satiMonth + " mjesec"
+          }
+        }
+      })
+  }
+
+
+
+
 
 
 
@@ -227,47 +351,47 @@ export class TelefoniComponent implements OnInit {
   prenos(value) {
 
     this.s.dajmodelmarke(value);
-this.s1.filter.marka_id=value;
-if(this.s1.filter.model_naziv!=''){
-  this.s1.filter.model_naziv='';
+this.filter.marka_id=value;
+if(this.filter.model_naziv!=''){
+  this.filter.model_naziv='';
 }
 
   }
 
   postavi_parametre(value){
-    this.s1.filter.model_naziv=value;
+    this.filter.model_naziv=value;
 
 
   }
   postavi_parametre_cijena(){
-    this.s1.filter.cijena_min=this.value;
-    this.s1.filter.cijena_max=this.highValue;
+    this.filter.cijena_min=this.value;
+    this.filter.cijena_max=this.highValue;
 
   }
   postavi_parametre_ram(value){
-    this.s1.filter.ram=value;
+    this.filter.ram=value;
 
   }
   postavi_parametre_kamPrednja(value){
-    this.s1.filter.prednja=value;
+    this.filter.prednja=value;
   }
   postavi_parametre_kamZadnja(value){
-    this.s1.filter.zadnja=value;
+    this.filter.zadnja=value;
   }
   postavi_parametre_memorija(value){
-    this.s1.filter.memorija=value;
+    this.filter.memorija=value;
   }
 
 
   filtriraj(){
-    this.s1.filtriraj();
+    this.filtrirajj();
 
 this.pokazivac_marke=1;
   }
 resetuj(){
     this.pokazivac_marke=0;
-    this.s1.filter.cijena_min=0;
-    this.s1.filter.cijena_max=2000;
+    this.filter.cijena_min=0;
+    this.filter.cijena_max=2000;
 
 }
 
