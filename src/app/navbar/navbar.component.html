@@ -3,7 +3,7 @@
 <div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
   <div class="container">
     <div class="row">  <div class="logo ">
-      <img style="height: 100px ;border-radius: 50%" class="img-responsive float-left" src="assets/logo.png"  />
+      <img  [routerLink]="['admin-login']"  style="height: 100px ;border-radius: 50%" class="img-responsive float-left" src="assets/logo.png"  />
     </div>
       <div class="col-lg-3 custom-col-2">
 
@@ -27,17 +27,11 @@
           <a class="nav-link m1"  style="margin-right: 40px;color:black" [routerLink]="['../postavi_oglas']">Postavi oglas</a>
         </div>
       </div>
-      <div class="intro-text-shipping text-right">
-        <div class="kruzici mt-5 ml-1">
-          <li class="nav-item" *ngIf="this.s.logged===false" >
-            <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
-          </li>
-        </div>
-      </div>
+
       <div class="intro-text-shipping text-right">
         <div class="kruzici mt-5 ml-1">
           <li class="nav-item" *ngIf="this.s.logged===true" >
-            <a class="nav-link" [routerLink]="['admin']">Admin</a>
+            <a class="nav-link" [routerLink]="['admin']">AdminBord</a>
           </li>
         </div>
       </div>
@@ -66,7 +60,7 @@
     <div class="row">
       <div class="col-lg-3 custom-col-2">
         <div class="header-menu-vertical">
-          <h1 class="nav-link  ml-1" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
+          <h1 [routerLink]="['admin-login']" class="nav-link  ml-1" style="color: black;font-family: 'Pacifico', cursive;" >Telefon Diler</h1>
 
           <!-- menu content -->
         </div>
@@ -85,12 +79,7 @@
 
       </div>
 
-        <div class="kruzici mt-2 ml-1">
-          <li class="nav-item" *ngIf="this.s.logged===false" >
-            <a class="nav-link" [routerLink]="['admin-login']"  >Admin</a>
-          </li>
-
-      </div>
+   
 
         <div class="kruzici mt-2 ml-1">
           <li class="nav-item" *ngIf="this.s.logged===true" >
