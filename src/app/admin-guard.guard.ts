@@ -15,8 +15,16 @@ constructor(public cookieService:CookieService, public s:ServisService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean{
+    if(this.s.token != "")
+    {
+      this.logovan = false;
+      return this.logovan;
+    }else
+    {
+      this.logovan = true;
+      return this.logovan;
+    }
 
-     return this.logovan;
 
   }
 
