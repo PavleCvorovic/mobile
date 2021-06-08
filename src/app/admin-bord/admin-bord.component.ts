@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from '../servis.service';
 
-import { DomSanitizer } from '@angular/platform-browser';
+
 import { AdminGuardGuard } from '../admin-guard.guard';
 import {CookieService} from 'ngx-cookie-service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-import { AdminLoginComponent } from '../admin-login/admin-login.component';
+
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -18,12 +18,7 @@ export class AdminBordComponent implements OnInit {
   t: any;
   tel_admin:any;
   telefoni_provjera:number=0;
-  photo: any = {
-    slika:"",
-    telefon_id:""
-  }
-  slika:any;
-  brojac = 0;
+
 
 
   constructor(public  s: ServisService, private http:HttpClient, public guard: AdminGuardGuard, public cookie: CookieService) {

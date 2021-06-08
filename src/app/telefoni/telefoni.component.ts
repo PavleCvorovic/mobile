@@ -79,6 +79,7 @@ export class TelefoniComponent implements OnInit {
 
         this.telefoni = posts;
         this.telefoni.reverse();
+        this.s.telefoni=this.telefoni
         console.log(this.telefoni)
         this.spiner = false;
         let i;
