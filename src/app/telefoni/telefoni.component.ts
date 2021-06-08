@@ -18,7 +18,17 @@ import {
   styleUrls: ['./telefoni.component.css']
 })
 export class TelefoniComponent implements OnInit {
-vreme:string[];
+  spiner: boolean = false;
+  telefoni: any = [];
+
+  prikaz: boolean = false;
+  duzinatelefona: number;
+
+
+
+
+
+  vreme:string[];
   value: number = 0;
   highValue: number = 2000;
   options: Options = {
@@ -41,7 +51,7 @@ vreme:string[];
     console.log(this.s.token + " token")
 
     this.objava = ''
-    this.s.dajtelefone();
+    this.dajtelefone();
     this.s.dajpostove();
     this.s.dajmarku();
     this.time()
@@ -51,6 +61,108 @@ vreme:string[];
     email:'',
     poruka:''
   })
+
+
+  dajtelefone() {
+    this.spiner = true;
+    return this.http
+      .get(
+        'http://localhost:8000/api/telefoni')
+
+
+      .subscribe(posts => {
+
+        this.telefoni = posts;
+        this.telefoni.reverse();
+        console.log(this.telefoni)
+        this.spiner = false;
+        let i;
+        this.duzinatelefona = this.telefoni.length
+        if (this.telefoni.length === 0) {
+          this.prikaz = true
+        } else {
+
+          this.prikaz = false;
+
+
+        }
+        var timeD: number[] = [];
+        for (let i = 0; i < 31; i++) {
+          timeD[i] = i;
+        }
+
+        let today = new Date()
+        for (let i = 0; i < this.telefoni.length; i++) {
+          let newdate = new Date(this.telefoni[i]?.vrijeme)
+          var timepostH = newdate.getHours();
+          var timenowH: number = today.getHours();
+          var timepostM = newdate.getMinutes();
+          var timenowM: number = today.getMinutes();
+          var timenowD: number = today.getDay();
+          var timepostD: number = newdate.getDay();
+          var timenowMonth: number = today.getMonth();
+          var timepostMonth: number = newdate.getMonth();
+
+          var satiM, satiH, satiD, satiMonth;
+
+
+          if (timenowM < timepostM) {
+            timenowM = timenowM + 60
+            timenowH = timenowH - 1;
+            satiM = Math.abs(timenowM - timepostM);
+          } else {
+            satiM = timenowM - timepostM;
+          }
+          if (timenowH < timepostH) {
+            timenowH = timenowH + 24;
+            timenowD = timenowD - 1;
+            satiH = Math.abs(timenowH - timepostH);
+          } else {
+            satiH = timenowH - timepostH;
+          }
+
+
+          if (timenowD < timepostD) {
+            timenowD = timenowD + 31;
+
+            satiD = timenowD - timepostD;
+            satiD = 31 - satiD
+          } else {
+            satiD = timenowD - timepostD
+          }
+          if (timenowMonth - timepostMonth >= 3) {
+            this.s.brisiTelefon(this.telefoni[i].id);
+          } else {
+            satiMonth = timenowMonth - timepostMonth;
+          }
+
+
+          if (timepostMonth == timenowMonth && timepostD == timenowD && timenowH == timepostH) {
+            this.telefoni[i].okacen = '1';
+            this.telefoni[i].vrijeme = "prije " + satiM + " min";
+          } else if (timepostMonth == timenowMonth && timepostD == timenowD) {
+            this.telefoni[i].okacen = '1';
+            this.telefoni[i].vrijeme = "prije " + satiH + " h";
+
+          } else if (timepostMonth == timenowMonth) {
+
+            this.telefoni[i].vrijeme = "prije " + satiD + " dan";
+          } else {
+            this.telefoni[i].vrijeme = "prije " + satiMonth + " mjesec";
+          }
+
+
+        }
+
+      })
+  }
+
+
+
+
+
+
+
 
   pitaj()
   {

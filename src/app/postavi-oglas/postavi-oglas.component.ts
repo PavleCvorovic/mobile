@@ -47,32 +47,6 @@ file:any;
 
   }
 
-  // sortCijena()
-  // {
-  //   this.s.uzmiSveTelefone();
-  //   // this.telefoniZaCijenu = this.s.telefoniZaSlike;
-  //   for(let i = 0; i<this.s.telefoniZaSlike.length;i++)
-  //   {
-  //     this.telefoniZaCijenu[i] = this.s.telefoniZaSlike[i].cijena;
-  //     parseFloat(this.telefoniZaCijenu[i])
-  //   }
-
-
-  //   // this.telefoniZaCijenu = this.telefoniZaCijenu.slice();
-
-  //   // console.log(this.telefoniZaCijenu);
-  //   for( let i=0;i<this.telefoniZaCijenu.length;i++){
-  //     for(let j=0;j<this.telefoniZaCijenu.length-1;j++){
-  //       if(this.telefoniZaCijenu[j] > this.telefoniZaCijenu[j+1]){
-  //         [this.telefoniZaCijenu[j], this.telefoniZaCijenu[j+1]] =[this.telefoniZaCijenu[j+1],this.telefoniZaCijenu[j]];
-  //         console.log(this.telefoniZaCijenu);
-  //     }
-  //   }
-  //   this.sort = 1;
-  // }
-
-  // }
-
 
 
 

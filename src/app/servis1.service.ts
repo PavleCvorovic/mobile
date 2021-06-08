@@ -23,26 +23,6 @@ export class Servis1Service {
   }
 
 
-  dajtelefonpomarci(id) {
-    this.s.spiner=true;
-    return this.http
-      .get(
-        'http://localhost:8000/api/telefon-filtriraj/' + id)
-
-
-      .subscribe(posts => {
-        this.tel_marka_id = posts;
-
-        this.s.spiner=false;
-
-        if (this.tel_marka_id.length===0){
-          this.s.prikaz=true
-        }
-        else {          this.s.prikaz=false
-        }
-
-      })
-  }
 
   photo: any = {
     slika:"",
