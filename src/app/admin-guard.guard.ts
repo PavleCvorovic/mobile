@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
+import { ServisService } from './servis.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminGuardGuard implements CanActivate {
-constructor(public cookieService:CookieService){}
-  logovan = false;
+constructor(public cookieService:CookieService, public s:ServisService){}
+   logovan=false;
+
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean{
@@ -16,5 +19,6 @@ constructor(public cookieService:CookieService){}
      return this.logovan;
 
   }
+
 
 }

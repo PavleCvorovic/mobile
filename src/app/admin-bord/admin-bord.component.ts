@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AdminGuardGuard } from '../admin-guard.guard';
 import {CookieService} from 'ngx-cookie-service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { AdminLoginComponent } from '../admin-login/admin-login.component';
 
 @Component({
   selector: 'app-admin-bord',
@@ -21,18 +22,20 @@ export class AdminBordComponent implements OnInit {
   }
 
 
-
   ngOnInit(): void {
-
     this.s.logovan();
     this.s1.dajtelefonadminu();
     this.s.dajtelefone();
     this.s.dajpostoveadminu();
     this.s.broji_postove();
     this.s.dajpitanja();
-
+    if(this.s.token != "")
+    {
+      this.guard.logovan = true;
+    }
 
   }
+
 
 
 

@@ -1,3 +1,4 @@
+import { ServisService } from './../servis.service';
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder} from '@angular/forms';
@@ -13,27 +14,28 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router, public guard:AdminGuardGuard, public cookieService:CookieService) { }
+  constructor(public fb:FormBuilder, public http:HttpClient, public router:Router, public guard:AdminGuardGuard, public cookieService:CookieService, public s:ServisService) { }
 
   unos_admin = this.fb.group(
   {
     username:'',
     password:''
   });
-  jwt= this.cookieService.get('jwt')
+
   ngOnInit(): void {
 
-
-
-
   }
+  // token:string;
 
   submit()
   {
       this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true})
-        .subscribe(()=>
+        .subscribe((result: any)=>
       {
-        this.guard.logovan = true
+        this.cookieService.set('test', result.message);
+        this.s.token = this.cookieService.get('test');
+        // window.console.log(this.cookieService.getAll());
+        this.guard.logovan = true;
         this.router.navigate(['admin']);
       });
 
