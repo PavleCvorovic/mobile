@@ -26,7 +26,7 @@ prikaz:boolean=false;
   id_telefona;
   duzinatelefona:number;
   pitanja:any;
-  token:any;
+  token:string ;
   pitanja_provjera:number;
   constructor(private http: HttpClient,private datePipe: DatePipe) { }
 

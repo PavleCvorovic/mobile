@@ -19,12 +19,15 @@ export class NavbarComponent implements OnInit {
 
   odjavi()
   {
-    this.s.logged= false;
-    this.guard.logovan = false;
+
+
+
     this.http.post('http://localhost:8000/api/logout',{},{withCredentials:true})
     .subscribe(()=>
     {
-
+      this.cookieService.deleteAll();
+      this.guard.logovan = false;
+      this.s.logged= false;
     })
   }
 

@@ -38,6 +38,7 @@ vreme:string[];
   }
 
   ngOnInit(): void {
+    console.log(this.s.token + " token")
 
     this.objava = ''
     this.s.dajtelefone();
