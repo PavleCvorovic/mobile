@@ -291,9 +291,6 @@ this.s.telefonBaza.vrijeme=x;
         this.postavislike();
      }, 3000);
 
-
-
-
       }
 
 
