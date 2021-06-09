@@ -191,3 +191,14 @@ img {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+.image #zoom img
+{
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.image #zoom:hover img
+{
+  transform:scale(1.4);
+  background-position: center;
+}
