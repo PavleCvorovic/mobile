@@ -100,17 +100,14 @@ file:any;
 
 
       .subscribe(posts => {
-        this.s.spinerOglas = false;
+
         console.log(this.urls.length);
 
-        if(this.brojac <1)
-        {
-          Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
-
-        }
         this.brojac++;
         if(this.urls.length-this.brojac == 1)
         {
+          this.s.spinerOglas = false;
+          Swal.fire('Hvala vam...', 'Ubrzo nakod pregleda od strane administracije vaš oglas će biti objavljen !', 'success')
           setTimeout(()=>{                           //<<<---using ()=> syntax
             window.location.reload();
         }, 1000);
