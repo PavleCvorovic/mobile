@@ -1,4 +1,4 @@
-<<div class="container-fluid">
+<!-- <<div class="container-fluid">
   <div class="row">
 
     <div class=" d-flex justify-content-left" id="heder"  >
@@ -60,15 +60,119 @@
         <td><img class="cpu"  src="{{cam}}" > <h1> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}<br>Zadnja kamera  {{telefon[0]?.specifikacije.kamera_zadnja}}</h1></td>
       </tr>
       </tbody>
-    </table>
+    </table> -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+
+          <div class="preview-pic tab-content"  *ngFor="let a of telefon[0]?.slika,index as i">
+            <div class="image">
+            <div id="zoom"><img *ngIf="this.promjena===i"  src="http://localhost:8000/storage/slike/{{a.slika}}" class="img-fluid" alt="Responsive image" style="height:350pt;width:450pt " ></div>
+          </div>
+          </div>
+          <div class="d-flex flex-row justify-content-center"><div class="d-flex  "  *ngFor="let a of telefon[0]?.slika,index as i">
+            <img (click)="this.promjena=i" src="http://localhost:8000/storage/slike/{{a.slika}}"  alt="Responsive image" style="height:50pt;width:50pt;margin-left:5px " >
+
+          </div></div>
+          <br>
+<br>
+          <div class="container float-left"  >
+
+
+            <div class="row justify-content-center " >
 
 
 
 
-<div class="justify-content-center">
-    <button class="btn-success"style="height: 100px;width: 200px"(click)= "postavi() " [routerLink]="['/admin']">Postavi</button>
-    <button class="btn-danger"style="height: 100px;width: 200px" (click)="obrisi()" [routerLink]="['/admin']">Obrisi</button>
-    </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col"><img class="cpu"  src="{{cpu}}" ></th>
+            <th scope="col"><img class="cpu"  src="{{dis}}" ></th>
+            <th scope="col"><img class="cpu"  src="{{bat}}" ></th>
+            <th scope="col"><img class="cpu"  src="{{mem}}" ></th>
+            <th scope="col"><img class="cpu"   src="{{ram_url}}" ></th>
+            <th scope="col"><img class="cpu"  src="{{cam}}" ></th>
+            <th scope="col"><img class="cpu"  src="{{cam}}" ></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
 
-  </div>
-</div>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.procesor != null" > {{telefon[0]?.specifikacije.procesor}}-GHz <div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.procesor == null">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.ekran != null"> {{telefon[0]?.specifikacije.ekran}}-Inch <div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.ekran == null">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.baterija != null"> {{telefon[0]?.specifikacije.baterija}}-mA<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.baterija == null">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.memorija != null"> {{telefon[0]?.specifikacije.memorija}}-Gb<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.memorija == null">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.ram != null"> {{telefon[0]?.specifikacije.ram}}-Gb<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.ram == null">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.kamera_prednja !=null "> Prednja kamera: {{telefon[0]?.specifikacije.kamera_prednja}}-MP<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.kamera_prednja == null && telefon[0]?.specifikacije.kamera_prednja ">/</div></td>
+            <td><p style="max-height: 90px;max-width: 90px" *ngIf="telefon[0]?.specifikacije.kamera_zadnja !=null "> Zadnja kamera: {{telefon[0]?.specifikacije.kamera_zadnja}}-MP<div style="max-width: 20px;max-height: 40px" *ngIf="telefon[0]?.specifikacije.kamera_zadnja == null && telefon[0]?.specifikacije.kamera_prednja ">/</div></td>
+          </tr>
+
+          </tbody>
+        </table>
+            </div>
+          </div>
+        </div>
+        <div class="details col-md-6" >
+          <h3 class="product-title">  {{telefon[0]?.mark_id.marka_naziv}}    {{telefon[0]?.model}}  </h3>
+          <div class="rating" >
+            <div style="font-size: larger; color: orange">
+              <p style="color: black">Stanje procijenjeno od strane vlasnika </p>
+              <ngb-rating [max]="10" [(rate)]= "stanje" [readonly] = "true">
+
+              </ngb-rating>
+            </div>
+
+          </div>
+          <p class="product-description"> {{telefon[0]?.opis}}</p>
+          <h4 class="price">Trenutna cijena :<span>{{telefon[0]?.cijena}} eur</span></h4>
+          <div class="details">
+          <h1>Kontakt: {{telefon[0]?.kontakt}}</h1>
+            <h1>Prodavac: {{telefon[0]?.prodavac}}</h1>
+          </div>
+          <div class="justify-content-center">
+            <button class="btn-success"style="height: 50px;width: 100px"(click)= "postavi() " [routerLink]="['/admin']">Postavi</button>
+            <button class="btn-danger"style="height: 50px;width: 100px" (click)="obrisi()" [routerLink]="['/admin']">Obrisi</button>
+            </div>
+
+            </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

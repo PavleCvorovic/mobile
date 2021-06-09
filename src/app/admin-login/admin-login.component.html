@@ -9,13 +9,13 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Sekula_Drljevi%C4%87.jpg" id="icon" alt="User Icon" style="width:15px;border-radius: 50%"/>
+      <img src="" id="icon" alt="User Icon" style="width:15px;border-radius: 50%"/>
     </div>
 
     <!-- Login Form -->
     <form [formGroup] = "unos_admin">
       <input  type="text" id="username" class="fadeIn second"  placeholder="login" formControlName= 'username'>
-      <input type="text" id="password" class="fadeIn third"   placeholder="password" formControlName= 'password'>
+      <input  type="password" id="password" class="fadeIn third"   placeholder="password" formControlName= 'password'><br>
       <input type="submit" class="fadeIn fourth" value="Log In" (click)='submit()'>
     </form>
 

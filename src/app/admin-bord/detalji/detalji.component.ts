@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisService} from "../../servis.service";
 import {ActivatedRoute} from "@angular/router";
+import { AdminGuardGuard } from 'src/app/admin-guard.guard';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetaljiComponent implements OnInit {
 
-  constructor(public s:ServisService, public route: ActivatedRoute) { }
+  constructor(public s:ServisService, public route: ActivatedRoute,  public guard: AdminGuardGuard,) { }
 
   id = this.route.snapshot.params.id;
 telefon={};
@@ -22,11 +23,16 @@ telefon={};
   cam:string='assets/camera.png'
   dis:string='assets/display.png'
   promjena:number=0;
+  stanje:number;
 
 
 
   ngOnInit(): void {
 this.pozovi();
+if(this.s.token != "")
+{
+  this.guard.logovan = true;
+}
 
 
   }
