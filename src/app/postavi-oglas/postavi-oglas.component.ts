@@ -233,13 +233,25 @@ prikazSlike=[];
           conf = this.s.specifikacije[i].id;
         }
       }
+      let t = 0;
+      let idT = 0;
+
+      for(let i =0;i<this.s.telefoniZaSlike.length;i++)
+      {
+
+        if(t<this.s.telefoniZaSlike[i].id)
+        {
+          t = this.s.telefoniZaSlike[i].id;
+          idT = this.s.telefoniZaSlike[i].telefon_id;
+        }
+      }
 
 
 
       this.s.telefonBaza.specifikacije = conf + 1;
       var  x = Date();
       this.s.telefonBaza.mark_id = this.marka;
-
+      this.s.telefonBaza.id = idT+1;
 
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
@@ -260,16 +272,7 @@ this.s.telefonBaza.vrijeme=x;
 
       this.s.dodajTelefon();
 
-      let t = 0;
 
-      for(let i =0;i<this.s.telefoniZaSlike.length;i++)
-      {
-
-        if(t<this.s.telefoniZaSlike[i].id)
-        {
-          t = this.s.telefoniZaSlike[i].id;
-        }
-      }
 
 
 
