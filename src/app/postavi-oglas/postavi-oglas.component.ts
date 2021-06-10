@@ -242,7 +242,6 @@ prikazSlike=[];
         if(t<this.s.telefoniZaSlike[i].id)
         {
           t = this.s.telefoniZaSlike[i].id;
-          idT = this.s.telefoniZaSlike[i].telefon_id;
         }
       }
 
@@ -251,7 +250,6 @@ prikazSlike=[];
       this.s.telefonBaza.specifikacije = conf + 1;
       var  x = Date();
       this.s.telefonBaza.mark_id = this.marka;
-      this.s.telefonBaza.id = idT+1;
 
       this.s.telefonBaza.cijena = this.cijena;
       this.s.telefonBaza.opis = this.opis;
