@@ -70,7 +70,7 @@ export class ServisService {
   uzmiSveTelefone() {
     return this.http
       .get(
-        'http://localhost:8000/api/sviTelefoni')
+        'http://polovni-telefoni.tk/laravel/public/api/sviTelefoni')
 
 
       .subscribe(posts => {
@@ -85,7 +85,7 @@ export class ServisService {
   brisiTelefon(id) {
 
 
-    return this.http.delete('http://localhost:8000/api/obrisi/' + id)
+    return this.http.delete('http://polovni-telefoni.tk/laravel/public/api/obrisi/' + id)
       .subscribe(() => {
 
       })
@@ -93,7 +93,7 @@ export class ServisService {
 
   dodajTelefonAdmin(id) {
     const params = new HttpParams()
-    return this.http.post('http://localhost:8000/api/edit/' + id, '')
+    return this.http.post('http://polovni-telefoni.tk/laravel/public/api/edit/' + id, '')
       .subscribe(() => {
 
       })
@@ -101,14 +101,14 @@ export class ServisService {
 
   dodajOglasAdmin(id) {
     const params = new HttpParams()
-    return this.http.post('http://localhost:8000/api/edit-oglas/' + id, '')
+    return this.http.post('http://polovni-telefoni.tk/laravel/public/api/edit-oglas/' + id, '')
       .subscribe(() => {
 
       })
   }
 
   obrisiPost(id) {
-    this.http.delete('http://localhost:8000/api/obrisi-oglas/' + id)
+    this.http.delete('http://polovni-telefoni.tk/laravel/public/api/obrisi-oglas/' + id)
       .subscribe(() => {
 
       })
@@ -118,7 +118,7 @@ export class ServisService {
     return this.http
 
       .get(
-        'http://localhost:8000/api/model/')
+        'http://polovni-telefoni.tk/laravel/public/api/model/')
 
 
       .subscribe(posts => {
@@ -131,7 +131,7 @@ export class ServisService {
   dajmarku() {
     return this.http
       .get(
-        'http://localhost:8000/api/marke')
+        'http://polovni-telefoni.tk/laravel/public/api/marke')
 
 
       .subscribe(posts => {
@@ -144,7 +144,7 @@ export class ServisService {
   dajmodelmarke(broj) {
     return this.http
       .get(
-        'http://localhost:8000/api/model/' + broj)
+        'http://polovni-telefoni.tk/laravel/public/api/model/' + broj)
 
 
       .subscribe(posts => {
@@ -159,7 +159,7 @@ export class ServisService {
   dodajPost() {
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-oglas', this.posts
+        'http://polovni-telefoni.tk/laravel/public/api/dodaj-oglas', this.posts
       ).subscribe(responseData => {
 
     })
@@ -168,7 +168,7 @@ export class ServisService {
   uzmiKonfiguracije() {
     return this.http
       .get(
-        'http://localhost:8000/api/konfiguracije')
+        'http://polovni-telefoni.tk/laravel/public/api/konfiguracije')
 
 
       .subscribe(posts => {
@@ -183,7 +183,7 @@ export class ServisService {
     this.spinerOglas = true;
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-konfiguracije', this.konfiguracijeBaza,
+        'http://polovni-telefoni.tk/laravel/public/api/dodaj-konfiguracije', this.konfiguracijeBaza,
         {
           params: params
         }
@@ -199,7 +199,7 @@ export class ServisService {
 
     this.http
       .post(
-        'http://localhost:8000/api/dodaj-telefon', this.telefonBaza,
+        'http://polovni-telefoni.tk/laravel/public/api/dodaj-telefon', this.telefonBaza,
         {
           params: params
         }
@@ -213,7 +213,7 @@ export class ServisService {
   dajpostove() {
     return this.http
       .get(
-        'http://localhost:8000/api/oglas')
+        'http://polovni-telefoni.tk/laravel/public/api/oglas')
 
 
       .subscribe(posts => {
@@ -227,7 +227,7 @@ export class ServisService {
   dajpostoveadminu() {
     return this.http
       .get(
-        'http://localhost:8000/api/oglasadmin')
+        'http://polovni-telefoni.tk/laravel/public/api/oglasadmin')
 
 
       .subscribe(posts => {
@@ -240,7 +240,7 @@ export class ServisService {
   broji_postove() {
     return this.http
       .get(
-        'http://localhost:8000/api/oglasadmin')
+        'http://polovni-telefoni.tk/laravel/public/api/oglasadmin')
 
 
       .subscribe(posts => {
@@ -252,12 +252,12 @@ export class ServisService {
   }
 
   getTelefonId(id: any): Observable<any> {
-    return this.http.get('http://localhost:8000/api/telefoni/' + id);
+    return this.http.get('http://polovni-telefoni.tk/laravel/public/api/telefoni/' + id);
   }
 
   logovan() {
     this.logged = true;
-    this.http.get('http://localhost:8000/api/user', {withCredentials: true})
+    this.http.get('http://polovni-telefoni.tk/laravel/public/api/user', {withCredentials: true})
       .subscribe(res => {
 
         },
@@ -271,7 +271,7 @@ export class ServisService {
   dajpitanja() {
     return this.http
       .get(
-        'http://localhost:8000/api/mail-svi')
+        'http://polovni-telefoni.tk/laravel/public/api/mail-svi')
 
 
       .subscribe(posts => {

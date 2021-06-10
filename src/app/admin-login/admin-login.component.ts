@@ -29,7 +29,7 @@ export class AdminLoginComponent implements OnInit {
 
   submit()
   {
-      this.http.post('http://localhost:8000/api/login', this.unos_admin.getRawValue(),{withCredentials:true})
+      this.http.post('http://polovni-telefoni.tk/laravel/public/api/login', this.unos_admin.getRawValue(),{withCredentials:true})
         .subscribe((result: any)=>
       {
         this.cookieService.set('test', result.message);

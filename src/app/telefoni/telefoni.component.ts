@@ -72,7 +72,7 @@ export class TelefoniComponent implements OnInit {
     this.spiner = true;
     return this.http
       .get(
-        'http://localhost:8000/api/telefoni')
+        'http://polovni-telefoni.tk/laravel/public/api/telefoni')
 
 
       .subscribe(posts => {
@@ -179,7 +179,7 @@ export class TelefoniComponent implements OnInit {
 
     this.s.spiner=false;
 
-    return this.http.post('http://localhost:8000/api/filtrirajSve', this.filter)
+    return this.http.post('http://polovni-telefoni.tk/laravel/public/api/filtrirajSve', this.filter)
       .subscribe(posts=>
       {
 
@@ -343,7 +343,7 @@ export class TelefoniComponent implements OnInit {
     else{
     this.http
       .post(
-        'http://localhost:8000/api/mail-salji', pitanje
+        'http://polovni-telefoni.tk/laravel/public/api/mail-salji', pitanje
 
       )   .subscribe(responseData =>
     {

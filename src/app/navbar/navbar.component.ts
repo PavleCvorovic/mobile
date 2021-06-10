@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-    this.http.post('http://localhost:8000/api/logout',{},{withCredentials:true})
+    this.http.post('http://polovni-telefoni.tk/laravel/public/api/logout',{},{withCredentials:true})
     .subscribe(()=>
     {
       this.cookieService.deleteAll();

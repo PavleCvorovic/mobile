@@ -44,7 +44,7 @@ export class AdminBordComponent implements OnInit {
   dajtelefonadminu() {
     return this.http
       .get(
-        'http://localhost:8000/api/novitelefon' )
+        'http://polovni-telefoni.tk/laravel/public/api/novitelefon' )
 
 
       .subscribe(posts => {

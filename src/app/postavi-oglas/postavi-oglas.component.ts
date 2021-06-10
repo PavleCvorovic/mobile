@@ -94,7 +94,7 @@ file:any;
     params.append('slika', this.photo.slika)
     params.append('telefon_id', this.photo.telefon_id);
     this.http
-      .post('http://localhost:8000/api/file', params
+      .post('http://polovni-telefoni.tk/laravel/public/api/file', params
 
       )
 
@@ -121,7 +121,7 @@ file:any;
 
   uzmiSlike()
   {
-    return this.http.get('http://localhost:8000/api/slike')
+    return this.http.get('http://polovni-telefoni.tk/laravel/public/api/slike')
       .subscribe(posts=>
       {
         this.slikeBaza11 = posts;
@@ -262,7 +262,7 @@ prikazSlike=[];
       this.s.telefonBaza.stanje = this.currentRate;
       this.s.telefonBaza.javno=0;
       this.s.telefonBaza.sifra = this.sifra;
-this.s.telefonBaza.vrijeme=x;
+      this.s.telefonBaza.vrijeme=x;
       this.s.spiner=true;
       this.photo.slika = this.slika;
       this.photo.telefon_id = this.s.telefonBaza.id;
