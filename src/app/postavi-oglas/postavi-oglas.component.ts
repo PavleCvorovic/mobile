@@ -50,6 +50,10 @@ file:any;
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
     this.uzmiSlike();
+    if(this.s.token != "")
+    {
+      this.guard.logovan = true;
+    }
 
 
 
@@ -314,14 +318,5 @@ prikazSlike=[];
     }}else{
   Swal.fire('Izvinite..', 'Popunite sva polja naznačena *!', 'warning')
 }
-
-
-
-
-
-
-
-
-
   }
 }

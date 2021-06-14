@@ -23,6 +23,11 @@ export class AdminLoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    if(this.s.token != "")
+  {
+    this.guard.logovan = true;
+    this.router.navigate(['/admin']);
+  }
 
   }
   // token:string;

@@ -35,6 +35,10 @@ stanje:number;
 
 
     this.pozovi();
+    if(this.s.token != "")
+{
+  this.guard.logovan = true;
+}
 
   }
 
