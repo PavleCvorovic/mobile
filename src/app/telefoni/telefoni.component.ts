@@ -48,10 +48,7 @@ export class TelefoniComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.s.token != "")
-    {
-       this.guard.logovan = true;
-    }
+   
     this.objava = ''
     this.dajtelefone();
 
