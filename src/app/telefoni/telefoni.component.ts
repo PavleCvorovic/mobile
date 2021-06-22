@@ -218,8 +218,8 @@ export class TelefoniComponent implements OnInit {
           var timepostM=newdate.getMinutes();
           var timenowM:number=today.getMinutes();
           var zbirM:number=timepostM+timenowM;
-          var timenowD:number=today.getDay();
-          var timepostD:number=newdate.getDay();
+          var timenowD:number=today.getDate();
+          var timepostD:number=newdate.getDate();
           var timenowMonth:number= today.getMonth();
           var timepostMonth:number = newdate.getMonth();
 
