@@ -568,7 +568,7 @@
         </form>
 
 <div class="text-center">
-        <button class="btn btn-primary mt-5 " (click)="filtriraj()"   >Filtriraj</button>
+  <a id="scrollUp" href="#top" class=" mt-5 mb-5" (click)="filtriraj()">Filtriraj</a>
 </div>
             </div> <!-- card -->
             <!-- card -->
@@ -585,7 +585,7 @@
 
 
 
-<div class="footer-area" >
+<div class="footer-area">
   <div class="footer-container" >
     <div class="footer-top ">
       <div class="container">
@@ -611,18 +611,20 @@
           <div class="col-md-6 col-lg-2 mb-sm-30px mb-lm-30px">
 
           </div>
-          <div class="col-md-6 col-lg-4 ">
-            <div class="single-wedge">
-              <h4 class="footer-herading">Kontaktirajte nas preko email-a</h4>
-              <div class="subscrib-text">
-                <p>Ukoliko imate imate bilo kakvih pitanja, možete nas kontaktirati preko email-a</p>
-              </div>
+        </div>
+          <div class="col-md-12 col-lg-12 ">
+
               <div class="col-md-10 d-flex justify-content-end pt-3 pb-2">
-                <div class="text-center" >
+                <div class="text-right" >
+                  <div class="single-wedge text-right">
+                    <h4 class="footer-herading">Kontaktirajte nas preko email-a</h4>
+                    <div class="subscrib-text">
+                      <p>Ukoliko imate imate bilo kakvih pitanja, možete nas kontaktirati preko email-a</p>
+                    </div>
                   <form [formGroup] = "question">
                   <input class="form-control"  placeholder="Vaša e-mail adresa ." formControlName = "email">
                   <input class="form-control" placeholder="Postavite pitanje?" formControlName="poruka">
-                  <button type="submit" class="btn btn-success " (click) = "pitaj()"> Pitaj !</button>
+                  <button type="submit" class="btn btn-success justify-content-center " (click) = "pitaj()"> Pitaj !</button>
                 </form>
                 </div>
 
@@ -631,7 +633,7 @@
             </div>
           </div>
         </div>
-      </div>
+
     </div>
 
   </div>

@@ -96,14 +96,16 @@ export class TelefoniComponent implements OnInit {
         }
 
         let today = new Date()
+
         for (let i = 0; i < this.telefoni.length; i++) {
           let newdate = new Date(this.telefoni[i]?.vrijeme)
           var timepostH = newdate.getHours();
           var timenowH: number = today.getHours();
           var timepostM = newdate.getMinutes();
           var timenowM: number = today.getMinutes();
-          var timenowD: number = today.getDay();
-          var timepostD: number = newdate.getDay();
+          var timenowD: number = today.getDate();
+          var timepostD: number = newdate.getDate();
+
           var timenowMonth: number = today.getMonth();
           var timepostMonth: number = newdate.getMonth();
 
@@ -145,6 +147,7 @@ export class TelefoniComponent implements OnInit {
             this.telefoni[i].okacen = '1';
             this.telefoni[i].vrijeme = "prije " + satiM + " min";
           } else if (timepostMonth == timenowMonth && timepostD == timenowD) {
+
             this.telefoni[i].okacen = '1';
             this.telefoni[i].vrijeme = "prije " + satiH + " h";
 
@@ -417,6 +420,7 @@ if(this.filter.model_naziv!=''){
 
   filtriraj(){
     this.filtrirajj();
+
 
 this.pokazivac_marke=1;
   }
