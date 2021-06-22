@@ -48,7 +48,7 @@ export class TelefoniComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+
     this.objava = ''
     this.dajtelefone();
 
@@ -72,7 +72,6 @@ export class TelefoniComponent implements OnInit {
     return this.http
       .get(
         'http://polovni-telefoni.tk/laravel/public/api/telefoni')
-
 
       .subscribe(posts => {
 
@@ -131,7 +130,7 @@ export class TelefoniComponent implements OnInit {
             timenowD = timenowD + 31;
 
             satiD = timenowD - timepostD;
-            satiD = 31 - satiD
+            // satiD = 31 - satiD
           } else {
             satiD = timenowD - timepostD
           }

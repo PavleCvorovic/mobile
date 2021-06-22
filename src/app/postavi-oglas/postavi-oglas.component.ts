@@ -50,7 +50,7 @@ file:any;
     this.s.dajmodel();
     this.s.uzmiKonfiguracije();
     this.uzmiSlike();
-  
+
 
 
 
@@ -269,9 +269,6 @@ prikazSlike=[];
 
 
       this.s.dodajTelefon();
-
-
-
 
 
       t = t+1;
